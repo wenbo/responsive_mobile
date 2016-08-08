@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  banner: MyString
+  feature: MyString
+  desc_as_option: MyString
+  red_desc_as_option: MyString
+  summary: 
+  upgraded: 
+  is_new: false
+  is_recommended: false
+
+two:
+  name: MyString
+  banner: MyString
+  feature: MyString
+  desc_as_option: MyString
+  red_desc_as_option: MyString
+  summary: 
+  upgraded: 
+  is_new: false
+  is_recommended: false
