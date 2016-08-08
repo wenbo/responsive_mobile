@@ -3,6 +3,7 @@
 
 ## Industry
 name
+note
 parent_id
 
 ## Category
@@ -11,15 +12,15 @@ note
 parent_id
 
 ## Product
-name
-banner
-feature
-desc_as_option
-red_desc_as_option
-summary
-upgraded
-is_new
-is_recommended
+name:string
+banner:string
+feature:string
+desc_as_option:string
+red_desc_as_option:string
+summary:textarea
+upgraded:textarea
+is_new:boolean
+is_recommended:boolean
 
 ## categories_products
 category_id
