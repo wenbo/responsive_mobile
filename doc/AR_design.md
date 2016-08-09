@@ -9,3 +9,7 @@ add_index :categories, :parent_id
 rails g model Product name:string banner:string feature:string desc_as_option:string red_desc_as_option:string summary:text upgraded:text is_new:boolean is_recommended:boolean
 add_index :products, :name
 
+rails g controller admin/base
+rails g controller admin/sessions new
+rails generate simple_captcha
+

@@ -1,3 +1,4 @@
+# coding: utf-8
 source 'https://rubygems.org'
 
 
@@ -29,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Add simple support for organizing ActiveRecord models into parent–children relationships.
 gem 'acts_as_tree', '~> 2.4'
+
+gem 'simple_captcha2', require: 'simple_captcha'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
