@@ -18,6 +18,10 @@ rails g controller admin/industries index
 rails g controller admin/categories index
 rails g controller admin/products index new crete edit update destroy show
 
+rails g model Option name:string picture:string
+rails g controller admin/options index new create edit upload destroy show
+rails g controller admin/product_attachments index new create edit update destroy show
+
 
 
 

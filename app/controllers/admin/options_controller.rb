@@ -1,18 +1,18 @@
-class Admin::ProductsController < Admin::BaseController
+class Admin::OptionsController < Admin::BaseController
   def index
   end
 
   def new
   end
 
-  def crete
+  def create
   end
 
   def edit
   end
 
   def update
-  end
+    endg
 
   def destroy
   end

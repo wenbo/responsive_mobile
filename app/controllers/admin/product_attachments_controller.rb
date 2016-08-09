@@ -1,11 +1,11 @@
-class Admin::ProductsController < Admin::BaseController
+class Admin::ProductAttachmentsController < Admin::BaseController
   def index
   end
 
   def new
   end
 
-  def crete
+  def create
   end
 
   def edit
