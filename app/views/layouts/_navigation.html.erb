@@ -8,13 +8,13 @@
   <!-- Administrator, Super user  -->
   <li class="<%= active?(:industries) %>">
     <%= link_to [:admin, :industries] do %>
-    <i class="fa fa-table"></i> <span>行业管理</span>
+    <i class="fa fa-star"></i> <span>行业管理</span>
     <% end %>
   </li>
 	
   <li class="<%= active?(:categories) %>">
     <%= link_to [:admin, :categories] do %>
-    <i class="fa fa-bell-o"></i> <span>分类管理</span>
+    <i class="fa fa-music"></i> <span>分类管理</span>
     <% end %>
   </li>
   <li class="<%= active?(:products) %>">
@@ -24,12 +24,12 @@
   </li>
 	  <li class="<%= active?(:products) %>">
     <%= link_to [:admin, :options] do %>
-    <i class="fa fa-bell"></i> <span>选件管理</span>
+    <i class="fa fa-gear"></i> <span>选件管理</span>
     <% end %>
   </li>
   <li class="<%= active?(:products) %>">
     <%= link_to [:admin, :product_attachments] do %>
-    <i class="fa fa-table"></i> <span>PDF样张管理</span>
+    <i class="fa fa-film"></i> <span>PDF样张管理</span>
     <% end %>
   </li>
 
