@@ -12,7 +12,7 @@ class Admin::OptionsController < Admin::BaseController
   end
 
   def update
-    endg
+  end
 
   def destroy
   end
