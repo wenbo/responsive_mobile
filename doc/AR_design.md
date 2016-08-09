@@ -12,4 +12,12 @@ add_index :products, :name
 rails g controller admin/base
 rails g controller admin/sessions new
 rails generate simple_captcha
+rails g controller admin/home index
+
+rails g controller admin/industries index
+rails g controller admin/categories index
+rails g controller admin/products index new crete edit update destroy show
+
+
+
 

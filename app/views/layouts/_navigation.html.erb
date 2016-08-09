@@ -1,0 +1,50 @@
+<ul class="sidebar-menu">
+  <li class="<%= active?(:home) %>">
+    <%= link_to [:admin, :root] do %>
+    <i class="fa fa-dashboard"></i> <span>主页</span>
+    <% end %>
+  </li>
+
+  <!-- Administrator, Super user  -->
+  <li class="<%= active?(:industries) %>">
+    <%= link_to [:admin, :industries] do %>
+    <i class="fa fa-table"></i> <span>行业管理</span>
+    <% end %>
+  </li>
+	
+  <li class="<%= active?(:categories) %>">
+    <%= link_to [:admin, :categories] do %>
+    <i class="fa fa-bell-o"></i> <span>分类管理</span>
+    <% end %>
+  </li>
+  <li class="<%= active?(:products) %>">
+    <%= link_to [:admin, :products] do %>
+    <i class="fa fa-table"></i> <span>产品管理</span>
+    <% end %>
+  </li>
+  <!-- <li class="<%#= active?(:users) %>">
+			 <%#= link_to [:admin, :users] do %>
+       <i class="fa fa-users"></i> <span>顾客管理</span>
+			 <%# end %>
+  </li> -->
+  <li class="">
+    <%= link_to [:admin, :logout], method: :delete do %>
+    <i class="fa fa-sign-out"></i> <span>退出登录</span>
+    <% end %>
+  </li>
+  <!--
+			<li class="treeview <%#= active?(:users, :archive_messages, :chat_images) %>"> 
+				<%#= link_to '#' do %>
+				<i class="fa fa-table"></i> <span>用户管理</span>
+				<i class="fa fa-angle-left pull-right"></i>
+				<%# end %>
+				<ul class="treeview-menu">
+					<li class="<%#= active?(users: :index) %>"> 
+						<%#= link_to "#" do %> 
+						<i class="fa fa-angle-double-right"></i> Users list 
+						<%# end %> 
+					</li>
+				</ul>
+			</li>
+			-->
+</ul>

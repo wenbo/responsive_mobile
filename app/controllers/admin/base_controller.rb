@@ -2,6 +2,7 @@
 class Admin::BaseController < ApplicationController
   include SimpleCaptcha::ControllerHelpers
   before_action :valid_access
+  layout "admin"
 
   def session_user
     _id = session[:user_id]
