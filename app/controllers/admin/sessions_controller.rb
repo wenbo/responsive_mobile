@@ -12,7 +12,7 @@ class Admin::SessionsController < Admin::BaseController
     flash[:notice] = "用户名或密码错误，请检查！"
 
     return render('new') if @user.nil?
-    return render('new') if @user.password_hash != params[:password]
+    return render('new') if @user.password != params[:password]
     if !simple_captcha_valid?
       flash[:notice] = "验证码输入有误"
       return render("new")
