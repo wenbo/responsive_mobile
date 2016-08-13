@@ -31,14 +31,18 @@ ActiveRecord::Schema.define(version: 20160809154852) do
   end
 
   create_table "options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+    t.string   "sku"
+    t.string   "title"
+    t.text     "description", limit: 65535
     t.string   "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["sku"], name: "index_options_on_sku", using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+    t.string   "sku"
+    t.string   "title"
     t.string   "banner"
     t.string   "feature"
     t.string   "desc_as_option"
@@ -49,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160809154852) do
     t.boolean  "is_recommended"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.index ["name"], name: "index_products_on_name", using: :btree
+    t.index ["sku"], name: "index_products_on_sku", using: :btree
   end
 
   create_table "simple_captcha_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

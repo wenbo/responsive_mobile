@@ -1,7 +1,8 @@
 class CreateProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :products do |t|
-      t.string :name
+      t.string :sku
+      t.string :title
       t.string :banner
       t.string :feature
       t.string :desc_as_option
@@ -13,6 +14,6 @@ class CreateProducts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :products, :name
+    add_index :products, :sku
   end
 end
