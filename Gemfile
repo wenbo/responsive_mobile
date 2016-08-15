@@ -34,6 +34,7 @@ gem 'acts_as_tree', '~> 2.4'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem "font-awesome-rails"
 gem 'ionicons-rails'
+gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160809154852) do
 
   create_table "industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.integer  "number"
     t.string   "note"
     t.integer  "parent_id"
     t.datetime "created_at", null: false
