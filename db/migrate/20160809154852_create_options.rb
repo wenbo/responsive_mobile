@@ -4,7 +4,6 @@ class CreateOptions < ActiveRecord::Migration[5.0]
       t.string :sku
       t.string :title
       t.text   :description
-      t.string :picture
 
       t.timestamps
     end

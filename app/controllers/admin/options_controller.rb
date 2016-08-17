@@ -9,6 +9,7 @@ class Admin::OptionsController < Admin::BaseController
 
   def create
     @option = Option.new params_option
+    @option.avatar = params[:option][:avatar]
     if @option.save
       redirect_to [:admin, :options]
     else
@@ -31,6 +32,6 @@ class Admin::OptionsController < Admin::BaseController
 
   private
   def params_option
-    params.require(:option).permit(:sku, :title, :description, :picture)
+    params.require(:option).permit(:sku, :title, :description)
   end
 end

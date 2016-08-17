@@ -36,6 +36,7 @@ gem "font-awesome-rails"
 gem 'ionicons-rails'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

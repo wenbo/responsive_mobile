@@ -22,6 +22,4 @@ rails g model Option name:string picture:string
 rails g controller admin/options index new create edit upload destroy show
 rails g controller admin/product_attachments index new create edit update destroy show
 
-
-
-
+  rails g migration AddAvatarToOptions avatar:string
