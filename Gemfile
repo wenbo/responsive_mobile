@@ -35,6 +35,7 @@ gem 'simple_captcha2', require: 'simple_captcha'
 gem "font-awesome-rails"
 gem 'ionicons-rails'
 gem 'kaminari'
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
