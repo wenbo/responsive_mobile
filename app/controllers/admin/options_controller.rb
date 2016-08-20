@@ -7,6 +7,10 @@ class Admin::OptionsController < Admin::BaseController
     @option = Option.new
   end
 
+  def show
+    @option = Option.find(params[:id])
+  end
+
   def create
     @option = Option.new params_option
     @option.avatar = params[:option][:avatar]
