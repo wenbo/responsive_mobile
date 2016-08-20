@@ -20,6 +20,7 @@ red_desc_as_option:string
 summary:textarea
 upgraded:textarea
 is_new:boolean
+is_option:boolean
 is_recommended:boolean
 
 ## categories_products
@@ -42,8 +43,10 @@ accessory_id
 accessory_category_id
 
 ## Option
-name
-picture
+sku
+title
+description
+avatar
 
 ## ProductAttachment
 file_name

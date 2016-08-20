@@ -48,9 +48,13 @@ ActiveRecord::Schema.define(version: 20160817020713) do
     t.string   "feature"
     t.string   "desc_as_option"
     t.string   "red_desc_as_option"
+    t.string   "option_avatar"
     t.text     "summary",            limit: 65535
     t.text     "upgraded",           limit: 65535
     t.boolean  "is_new"
+    t.boolean  "is_main_body"
+    t.boolean  "is_option"
+    t.boolean  "is_display"
     t.boolean  "is_recommended"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
