@@ -1,8 +1,10 @@
 class Admin::ProductsController < Admin::BaseController
   def index
+    @products = Product.page(params[:page]).per(20)
   end
 
   def new
+    @product = Product.new
   end
 
   def crete
