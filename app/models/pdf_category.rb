@@ -1,0 +1,2 @@
+class PdfCategory < ApplicationRecord
+end

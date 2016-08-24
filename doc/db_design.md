@@ -48,10 +48,16 @@ title
 description
 avatar
 
+
+##PDFCategory
+name
+note
+
 ## ProductAttachment
-file_name
-file_size
-content_type
+name
+pdf_category_id
+pdf
+
 
 ## User
 username

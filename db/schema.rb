@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817020713) do
+ActiveRecord::Schema.define(version: 20160824104902) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -39,6 +39,28 @@ ActiveRecord::Schema.define(version: 20160817020713) do
     t.datetime "updated_at",                null: false
     t.string   "avatar"
     t.index ["sku"], name: "index_options_on_sku", using: :btree
+  end
+
+  create_table "pdf_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "note"
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_pdf_categories_on_parent_id", using: :btree
+  end
+
+  create_table "product_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "note"
+    t.integer  "pdf_category_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.index ["pdf_category_id"], name: "index_product_attachments_on_pdf_category_id", using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -76,4 +98,5 @@ ActiveRecord::Schema.define(version: 20160817020713) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "product_attachments", "pdf_categories"
 end

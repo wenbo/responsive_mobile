@@ -37,6 +37,7 @@ gem 'ionicons-rails'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
+gem "paperclip", "~> 5.0.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

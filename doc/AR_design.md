@@ -5,6 +5,12 @@ add_index :industries, :parent_id
 rails g model Category name:string note:string parent_id:integer
 add_index :categories, :parent_id
 
+rails g model PDFCategory name:string note:string parent_id:integer
+add_index :pdf_categories, :parent_id
+
+rails g model ProductAttachment name:string note:string pdf_category:references
+rails generate paperclip product_attachment pdf
+
 
 rails g model Product name:string banner:string feature:string desc_as_option:string red_desc_as_option:string summary:text upgraded:text is_new:boolean is_recommended:boolean
 add_index :products, :name
