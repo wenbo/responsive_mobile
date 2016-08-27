@@ -5,6 +5,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def new
     @product = Product.new
+    @option_categories = @product.option_categories.build
   end
 
   def create
@@ -18,6 +19,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def edit
     @product = Product.find params[:id]
+    @option_categories = @product.option_categories
   end
 
   def update
@@ -37,6 +39,6 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def params_product
-    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :banner, :summary)
+    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :banner, :summary, option_categories_attributes: [:name, :note, :option_sku_collection])
   end
 end

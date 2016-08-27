@@ -6,7 +6,7 @@
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-           编号<abbr title="required">*</abbr>
+           产品型号<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
           <%= f.text_field :sku, class: "string required form-control" %>
@@ -17,7 +17,7 @@
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-          标题<abbr title="required">*</abbr>
+          产品名称<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
           <%= f.text_field :title, class: "string required form-control" %>
@@ -68,7 +68,7 @@
 
     <div class="form-inputs">
       <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 作为主体banner </label>
+        <label class="col-sm-2 control-label"> 产品KV图片KV </label>
         <%= image_tag(@product.banner.thumb.url) if @product.banner? %>
         <div class="col-sm-4">
           <%= f.file_field :banner, class: "string required form-control" %>
@@ -103,6 +103,33 @@
         <div class="col-sm-9">
           <%= f.text_area :summary %>
         </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <label class="col-sm-2 control-label"> 适用选件 </label>
+      <br/><br/>
+      <div class="row">
+        <%= f.fields_for :option_categories, @option_categories do |option_category_fields| %>
+          <div class="form-group">
+          <label class="col-sm-2 control-label col-sm-offset-1"> 选件分类 </label>
+          <div class="col-sm-4">
+            <%= option_category_fields.text_field :name, class: "string required form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label col-sm-offset-1"> 备注 </label>
+          <div class="col-sm-4">
+            <%= option_category_fields.text_field :note, class: "string required form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label col-sm-offset-1"> 选件编号  </label>
+          <div class="col-sm-4">
+            <%= option_category_fields.text_field :option_sku_collection, class: "string required form-control", :placeholder => "适用选件型号,如有多个,请用半角逗号分隔" %>
+          </div>
+        </div>
+      <% end %>
       </div>
     </div>
 

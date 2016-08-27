@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824104902) do
+ActiveRecord::Schema.define(version: 20160827062547) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20160824104902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_industries_on_parent_id", using: :btree
+  end
+
+  create_table "option_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "note"
+    t.string   "option_sku_collection"
+    t.integer  "product_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["product_id"], name: "index_option_categories_on_product_id", using: :btree
   end
 
   create_table "options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -98,5 +108,6 @@ ActiveRecord::Schema.define(version: 20160824104902) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "option_categories", "products"
   add_foreign_key "product_attachments", "pdf_categories"
 end

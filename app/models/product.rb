@@ -1,4 +1,6 @@
 require File.join(Rails.root, "app/uploaders/avatar_uploader.rb")
 class Product < ApplicationRecord
   mount_uploader :banner, AvatarUploader
+  has_many :option_categories
+  accepts_nested_attributes_for :option_categories
 end

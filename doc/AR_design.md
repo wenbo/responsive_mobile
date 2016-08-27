@@ -15,6 +15,8 @@ rails generate paperclip product_attachment pdf
 rails g model Product name:string banner:string feature:string desc_as_option:string red_desc_as_option:string summary:text upgraded:text is_new:boolean is_recommended:boolean
 add_index :products, :name
 
+rails g model OptionCategory name:string note:string option_sku_collection:string product:references
+
 rails g controller admin/base
 rails g controller admin/sessions new
 rails generate simple_captcha
@@ -28,4 +30,4 @@ rails g model Option name:string picture:string
 rails g controller admin/options index new create edit upload destroy show
 rails g controller admin/product_attachments index new create edit update destroy show
 
-  rails g migration AddAvatarToOptions avatar:string
+rails g migration AddAvatarToOptions avatar:string
