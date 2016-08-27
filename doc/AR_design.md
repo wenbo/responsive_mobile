@@ -31,3 +31,5 @@ rails g controller admin/options index new create edit upload destroy show
 rails g controller admin/product_attachments index new create edit update destroy show
 
 rails g migration AddAvatarToOptions avatar:string
+
+rails g migration AddThumbImageAndIsDeletedToProducts thumb_image:string is_deleted:boolean

@@ -58,6 +58,23 @@
     </div>
 
     <div class="form-inputs">
+      <div class="form-group string">
+        <label class="string col-sm-2 control-label"> 是否显示或下架
+</label>
+        <div class="col-sm-2">
+          <label class="checkbox-inline">
+            <%= f.check_box :is_display %> 是否显示
+          </label>
+        </div>
+        <div class="col-sm-2">
+          <label class="checkbox-inline">
+            <%= f.check_box :is_deleted %> 是否下架
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="col-sm-2 control-label"> 描述 </label>
         <div class="col-sm-4">
@@ -68,7 +85,17 @@
 
     <div class="form-inputs">
       <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 产品KV图片KV </label>
+        <label class="col-sm-2 control-label"> 产品缩略图片 </label>
+        <%= image_tag(@product.thumb_image.thumb.url) if @product.thumb_image? %>
+        <div class="col-sm-4">
+          <%= f.file_field :thumb_image, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 产品KV图片 </label>
         <%= image_tag(@product.banner.thumb.url) if @product.banner? %>
         <div class="col-sm-4">
           <%= f.file_field :banner, class: "string required form-control" %>

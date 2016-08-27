@@ -39,6 +39,6 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def params_product
-    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :banner, :summary, option_categories_attributes: [:name, :note, :option_sku_collection])
+    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, option_categories_attributes: [:name, :note, :option_sku_collection])
   end
 end
