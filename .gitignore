@@ -37,4 +37,5 @@ config/database.yml
 # 忽略配置文件
 /config/mongoid.yml
 /config/mongoid_example.yml
+doc/.~*
 

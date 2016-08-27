@@ -2,10 +2,11 @@
   <div class="box-body">
   <%= render 'admin/shared/error', model: @product %>
   <fieldset>
+
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-          <abbr title="required">*</abbr> 编号
+           编号<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
           <%= f.text_field :sku, class: "string required form-control" %>
@@ -16,19 +17,10 @@
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-          <abbr title="required">*</abbr>标题
+          标题<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
           <%= f.text_field :title, class: "string required form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-inputs">
-      <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 描述 </label>
-        <div class="col-sm-4">
-          <%= f.text_field :desc_as_option, class: "string required form-control" %>
         </div>
       </div>
     </div>
@@ -43,7 +35,23 @@
         </div>
         <div class="col-sm-2">
           <label class="checkbox-inline">
-            <%= f.check_box :is_main_body %> 是否为选件
+            <%= f.check_box :is_option %> 是否为选件
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-inputs">
+      <div class="form-group string">
+        <label class="string col-sm-2 control-label"> 新品或推荐
+</label>
+        <div class="col-sm-2">
+          <label class="checkbox-inline">
+            <%= f.check_box :is_new %> 是否为新品
+          </label>
+        </div>
+        <div class="col-sm-2">
+          <label class="checkbox-inline">
+            <%= f.check_box :is_recommended %> 是否为推荐
           </label>
         </div>
       </div>
@@ -51,10 +59,9 @@
 
     <div class="form-inputs">
       <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 作为选件图片 </label>
-        <%= image_tag(@product.option_avatar.thumb.url) if @product.option_avatar? %>
+        <label class="col-sm-2 control-label"> 描述 </label>
         <div class="col-sm-4">
-          <%= f.file_field :avatar, class: "string required form-control" %>
+          <%= f.text_field :feature, class: "string required form-control" %>
         </div>
       </div>
     </div>
@@ -63,6 +70,27 @@
       <div class="form-group string requirede">
         <label class="col-sm-2 control-label"> 作为主体banner </label>
         <%= image_tag(@product.banner.thumb.url) if @product.banner? %>
+        <div class="col-sm-4">
+          <%= f.file_field :banner, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 作为选件描述 </label>
+        <div class="col-sm-4">
+          <%= f.text_field :desc_as_option, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 作为选件图片 </label>
+        <%= image_tag(@product.option_avatar.thumb.url) if @product.option_avatar? %>
         <div class="col-sm-4">
           <%= f.file_field :avatar, class: "string required form-control" %>
         </div>
