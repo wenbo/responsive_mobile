@@ -38,4 +38,5 @@ config/database.yml
 /config/mongoid.yml
 /config/mongoid_example.yml
 doc/.~*
+.byebug*
 

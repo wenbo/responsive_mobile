@@ -1,6 +1,5 @@
 <ul class="sidebar-menu">
-  <li class="<%= active?(:home) %>">
-    <%= link_to [:admin, :root] do %>
+  <li class="<%= active?(:home) %>"> <%= link_to [:admin, :root] do %>
     <i class="fa fa-dashboard"></i> <span>主页</span>
     <% end %>
   </li>
@@ -32,7 +31,7 @@
     <i class="fa fa-file-pdf-o"></i> <span>PDF分类管理</span>
     <% end %>
   </li>
-  <li class="<%= active?(:pdf_attachments) %>">
+  <li class="<%= active?(:product_attachments) %>">
     <%= link_to [:admin, :product_attachments] do %>
     <i class="fa fa-book"></i> <span>PDF文件管理</span>
     <% end %>

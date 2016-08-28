@@ -27,6 +27,25 @@
 
     <div class="form-inputs">
       <div class="form-group string">
+        <label class="string col-sm-2 control-label"> 所属行业
+        </label>
+        <br/>
+        <br/>
+        <div class="indent">
+        <% Industry.roots.each do |root| %>
+          <% root.children.sort_by{|c| c.number }.each do |child| %>
+          <div class="col-sm-3">
+          <%= check_box_tag "product[industry_ids][]", child.id, @product.industries.include?(child) %>
+          <%= "#{child.number}-#{child.name}" %>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string">
         <label class="string col-sm-2 control-label"> 本体或选件 </label>
         <div class="col-sm-2">
           <label class="checkbox-inline">
@@ -40,6 +59,7 @@
         </div>
       </div>
     </div>
+
     <div class="form-inputs">
       <div class="form-group string">
         <label class="string col-sm-2 control-label"> 新品或推荐

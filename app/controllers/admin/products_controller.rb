@@ -5,7 +5,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def new
     @product = Product.new
-    @option_categories = @product.option_categories.build
+    #@option_categories = @product.option_categories.build
   end
 
   def create
@@ -13,6 +13,7 @@ class Admin::ProductsController < Admin::BaseController
     if @product.save
       redirect_to [:admin, :products]
     else
+      #debugger
       render 'new'
     end
   end
@@ -39,6 +40,6 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def params_product
-    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, option_categories_attributes: [:name, :note, :option_sku_collection])
+    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, option_categories_attributes: [:name, :note, :option_sku_collection], industry_ids: [])
   end
 end

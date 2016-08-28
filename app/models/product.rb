@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   has_many :option_categories
   accepts_nested_attributes_for :option_categories
   has_and_belongs_to_many :utilities
+  has_and_belongs_to_many :industries
 end

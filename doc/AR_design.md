@@ -36,3 +36,4 @@ rails g migration AddThumbImageAndIsDeletedToProducts thumb_image:string is_dele
 
 rails g model Utility title:string description:string link:string
 rails g migration create_table_products_utilities product:references utility:references
+rails g migration create_products_industries product:references utility:references
