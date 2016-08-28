@@ -3,6 +3,6 @@
     <%= industry.name %> 
   </th>
   <th><%= industry.number %></th>
-  <th><%= industry.note %></th>
+  <th><%= industry.parent_id.blank? ? "行业（大）" : "行业（中）" %></th>
   <th><%= link_to "编辑", [:edit, :admin, industry], class: "btn btn-primary" %></th>
 </tr>                                                                                            
