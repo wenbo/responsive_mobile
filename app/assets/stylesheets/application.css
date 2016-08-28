@@ -16,3 +16,12 @@
  *= require font-awesome
  *= require ionicons
  */
+.form-inputs fieldset{
+  padding:.35em .625em .75em;
+  margin:10px 2px;
+  margin-left:172px;
+  border:1px solid silver;
+  width: 75%;
+}
+
+.form-inputs legend{border:0;width:auto;font-size:16px}
