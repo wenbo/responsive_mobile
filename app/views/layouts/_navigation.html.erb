@@ -22,19 +22,24 @@
     <i class="fa fa-table"></i> <span>产品管理</span>
     <% end %>
   </li>
-	<li class="<%= active?(:products) %>">
+	<li class="<%= active?(:options) %>">
     <%= link_to [:admin, :options] do %>
     <i class="fa fa-gear"></i> <span>选件管理</span>
     <% end %>
 	</li>
-	<li class="<%= active?(:products) %>">
+	<li class="<%= active?(:pdf_categories) %>">
     <%= link_to [:admin, :pdf_categories] do %>
     <i class="fa fa-file-pdf-o"></i> <span>PDF分类管理</span>
     <% end %>
   </li>
-  <li class="<%= active?(:products) %>">
+  <li class="<%= active?(:pdf_attachments) %>">
     <%= link_to [:admin, :product_attachments] do %>
     <i class="fa fa-book"></i> <span>PDF文件管理</span>
+    <% end %>
+  </li>
+	<li class="<%= active?(:utilities) %>">
+    <%= link_to [:admin, :utilities] do %>
+    <i class="fa fa-plug"></i> <span>便利工具管理</span>
     <% end %>
   </li>
 

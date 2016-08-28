@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827094443) do
+ActiveRecord::Schema.define(version: 20160828071332) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -95,6 +95,13 @@ ActiveRecord::Schema.define(version: 20160827094443) do
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end
 
+  create_table "products_utilities", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "product_id"
+    t.integer "utility_id"
+    t.index ["product_id"], name: "index_products_utilities_on_product_id", using: :btree
+    t.index ["utility_id"], name: "index_products_utilities_on_utility_id", using: :btree
+  end
+
   create_table "simple_captcha_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "key",        limit: 40
     t.string   "value",      limit: 6
@@ -108,6 +115,14 @@ ActiveRecord::Schema.define(version: 20160827094443) do
     t.string   "password_hash"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "utilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_foreign_key "option_categories", "products"

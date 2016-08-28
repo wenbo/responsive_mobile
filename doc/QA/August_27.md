@@ -8,6 +8,7 @@ products_utilities
 product_id
 utility_id
 
+
 Product has_many ProductAttachment
 
 Product

@@ -4,4 +4,5 @@ class Product < ApplicationRecord
   mount_uploader :thumb_image, AvatarUploader
   has_many :option_categories
   accepts_nested_attributes_for :option_categories
+  has_and_belongs_to_many :utilities
 end

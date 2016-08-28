@@ -33,3 +33,6 @@ rails g controller admin/product_attachments index new create edit update destro
 rails g migration AddAvatarToOptions avatar:string
 
 rails g migration AddThumbImageAndIsDeletedToProducts thumb_image:string is_deleted:boolean
+
+rails g model Utility title:string description:string link:string
+rails g migration create_table_products_utilities product:references utility:references
