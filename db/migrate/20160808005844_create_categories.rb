@@ -4,9 +4,11 @@ class CreateCategories < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :note
       t.integer :parent_id
+      t.integer :lft, :index => true
+      t.integer :rgt, :index => true
 
       t.timestamps
     end
-    add_index :categories, :parent_id
+    #add_index :categories, :parent_id
   end
 end
