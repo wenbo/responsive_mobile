@@ -26,3 +26,9 @@
 
 .form-inputs legend{border:0;width:auto;font-size:16px}
 .indent{margin-left:120px}
+#option_fieldsets{
+		text-align: left;
+}
+.delete_link{
+		margin-left:10px;
+}

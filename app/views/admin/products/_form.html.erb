@@ -164,10 +164,10 @@
 
     <div class="form-inputs">
       <label class="col-sm-2 control-label"> 适用选件 </label>
-      <br/><br/>
+    	<div id="option_fieldsets" class="control-label"><%= link_to_add_fields "添加选件", f, :option_categories %></div>
       <%= f.fields_for :option_categories, @option_categories do |option_category_fields| %>
         <%= render "option_category_fields", :f => option_category_fields %>
-    <% end %>
+				<% end %>
     </div>
   </fieldset>
 
