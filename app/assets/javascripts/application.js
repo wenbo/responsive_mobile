@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap.min
-
+//= require app
 //= require_tree .
 
 function remove_fields(link) {
