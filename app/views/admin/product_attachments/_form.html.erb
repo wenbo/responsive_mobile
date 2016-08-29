@@ -1,0 +1,59 @@
+<%= form_for [:admin, @product_attachment], html: {class: "form-horizontal"} do |f| %>
+<div class="box-body">
+  <%= render 'admin/shared/error', model: @product_attachment %>
+	
+  <fieldset>
+		
+		<div class="form-inputs">
+			<div class="form-group">
+				<label class="col-sm-2 control-label"> 从属分类 </label>
+				<div class="col-sm-4">
+					<%= f.select :pdf_category_id, options_for_select(PdfCategory.roots.collect do |i| [i.name, i.id] end, @product_attachment.pdf_category_id), {}, class: "string required form-control" %>
+				</div>
+			</div>
+		</div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          <abbr title="required">*</abbr> 名称
+        </label>
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+		
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          <abbr title="required">*</abbr>描述 
+        </label>
+        <div class="col-sm-4">
+          <%= f.text_field :note, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+		<div class="form-inputs">
+			<div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          <abbr title="required">*</abbr>文件
+        </label>
+				<%= image_tag(@product_attachment.pdf.url(:thumbnail)) if @product_attachment.pdf? %>
+        <div class="col-sm-4">
+          <%= f.file_field :pdf, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+	</fieldset>
+
+	<div class="form-group">
+		<div class="col-sm-4 col-sm-offset-2">
+			<%= f.button '保存', class: 'btn btn-primary' %>
+			<%= link_to '取消', [:admin, :industries], class: 'btn btn-warning' %>
+		</div>
+	</div>
+</div>
+<% end %>
