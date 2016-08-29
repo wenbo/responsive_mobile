@@ -48,3 +48,9 @@ en:
            other: "Displaying <b>all %{count}</b> %{entry_name}"
        more_pages:
          display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b>"
+
+   activerecord:
+     attributes:
+       product:
+         sku: "产品型号"
+         title: "产品名称"
