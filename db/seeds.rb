@@ -1,3 +1,4 @@
+# coding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -42,3 +43,92 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  Industry.create( name: "地铁，高铁研发检测", number: 24, parent_id: e.id)
  Industry.create( name: "航空研发生产", number: 25, parent_id: e.id)
  Industry.create( name: "应用", number: 26, parent_id: e.id)
+
+ Category.connection.execute("truncate table categories")
+ c = Category.create(name: "现场测试仪器")
+ c.children << Category.create(name: "电表继电器,变流器")
+ c.children << Category.create(name: "万用表")
+ c.children << Category.create(name: "接地电阻计,验电笔,相序表")
+ c.children << Category.create(name: "电压计,相序表")
+ c.children << Category.create(name: "绝缘电阻表")
+ c.children << Category.create(name: "噪音计,转速计,照度计")
+ c.children << Category.create(name: "光功率计,LAN线测试仪")
+ c.children << Category.create(name: "兆欧表")
+
+
+  c = Category.create(name: "环境测量仪表")
+ c.children << Category.create(name: "环境测量系统")
+ c.children << Category.create(name: "噪音计,转速计,照度计")
+ c.children << Category.create(name: "温度计")
+ c.children << Category.create(name: "磁场测试仪,光测试仪")
+ 
+ c = Category.create(name: "安全标准测量仪")
+ c.children << Category.create(name: "绝缘耐压测试仪")
+ c.children << Category.create(name: "接地保护测试仪")
+ c.children << Category.create(name: "泄漏电流测试仪")
+
+ c = Category.create(name: "电力测量仪器")
+ c.children << Category.create(name: "功率分析仪")
+ c.children << Category.create(name: "电能质量分析仪")
+ c.children << Category.create(name: "功率计")
+ c.children << Category.create(name: "钳形功率计")
+
+ c = Category.create(name: "电子测量仪表")
+ c.children << Category.create(name: "台式万用表")
+ c.children << Category.create(name: "LCR测试仪")
+ c.children << Category.create(name: "电池测试仪")
+ c.children << Category.create(name: "绝缘耐压测试仪")
+ c.children << Category.create(name: "LCR测试仪,阻抗分析仪")
+
+ c = Category.create(name: "钳形表,钳形传感器")
+ c.children << Category.create(name: "钳形传感器")
+ c.children << Category.create(name: "钳形表")
+
+ c = Category.create(name: "记录仪,数据采集仪")
+ c.children << Category.create(name: "记录仪")
+ c.children << Category.create(name: "数据采集仪")
+
+ c = Category.create(name: "信号发生器,波形发生器")
+ c.children << Category.create(name: "信号发生器")
+
+ p = Product.create(
+   sku: "8861-50",
+   title: "8860-50/ 8861-50",
+   category_id: Category.find_by(name: "记录仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   feature: "最大32通道+16个逻辑通道,
+扫描单元 64ch,
+20MS/s(12bits 8通道),
+64MW～2GW内存(附件),
+12bit/16bit A/D 分辩率,
+USB, HD, PC卡",
+   desc_as_option: "高速信号波形捕捉, 同时记录多路信号"
+ )
+
+#   p = Product.create(
+#    sku: "PW9100",
+#    title: "电流直接输入单元PW9100",
+#    category_id: Category.find_by(name: "电力测量仪表").id,
+#    feature: "宽频带、高精度,
+# PW6001/3390用，3ch,
+# PW6001/3390用，4ch",
+#    desc_as_option: ""
+#   )
+  
+  p = Product.create(
+   sku: "3390",
+   title: "3390",
+   category_id: Category.find_by(name: "功率分析仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   feature: "适用于设备的综合评估,
+带宽DC, 0.5 ~ 150kHz,
+DC, 或单相至三相4线,
+4ch/ 钳式传感器输出,
+测量变频器设备和分析马达",
+   desc_as_option: "宽频带，多用途型号，高性能仪器"
+ )
+

@@ -6,4 +6,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :option_categories
   has_and_belongs_to_many :utilities
   has_and_belongs_to_many :industries
+
+  validates :sku, :title, :category_id, presence: true
+  validates :sku, uniqueness: true
 end

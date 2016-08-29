@@ -31,7 +31,7 @@
           产品分类<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
-          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" } %>
+          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control" %>
         </div>
       </div>
     </div>
@@ -104,16 +104,25 @@
         </div>
       </div>
     </div>
-
-    <div class="form-inputs">
+		
+		<div class="form-inputs">
       <div class="form-group string requirede">
         <label class="col-sm-2 control-label"> 描述 </label>
         <div class="col-sm-4">
-          <%= f.text_field :feature, class: "string required form-control" %>
+          <%= f.text_field :desc_as_option, class: "string required form-control" %>
         </div>
       </div>
     </div>
 
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 特征 </label>
+        <div class="col-sm-4">
+          <%= f.text_area :feature, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+		
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="col-sm-2 control-label"> 产品缩略图片 </label>
@@ -133,17 +142,6 @@
         </div>
       </div>
     </div>
-
-
-    <div class="form-inputs">
-      <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 作为选件描述 </label>
-        <div class="col-sm-4">
-          <%= f.text_field :desc_as_option, class: "string required form-control" %>
-        </div>
-      </div>
-    </div>
-
 
     <div class="form-inputs">
       <div class="form-group string requirede">
