@@ -2,9 +2,9 @@
   <th> 
     <%= product_attachment.name %> 
   </th>
+	<th><%= product_attachment.pdf_category.name %></th>
   <th><%= product_attachment.note %></th>
-  <th><%= product_attachment.pdf_file_name %></th>
 	<th><%= image_tag product_attachment.pdf.url(:thumbnail) %></th>
-	<th><%= product_attachment.pdf_file_size %></th>
+	<th><%= number_to_human_size(product_attachment.pdf_file_size) %></th>
   <th><%= link_to "编辑", [:edit, :admin, product_attachment], class: "btn btn-primary" %></th>
 </tr>                                                                                            
