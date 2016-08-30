@@ -40,7 +40,7 @@
         <label class="string required col-sm-2 control-label">
           <abbr title="required">*</abbr>文件
         </label>
-				<%= image_tag(@product_attachment.pdf.url(:thumbnail)) if @product_attachment.pdf? %>
+				<!-- <%= image_tag(@product_attachment.pdf.url(:thumbnail)) if @product_attachment.pdf? %> -->
         <div class="col-sm-4">
           <%= f.file_field :pdf, class: "string required form-control" %>
         </div>
