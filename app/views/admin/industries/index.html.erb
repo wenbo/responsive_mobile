@@ -7,14 +7,17 @@
   <div class="box box-primary">
     <div class="box-header">
       <h3 class="box-title">行业列表</h3>
+      <div class="col-sm-4 hidden-xs margin-top-10">
+        <%= link_to '新建',[:new,:admin,:industry],  class: 'btn btn-s-md btn-primary btn-flat', id: 'color-white' %>
+        </div>
     </div>
     <div class="box-body table-responsive no-padding">                                                     
       <table class="table table-hover"> 
-        <tbody>                                                                                            
-          <tr>                                                                                             
+        <tbody>
+          <tr>
+						<th>行业编号</th>
             <th>行业名称</th>
-            <th>编号</th>
-            <th>备注</th>
+            <th>所属业界</th>
             <th></th>                                                                  
           </tr>                                                                                            
           <%= render @industries  %>
@@ -23,10 +26,7 @@
     </div>                                                                                                 
     <div class="box-footer clearfix">                                                                      
       <div class="row">
-        <div class="col-sm-4 hidden-xs">
-          <%= link_to '新建',[:new,:admin,:industry],  class: 'btn btn-s-md btn-info btn-flat' %>
-        </div>
-        <div class="col-sm-4 text-center text-center-xs">
+        <div class="col-sm-10 text-center text-center-xs">
           <%= paginate @industries %> 
         </div>                                                                                             
       </div>                                                                                               
