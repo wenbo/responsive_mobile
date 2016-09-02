@@ -155,7 +155,7 @@
       <div class="form-group text requirede">
         <label class="col-sm-2 control-label"> 概要 </label>
         <div class="col-sm-9">
-          <%= f.text_area :summary %>
+          <%= f.cktext_area :summary %>
         </div>
       </div>
     </div>
@@ -177,12 +177,3 @@
   </div>
 </div>
 <% end %>
-
-<script src="/plugin/ckeditor/ckeditor.js"></script>
-<script>
-// Replace the <textarea id="editor1"> with a CKEditor
-// instance, using default configuration.
-$(window).load(function () {
-    CKEDITOR.replace( 'product_summary' );
-    })
-</script>

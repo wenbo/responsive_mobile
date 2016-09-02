@@ -39,4 +39,4 @@ config/database.yml
 /config/mongoid_example.yml
 doc/.~*
 .byebug*
-
+public/ckeditor_assets/
