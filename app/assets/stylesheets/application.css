@@ -16,21 +16,3 @@
  *= require font-awesome
  *= require ionicons
  */
-
-.form-inputs legend{border:0;width:auto;font-size:16px;}
-.indent{margin-left:120px}
-#option_fieldsets{
-		text-align: left;
-}
-.delete_link{
-		margin-left:10px;
-}
-.checkbox-industry{
-		font-weight:400;
-}
-.margin-top-10{
-		margin-top: 4px;
-}
-#color-white{
-		color: #fff;
-}
