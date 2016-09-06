@@ -1,6 +1,6 @@
 class Admin::ProductsController < Admin::BaseController
   def index
-    @products = Product.page(params[:page]).per(20)
+    @products = Product.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(20)
   end
 
   def new
@@ -42,4 +42,12 @@ class Admin::ProductsController < Admin::BaseController
   def params_product
     params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, :category_id, option_categories_attributes: [:name, :note, :option_sku_collection, :_destroy, :id], industry_ids: [])
   end
+
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end 
+    
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end 
 end

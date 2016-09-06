@@ -11,7 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require app
  *= require bootstrap.min
  *= require font-awesome
  *= require ionicons
+ *= require main
  */

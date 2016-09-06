@@ -1,0 +1,48 @@
+.form-inputs fieldset{
+  padding:.35em .625em .75em;
+  margin:10px 2px;
+  margin-left:172px;
+  border:1px solid silver;
+  width: 75%;
+}
+
+.form-inputs legend{border:0;width:auto;font-size:16px}
+.indent{margin-left:120px}
+#option_fieldsets{
+		text-align: left;
+}
+.delete_link{
+		margin-left:10px;
+}
+.checkbox-industry{
+		font-weight:400;
+}
+.margin-top-10{
+		margin-top: 4px;
+}
+#color-white{
+		color: #fff;
+}
+
+.form-inputs legend{border:0;width:auto;font-size:16px;}
+.indent{margin-left:120px}
+#option_fieldsets{
+		text-align: left;
+}
+.delete_link{
+		margin-left:10px;
+}
+.checkbox-industry{
+		font-weight:400;
+}
+.margin-top-10{
+		margin-top: 4px;
+}
+#color-white{
+		color: #fff;
+}
+form#products_search{
+		float: right;
+    margin-top: 5px;
+    padding-right: 112px;
+}
