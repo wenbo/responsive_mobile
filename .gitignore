@@ -40,3 +40,4 @@ config/database.yml
 doc/.~*
 .byebug*
 public/ckeditor_assets/
+public/assets/
