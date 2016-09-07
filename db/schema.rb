@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902141330) do
+ActiveRecord::Schema.define(version: 20160907105946) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -55,6 +55,27 @@ ActiveRecord::Schema.define(version: 20160902141330) do
     t.integer "industry_id"
     t.index ["industry_id"], name: "index_industries_products_on_industry_id", using: :btree
     t.index ["product_id"], name: "index_industries_products_on_product_id", using: :btree
+  end
+
+  create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "news_category_id"
+    t.text     "content",          limit: 65535
+    t.boolean  "is_public"
+    t.datetime "public_time"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["news_category_id"], name: "index_news_on_news_category_id", using: :btree
+  end
+
+  create_table "news_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "option_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -153,6 +174,7 @@ ActiveRecord::Schema.define(version: 20160902141330) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "news", "news_categories"
   add_foreign_key "option_categories", "products"
   add_foreign_key "product_attachments", "pdf_categories"
   add_foreign_key "products", "categories"

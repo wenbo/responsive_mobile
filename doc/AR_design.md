@@ -38,3 +38,8 @@ rails g model Utility title:string description:string link:string
 rails g migration create_table_products_utilities product:references utility:references
 rails g migration create_products_industries product:references utility:references
 rails g migration add_category_id_to_products category:references
+
+rails g model NewsCategory name:string
+rails generate paperclip NewsCategory image
+rails g model News name:string news_category:references content:text is_public:boolean public_time:datetime
+

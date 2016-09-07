@@ -38,6 +38,8 @@ config/database.yml
 /config/mongoid.yml
 /config/mongoid_example.yml
 doc/.~*
+doc/*.zip
+app/#*#
 .byebug*
 public/ckeditor_assets/
 public/assets/
