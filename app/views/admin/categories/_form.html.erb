@@ -1,42 +1,41 @@
 <%= form_for [:admin, @category], html: {class: "form-horizontal"} do |f| %>
-  <div class="box-body">
-    <%= render 'admin/shared/error', model: @category %>
-    <fieldset>
-      <div class="form-inputs">
-        <div class="form-group string requirede">
-          <label class="string required col-sm-2 control-label">
-             分类名称<abbr title="required">*</abbr>
-          </label>
-          <div class="col-sm-4">
-            <%= f.text_field :name, class: "string required form-control" %>
-          </div>
+<div class="box-body">
+  <%= render 'admin/shared/error', model: @category %>
+  <fieldset>
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          分类名称<abbr title="required">*</abbr>
+        </label>
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "string required form-control" %>
         </div>
-      </div>
-      <div class="form-inputs">
-        <div class="form-group string requirede">
-          <label class="col-sm-2 control-label"> 备注 </label>
-          <div class="col-sm-4">
-            <%= f.text_field :note, class: "string required form-control" %>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="form-inputs">
-        <div class="form-group">
-          <label class="col-sm-2 control-label"> 从属分类 </label>
-          <div class="col-sm-4">
-            <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "string required form-control"  %>
-          </div>
-        </div>
-      </div>
-
-    </fieldset>
-    <div class="form-group">
-      <div class="col-sm-4 col-sm-offset-2">
-        <%= f.button '保存', class: 'btn btn-primary' %>
-        <%= link_to '取消', [:admin, :categories], class: 'btn btn-warning' %>
       </div>
     </div>
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 备注 </label>
+        <div class="col-sm-4">
+          <%= f.text_field :note, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group">
+        <label class="col-sm-2 control-label"> 从属分类 </label>
+        <div class="col-sm-4">
+          <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "string required form-control"  %>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+  <div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+      <%= f.button '保存', class: 'btn btn-primary' %>
+      <%= link_to '取消', [:admin, :categories], class: 'btn btn-warning' %>
+    </div>
   </div>
+</div>
 <% end %>
