@@ -155,7 +155,7 @@
       <div class="form-group text requirede">
         <label class="col-sm-2 control-label"> 概要 </label>
         <div class="col-sm-9">
-          <%= f.cktext_area :summary %>
+          <%= f.text_area :summary %>
         </div>
       </div>
     </div>
@@ -177,3 +177,8 @@
   </div>
 </div>
 <% end %>
+<script>
+$(document).on("turbolinks:load", function (){
+  CKEDITOR.replace("product_summary");
+});
+</script>
