@@ -7,26 +7,13 @@
   <div class="box box-primary">
     <div class="box-header">
       <h3 class="box-title">选件列表</h3>
+			<!-- <div class="col-sm-4 hidden-xs margin-top-10"> -->
+      <!--   <%= link_to '新建',[:new,:admin,:product],  class: 'btn btn-s-md btn-primary btn-flat', id: 'color-white' %> -->
+      <!-- </div> -->
+			<%= render "search_form" %>
     </div>
-    <div class="box-body table-responsive no-padding">                                                     
-      <table class="table table-hover"> 
-        <tbody>                                                                                            
-          <tr>                                                                                             
-            <th>选件编号</th>
-            <th>标题</th>
-            <th>描述</th>
-            <th>图片</th>                                                                  
-          </tr>                                                                                            
-          <%= render @options  %>
-        </tbody>                                                                                           
-      </table>                                                                                             
-    </div>                                                                                                 
-    <div class="box-footer clearfix">                                                                      
-      <div class="row">
-        <div class="col-sm-4 text-center text-center-xs">
-          <%= paginate @options %> 
-        </div>                                                                                             
-      </div>                                                                                               
-    </div>    
+		<div id="products">
+			<%= render "products" %>
+		</div>
   </div>    
 </section>

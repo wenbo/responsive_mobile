@@ -1,0 +1,13 @@
+<tr>                                                                                             
+  <th> 
+    <%= product.sku %> 
+  </th>
+  <th><%= product.title %></th>
+  <th><%= product.desc_as_option %></th>
+  <th>
+    <% if product.banner.thumb.present? %>
+      <%= image_tag product.banner.thumb.url %>
+  <% end %>
+</th>
+  <th><%= link_to "编辑", "/admin/options/#{product.id}/edit", class: "btn btn-primary" %></th>
+</tr>                                                                                            

@@ -1,41 +1,38 @@
 class Admin::OptionsController < Admin::BaseController
   def index
-    @options = Option.page(params[:page]).per(20)
-  end
-
-  def new
-    @option = Option.new
-  end
-
-  def show
-    @option = Option.find(params[:id])
-  end
-
-  def create
-    @option = Option.new params_option
-    @option.avatar = params[:option][:avatar]
-    if @option.save
-      redirect_to [:admin, :options]
-    else
-      render 'new'
-    end
+    @products = Product.options.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(20)
   end
 
   def edit
-    @option = Option.find params[:id]
+    @product = Product.find params[:id]
+    @option_categories = @product.option_categories
   end
 
   def update
-    @option = Option.find params[:id]
-    if @option.update_attributes params_option
-      redirect_to [:admin, :options]
+    @product = Product.find params[:id]
+    if @product.update_attributes params_product
+      redirect_to [:admin, :products]
     else
       render 'edit'
     end
   end
 
-  private
-  def params_option
-    params.require(:option).permit(:sku, :title, :description)
+  def destroy
   end
+
+  def show
+  end
+
+  private
+  def params_product
+    params.require(:product).permit(:sku, :title, :feature, :desc_as_option, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, :category_id, option_categories_attributes: [:name, :note, :option_sku_collection, :_destroy, :id], industry_ids: [])
+  end
+
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end 
+    
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end 
 end

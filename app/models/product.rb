@@ -1,6 +1,7 @@
 require File.join(Rails.root, "app/uploaders/avatar_uploader.rb")
 class Product < ApplicationRecord
   scope :ordered, -> {order('created_at DESC')}
+  scope :options, -> { where(is_option: true) }
   mount_uploader :banner, AvatarUploader
   mount_uploader :thumb_image, AvatarUploader
   has_many :option_categories
