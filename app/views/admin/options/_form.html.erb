@@ -1,36 +1,33 @@
 <%= form_for [:admin, @product], url: "/admin/options/#{@product.id}/edit", html: {class: "form-horizontal", multipart: true} do |f| %>
-  <div class="box-body">
+<div class="box-body">
   <%= render 'admin/shared/error', model: @product %>
   <fieldset>
 
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-          选件型号<abbr title="required">*</abbr>
+          选件型号
         </label>
         <div class="col-sm-4">
-          <%= f.text_field :sku, class: "string required form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-inputs">
-      <div class="form-group string requirede">
-        <label class="string required col-sm-2 control-label">
-          选件名称<abbr title="required">*</abbr>
-        </label>
-        <div class="col-sm-4">
-          <%= f.text_field :title, class: "string required form-control" %>
+          <%= f.text_field :sku, class: "string required form-control", readonly: true %>
         </div>
       </div>
     </div>
 
 		<div class="form-inputs">
-      <div class="form-group string requirede">
-        <label class="col-sm-2 control-label"> 描述 </label>
-        <div class="col-sm-4">
-          <%= f.text_field :desc_as_option, class: "string required form-control" %>
-        </div>
+      <div class="form-group string">
+        <label class="string col-sm-2 control-label"> 适用产品
+        </label>
+        <br/>
+        <br/>
+        <div class="indent">
+					<% Industry.roots.collect do |root| root.children end.flatten.sort_by do |i| i.number end.each do |child| %>
+          <div class="col-sm-3">
+						<%= check_box_tag "product[industry_ids][]", child.id, @product.industries.include?(child), id: "industry_#{child.number}" %>
+						<label for=<%= "industry_#{child.number} "%> class="checkbox-industry"><%= "#{child.number}-#{child.name}" %></label>
+					</div>
+					<% end %>
+				</div>
       </div>
     </div>
 
