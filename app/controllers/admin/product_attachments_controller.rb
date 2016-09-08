@@ -11,7 +11,7 @@ class Admin::ProductAttachmentsController < Admin::BaseController
     @product_attachment = ProductAttachment.new params_product_attachment
     @product_attachment.pdf = params[:product_attachment][:pdf]
     if @product_attachment.save
-      redirect_to [:admin, :industries]
+      redirect_to [:admin, :product_attachments]
     else
       render 'new'
     end
