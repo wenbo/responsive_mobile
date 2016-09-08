@@ -44,7 +44,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  Industry.create( name: "航空研发生产", number: 25, parent_id: e.id)
  Industry.create( name: "应用", number: 26, parent_id: e.id)
 
- Category.connection.execute("truncate table categories")
+ #Category.connection.execute("truncate table categories")
  c = Category.create(name: "现场测试仪器")
  c.children << Category.create(name: "电表继电器,变流器")
  c.children << Category.create(name: "万用表")
@@ -124,6 +124,39 @@ USB, HD, PC卡",
    industry_ids: [1,2,3,4,5,6],
    is_main_body: true,
    is_display: true,
+   is_option: true,
+   feature: "适用于设备的综合评估,
+带宽DC, 0.5 ~ 150kHz,
+DC, 或单相至三相4线,
+4ch/ 钳式传感器输出,
+测量变频器设备和分析马达",
+   desc_as_option: "宽频带，多用途型号，高性能仪器"
+ )
+
+  p = Product.create(
+   sku: "3391",
+   title: "3391",
+   category_id: Category.find_by(name: "功率分析仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   is_option: true,
+   feature: "适用于设备的综合评估,
+带宽DC, 0.5 ~ 150kHz,
+DC, 或单相至三相4线,
+4ch/ 钳式传感器输出,
+测量变频器设备和分析马达",
+   desc_as_option: "宽频带，多用途型号，高性能仪器"
+ )
+
+  p = Product.create(
+   sku: "3392",
+   title: "3392",
+   category_id: Category.find_by(name: "功率分析仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   is_option: true,
    feature: "适用于设备的综合评估,
 带宽DC, 0.5 ~ 150kHz,
 DC, 或单相至三相4线,

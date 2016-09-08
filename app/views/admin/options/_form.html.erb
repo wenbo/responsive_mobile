@@ -1,4 +1,4 @@
-<%= form_for [:admin, @product], url: "/admin/options/#{@product.id}/edit", html: {class: "form-horizontal", multipart: true} do |f| %>
+<%= form_for [:admin, @product], url: "/admin/options/#{@product.id}", html: {class: "form-horizontal"} do |f| %>
 <div class="box-body">
   <%= render 'admin/shared/error', model: @product %>
   <fieldset>
@@ -21,10 +21,10 @@
         <br/>
         <br/>
         <div class="indent">
-					<% Industry.roots.collect do |root| root.children end.flatten.sort_by do |i| i.number end.each do |child| %>
+          <% OptionCategory.where("option_sku_collection LIKE ?", "%#{@product.sku}%").each do |oc| %>
           <div class="col-sm-3">
-						<%= check_box_tag "product[industry_ids][]", child.id, @product.industries.include?(child), id: "industry_#{child.number}" %>
-						<label for=<%= "industry_#{child.number} "%> class="checkbox-industry"><%= "#{child.number}-#{child.name}" %></label>
+						<%= check_box_tag "product[option_category_ids][]", oc.id, oc.option_sku_collection.include?(@product.sku), id: "option_category_#{oc.id}" %>
+						<label for=<%= "option_category_#{oc.id} "%> class="checkbox-industry"><%= "#{oc.product.sku} (#{oc.name})" %></label>
 					</div>
 					<% end %>
 				</div>
