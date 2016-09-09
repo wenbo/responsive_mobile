@@ -17,11 +17,14 @@ class Admin::OptionsController < Admin::BaseController
       hash[ele] = 1 if hash[ele].blank?
     end
     cancel_ele = hash.select do |k,v| v == 1 end #{"1_3390"=>1} 
+    puts '******'
+    puts cancel_ele
+
     cancel_ele.keys.each do |ele|
       oc_id, pro_sku = ele.split("_")
       oc = OptionCategory.find oc_id
       option_sku_collection_arr = oc.option_sku_collection.split(",")
-      option_sku_collection_arr.delete(pro_sku)
+      option_sku_collection_arr.delete(@product.sku)
       oc.update_attribute(:option_sku_collection, option_sku_collection_arr.join(","))
     end
 

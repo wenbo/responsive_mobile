@@ -11,6 +11,11 @@ class Product < ApplicationRecord
 
   validates :sku, :title, :category_id, presence: true
   validates :sku, uniqueness: true
+  before_save :strip_sku
+
+  def strip_sku
+    self.sku = sku.strip
+  end
 
   def self.search(search)      
     if search
