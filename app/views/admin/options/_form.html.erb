@@ -22,9 +22,10 @@
         <br/>
         <div class="indent">
           <% OptionCategory.where("option_sku_collection LIKE ?", "%#{@product.sku}%").each do |oc| %>
+            <%= hidden_field_tag "product[option_category_ids][]", "#{oc.id}_#{oc.product.sku}" %>
           <div class="col-sm-3">
-						<%= check_box_tag "product[option_category_ids][]", oc.id, oc.option_sku_collection.include?(@product.sku), id: "option_category_#{oc.id}" %>
-						<label for=<%= "option_category_#{oc.id} "%> class="checkbox-industry"><%= "#{oc.product.sku} (#{oc.name})" %></label>
+						<%= check_box_tag "product[option_category_ids][]", "#{oc.id}_#{oc.product.sku}", oc.option_sku_collection.include?(@product.sku), id: "option_category_#{oc.id}" %>
+						<label for=<%= "option_category_#{oc.id} "%> class="checkbox-industry"><%= "#{oc.product.sku} (选件类别: #{oc.name})" %></label>
 					</div>
 					<% end %>
 				</div>

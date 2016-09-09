@@ -11,9 +11,20 @@ class Admin::OptionsController < Admin::BaseController
   def update
     @product = Product.find params[:id]
     option_category_ids = params[:product][:option_category_ids]
-    canceled_ids = OptionCategory.where("option_sku_collection LIKE ?", "%#{@product.sku}%").map(&:id) - option_category_ids
-    puts canceled_ids
-    ocs = OptionCategory.find(canceled_ids)
+    hash = {}
+    option_category_ids.each do |ele|
+      hash[ele] += 1 if hash[ele].present?
+      hash[ele] = 1 if hash[ele].blank?
+    end
+    cancel_ele = hash.select do |k,v| v == 1 end #{"1_3390"=>1} 
+    cancel_ele.keys.each do |ele|
+      oc_id, pro_sku = ele.split("_")
+      oc = OptionCategory.find oc_id
+      option_sku_collection_arr = oc.option_sku_collection.split(",")
+      option_sku_collection_arr.delete(pro_sku)
+      oc.update_attribute(:option_sku_collection, option_sku_collection_arr.join(","))
+    end
+
     if true 
       redirect_to "/admin/options/#{@product.id}/edit"
     else
