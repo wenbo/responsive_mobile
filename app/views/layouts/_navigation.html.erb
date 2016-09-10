@@ -28,12 +28,12 @@
 	</li>
 	<li class="<%= active?(:news_categories) %>">
     <%= link_to [:admin, :news_categories] do %>
-    <i class="fa fa-gear"></i> <span>新闻分类管理</span>
+    <i class="fa fa-reorder"></i> <span>新闻分类管理</span>
     <% end %>
 	</li>
 	<li class="<%= active?(:news) %>">
     <%= link_to admin_news_index_path do %>
-    <i class="fa fa-gear"></i> <span>新闻管理</span>
+    <i class="fa fa-rss"></i> <span>新闻管理</span>
     <% end %>
 	</li>
 	<li class="<%= active?(:pdf_categories) %>">

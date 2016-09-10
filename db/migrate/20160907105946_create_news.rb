@@ -5,7 +5,7 @@ class CreateNews < ActiveRecord::Migration[5.0]
       t.references :news_category, foreign_key: true
       t.text :content
       t.boolean :is_public
-      t.datetime :public_time
+      t.date :public_time
 
       t.timestamps
     end
