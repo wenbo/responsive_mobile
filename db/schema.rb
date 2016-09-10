@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910072225) do
+ActiveRecord::Schema.define(version: 20160910075851) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20160910072225) do
     t.string   "title"
     t.string   "banner"
     t.string   "feature"
-    t.string   "desc_as_option"
+    t.string   "desc"
     t.string   "red_desc_as_option"
     t.string   "option_avatar"
     t.text     "summary",            limit: 65535
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20160910072225) do
     t.string   "thumb_image"
     t.boolean  "is_deleted"
     t.integer  "category_id"
+    t.string   "note_for_option"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end

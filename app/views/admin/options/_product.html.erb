@@ -3,7 +3,7 @@
     <%= product.sku %> 
   </th>
   <th><%= product.title %></th>
-  <th><%= product.desc_as_option %></th>
+  <th><%= product.desc %></th>
   <th>
     <% if product.banner.thumb.present? %>
       <%= image_tag product.banner.thumb.url %>
