@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :product_attachments
     resources :pdf_categories
     resources :utilities
+    resources :news_categories
+    resources :news
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

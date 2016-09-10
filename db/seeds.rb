@@ -164,4 +164,27 @@ DC, 或单相至三相4线,
 测量变频器设备和分析马达",
    desc_as_option: "宽频带，多用途型号，高性能仪器"
  )
-
+ news_cate1 = NewsCategory.create(
+   name: "企业新闻",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c11.jpg"))
+ )
+ news_cate1 = NewsCategory.create(
+   name: "展会信息",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c12.jpg"))
+ )
+ news_cate1 = NewsCategory.create(
+   name: "业界新闻",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c13.jpg"))
+ )
+ news_cate1 = NewsCategory.create(
+   name: "新品发布",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c14.jpg"))
+ )
+ news_cate1 = NewsCategory.create(
+   name: "保养维修",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c15.jpg"))
+ )
+ news_cate1 = NewsCategory.create(
+   name: "活动新闻",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c16.jpg"))
+ )
