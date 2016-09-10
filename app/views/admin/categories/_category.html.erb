@@ -3,6 +3,7 @@
     <%= category.name %> 
   </th>
   <th><%= category.parent_id.present? ? category.parent.try(:name) : "" %></th>
+  <th><%= image_tag category.image.url(:w50h50) if category.image?%></th>
   <th><%= category.note %></th>
   <th><%= link_to "编辑", [:edit, :admin, category], class: "btn btn-primary" %></th>
 </tr>                                                                                            

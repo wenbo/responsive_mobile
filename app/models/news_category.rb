@@ -1,4 +1,5 @@
 class NewsCategory < ApplicationRecord
+  default_scope  -> {order('created_at DESC')}
   validates :name, uniqueness: true
   has_attached_file :image,
     :styles => {:w120h100 => "120x100>", :w50h50 => "50x50>"},

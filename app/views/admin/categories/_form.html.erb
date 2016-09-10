@@ -12,6 +12,17 @@
         </div>
       </div>
     </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label">  图片 </label>
+        <%= image_tag(@category.image.url(:w50h50)) if @category.image? %>
+        <div class="col-sm-4">
+          <%= f.file_field :image, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="col-sm-2 control-label"> 备注 </label>

@@ -42,4 +42,5 @@ rails g migration add_category_id_to_products category:references
 rails g model NewsCategory name:string
 rails generate paperclip NewsCategory image
 rails g model News name:string news_category:references content:text is_public:boolean public_time:datetime
+rails generate paperclip Category image
 
