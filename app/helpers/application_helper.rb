@@ -1,5 +1,13 @@
 # coding: utf-8
 module ApplicationHelper
+
+  def sortable(column, title = nil)
+    title ||= column.titleize  
+    css_class = column == sort_column ? "current #{sort_direction}" : nil
+    direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+    link_to title, {:search => params[:search]}.merge(:sort => column, :direction => direction, :page => params[:page]), {:class => css_class}
+  end
+
   
   def parse_date(date,join = '-') 
     date.strftime("%Y#{join}%m#{join}%d") if date
