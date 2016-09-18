@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
+
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     get 'sessions/new'
