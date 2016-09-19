@@ -7,9 +7,27 @@
 <div class="header">
 	<h1 class="fl"><a href="index.html"><%= image_tag "front/hioki_r4_c3.jpg", width: 150, height: 30, alt: "HIOKI" %></a></h1>
 	<ul>
-  	<li class="nav_li"><a href="/">首　　页</a></li>
-		<li><a href="news.html">新　　闻</a></li>
-		<li><a href="products.html">产品一览</a></li>
+		<% if controller_name == "home" && action_name = "index" %>
+  	<li class="nav_li">
+			<% else %>
+		<li>
+			<% end %>
+			<a href="/">首　　页</a>
+		</li>
+		<% if controller_name == "news" && action_name = "index" %>
+  	<li class="nav_li">
+			<% else %>
+		<li>
+			<% end %>
+			<a href="news.html">新　　闻</a>
+		</li>
+		<% if controller_name == "products" %>
+  	<li class="nav_li">
+			<% else %>
+		<li>
+			<% end %>
+			<a href="products.html">产品一览</a>
+		</li>
 		<li><a href="company.html">公司介绍</a></li>
 		<li><a href="contact.html">联系我们</a></li>
 		<li class="nav_li02"><a href="repair.html">维修中心</a></li>
