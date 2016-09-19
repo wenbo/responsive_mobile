@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   get 'products' => 'products#index'
-
+  get 'recorder' => 'products#show'
   get 'news' => 'news#index'
+
 
   get '/' => 'home#index'
 
