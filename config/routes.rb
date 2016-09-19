@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  get '/' => 'home#index'
 
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
