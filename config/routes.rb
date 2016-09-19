@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'products' => 'products#index'
+
+  get 'news' => 'news#index'
+
   get '/' => 'home#index'
 
   mount Ckeditor::Engine => '/ckeditor'
