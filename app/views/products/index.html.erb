@@ -1,2 +1,107 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<a name="top" id="top"></a>
+<%= render partial: "shared/top_header" %>
+<div class="t_center"><%= image_tag "front/product_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
+<div class="news_content clearfix">
+  <div class="product_left" >
+		<h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
+		<ul class="m_top10">
+			<li><a href="#">电子测量仪表</a></li>
+			<li><a href="#">现场测试仪器</a></li>
+			<li><a href="#">安全标准测量仪表</a></li>
+      <li><a href="#">记录仪・数据记录仪</a></li>
+      <li><a href="#">钳式传感器</a></li>
+      <li><a href="#">钳式传感器</a></li>
+			<li><a href="#">现场测试仪器</a></li>
+      <li><a href="#">钳式传感器</a></li>
+      <li><a href="#">电子测量仪表</a></li>
+      <li><a href="#">信号发生器</a></li>
+      <li><a href="#">环境测量仪表</a></li>
+      <li><a href="#">电力测量仪器</a></li>
+      <li><a href="#">记录仪、存储记录仪</a></li>
+		</ul>
+  </div>
+  <div class="product_right">
+  	<p class="current"><a href="/">首页</a> > 产品一览</p>
+    <h3 class="product_f25 m_top20">记录仪、存储记录仪</h3>
+    <ul class="product_category m_top25 clearfix">
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+      <li><a href="#">第三分類（カテゴリ）</a></li>
+    </ul>
+    <ul class="product_search">
+      <li>出　力　<select name="">
+					<option>出　力</option>
+				</select>
+      </li>
+      <li>耐热性能　<select name="">
+					<option>耐热性能</option>
+				</select>
+			</li>　
+      <li class="product_number"><p>品番で検索</p><input name="" type="text" /><input name="" type="submit" value="" /></li>
+    </ul>
+    <ul class="product_list m_top30">
+			<li>
+				<p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
+        <dl class="product_tj">
+					<dd><%= image_tag "front/product_r9_c5.jpg", width: 160, height: 160 %></dd>
+          <dt class="product_dt01">
+          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
+            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
+            <p class="product_xx m_top15"><a href="recorder.html">查看详情</a></p>
+          </dt>
+          <dt class="product_dt02">记录仪</dt>
+				</dl>
+      </li>
+      <li>
+				<p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
+        <dl class="product_new">
+					<dd><%= image_tag "front/product_r9_c5.jpg", width: 160, height: 160 %></dd>
+          <dt class="product_dt01">
+          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
+            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
+            <p class="product_xx m_top15"><a href="recorder.html">查看详情</a></p>
+          </dt>
+          <dt class="product_dt02">记录仪</dt>
+				</dl>
+      </li>
+      <li>
+        <dl>
+					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
+          <dt class="product_dt01">
+          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
+            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
+            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
+          </dt>
+          <dt class="product_dt02">记录仪</dt>
+				</dl>
+      </li>
+      <li>
+        <dl>
+					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
+          <dt class="product_dt01">
+          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
+            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
+            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
+          </dt>
+          <dt class="product_dt02">记录仪</dt>
+				</dl>
+      </li>
+      <li>
+        <dl>
+					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
+          <dt class="product_dt01">
+          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
+            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
+            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
+          </dt>
+          <dt class="product_dt02">记录仪</dt>
+				</dl>
+      </li>
+    </ul>
+    <p class="m_top45">&nbsp;</p>
+  </div>
+</div>
+<%= render partial: "shared/footer" %>
