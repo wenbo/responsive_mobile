@@ -6,4 +6,5 @@ class NewsCategory < ApplicationRecord
     :url => "/system/news_categories/:id/:style.:extension",
     :path => ":rails_root/public/system/news_categories/:id/:style.:extension"
   validates_attachment_content_type :image, content_type: [/\Aimage/, "application/octet-stream"]
+  has_many :news
 end
