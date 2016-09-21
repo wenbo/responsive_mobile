@@ -105,21 +105,15 @@
 			<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
 			<p class="hioki_f15 m_top5">&nbsp;&gt; 新闻一览</p>
 			<ul>
-      	<li>・企业新闻</li>
-				<li>・展会信</li>
-				<li>・业界新闻</li>
-				<li>・新品发布</li>
-				<li>・保养・维修</li>
-				<li>・活动新闻</li>
+				<% NewsCategory.all.each do |nc| %>
+      	<li>・<%= nc.name %></li>
+				<% end %>
 			</ul>
 		</div>
 		<ul class="hioki_news">
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c11.jpg", width: 72, height: 25 %><a href="#">HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出</a></li>
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c12.jpg", width: 72, height: 25 %><a href="#">日置HIOKI参加CIBF2016中国国际电池技术展览会</a></li>
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c13.jpg", width: 72, height: 25 %><a href="#">HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出</a></li>
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c14.jpg", width: 72, height: 25 %><a href="#">日置HIOKI参加CIBF2016中国国际电池技术展览会</a></li>
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c15.jpg", width: 72, height: 25 %><a href="#">日置HIOKI参加CIBF2016中国国际电池技术展览会</a></li>
-			<li>2016年6月24日<%= image_tag "front/hioki_r14_c16.jpg", width: 72, height: 25 %><a href="#">日置HIOKI参加CIBF2016中国国际电池技术展览会</a></li>
+			<% @news.each do |news| %>
+			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="#"><%= news.name %></a></li>
+			<% end %>
 		</ul>
 	</div>
 	<ul class="hioki_columns clearfix">

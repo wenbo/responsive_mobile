@@ -12,6 +12,11 @@ module ApplicationHelper
   def parse_date(date,join = '-') 
     date.strftime("%Y#{join}%m#{join}%d") if date
   end
+
+  def parse_date_with_unit(date) 
+    date.strftime("%Y年%m月%d日") if date
+  end
+
   
   def link_to_add_fields(name, f, association)
     new_object = f.object.class.reflect_on_association(association).klass.new
