@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @root_categories = Category.roots
     @product = Product.find params[:id]
   end
 end
