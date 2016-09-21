@@ -45,7 +45,7 @@
         <dl class="product_tj">
 					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+          	<h3 class="product_f21"><%= product.category.name %> <%= product.title %></h3>
             <p class="product_f16 m_top5"><%= product.feature %> </p>
             <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
@@ -59,7 +59,7 @@
         <dl class="product_new">
 					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+          	<h3 class="product_f21"><%= product.category.name %> <%= product.title %></h3>
             <p class="product_f16 m_top5"><%= product.feature %></p>
             <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
@@ -72,7 +72,7 @@
         <dl>
 					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+          	<h3 class="product_f21"><%= product.category.name %> <%= product.title %></h3>
             <p class="product_f16 m_top5"><%= product.feature %></p>
             <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
