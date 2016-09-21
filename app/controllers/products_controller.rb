@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.is_display.is_main_body.page(params[:page]).per(20)
+    if params[:search].present?
+      @products = Product.search(params[:search]).is_display.is_main_body.page(params[:page]).per(20)
+    else
+      @products = Product.is_display.is_main_body.page(params[:page]).per(20)
+    end
     @root_categories = Category.roots
   end
 

@@ -30,7 +30,12 @@
 					<option>耐热性能</option>
 				</select>
 			</li>　
-      <li class="product_number"><p>品番で検索</p><input name="" type="text" /><input name="" type="submit" value="" /></li>
+      <li class="product_number">
+				<p>品番で検索</p>
+				<%= form_tag "/products", method: :get do %>
+				<input name="search" type="text" value="<%= params[:search] %>" /><input name="" type="submit" value="" />
+				<% end %>
+			</li>
     </ul>
     <ul class="product_list m_top30">
 			<% @products.each do |product| %>
