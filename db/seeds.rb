@@ -45,9 +45,12 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  Industry.create( name: "应用", number: 26, parent_id: e.id)
 
  #Category.connection.execute("truncate table categories")
- c = Category.create(name: "现场测试仪器")
+ c = Category.create(
+   name: "现场测试仪器",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r18_c26.jpg"))
+ )
+ 
  c.children << Category.create(name: "电表继电器,变流器")
- c.children << Category.create(name: "万用表")
  c.children << Category.create(name: "接地电阻计,验电笔,相序表")
  c.children << Category.create(name: "电压计,相序表")
  c.children << Category.create(name: "绝缘电阻表")
@@ -56,40 +59,87 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  c.children << Category.create(name: "兆欧表")
 
 
-  c = Category.create(name: "环境测量仪表")
+ c = Category.create(
+   name: "环境测量仪表",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r18_c20.jpg"))
+ )
  c.children << Category.create(name: "环境测量系统")
  c.children << Category.create(name: "噪音计,转速计,照度计")
  c.children << Category.create(name: "温度计")
  c.children << Category.create(name: "磁场测试仪,光测试仪")
  
- c = Category.create(name: "安全标准测量仪")
+ c = Category.create(
+   name: "安全标准测量仪",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r16_c20.jpg"))
+ )
  c.children << Category.create(name: "绝缘耐压测试仪")
  c.children << Category.create(name: "接地保护测试仪")
  c.children << Category.create(name: "泄漏电流测试仪")
 
- c = Category.create(name: "电力测量仪器")
+ c = Category.create(
+   name: "电力测量仪器",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r16_c26.jpg"))
+ )
+ 
  c.children << Category.create(name: "功率分析仪")
  c.children << Category.create(name: "电能质量分析仪")
  c.children << Category.create(name: "功率计")
  c.children << Category.create(name: "钳形功率计")
 
- c = Category.create(name: "电子测量仪表")
+ c = Category.create(
+   name: "电子测量仪表",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r16_c30.jpg"))
+ )
  c.children << Category.create(name: "台式万用表")
  c.children << Category.create(name: "LCR测试仪")
  c.children << Category.create(name: "电池测试仪")
  c.children << Category.create(name: "绝缘耐压测试仪")
  c.children << Category.create(name: "LCR测试仪,阻抗分析仪")
 
- c = Category.create(name: "钳形表,钳形传感器")
+ c = Category.create(
+   name: "钳形表,钳形传感器",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r18_c6.jpg"))
+ )
  c.children << Category.create(name: "钳形传感器")
  c.children << Category.create(name: "钳形表")
 
- c = Category.create(name: "记录仪,数据采集仪")
+ c = Category.create(
+   name: "记录仪,数据采集仪",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r16_c6.jpg"))
+ )
  c.children << Category.create(name: "记录仪")
  c.children << Category.create(name: "数据采集仪")
 
- c = Category.create(name: "信号发生器,波形发生器")
+ c = Category.create(
+   name: "信号发生器",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r20_c26.jpg"))
+ )
  c.children << Category.create(name: "信号发生器")
+
+ c = Category.create(
+   name: "HIOKI其他产品",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r22_c6.jpg"))
+ )
+ c = Category.create(
+   name: "万用表",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r20_c6.jpg"))
+ )
+
+ c = Category.create(
+   name: "通讯测试仪",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r18_c30.jpg"))
+ )
+
+ c = Category.create(
+   name: "其他测试仪",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r20_c30.jpg"))
+ )
+ c = Category.create(
+   name: "自动测试设备",
+   image: File.new(File.join(Rails.root, "doc/www/images/hioki_r20_c20.jpg"))
+ )
+
+
 
  p = Product.create(
    sku: "8861-50",

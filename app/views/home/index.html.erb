@@ -112,7 +112,7 @@
 		</div>
 		<ul class="hioki_news">
 			<% @news.each do |news| %>
-			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="#"><%= news.name %></a></li>
+			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="/news/<%= news.id %>"><%= news.name %></a></li>
 			<% end %>
 		</ul>
 	</div>
@@ -125,84 +125,18 @@
 <div class="hioki_search clearfix">
 	<h3 class="hioki_category_title m_top45 t_center">日置产品一览<br /><span class="hioki_f15">Search Category</span></h3>
 	<ul class="m_top45 clearfix">
+		<% @root_categories.each_with_index do |r_c, index| %>
+		<% if index % 4 == 0 %>
   	<li class="hioki_category">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r16_c6.jpg", width: 120, height: 100 %></dd>
-				<dt>记录仪、<br />存储记录仪</dt>
-			</a>
-		</li>
+			<% else %>
 		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r16_c20.jpg", width: 120, height: 100 %></dd>
-				<dt>安全标准测量仪</dt>
+			<% end %>
+			<a href="/categories/<%= r_c.id %>">
+				<dd><%= image_tag r_c.image.url, width: 120, height: 100 %></dd>
+				<dt><%= r_c.name %></dt>
 			</a>
 		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r16_c26.jpg", width: 120, height: 100 %></dd>
-				<dt>电力测量仪器</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r16_c30.jpg", width: 120, height: 100 %></dd>
-				<dt>电子测量仪表</dt>
-			</a>
-		</li>
-		<li class="hioki_category">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r18_c6.jpg", width: 120, height: 100 %></dd>
-				<dt>钳形表、<br />钳式传感器</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r18_c20.jpg", width: 120, height: 100 %></dd>
-				<dt>数据记录、<br />环境测量</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r18_c26.jpg", width: 120, height: 100 %></dd>
-				<dt>现场测试仪</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r18_c30.jpg", width: 120, height: 100 %></dd>
-				<dt>通讯测试仪</dt>
-			</a>
-		</li>
-		<li class="hioki_category">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r20_c6.jpg", width: 120, height: 100 %></dd>
-				<dt>万用表</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r20_c20.jpg", width: 120, height: 100 %></dd>
-				<dt>自动测试设备</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r20_c26.jpg", width: 120, height: 100 %></dd>
-				<dt>信号发生器</dt>
-			</a>
-		</li>
-		<li class="hioki_category m_left25">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r20_c30.jpg", width: 120, height: 100 %></dd>
-				<dt>其他测试仪</dt>
-			</a>
-		</li>
-		<li class="hioki_category">
-			<a href="#">
-				<dd><%= image_tag "front/hioki_r22_c6.jpg", width: 120, height: 100 %></dd>
-				<dt>HIOKI其他产品</dt>
-			</a>
-		</li>
+		<% end %>
 		<li class="hioki_category02 m_left25">
 			<a href="#"><%= image_tag "front/hioki_r23_c21.jpg", width: 13, height: 13 %> 查看全部产品
 			</a>
