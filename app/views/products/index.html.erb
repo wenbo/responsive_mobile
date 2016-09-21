@@ -5,19 +5,9 @@
   <div class="product_left" >
 		<h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
 		<ul class="m_top10">
-			<li><a href="#">电子测量仪表</a></li>
-			<li><a href="#">现场测试仪器</a></li>
-			<li><a href="#">安全标准测量仪表</a></li>
-      <li><a href="#">记录仪・数据记录仪</a></li>
-      <li><a href="#">钳式传感器</a></li>
-      <li><a href="#">钳式传感器</a></li>
-			<li><a href="#">现场测试仪器</a></li>
-      <li><a href="#">钳式传感器</a></li>
-      <li><a href="#">电子测量仪表</a></li>
-      <li><a href="#">信号发生器</a></li>
-      <li><a href="#">环境测量仪表</a></li>
-      <li><a href="#">电力测量仪器</a></li>
-      <li><a href="#">记录仪、存储记录仪</a></li>
+			<% @root_categories.each do |r_c| %>
+			<li><%= link_to r_c.name, "/categories/#{r_c.id}" %></li>
+			<% end %>
 		</ul>
   </div>
   <div class="product_right">
@@ -43,63 +33,49 @@
       <li class="product_number"><p>品番で検索</p><input name="" type="text" /><input name="" type="submit" value="" /></li>
     </ul>
     <ul class="product_list m_top30">
+			<% @products.each do |product| %>
+			<% if product.is_recommended? %>
 			<li>
 				<p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
         <dl class="product_tj">
-					<dd><%= image_tag "front/product_r9_c5.jpg", width: 160, height: 160 %></dd>
+					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
-            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
-            <p class="product_xx m_top15"><a href="recorder.html">查看详情</a></p>
+          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+            <p class="product_f16 m_top5"><%= product.feature %> </p>
+            <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
-          <dt class="product_dt02">记录仪</dt>
+          <dt class="product_dt02"><%= product.category.name %></dt>
 				</dl>
       </li>
+			<% end %>
+			<% if product.is_new? %>
       <li>
 				<p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
         <dl class="product_new">
-					<dd><%= image_tag "front/product_r9_c5.jpg", width: 160, height: 160 %></dd>
+					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
-            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
-            <p class="product_xx m_top15"><a href="recorder.html">查看详情</a></p>
+          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+            <p class="product_f16 m_top5"><%= product.feature %></p>
+            <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
-          <dt class="product_dt02">记录仪</dt>
+          <dt class="product_dt02"><%= product.category.name %></dt>
 				</dl>
       </li>
+			<% end %>
+			<% if !product.is_new? and !product.is_recommended? %>
       <li>
         <dl>
-					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
+					<dd><%= image_tag product.thumb_image.url, width: 160, height: 160 %></dd>
           <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
-            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
-            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
+          	<h3 class="product_f21">存储记录仪 <%= product.title %></h3>
+            <p class="product_f16 m_top5"><%= product.feature %></p>
+            <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
           </dt>
-          <dt class="product_dt02">记录仪</dt>
+          <dt class="product_dt02"><%= product.category.name %></dt>
 				</dl>
       </li>
-      <li>
-        <dl>
-					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
-          <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
-            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
-            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
-          </dt>
-          <dt class="product_dt02">记录仪</dt>
-				</dl>
-      </li>
-      <li>
-        <dl>
-					<dd><%= image_tag "front/product_r13_c5.jpg", width: 160, height: 160 %></dd>
-          <dt class="product_dt01">
-          	<h3 class="product_f21">存储记录仪 8860-50　MR8847A</h3>
-            <p class="product_f16 m_top5">高速信号波形捕捉, 同时记录多路信号</p>
-            <p class="product_xx m_top15"><a href="#">查看详情</a></p>
-          </dt>
-          <dt class="product_dt02">记录仪</dt>
-				</dl>
-      </li>
+			<% end %>
+			<% end %>
     </ul>
     <p class="m_top45">&nbsp;</p>
   </div>

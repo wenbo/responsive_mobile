@@ -139,22 +139,334 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    image: File.new(File.join(Rails.root, "doc/www/images/hioki_r20_c20.jpg"))
  )
 
-
-
  p = Product.create(
-   sku: "8861-50",
-   title: "8860-50/ 8861-50",
+   sku: "8860-50",
+   title: "8860-50　MR8847A",
+   feature: "高速信号波形捕捉, 同时记录多路信号",
    category_id: Category.find_by(name: "记录仪").id,
    industry_ids: [1,2,3,4,5,6],
    is_main_body: true,
    is_display: true,
-   feature: "最大32通道+16个逻辑通道,
-扫描单元 64ch,
-20MS/s(12bits 8通道),
-64MW～2GW内存(附件),
-12bit/16bit A/D 分辩率,
-USB, HD, PC卡",
-   desc_as_option: "高速信号波形捕捉, 同时记录多路信号"
+   is_new: true,
+   thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r9_c5.jpg")),
+   summary: '
+      <p class="product_f25">工作速度比以前机型提高3倍</p>
+	  <p class="m_top20">最大64通道/128通道的多通道数据采集(使用8958扫描单元)<br>
+20MS/s的高速采样读取<br>
+搭载了LAN/USB/PC卡槽等各种接口<br>
+有丰富的温度、FFT、应变、F/V、电荷等输入单元<br>
+<br>
+仅8860-50，8861-50本机不能使用，请将另外选购的输入单元装在本机上一起使用。<br>
+*无论何种情况，都需要1种内存扩展板。8861-50同种类的需2块，订货时请指定。
+      </p>
+      <h3 class="recorder_basic">基本参数</h3>
+      <div class="m_top25"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recorder_parameter">
+  <tbody><tr>
+    <th width="216" bgcolor="#E3E3E3">&nbsp;</th>
+    <th width="350" align="left" bgcolor="#F3F8FB">8860-50</th>
+    <th align="left" bgcolor="#FDECD2">8861-50</th>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+</tbody></table>
+      </div>
+    '
+ )
+
+  p = Product.create(
+   sku: "8860-51",
+   title: "8860-51　MR8847A",
+   feature: "高速信号波形捕捉, 同时记录多路信号",
+   category_id: Category.find_by(name: "记录仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   is_recommended: true,
+   thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r9_c5.jpg")),
+      summary: '
+      <p class="product_f25">工作速度比以前机型提高3倍</p>
+	  <p class="m_top20">最大64通道/128通道的多通道数据采集(使用8958扫描单元)<br>
+20MS/s的高速采样读取<br>
+搭载了LAN/USB/PC卡槽等各种接口<br>
+有丰富的温度、FFT、应变、F/V、电荷等输入单元<br>
+<br>
+仅8860-50，8861-50本机不能使用，请将另外选购的输入单元装在本机上一起使用。<br>
+*无论何种情况，都需要1种内存扩展板。8861-50同种类的需2块，订货时请指定。
+      </p>
+      <h3 class="recorder_basic">基本参数</h3>
+      <div class="m_top25"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recorder_parameter">
+  <tbody><tr>
+    <th width="216" bgcolor="#E3E3E3">&nbsp;</th>
+    <th width="350" align="left" bgcolor="#F3F8FB">8860-50</th>
+    <th align="left" bgcolor="#FDECD2">8861-50</th>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+</tbody></table>
+      </div>
+    '
+
+ )
+
+  p = Product.create(
+   sku: "8860-52",
+   title: "8860-52　MR8847A",
+   feature: "高速信号波形捕捉, 同时记录多路信号",
+   category_id: Category.find_by(name: "记录仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   is_recommended: true,
+   thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r13_c5.jpg")),
+      summary: '
+      <p class="product_f25">工作速度比以前机型提高3倍</p>
+	  <p class="m_top20">最大64通道/128通道的多通道数据采集(使用8958扫描单元)<br>
+20MS/s的高速采样读取<br>
+搭载了LAN/USB/PC卡槽等各种接口<br>
+有丰富的温度、FFT、应变、F/V、电荷等输入单元<br>
+<br>
+仅8860-50，8861-50本机不能使用，请将另外选购的输入单元装在本机上一起使用。<br>
+*无论何种情况，都需要1种内存扩展板。8861-50同种类的需2块，订货时请指定。
+      </p>
+      <h3 class="recorder_basic">基本参数</h3>
+      <div class="m_top25"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recorder_parameter">
+  <tbody><tr>
+    <th width="216" bgcolor="#E3E3E3">&nbsp;</th>
+    <th width="350" align="left" bgcolor="#F3F8FB">8860-50</th>
+    <th align="left" bgcolor="#FDECD2">8861-50</th>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+</tbody></table>
+      </div>
+    '
+
+ )
+
+  p = Product.create(
+   sku: "8860-53",
+   title: "8860-53　MR8847A",
+   feature: "高速信号波形捕捉, 同时记录多路信号",
+   category_id: Category.find_by(name: "记录仪").id,
+   industry_ids: [1,2,3,4,5,6],
+   is_main_body: true,
+   is_display: true,
+   is_new: true,
+   thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r13_c5.jpg")),
+      summary: '
+      <p class="product_f25">工作速度比以前机型提高3倍</p>
+	  <p class="m_top20">最大64通道/128通道的多通道数据采集(使用8958扫描单元)<br>
+20MS/s的高速采样读取<br>
+搭载了LAN/USB/PC卡槽等各种接口<br>
+有丰富的温度、FFT、应变、F/V、电荷等输入单元<br>
+<br>
+仅8860-50，8861-50本机不能使用，请将另外选购的输入单元装在本机上一起使用。<br>
+*无论何种情况，都需要1种内存扩展板。8861-50同种类的需2块，订货时请指定。
+      </p>
+      <h3 class="recorder_basic">基本参数</h3>
+      <div class="m_top25"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recorder_parameter">
+  <tbody><tr>
+    <th width="216" bgcolor="#E3E3E3">&nbsp;</th>
+    <th width="350" align="left" bgcolor="#F3F8FB">8860-50</th>
+    <th align="left" bgcolor="#FDECD2">8861-50</th>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td bgcolor="#F6FAFB">最大4单元</td>
+    <td bgcolor="#FEFAF1">最大4单元</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">输入通道数</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">测量量程</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">最大输入电压</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">频率特性</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+  <tr>
+    <td bgcolor="#F7F7F7">单元</td>
+    <td colspan="2">最大4单元</td>
+    </tr>
+</tbody></table>
+      </div>
+    '
  )
 
 #   p = Product.create(
@@ -166,54 +478,18 @@ USB, HD, PC卡",
 # PW6001/3390用，4ch",
 #    desc_as_option: ""
 #   )
-  
-  p = Product.create(
-   sku: "3390",
-   title: "3390",
-   category_id: Category.find_by(name: "功率分析仪").id,
-   industry_ids: [1,2,3,4,5,6],
-   is_main_body: true,
-   is_display: true,
-   is_option: true,
-   feature: "适用于设备的综合评估,
-带宽DC, 0.5 ~ 150kHz,
-DC, 或单相至三相4线,
-4ch/ 钳式传感器输出,
-测量变频器设备和分析马达",
-   desc_as_option: "宽频带，多用途型号，高性能仪器"
- )
 
+  50.times do |i|
   p = Product.create(
-   sku: "3391",
-   title: "3391",
-   category_id: Category.find_by(name: "功率分析仪").id,
-   industry_ids: [1,2,3,4,5,6],
-   is_main_body: true,
-   is_display: true,
+   sku: "339#{i}",
+   title: "内存扩展板(32MW) 339#{i}",
+   desc: ["※仅可安装DC电源单元9684或探头电源单元9687其中之一。若需要同时安装请联系HIOKI。", ""][rand(2)],
    is_option: true,
-   feature: "适用于设备的综合评估,
-带宽DC, 0.5 ~ 150kHz,
-DC, 或单相至三相4线,
-4ch/ 钳式传感器输出,
-测量变频器设备和分析马达",
-   desc_as_option: "宽频带，多用途型号，高性能仪器"
- )
+   option_avatar: File.new(File.join(Rails.root, "doc/www/images/recorder02_02.jpg")),
+   note_for_option: "容量 32 M"
+  )
+  end
 
-  p = Product.create(
-   sku: "3392",
-   title: "3392",
-   category_id: Category.find_by(name: "功率分析仪").id,
-   industry_ids: [1,2,3,4,5,6],
-   is_main_body: true,
-   is_display: true,
-   is_option: true,
-   feature: "适用于设备的综合评估,
-带宽DC, 0.5 ~ 150kHz,
-DC, 或单相至三相4线,
-4ch/ 钳式传感器输出,
-测量变频器设备和分析马达",
-   desc_as_option: "宽频带，多用途型号，高性能仪器"
- )
  news_cate1 = NewsCategory.create(
    name: "企业新闻",
    image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c11.jpg"))

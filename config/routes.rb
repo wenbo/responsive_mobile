@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :news_categories, only: [:show]
 
   get 'products' => 'products#index'
+  get 'products/:id' => 'products#show'
   get 'recorder' => 'products#show'
   get 'news' => 'news#index'
 
