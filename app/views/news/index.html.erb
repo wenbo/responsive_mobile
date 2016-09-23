@@ -30,7 +30,20 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
 				<% @news.each do |news| %>
 			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="/news/<%= news.id %>"><%= news.name %></a></li>
 			<% end %>
-    </ul>
+</ul>
+<ul class="news_flip t_center m_top20">
+	<li><a href="#">首页</a>&nbsp;</li>
+	<li> 1 |</li>
+	<li class="news_flip_li01"><a href="#"> 2 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 3 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 4 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 5 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 6 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 7 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 8 </a>|</li>
+	<li class="news_flip_li01"><a href="#"> 9 </a></li>
+	<li>&nbsp;<a href="#">末页</a></li>
+</ul>
   </div>
 </div>
 <%= render partial: "shared/footer" %>
