@@ -179,6 +179,14 @@
     </div>
 
     <div class="form-inputs">
+      <label class="col-sm-2 control-label"> 软件升级文档 </label>
+      <div id="option_fieldsets" class="control-label"><%= link_to_add_fields "添加文档 ", f, :upgrade_attachments %></div>
+      <%= f.fields_for :upgrade_attachments, @upgrade_attachments do |upgrade_attachment_fields| %>
+        <%= render "upgrade_attachment_fields", :f => upgrade_attachment_fields %>
+    <% end %>
+    </div>
+
+    <div class="form-inputs">
       <label class="col-sm-2 control-label"> 适用选件 </label>
     	<div id="option_fieldsets" class="control-label"><%= link_to_add_fields "添加选件", f, :option_categories %></div>
       <%= f.fields_for :option_categories, @option_categories do |option_category_fields| %>

@@ -1,0 +1,25 @@
+<fieldset>
+    <legend></legend>
+    <div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 标题 </label>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "string required form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 文档 </label>
+    <%=  f.object.attachment_file_name %>
+    <div class="col-sm-6">
+      <%= f.file_field :attachment, class: "string required form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 类别 </label>
+    <div class="col-sm-6">
+        <div class="col-sm-6">
+          <%= f.select :classifier_id, Product::UpgradeClassifier, {}, class: "form-control" %>
+        </div>
+    </div>
+  </div>
+		<p class="delete_link"><%= delete_image f %></p>
+</fieldset>

@@ -48,3 +48,6 @@ rails g migration add_note_for_option_to_products note_for_option:string
 rails g migration rename_desc_as_option_from_products desc_as_option:string
 
 rails g migration add_video_path_to_products video_path:string
+
+rails g model UpgradeAttachment name:string product:references classifier_id:integer # [[1, "下载文件"], [2, "操作说明书"]]
+rails generate paperclip upgrade_attachment attachment
