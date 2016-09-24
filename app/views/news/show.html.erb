@@ -1,2 +1,44 @@
-<h1>News#show</h1>
-<p>Find me in app/views/news/show.html.erb</p>
+<% content_for :head do %>
+<script type="text/javascript">
+<!--
+window.onload=window.onresize=function(){
+  if(document.getElementById("mm2").clientHeight<document.getElementById("mm1").clientHeight){
+    document.getElementById("mm2").style.height=document.getElementById("mm1").offsetHeight+"px";
+  }
+  else{
+    document.getElementById("mm1").style.height=document.getElementById("mm2").offsetHeight+"px";
+  }
+}
+-->
+</script>
+<% end %>
+<a name="top" id="top"></a>
+<%= render partial: "shared/top_header" %>
+<div class="t_center"><%= image_tag "front/news_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
+<div class="news_content clearfix">
+  <div class="news_left" id="mm1">
+		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
+		<ul>
+			<% NewsCategory.all.each do |nc| %>
+      <li>&gt;<%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
+			<% end %>
+		</ul>
+  </div>
+  <div class="news_right" id="mm2">
+    <p class="current"><a href="/">首页</a> > <a href="/news">新闻</a> > 新闻详细</p>
+    <p class="m_top20 clearfix">
+    <%= image_tag @news.news_category.image.url, width: 72, height: 25, class: "fl" %>
+    <a href="/news.html" class="recorder_f16 fr"><span class="recorder_blue">返回</span></a>
+    </p>
+    <h3 class="recorder_blue product_f20 m_top10">
+      <%= @news.name %>
+    </h3>
+    <%= @news.content %>
+    <!--
+    <p class="m_top20">
+    <%= image_tag "front/repair_r5_c3.jpg", width: 543, height: 194 %>
+    </p>
+    --->
+  </div>
+</div>
+<%= render partial: "shared/footer" %>

@@ -519,7 +519,10 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
      name: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出#{i}",
      public_time: "2016-09-24",
      is_public: true,
-     content: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出, HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出",
+     content: 
+     ' <p class="m_top20">HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出</p>
+         <p class="m_top20"><img src="images/repair_r5_c3.jpg" width="543" height="194" /></p>
+         ',
      news_category_id: rand(6)+1
    )
  end
