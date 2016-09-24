@@ -8,4 +8,3 @@ XC682
 
 flash video:  http://www.hioki.cn/product/pw336530/index.html
 http://www.hioki.cn/product/pw336530/pw336530s.html
-

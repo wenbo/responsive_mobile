@@ -51,3 +51,5 @@ rails g migration add_video_path_to_products video_path:string
 
 rails g model UpgradeAttachment name:string product:references classifier_id:integer # [[1, "下载文件"], [2, "操作说明书"]]
 rails generate paperclip upgrade_attachment attachment
+
+rails g migration create_products_product_attachments product:references product_attachment:references

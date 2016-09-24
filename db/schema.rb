@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924055313) do
+ActiveRecord::Schema.define(version: 20160924104218) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -122,6 +122,13 @@ ActiveRecord::Schema.define(version: 20160924055313) do
     t.integer  "pdf_file_size"
     t.datetime "pdf_updated_at"
     t.index ["pdf_category_id"], name: "index_product_attachments_on_pdf_category_id", using: :btree
+  end
+
+  create_table "product_attachments_products", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "product_id"
+    t.integer "product_attachment_id"
+    t.index ["product_attachment_id"], name: "index_product_attachments_products_on_product_attachment_id", using: :btree
+    t.index ["product_id"], name: "index_product_attachments_products_on_product_id", using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
