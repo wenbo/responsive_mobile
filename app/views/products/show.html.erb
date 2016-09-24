@@ -1,5 +1,5 @@
 <% content_for :head do %>
-<%= javascript_include_tag 'tab' %>
+  <%= javascript_include_tag 'tab' %>
 <% end %>
 
 <a name="top" id="top"></a>
@@ -7,15 +7,15 @@
 <div class="t_center"><%= image_tag "front/product_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
 <div class="news_content clearfix">
   <div class="product_left" >
-	<h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
-	<ul class="m_top10">
-			<% @root_categories.each do |r_c| %>
-			<li><%= link_to r_c.name, "/categories/#{r_c.id}" %></li>
-			<% end %>
-	</ul>
+    <h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
+    <ul class="m_top10">
+      <% @root_categories.each do |r_c| %>
+        <li><%= link_to r_c.name, "/categories/#{r_c.id}" %></li>
+    <% end %>
+    </ul>
   </div>
   <div class="product_right">
-  	<p class="current"><a href="/">首页</a> > <%= link_to "产品一览", "/products" %> > <%= @product.sku %></p>
+    <p class="current"><a href="/">首页</a> > <%= link_to "产品一览", "/products" %> > <%= @product.sku %></p>
     <h3 class="product_f25 m_top20"><%= @product.category.name %> <%= @product.sku%></h3>
     <p class="m_top10"><%= @product.feature %></p>
     <p class="m_top30"><%= image_tag "front/recorder_r1_c1.jpg", width: 480, height: 280 %></p>
@@ -27,39 +27,13 @@
       <li onclick=ShowSub(0,5) id=S_Menu_05>应用案例</li>
     </ul>
     <div id="pic_corpus_01" class="recorder_content">
-			<%=raw @product.summary %>
+      <%=raw @product.summary %>
     </div>
     <%= render partial: "options" %>
-    <div id="pic_corpus_03" class="recorder_content">
-      <p class="product_f25">PDF样张</p>
-      <ul class="m_top30 clearfix">
-      	<li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-        <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-        <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-        <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-      </ul>
-    </div>
-    <h3 class="recorder_basic">相关产品</h3>
-    <div class="m_top15 clearfix">
-      <div class="recorder_related">
-      	<p class="recorder_jly">记录仪</p>
-        <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-        <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-        <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
-      </div>
-      <div class="recorder_related">
-      	<p class="recorder_jly">记录仪</p>
-        <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-        <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-        <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
-      </div>
-      <div class="recorder_related">
-      	<p class="recorder_jly">记录仪</p>
-        <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-        <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-        <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
-      </div>
-    </div>
+    <%= render partial: "pdf" %>
+    <%= render partial: "upgrade" %>
+    <%= render partial: "case" %>
+    <%= render partial: "related_products" %>
     <p class="m_top45">&nbsp;</p>
   </div>
 </div>

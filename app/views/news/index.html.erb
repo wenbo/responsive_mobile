@@ -32,18 +32,8 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
 			<% end %>
 </ul>
 <ul class="news_flip t_center m_top20">
-	<li><a href="#">首页</a>&nbsp;</li>
-	<li> 1 |</li>
-	<li class="news_flip_li01"><a href="#"> 2 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 3 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 4 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 5 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 6 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 7 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 8 </a>|</li>
-	<li class="news_flip_li01"><a href="#"> 9 </a></li>
-	<li>&nbsp;<a href="#">末页</a></li>
+  <%= paginate @news %> 
 </ul>
-  </div>
+</div>
 </div>
 <%= render partial: "shared/footer" %>
