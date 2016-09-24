@@ -479,7 +479,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
 #    desc_as_option: ""
 #   )
 
-  50.times do |i|
+  60.times do |i|
   p = Product.create(
    sku: "339#{i}",
    title: "内存扩展板(32MW) 339#{i}",
@@ -514,3 +514,12 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    name: "活动新闻",
    image: File.new(File.join(Rails.root, "doc/www/images/hioki_r14_c16.jpg"))
  )
+ 20.times do |i|
+   News.create(
+     name: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出#{i}",
+     public_time: "2016-09-24",
+     is_public: true,
+     content: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出, HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出",
+     news_category_id: rand(6)+1
+   )
+ end

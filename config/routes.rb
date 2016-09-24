@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 
   get '/' => 'home#index'
+  get 'repair' => 'home#repair'
 
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
