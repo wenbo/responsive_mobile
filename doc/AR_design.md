@@ -46,3 +46,5 @@ rails generate paperclip Category image
 
 rails g migration add_note_for_option_to_products note_for_option:string
 rails g migration rename_desc_as_option_from_products desc_as_option:string
+
+rails g migration add_video_path_to_products video_path:string
