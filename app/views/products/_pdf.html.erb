@@ -2,9 +2,8 @@
   <p class="product_f25">PDF样张</p>
 
   <ul class="m_top30 clearfix">
-    <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-    <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-    <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
-    <li class="recorder_pdf"><a href="#">存储记录仪 8860-50, 8861-50</a></li>
+		<% @product.product_attachments.each do |p_a| %>
+    <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>"><%= p_a.name %></a></li>
+		<% end %>
   </ul>
 </div>

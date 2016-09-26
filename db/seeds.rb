@@ -148,6 +148,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    is_main_body: true,
    is_display: true,
    is_new: true,
+   banner: File.new(File.join(Rails.root, "doc/www/images/recorder_r1_c1.jpg")),
    thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r9_c5.jpg")),
    summary: '
       <p class="product_f25">工作速度比以前机型提高3倍</p>
@@ -220,6 +221,11 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
       </div>
     '
  )
+ option_cateogry = OptionCategory.create(
+   name: "工厂装配选件#{rand(10)} (需指定：非用户安装)",
+   option_sku_collection: "3390,3391,3393"
+ )
+ p.option_categories << option_cateogry
 
   p = Product.create(
    sku: "8860-51",
@@ -230,6 +236,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    is_main_body: true,
    is_display: true,
    is_recommended: true,
+   banner: File.new(File.join(Rails.root, "doc/www/images/recorder_r1_c1.jpg")),
    thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r9_c5.jpg")),
       summary: '
       <p class="product_f25">工作速度比以前机型提高3倍</p>
@@ -302,7 +309,14 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
       </div>
     '
 
+  )
+
+  option_cateogry = OptionCategory.create(
+   name: "工厂装配选件#{rand(10)} (需指定：非用户安装)",
+   option_sku_collection: "3394,3395,3396"
  )
+ p.option_categories << option_cateogry
+
 
   p = Product.create(
    sku: "8860-52",
@@ -313,6 +327,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    is_main_body: true,
    is_display: true,
    is_recommended: true,
+   banner: File.new(File.join(Rails.root, "doc/www/images/recorder_r1_c1.jpg")),
    thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r13_c5.jpg")),
       summary: '
       <p class="product_f25">工作速度比以前机型提高3倍</p>
@@ -385,7 +400,13 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
       </div>
     '
 
+  )
+  option_cateogry = OptionCategory.create(
+   name: "工厂装配选件#{rand(10)} (需指定：非用户安装)",
+   option_sku_collection: "3396,3397,3398"
  )
+ p.option_categories << option_cateogry
+
 
   p = Product.create(
    sku: "8860-53",
@@ -396,6 +417,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
    is_main_body: true,
    is_display: true,
    is_new: true,
+   banner: File.new(File.join(Rails.root, "doc/www/images/recorder_r1_c1.jpg")),
    thumb_image: File.new(File.join(Rails.root, "doc/www/images/product_r13_c5.jpg")),
       summary: '
       <p class="product_f25">工作速度比以前机型提高3倍</p>
@@ -467,7 +489,13 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
 </tbody></table>
       </div>
     '
+  )
+  option_cateogry = OptionCategory.create(
+   name: "工厂装配选件#{rand(10)} (需指定：非用户安装)",
+   option_sku_collection: "3396,3397,3399"
  )
+ p.option_categories << option_cateogry
+
 
 #   p = Product.create(
 #    sku: "PW9100",
@@ -479,14 +507,14 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
 #    desc_as_option: ""
 #   )
 
-  60.times do |i|
+  80.times do |i|
   p = Product.create(
    sku: "339#{i}",
-   title: "内存扩展板(32MW) 339#{i}",
+   title: "内存扩展板(#{10+rand(32)}MW) 339#{i}",
    desc: ["※仅可安装DC电源单元9684或探头电源单元9687其中之一。若需要同时安装请联系HIOKI。", ""][rand(2)],
    is_option: true,
    option_avatar: File.new(File.join(Rails.root, "doc/www/images/recorder02_02.jpg")),
-   note_for_option: "容量 32 M"
+   note_for_option: "容量 #{20+rand(50)} M"
   )
   end
 
@@ -516,7 +544,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  )
  20.times do |i|
    News.create(
-     name: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出#{i}",
+     name: "HIOKI发售高阻计SM7110、SM7120，SM7120世界首次实现2000V测试电压输出#{i}#{("a".."z").to_a[i]}",
      public_time: "2016-09-24",
      is_public: true,
      content: 
@@ -526,3 +554,14 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
      news_category_id: rand(6)+1
    )
  end
+
+ pdf_category = PdfCategory.create(
+   name: "PDF样张分类1"
+ )
+ 
+ p_a = ProductAttachment.create(
+   name: "存储记录仪 8860-50, 8861-50"
+   pdf: File.new(File.join(Rails.root, "doc/8860vup.pdf")),
+   pdf_category_id: pdf_category.id
+ )
+ p_a.products << Product.find_by_sku("8860-51")

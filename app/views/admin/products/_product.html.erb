@@ -5,8 +5,8 @@
   <th><%= product.title %></th>
   <th><%= product.desc %></th>
   <th>
-    <% if product.banner.thumb.present? %>
-      <%= image_tag product.banner.thumb.url %>
+    <% if product.thumb_image.thumb.present? %>
+      <%= image_tag product.thumb_image.thumb.url %>
   <% end %>
 </th>
   <th><%= link_to "编辑", [:edit, :admin, product], class: "btn btn-primary" %></th>
