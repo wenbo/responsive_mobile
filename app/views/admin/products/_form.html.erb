@@ -186,6 +186,18 @@
     <% end %>
     </div>
 
+		<br/>
+		
+    <div class="form-inputs">
+      <div class="form-group text requirede">
+        <label class="col-sm-2 control-label"> 升级・软件 </label>
+        <div class="col-sm-9">
+          <%= f.text_area :upgraded %>
+        </div>
+      </div>
+    </div>
+
+		
     <div class="form-inputs">
       <label class="col-sm-2 control-label"> 适用选件 </label>
     	<div id="option_fieldsets" class="control-label"><%= link_to_add_fields "添加选件", f, :option_categories %></div>
@@ -206,5 +218,6 @@
 <script>
 	$(document).on("turbolinks:load", function (){
   CKEDITOR.replace("product_summary");
+	CKEDITOR.replace("product_upgraded");
 	});
 </script>

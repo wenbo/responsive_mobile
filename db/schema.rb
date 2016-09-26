@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160924104218) do
     t.integer  "news_category_id"
     t.text     "content",          limit: 65535
     t.boolean  "is_public"
-    t.date     "public_time"
+    t.datetime "public_time"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.index ["news_category_id"], name: "index_news_on_news_category_id", using: :btree
