@@ -10,4 +10,8 @@ class Category < ApplicationRecord
     :url => "/system/categories/:id/:style.:extension",
     :path => ":rails_root/public/system/categories/:id/:style.:extension"
   validates_attachment_content_type :image, content_type: [/\Aimage/, "application/octet-stream"]
+
+  def self_and_descendants_id
+    self_and_descendants.map(&:id)  
+  end
 end

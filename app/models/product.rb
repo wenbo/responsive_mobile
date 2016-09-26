@@ -1,3 +1,4 @@
+# coding: utf-8
 require File.join(Rails.root, "app/uploaders/avatar_uploader.rb")
 class Product < ApplicationRecord
   UpgradeClassifier = [["下载文件", 1], ["操作说明书", 2]]
@@ -5,6 +6,7 @@ class Product < ApplicationRecord
   scope :options, -> { where(is_option: true) }
   scope :is_display, -> { where(is_display: true) }
   scope :is_main_body, -> { where(is_main_body: true) }
+  scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }  
 
   mount_uploader :banner, AvatarUploader
   mount_uploader :thumb_image, AvatarUploader
