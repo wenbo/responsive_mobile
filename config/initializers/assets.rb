@@ -9,5 +9,5 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( login.js ckeditor/* scrollsmoothly.js jquery-1.9.1 tab )
-Rails.application.config.assets.precompile += %w( login.css style.css )
+Rails.application.config.assets.precompile += %w( login.js ckeditor/* scrollsmoothly.js jquery-1.9.1 tab jquery-ui )
+Rails.application.config.assets.precompile += %w( login.css style.css jquery-ui.css )

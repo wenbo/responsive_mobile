@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<%= stylesheet_link_tag 'jquery-ui' %>
+<%= javascript_include_tag 'jquery-ui' %>
 <%= form_for [:admin, @news], html: {class: "form-horizontal"} do |f| %>
   <div class="box-body">
   <%= render 'admin/shared/error', model: @news %>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-
+		
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
