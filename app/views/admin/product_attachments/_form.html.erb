@@ -54,7 +54,7 @@
         <br/>
         <br/>
         <div class="indent">
-        <% Product.all.collect do |product| %>
+        <% Product.is_main_body.collect do |product| %>
           <div class="col-sm-3">
           <%= check_box_tag "product_attachment[product_ids][]", product.id, @product_attachment.products.include?(product), id: "product_#{product.sku}" %>
           <label for=<%= "product_#{product.sku} "%> class="checkbox-industry"><%= "#{product.sku}" %></label>

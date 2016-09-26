@@ -33,7 +33,7 @@ window.onload=window.onresize=function(){
     <h3 class="recorder_blue product_f20 m_top10">
       <%= @news.name %>
     </h3>
-    <%= @news.content %>
+    <%= raw @news.content %>
     <!--
     <p class="m_top20">
     <%= image_tag "front/repair_r5_c3.jpg", width: 543, height: 194 %>
