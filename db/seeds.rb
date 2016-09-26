@@ -560,7 +560,7 @@ User.create(username: "admin", password: "asdfasdf") if User.find_by(username: "
  )
  
  p_a = ProductAttachment.create(
-   name: "存储记录仪 8860-50, 8861-50"
+   name: "存储记录仪 8860-50, 8861-50",
    pdf: File.new(File.join(Rails.root, "doc/8860vup.pdf")),
    pdf_category_id: pdf_category.id
  )
