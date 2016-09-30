@@ -28,7 +28,7 @@ class Admin::SessionsController < Admin::BaseController
     end
     flash[:notice] = nil
     cookies[:admin] = {
-      value: @user.name,
+      value: @user.username,
 	    expires: 1.day.from_now,
 	    path: '/usercenter/admin/'
     }
@@ -37,6 +37,7 @@ class Admin::SessionsController < Admin::BaseController
 
   def destroy
     cookies.delete(:user)
+    cookies.delete(:admin, path: "/usercenter/admin/")
     session[:user_id] = nil
     redirect_to [:admin, :login]
   end

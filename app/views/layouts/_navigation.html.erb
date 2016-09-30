@@ -52,11 +52,11 @@
     <% end %>
   </li>
 
-  <!-- <li class="<%#= active?(:users) %>">
-			 <%#= link_to [:admin, :users] do %>
-       <i class="fa fa-users"></i> <span>顾客管理</span>
-			 <%# end %>
-  </li> -->
+  <li class="<%#= active?(:users) %>">
+			 <%= link_to "/usercenter/admin/login.php" do %>
+       <i class="fa fa-users"></i> <span>会员系统</span>
+			 <% end %>
+  </li>
   <li class="">
     <%= link_to [:admin, :logout], method: :delete do %>
     <i class="fa fa-sign-out"></i> <span>退出登录</span>
