@@ -38,6 +38,11 @@ class Admin::SessionsController < Admin::BaseController
   def destroy
     cookies.delete(:user)
     cookies.delete(:admin, path: "/usercenter/admin/")
+    cookies[:admin] = {
+      value: "",
+	    expires: 1.day.ago,
+	    path: '/usercenter/admin/'
+    }
     session[:user_id] = nil
     redirect_to [:admin, :login]
   end
