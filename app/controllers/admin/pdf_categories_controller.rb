@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::PdfCategoriesController < Admin::BaseController
   def index
     @pdf_categories = PdfCategory.page(params[:page]).per(20)
@@ -26,6 +27,14 @@ class Admin::PdfCategoriesController < Admin::BaseController
       redirect_to [:admin, :pdf_categories]
     else
       render 'edit'
+    end
+  end
+  
+  def destroy
+    @pdf_category = PdfCategory.find params[:id]
+    if @pdf_category.delete
+      flash[:notice] = "删除成功!"
+      redirect_to [:admin, :pdf_categories]
     end
   end
 
