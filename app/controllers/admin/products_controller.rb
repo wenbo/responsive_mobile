@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::ProductsController < Admin::BaseController
   helper_method :sort_column, :sort_direction
   
@@ -36,6 +37,11 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def destroy
+    @product = Product.find params[:id]
+    if @product.delete
+      flash[:notice] = "删除成功!"
+      redirect_to [:admin, :products]
+    end
   end
 
   def show
