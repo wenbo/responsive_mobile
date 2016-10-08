@@ -18,7 +18,7 @@
     <p class="current"><a href="/">首页</a> > <%= link_to "产品一览", "/products" %> > <%= @product.sku %></p>
     <h3 class="product_f25 m_top20"><%= @product.category.name %> <%= @product.sku%></h3>
     <p class="m_top10"><%= @product.feature %></p>
-    <p class="m_top30"><%= image_tag "front/recorder_r1_c1.jpg", width: 480, height: 280 %></p>
+    <p class="m_top30"><%= image_tag @product.banner.url, width: 480, height: 280 %></p>
     <ul class="recorder_title m_top30 clearfix">
       <li onclick=ShowSub(0,1) id=S_Menu_01 class=selectd>概　要</li>
       <li onclick=ShowSub(0,2) id=S_Menu_02>选　件</li>
