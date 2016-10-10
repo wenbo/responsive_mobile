@@ -35,6 +35,6 @@ class Admin::UtilitiesController < Admin::BaseController
 
   private
   def params_utility
-    params.require(:utility).permit(:title, :description, :link)
+    params.require(:utility).permit(:title, :description, :link, product_ids: [])
   end
 end
