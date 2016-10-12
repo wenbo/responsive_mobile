@@ -35,6 +35,9 @@
 				</section>
 			</aside>
 			<aside class="right-side">
+				<% if flash[:notice].present? %>
+				<div id="flash"><div class="flash_notice success" data-closable=""><div><%= flash[:notice] %></div></div></div>
+				<% end %>
 				<%= yield -%>
 			</aside>
 		</div>

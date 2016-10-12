@@ -14,7 +14,8 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new params_product
     if @product.save
-      redirect_to [:admin, :products]
+      flash[:notice] = "保存成功"
+      redirect_to [:edit, :admin, @product]
     else
       #debugger
       render 'new'
@@ -30,7 +31,8 @@ class Admin::ProductsController < Admin::BaseController
   def update
     @product = Product.find params[:id]
     if @product.update_attributes params_product
-      redirect_to [:admin, :products]
+      flash[:notice] = "更新成功"
+      redirect_to [:edit, :admin, @product]
     else
       render 'edit'
     end
@@ -49,7 +51,7 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def params_product
-    params.require(:product).permit(:sku, :title, :feature, :note_for_option, :desc, :video_path, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :summary, :upgraded, :category_id, option_categories_attributes: [:name, :note, :option_sku_collection, :_destroy, :id], upgrade_attachments_attributes: [:name, :attachment, :classifier_id, :_destroy, :id], industry_ids: [])
+    params.require(:product).permit(:sku, :title, :feature, :note_for_option, :desc, :video_path, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :option_avatar, :summary, :upgraded, :category_id, option_categories_attributes: [:name, :note, :option_sku_collection, :_destroy, :id], upgrade_attachments_attributes: [:name, :attachment, :classifier_id, :_destroy, :id], industry_ids: [])
   end
 
   def sort_column

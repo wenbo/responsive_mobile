@@ -164,7 +164,7 @@
         <label class="col-sm-2 control-label"> 作为选件图片 </label>
         <%= image_tag(@product.option_avatar.thumb.url) if @product.option_avatar? %>
         <div class="col-sm-4">
-          <%= f.file_field :avatar, class: "string required form-control" %>
+          <%= f.file_field :option_avatar, class: "string required form-control" %>
         </div>
       </div>
     </div>
