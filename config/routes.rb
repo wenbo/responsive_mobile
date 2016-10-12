@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'products' => 'products#index'
   get 'products/:id' => 'products#show'
+  get 'product' => 'products#product'
   get 'recorder' => 'products#show'
   get 'news' => 'news#index'
 

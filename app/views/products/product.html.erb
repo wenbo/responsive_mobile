@@ -1,0 +1,58 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'tab' %>
+<% end %>
+
+<a name="top" id="top"></a>
+<%= render partial: "shared/top_header" %>
+<div class="t_center"><%= image_tag "front/product_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
+<div class="product_title">
+  <ul class="news_content">
+		<li onclick=ShowSub(0,1) id=S_Menu_01 class="selectd"><p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p></li>
+		<li onclick=ShowSub(0,2) id=S_Menu_02><p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p></li>
+		<li onclick=ShowSub(0,3) id=S_Menu_03><p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p></li>
+		<li onclick=ShowSub(0,4) id=S_Menu_04><p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p></li>
+		<li onclick=ShowSub(0,5) id=S_Menu_05><p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p></li>
+  </ul>
+</div>
+
+<div id="pic_corpus_01" class="hioki_search clearfix">
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电力/新能源 <span class="product_f20">Power, Energy, Environment</span></h3>
+    <p class="product_dljs recorder_f16">电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，</p>
+  </div>
+  <%= render partial: "industry_sub_category" %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_02" class="hioki_search clearfix" style="display:none;">
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">汽车 <span class="product_f20">Automotive, Transport</span></h3>
+    <p class="product_dljs recorder_f16">电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，</p>
+  </div>
+	  <%= render partial: "industry_sub_category" %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_03" class="hioki_search clearfix" style="display:none;">
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电子零件 <span class="product_f20">Components, Semiconductors</span></h3>
+    <p class="product_dljs recorder_f16">电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，</p>
+  </div>
+	<%= render partial: "industry_sub_category" %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_04" class="hioki_search clearfix" style="display:none;">
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电池 <span class="product_f20">Battery</span></h3>
+    <p class="product_dljs recorder_f16">电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，</p>
+  </div>
+	<%= render partial: "industry_sub_category" %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_05" class="hioki_search clearfix" style="display:none;">
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">交通<span class="product_f20">（地铁、铁道、航空） Underground, Railway, Aviation</span></h3>
+    <p class="product_dljs recorder_f16">电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，电力新能源介绍假字，</p>
+  </div>
+	<%= render partial: "industry_sub_category" %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<%= render partial: "shared/footer" %>

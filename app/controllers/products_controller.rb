@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
     @root_categories = Category.roots
   end
 
+  def product
+    @root_categories = Category.roots
+  end
+
   def show
     @root_categories = Category.roots
     @product = Product.find params[:id]
