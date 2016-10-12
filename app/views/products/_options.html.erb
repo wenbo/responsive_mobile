@@ -12,9 +12,9 @@
       <dd class="fl"><%= image_tag option.option_avatar.url %></dd>
       <dt>
         <h3 class="recorder_f18"><%= option.title%></h3>
-        <p><%= option.note_for_option%></p>
-				<% if option.desc.present? %>
-        <p class="recorder_blue m_top10"><%= option.desc %></p>
+        <p><%= option.desc %></p>
+				<% if option.note_for_option.present? %>
+        <p class="recorder_blue m_top10"><%= option.note_for_option %></p>
 				<% end %>
       </dt>
     </dl>
