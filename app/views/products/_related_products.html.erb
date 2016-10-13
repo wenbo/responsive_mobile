@@ -1,21 +1,11 @@
 <h3 class="recorder_basic">相关产品</h3>
 <div class="m_top15 clearfix">
+	<% @product.related_products.each do |product| %>
   <div class="recorder_related">
-    <p class="recorder_jly">记录仪</p>
-    <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-    <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-    <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
+    <p class="recorder_jly"><%= product.category.name %></p>
+		<p><%= image_tag product.thumb_image.url, width: 250 %></p>
+    <p class="recorder_f18"><%= product.title %><br /><%= product.sku %></p>
+    <p class="recorder_blue"><%= product.desc %></p>
   </div>
-  <div class="recorder_related">
-    <p class="recorder_jly">记录仪</p>
-    <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-    <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-    <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
-  </div>
-  <div class="recorder_related">
-    <p class="recorder_jly">记录仪</p>
-    <p><%= image_tag "front/recorder_r5_c3.jpg", width: 250, height: 180 %></p>
-    <p class="recorder_f18">存储记录仪 8860-50<br />MR8847A</p>
-    <p class="recorder_blue">高速信号波形捕捉, 同时记录多路信号</p>
-  </div>
+	<% end %>
 </div>

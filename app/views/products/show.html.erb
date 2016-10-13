@@ -33,7 +33,9 @@
     <%= render partial: "pdf" %>
     <%= render partial: "upgrade" %>
     <%= render partial: "case" %>
+		<% if @related_products.present? %>
     <%= render partial: "related_products" %>
+		<% end %>
     <p class="m_top45">&nbsp;</p>
   </div>
 </div>

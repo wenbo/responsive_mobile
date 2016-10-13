@@ -34,6 +34,13 @@ class Product < ApplicationRecord
     where('sku LIKE ?', "%#{search}%")
   end
 
+  def related_products
+    category = self.category.root
+    product_ids = ProductAccessRecord.category_most_visited_products(category).map(&:product_id)
+    product_ids.delete(self.id)
+    related = Product.find product_ids[0..2]
+  end
+
   def visited
     record = ProductAccessRecord.find_by(product_id: self.id, category_id: self.category_id)
     if record.present?
