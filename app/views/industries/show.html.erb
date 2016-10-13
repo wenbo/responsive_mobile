@@ -1,0 +1,63 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'tab' %>
+<% end %>
+
+<a name="top" id="top"></a>
+<%= render partial: "shared/top_header" %>
+<div class="t_center"><%= image_tag "front/product_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
+<div class="product_title">
+  <ul class="news_content">
+		<% (1..5).each do |i| %>
+		<% if params[:id].to_i == i %>
+		<li onclick=ShowSub(0,<%= i %>) id=S_Menu_0<%= i %> class="selectd">
+			<% else %>
+		<li onclick=ShowSub(0,<%= i %>) id=S_Menu_0<%= i %> >
+			<% end %>
+			<p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p>
+		</li>
+		<% end %>
+  </ul>
+</div>
+
+<div id="pic_corpus_01" class="hioki_search clearfix" <%= params[:id].to_i == 1 ? '' : "style=display:none;" %>>
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电力/新能源 <span class="product_f20">Power, Energy, Environment</span></h3>
+    <p class="product_dljs recorder_f16"><%= @industries[0].note %></p>
+  </div>
+  <%= render partial: "industry_sub_category", locals: {industry: @industries[0]} %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+
+<div id="pic_corpus_02" class="hioki_search clearfix" <%= params[:id].to_i == 2 ? '' : "style=display:none;" %>>
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">汽车 <span class="product_f20">Automotive, Transport</span></h3>
+		<p class="product_dljs recorder_f16"><%= @industries[1].note %></p>
+  </div>
+	<%= render partial: "industry_sub_category", locals: {industry: @industries[1]} %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_03" class="hioki_search clearfix" <%= params[:id].to_i == 3 ? '' : "style=display:none;" %>>
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电子零件 <span class="product_f20">Components, Semiconductors</span></h3>
+    <p class="product_dljs recorder_f16"><%= @industries[2].note %></p>
+  </div>
+	<%= render partial: "industry_sub_category", locals: {industry: @industries[2]} %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_04" class="hioki_search clearfix" <%= params[:id].to_i == 4 ? '' : "style=display:none;" %>>
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">电池 <span class="product_f20">Battery</span></h3>
+    <p class="product_dljs recorder_f16"><%= @industries[3].note %></p>
+  </div>
+	<%= render partial: "industry_sub_category", locals: {industry: @industries[3]} %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<div id="pic_corpus_05" class="hioki_search clearfix" <%= params[:id].to_i == 5 ? '' : "style=display:none;" %>>
+  <div class="m_top45 clearfix">
+  	<h3 class="product_f42 fl">交通<span class="product_f20">（地铁、铁道、航空） Underground, Railway, Aviation</span></h3>
+		<p class="product_dljs recorder_f16"><%= @industries[4].note %></p>
+  </div>
+	<%= render partial: "industry_sub_category", locals: {industry: @industries[4]} %>
+  <p class="m_top45">&nbsp;</p>
+</div>
+<%= render partial: "shared/footer" %>

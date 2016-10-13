@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :news_categories, only: [:show]
   resources :categories, only: [:show]
   resources :news, only: [:show]
+  resources :industries, only: [:show]
 
 
 

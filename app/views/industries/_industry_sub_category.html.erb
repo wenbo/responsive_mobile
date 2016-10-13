@@ -1,0 +1,15 @@
+<ul class="m_top45 clearfix">
+		<% industry.categories.each_with_index do |r_c, index| %>
+		<% if index % 4 == 0 %>
+  	<li class="hioki_category">
+			<% else %>
+		<li class="hioki_category m_left25">
+			<% end %>
+			<a href="/categories/<%= r_c.id %>">
+				<dd><%= image_tag r_c.image.url, width: 120, height: 100 %></dd>
+				<dt><%= r_c.name %></dt>
+			</a>
+		</li>
+		<% end %>
+</ul>
+
