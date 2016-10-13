@@ -31,8 +31,11 @@
 		<dt class="fl"><%= image_tag "front/sidebar_search01.jpg", width: 135 %></dt>
 		<dd>
 			<h3>HIOKI商品搜索</h3>
-			<label><input type="text" name="" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" type="button" /></label>
+			<%= form_tag "/products", method: :get, id: "search_form", name: "search_form" do %>
+			<label>
+				<input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
 			<p><input name="" type="checkbox" value="" /> 製品検索に生産終了機種を含める</p>
+			<% end %>
 		</dd>
 	</dl>
 </div>

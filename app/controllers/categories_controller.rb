@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find params[:id]
+    @category_parent = @category.parent
     if params[:search].present?
       @products = Product.category_all_products(@category).search(params[:search]).is_display.is_main_body.page(params[:page]).per(20)
     else

@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::CategoriesController < Admin::BaseController
   def index
     @categories = Category.page(params[:page]).per(20)
@@ -28,6 +29,15 @@ class Admin::CategoriesController < Admin::BaseController
       render 'edit'
     end
   end
+
+  def destroy
+    @category = Category.find params[:id]
+    if @category.delete
+      flash[:notice] = "删除成功!"
+      redirect_to [:admin, :categories]
+    end
+  end
+
 
   private
   def params_category
