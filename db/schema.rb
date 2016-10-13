@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924104218) do
+ActiveRecord::Schema.define(version: 20161013032549) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20160924104218) do
     t.datetime "image_updated_at"
     t.index ["lft"], name: "index_categories_on_lft", using: :btree
     t.index ["rgt"], name: "index_categories_on_rgt", using: :btree
+  end
+
+  create_table "categories_industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "category_id"
+    t.integer "industry_id"
+    t.index ["category_id"], name: "index_categories_industries_on_category_id", using: :btree
+    t.index ["industry_id"], name: "index_categories_industries_on_industry_id", using: :btree
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -66,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160924104218) do
     t.integer  "news_category_id"
     t.text     "content",          limit: 65535
     t.boolean  "is_public"
-    t.date "public_time"
+    t.date     "public_time"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.index ["news_category_id"], name: "index_news_on_news_category_id", using: :btree

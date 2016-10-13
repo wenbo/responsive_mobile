@@ -53,3 +53,5 @@ rails g model UpgradeAttachment name:string product:references classifier_id:int
 rails generate paperclip upgrade_attachment attachment
 
 rails g migration create_products_product_attachments product:references product_attachment:references
+
+rails g migration create_categories_industries category:references industry:references

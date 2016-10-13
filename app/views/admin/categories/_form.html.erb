@@ -41,6 +41,25 @@
       </div>
     </div>
 
+		
+    <div class="form-inputs">
+      <div class="form-group string">
+        <label class="string col-sm-2 control-label"> 关联行业
+        </label>
+        <br/>
+        <br/>
+        <div class="indent">
+					<% Industry.roots.sort_by do |i| i.id end.each do |child| %>
+          <div class="col-sm-3">
+						<%= check_box_tag "category[industry_ids][]", child.id, @category.industries.include?(child), id: "industry_#{child.number}" %>
+						<label for=<%= "industry_#{child.number} "%> class="checkbox-industry"><%= "#{child.number}-#{child.name}" %></label>
+					</div>
+					<% end %>
+				</div>
+      </div>
+    </div>
+
+
   </fieldset>
   <div class="form-group">
     <div class="col-sm-4 col-sm-offset-2">
