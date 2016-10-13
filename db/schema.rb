@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013032549) do
+ActiveRecord::Schema.define(version: 20161013070429) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -118,6 +118,16 @@ ActiveRecord::Schema.define(version: 20161013032549) do
     t.index ["parent_id"], name: "index_pdf_categories_on_parent_id", using: :btree
   end
 
+  create_table "product_access_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
+    t.integer  "visited_count"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["category_id"], name: "index_product_access_records_on_category_id", using: :btree
+    t.index ["product_id"], name: "index_product_access_records_on_product_id", using: :btree
+  end
+
   create_table "product_attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "note"
@@ -209,6 +219,8 @@ ActiveRecord::Schema.define(version: 20161013032549) do
 
   add_foreign_key "news", "news_categories"
   add_foreign_key "option_categories", "products"
+  add_foreign_key "product_access_records", "categories"
+  add_foreign_key "product_access_records", "products"
   add_foreign_key "product_attachments", "pdf_categories"
   add_foreign_key "products", "categories"
   add_foreign_key "upgrade_attachments", "products"

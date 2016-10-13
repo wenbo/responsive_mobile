@@ -34,4 +34,18 @@ class Product < ApplicationRecord
     where('sku LIKE ?', "%#{search}%")
   end
 
+  def visited
+    record = ProductAccessRecord.find_by(product_id: self.id, category_id: self.category_id)
+    if record.present?
+      record.visited_count += 1
+      record.save
+    else
+      record = ProductAccessRecord.create(
+        product_id: self.id,
+        category_id: self.category_id,
+        visited_count: 1
+      )
+    end
+  end
+
 end

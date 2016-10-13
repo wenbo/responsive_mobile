@@ -36,7 +36,7 @@
       <div class="form-group">
         <label class="col-sm-2 control-label"> 从属分类 </label>
         <div class="col-sm-4">
-          <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "string required form-control"  %>
+          <%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }.unshift(["一级分类", '']), {}, class: "string required form-control"  %>
         </div>
       </div>
     </div>

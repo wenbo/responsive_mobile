@@ -3,6 +3,7 @@ class Category < ApplicationRecord
   validates :name, uniqueness: true
   #acts_as_tree order: "name"
   has_many :products
+  has_many :product_access_records
   has_and_belongs_to_many :industries
   
   acts_as_nested_set
