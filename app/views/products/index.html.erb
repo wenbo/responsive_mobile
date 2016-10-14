@@ -12,12 +12,7 @@
   </div>
   <div class="product_right">
     <p class="current"><a href="/">首页</a> > 产品一览</p>
-		<h3 class="product_f25 m_top20"><%= @root_categories.first.name %></h3>
-    <ul class="product_category m_top25 clearfix">
-			<% @root_categories.first.children.each do |category| %>
-      <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
-			<% end %>
-    </ul>
+		<h3 class="product_f25 m_top20">全部产品</h3>
 		<% if false %>
     <ul class="product_search">
       <li>出　力　<select name="">
