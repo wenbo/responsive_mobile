@@ -38,7 +38,7 @@ class Product < ApplicationRecord
     category = self.category.root
     product_ids = ProductAccessRecord.category_most_visited_products(category).map(&:product_id)
     product_ids.delete(self.id)
-    related = Product.is_display.find(product_ids)[0..2]
+    related = Product.is_display.where(id: product_ids)[0..2]
   end
 
   def visited
