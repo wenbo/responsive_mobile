@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   UpgradeClassifier = [["下载文件", 1], ["操作说明书", 2]]
   scope :ordered, -> {order('created_at DESC')}
   scope :options, -> { where(is_option: true) }
-  scope :is_display, -> { where(is_display: true) }
+  scope :is_display, -> { where(is_display: true, is_deleted: false) }
   scope :is_main_body, -> { where(is_main_body: true) }
   scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }  
 
@@ -38,7 +38,7 @@ class Product < ApplicationRecord
     category = self.category.root
     product_ids = ProductAccessRecord.category_most_visited_products(category).map(&:product_id)
     product_ids.delete(self.id)
-    related = Product.find product_ids[0..2]
+    related = Product.is_display.find(product_ids)[0..2]
   end
 
   def visited
