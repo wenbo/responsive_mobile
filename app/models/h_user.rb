@@ -3,6 +3,7 @@ class HUser < ApplicationRecord
   establish_connection :web
   self.table_name = "h_user"
   self.inheritance_column = 'h_user_type'
+  self.primary_key = "user_id"
 
   def valid_password?(str)
     Digest::SHA1.hexdigest(str) == self.password
