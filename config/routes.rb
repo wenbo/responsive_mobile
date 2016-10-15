@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  post "login_async" => "sessions#login_async"
+  post "sessions/login_async" => "sessions#login_async"
+  get "sessions/logout_async" => "sessions#logout_async"
+  # delete "logout_async" => "sessions#logout_async"
 
   resources :news_categories, only: [:show]
   resources :categories, only: [:show]

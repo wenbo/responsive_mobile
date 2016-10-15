@@ -13,7 +13,7 @@ $(document).ready(function() {
         $.ajax({
 						beforeSend: send_xhr(),
 						type: "post",                                                                            
-						url: "/login_async",                                      
+						url: "/sessions/login_async",                                      
 						data: {
 								email: $("#email").val(),
 								password:  $("#password").val()

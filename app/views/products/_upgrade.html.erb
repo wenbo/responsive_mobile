@@ -9,13 +9,14 @@
     <p>如果还没有登陆客户信息，请先进行登录。</p>
     <div class="recorder_please">
       <div class="m_top25 clearfix"><label>用户名<br />(邮箱地址)</label><input name="email" id="email" type="text" /></div>
-      <div class="m_top25 clearfix"><label class="m_top10">密　码</label><input name="password" id="password" type="text" /><br />
+      <div class="m_top25 clearfix"><label class="m_top10">密　码</label><input name="password" id="password" type="password" /><br />
         <p><a href="#">忘记密码</a></p></div>
     </div>
     <input id="submit" name="" type="submit" class="recorder_login" value="" />
     <p class="m_top35"><a href="register.html"><%= image_tag "front/recorder04_02.jpg", width: 197, height: 86 %></a></p>
   </div>
 </div>
+<%= render partial: "upgrade_content" %>
 <% else %>
 <%= render partial: "upgrade_content" %>
 <% end %>
