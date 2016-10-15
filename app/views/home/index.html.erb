@@ -42,15 +42,25 @@
 <div class="sidebar_search02">
 	<dl>
 		<dt class="fl"><%= image_tag "front/sidebar_search11.jpg", width: 135 %></dt>
+		<% if !session[:user_id].present? %>
+		<%= form_tag "sessions/" do |f| %>
 		<dd>
-			<label>用户名 <input type="text" name="" value="" /></label>
-			<label>密　码 <input type="text" name="" value="" /></label>
+			<label>用户名 <input type="text" name="email" value="<%= params[:email] %>" /></label>
+			<label>密　码 <input type="text" name="password" value="<%= params[:password] %>" /></label>
 			<ul class="m_top15">
       	<li><input name="" type="submit" value="登录" class="sidebar_ld" /></li>
 				<li><a href="#" class="sidebar_ld">注册</a></li>
 				<li><a href="#">忘记密码</a></li>
 			</ul>
 		</dd>
+		<% end %>
+		
+		<% else %>
+		<dd>
+			<p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
+      <p class="sidebar_tc"><a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">退出登录</a></p>
+    </dd>
+		<% end %>
 	</dl>
 </div>
 <%= render partial: "shared/top_header" %>
