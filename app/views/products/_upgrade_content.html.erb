@@ -1,5 +1,6 @@
 <div id="pic_corpus_04" class="upgrade_content recorder04_content" style="display:none;">
-  <h3 class="recorder04_basic">软件</h3>
+	<% @product.upgrade_attachments.group_by do |file| file.classifier_id end.each do |id, files| %>
+  <h3 class="recorder04_basic"><%= Product::UpgradeClassifier[id-1][0] %></h3>
   <p class="recorder_f23 m_top25">电力测试仪</p>
   <div class="m_top20"><table width="1000" border="0" cellspacing="0" cellpadding="0" class="recorder_upgrade">
       <tr>
@@ -10,83 +11,17 @@
         <th width="95" bgcolor="#FFFEE2">容量</th>
         <th bgcolor="#FFFEE2">下载</th>
       </tr>
+			<% files.each do |file| %>
       <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
+        <td><%= file.sku %></td>
+        <td><%= file.name %></td>
+        <td><%= file.attachment_file_name %></td>
+        <td><%= file.desc %></td>
+        <td><%= number_to_human_size(file.attachment_file_size) %></td>
+        <td><%= link_to "下载文件", file.attachment.url %></td>
       </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
+			<% end %>
     </table>
   </div>
-  <h3 class="recorder04_basic">升级 </h3>
-  <p class="recorder_f23 m_top25">电力测试仪</p>
-  <div class="m_top20"><table width="1000" border="0" cellspacing="0" cellpadding="0" class="recorder_upgrade">
-      <tr>
-        <th width="130" height="50" bgcolor="#F0F7FD">型号</th>
-        <th width="160" bgcolor="#F0F7FD">品名</th>
-        <th width="170" bgcolor="#F0F7FD">文件</th>
-        <th width="340" bgcolor="#F0F7FD">记述</th>
-        <th width="95" bgcolor="#F0F7FD">容量</th>
-        <th bgcolor="#F0F7FD">下载</th>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-      <tr>
-        <td>3169-20</td>
-        <td>钳式功率计</td>
-        <td>3169用RS通讯软件</td>
-        <td>通过RS-232C或调制解调器控制 3169-20/21</td>
-        <td>1.7MB</td>
-        <td>下载文件</td>
-      </tr>
-    </table>
-  </div>
+	<% end %>
 </div>
