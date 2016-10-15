@@ -27,15 +27,15 @@ class SessionsController < ApplicationController
     if user.valid_password?(params[:password])
       session[:user_id] = user.id
       session[:user_name] = user.name
-      redirect_to "/"
+      redirect_to "/demo"
     else
-      redirect_to "/"
+      redirect_to "/demo"
     end    
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to "/"
+    redirect_to "/demo"
   end
   
 end
