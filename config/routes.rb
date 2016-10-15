@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :news_categories, only: [:show]
   resources :categories, only: [:show]
   resources :news, only: [:show]

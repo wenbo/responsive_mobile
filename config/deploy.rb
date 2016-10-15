@@ -1,4 +1,4 @@
-lock '3.6.1'
+lock '3.6.0'
 
 set :application, 'hioki_rails'
 set :repo_url, 'git@gitlab.com:hioki/hiroki_rails.git'
