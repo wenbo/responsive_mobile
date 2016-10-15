@@ -57,3 +57,8 @@ rails g migration create_products_product_attachments product:references product
 rails g migration create_categories_industries category:references industry:references
 
 rails g model ProductAccessRecord product:references category:references count:integer
+
+rails g migration add_visited_count_to_products visited_count:integer
+
+rails g migration add_sku_and_desc_to_upgrade_attachments sku:string  desc:string
+

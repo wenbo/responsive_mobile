@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
       @products = Product.search(params[:search]).is_display.is_main_body
       render :search
     else
-      @products = Product.is_display.is_main_body
+      @products = Product.ordered.is_display.is_main_body
     end
   end
 

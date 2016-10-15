@@ -1,11 +1,26 @@
 <fieldset>
-    <legend></legend>
-    <div class="form-group">
-    <label class="col-sm-2 control-label col-sm-offset-1"> 标题 </label>
+  <legend></legend>
+  <div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 型号 </label>
+    <div class="col-sm-6">
+      <%= f.text_field :sku, class: "string required form-control" %>
+    </div>
+  </div>
+	
+	<div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 品名 </label>
     <div class="col-sm-6">
       <%= f.text_field :name, class: "string required form-control" %>
     </div>
+	</div>
+
+	<div class="form-group">
+    <label class="col-sm-2 control-label col-sm-offset-1"> 记述 </label>
+    <div class="col-sm-6">
+      <%= f.text_field :desc, class: "string required form-control" %>
+    </div>
   </div>
+
   <div class="form-group">
     <label class="col-sm-2 control-label col-sm-offset-1"> 文档 </label>
     <%=  f.object.attachment_file_name %>
@@ -16,10 +31,10 @@
   <div class="form-group">
     <label class="col-sm-2 control-label col-sm-offset-1"> 类别 </label>
     <div class="col-sm-6">
-        <div class="col-sm-6">
-          <%= f.select :classifier_id, Product::UpgradeClassifier, {}, class: "form-control" %>
-        </div>
+      <div class="col-sm-6">
+        <%= f.select :classifier_id, Product::UpgradeClassifier, {}, class: "form-control" %>
+      </div>
     </div>
   </div>
-		<p class="delete_link"><%= delete_image f %></p>
+	<p class="delete_link"><%= delete_image f %></p>
 </fieldset>

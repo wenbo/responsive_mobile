@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013070429) do
+ActiveRecord::Schema.define(version: 20161015074729) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20161013070429) do
     t.integer  "category_id"
     t.string   "note_for_option"
     t.string   "video_path"
+    t.integer  "visited_count"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end
@@ -199,6 +200,8 @@ ActiveRecord::Schema.define(version: 20161013070429) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.string   "sku"
+    t.string   "desc"
     t.index ["product_id"], name: "index_upgrade_attachments_on_product_id", using: :btree
   end
 
