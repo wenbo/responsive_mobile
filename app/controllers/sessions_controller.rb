@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   
   def login_async
     user = HUser.find_by(email: params[:email])
-    if user.valid_password?(params[:password])
+    if user.present? && user.valid_password?(params[:password])
       session[:user_id] = user.id
       sesion[:user_name] = user.name
         render json: {code: 200}
