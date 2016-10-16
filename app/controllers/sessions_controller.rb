@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = HUser.find_by(email: params[:email])
     if user.present? && user.valid_password?(params[:password])
       session[:user_id] = user.id
-      sesion[:user_name] = user.name
+      session[:user_name] = user.name
         render json: {code: 200}
     else
       render json: {code: 404, mmessage: "error"}
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
   def create
     user = HUser.find_by(email: params[:email])
-    if user.valid_password?(params[:password])
+    if user.present? && user.valid_password?(params[:password])
       session[:user_id] = user.id
       session[:user_name] = user.name
       redirect_to "/demo/"
