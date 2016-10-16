@@ -23,6 +23,8 @@
 	});
 	});
 </script>
+<%= javascript_include_tag 'main' %>
+<%= csrf_meta_tags %>
 <% end %>
 
 <a name="top" id="top"></a>
@@ -43,12 +45,12 @@
 	<dl>
 		<dt class="fl"><%= image_tag "front/sidebar_search11.jpg", width: 135 %></dt>
 		<% if !session[:user_id].present? %>
-		<%= form_tag "sessions/" do |f| %>
+		<%= form_tag "sessions/", id: "login_form" do |f| %>
 		<dd>
-			<label>用户名 <input type="text" name="email" value="<%= params[:email] %>" /></label>
-			<label>密　码 <input type="password" name="password" value="<%= params[:password] %>" /></label>
+			<label>用户名 <input type="text" id="email" name="email" value="<%= params[:email] %>" /></label>
+			<label>密　码 <input type="password" id="password" name="password" value="<%= params[:password] %>" /></label>
 			<ul class="m_top15">
-      	<li><input name="" type="submit" value="登录" class="sidebar_ld" /></li>
+      	<li><input name="" type="" value="登录" class="sidebar_ld" /></li>
 				<li><a href="#" class="sidebar_ld">注册</a></li>
 				<li><a href="#">忘记密码</a></li>
 			</ul>

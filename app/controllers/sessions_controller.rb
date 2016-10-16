@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user.present? && user.valid_password?(params[:password])
       session[:user_id] = user.id
       session[:user_name] = user.name
-        render json: {code: 200}
+        render json: {code: 200, user_name: user.name}
     else
       render json: {code: 404, mmessage: "error"}
     end
