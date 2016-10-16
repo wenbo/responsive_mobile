@@ -24,7 +24,7 @@ $(document).ready(function() {
 										$(".upgrade_content").show();
 										$(".upgrade_login_form").hide();
 								}
-								// if (data.code == 401) $("#shadow, #msg_3").show();
+								if (data.code == 404) {alert("请输入正确账号或密码")};
 								// if (data.code == 402) $("#shadow, #msg_4").show();
 						}
         });
