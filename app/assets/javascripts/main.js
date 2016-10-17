@@ -22,7 +22,7 @@ $(document).ready(function() {
 						success: function (data) { 
 								if (data.code == 200) {
 										$(".upgrade_content").show();
-										$(".upgrade_login_form").hide();
+										$(".upgrade_login_form").remove();
 								}
 								if (data.code == 404) {alert("请输入正确账号或密码")};
 								// if (data.code == 402) $("#shadow, #msg_4").show();
