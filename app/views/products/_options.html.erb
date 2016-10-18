@@ -16,6 +16,11 @@
 				<% if option.note_for_option.present? %>
         <p class="recorder_blue m_top10"><%= option.note_for_option %></p>
 				<% end %>
+				<% if option.summary.present? %>
+				<p class="recorder_xx">
+					<a href="#">详细内容 &gt;&gt;</a>
+				</p>
+				<% end %>
       </dt>
     </dl>
 		<% end %>
