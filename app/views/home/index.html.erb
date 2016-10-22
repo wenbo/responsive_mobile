@@ -44,7 +44,7 @@
 <div class="sidebar_search02">
 	<dl>
 		<dt class="fl"><%= image_tag "front/sidebar_search11.jpg", width: 135 %></dt>
-		<% if !session[:user_id].present? %>
+		<% if !session[:user_name].present? %>
 		<%= form_tag "sessions/", id: "login_form" do |f| %>
 		<dd>
 			<label>用户名 <input type="text" id="email" name="email" value="<%= params[:email] %>" /></label>
