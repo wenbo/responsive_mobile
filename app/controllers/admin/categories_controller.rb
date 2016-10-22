@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::BaseController
   helper_method :sort_column, :sort_direction
 
   def index
-    @categories = Category.order(sort_column + " " + sort_direction).page(params[:page]).per(20)
+    @categories = Category.unscoped.order(sort_column + " " + sort_direction).page(params[:page]).per(20)
   end
 
   def new
