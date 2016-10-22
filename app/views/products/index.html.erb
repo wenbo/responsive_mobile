@@ -12,9 +12,9 @@
   </div>
   <div class="product_right">
     <p class="current"><a href="/">首页</a> > 产品一览</p>
-		<h3 class="product_f25 m_top20">全部产品</h3>
-		<% if false %>
-    <ul class="product_search">
+    <h3 class="product_f25 m_top20">全部产品</h3>
+    <% if false %>
+      <ul class="product_search">
       <li>出　力　<select name="">
         <option>出　力</option>
       </select>
@@ -30,53 +30,9 @@
     <% end %>
       </li>
     </ul>
-		<% end %>
-    <ul class="product_list m_top30">
-      <% @products.each do |product| %>
-        <% if product.is_recommended? %>
-        <li>
-      <p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
-      <dl class="product_tj">
-        <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
-        <dt class="product_dt01">
-        <h3 class="product_f21"><%= product.title %></h3>
-        <p class="product_f16 m_top5"><%= product.desc %> </p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
-        </dt>
-        <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
-      </li>
-    <% end %>
-      <% if product.is_new? %>
-        <li>
-      <p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
-      <dl class="product_new">
-        <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
-        <dt class="product_dt01">
-        <h3 class="product_f21"><%= product.title %></h3>
-        <p class="product_f16 m_top5"><%= product.desc %></p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
-        </dt>
-        <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
-      </li>
-    <% end %>
-      <% if !product.is_new? and !product.is_recommended? %>
-        <li>
-      <dl>
-        <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
-        <dt class="product_dt01">
-        <h3 class="product_f21"><%= product.title %></h3>
-        <p class="product_f16 m_top5"><%= product.desc %></p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
-        </dt>
-        <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
-      </li>
-    <% end %>
-    <% end %>
-    </ul>
-    <p class="m_top45">&nbsp;</p>
+  <% end %>
+  <%= render partial: "products/products" %>
+  <p class="m_top45">&nbsp;</p>
   </div>
 </div>
 <%= render partial: "shared/footer" %>
