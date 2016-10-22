@@ -32,7 +32,7 @@ class Product < ApplicationRecord
   end
 
   def self.search(search)      
-    where('sku LIKE ?', "%#{search}%")
+    where('sku LIKE :search OR search_keywords LIKE :search', {search: "%#{search}%"})
   end
 
   def related_products

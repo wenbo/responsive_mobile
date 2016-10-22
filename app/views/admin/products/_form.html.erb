@@ -28,6 +28,17 @@
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
+          搜索用关键字<abbr title="required">*</abbr>
+        </label>
+        <div class="col-sm-4">
+          <%= f.text_field :search_keywords, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
           产品分类<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
