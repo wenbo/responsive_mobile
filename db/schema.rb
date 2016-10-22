@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022023633) do
+ActiveRecord::Schema.define(version: 20161022032618) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161022023633) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "position"
     t.index ["lft"], name: "index_categories_on_lft", using: :btree
     t.index ["rgt"], name: "index_categories_on_rgt", using: :btree
   end
