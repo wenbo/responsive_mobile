@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
   default_scope  -> {order('position ASC')}
-  validates :name, :position, uniqueness: true
+  validates :position, uniqueness: true
+  validates :name, uniqueness: { scope: :parent_id }
   #acts_as_tree order: "name"
   has_many :products
   has_and_belongs_to_many :industries
