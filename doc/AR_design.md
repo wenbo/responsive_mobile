@@ -61,4 +61,5 @@ rails g model ProductAccessRecord product:references category:references count:i
 rails g migration add_visited_count_to_products visited_count:integer
 
 rails g migration add_sku_and_desc_to_upgrade_attachments sku:string  desc:string
-
+rails g migration add_search_keywords_to_products search_keywords:string
+rails g migration add_position_to_categories position:integer

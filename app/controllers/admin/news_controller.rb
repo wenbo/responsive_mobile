@@ -10,6 +10,7 @@ class Admin::NewsController < Admin::BaseController
   def create
     @news = News.new params_news
     if @news.save
+      flash[:notice] = "保存成功"
       redirect_to admin_news_index_path
     else
       render 'new'
@@ -23,6 +24,7 @@ class Admin::NewsController < Admin::BaseController
   def update
     @news = News.find params[:id]
     if @news.update_attributes params_news
+      flash[:notice] = "更新成功"
       redirect_to edit_admin_news_path(@news)
     else
       render 'edit'

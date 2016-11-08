@@ -49,7 +49,9 @@ $(document).ready(function() {
 										$("#login_form dd").html(
 														'<p class="sidebar_p recorder_f18">'+ data.user_name + '，HIOKI欢迎您</p>'+
 														'<p class="sidebar_tc"><a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">退出登录</a></p>'
-										)
+										);
+                                                                                $("#logout_in_header").show();
+
 								}
 								if (data.code == 404) {alert("请输入正确账号或密码")};
 								// if (data.code == 402) $("#shadow, #msg_4").show();

@@ -80,7 +80,9 @@
       buttonImageOnly: true,
       buttonText: "Select date"
       });
-  CKEDITOR.replace("news_content");
  })
+$(document).on("turbolinks:load", function (){
+    CKEDITOR.replace("news_content");
+    });
       </script>
 

@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def logout_async
     session[:user_id] = nil
+    session[:user_name] = nil
     render json: {code: 200}
   end
 
@@ -35,6 +36,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:user_name] = nil
     redirect_to "/demo/"
   end
   
