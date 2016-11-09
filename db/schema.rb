@@ -164,8 +164,8 @@ ActiveRecord::Schema.define(version: 20161109052615) do
     t.boolean  "is_option"
     t.boolean  "is_display"
     t.boolean  "is_recommended"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "thumb_image"
     t.boolean  "is_deleted"
     t.integer  "category_id"
@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(version: 20161109052615) do
     t.string   "video_path"
     t.integer  "visited_count"
     t.string   "search_keywords"
-    t.integer  "position"
+    t.integer  "position",                         default: 99999
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end
