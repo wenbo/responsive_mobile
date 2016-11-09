@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022032618) do
+ActiveRecord::Schema.define(version: 20161109052615) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(version: 20161022032618) do
     t.string   "video_path"
     t.integer  "visited_count"
     t.string   "search_keywords"
+    t.integer  "position"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end

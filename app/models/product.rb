@@ -3,11 +3,13 @@ require File.join(Rails.root, "app/uploaders/avatar_uploader.rb")
 class Product < ApplicationRecord
   UpgradeClassifier = [["下载文件", 1], ["操作说明书", 2]]
   scope :ordered, -> {order('created_at DESC')} #{order(is_recommended: :desc, is_new: :desc)}
-  scope :ordered, -> {order(is_recommended: :desc, is_new: :desc, visited_count: :desc)}
+  scope :ordered, -> {order(is_recommended: :desc, is_new: :desc, position: :asc, visited_count: :desc)}
   scope :options, -> { where(is_option: true) }
   scope :is_display, -> { where(is_display: true, is_deleted: false) }
   scope :is_main_body, -> { where(is_main_body: true) }
-  scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }  
+  scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
+
+  validates :position, uniqueness: { scope: :category_id }
 
   mount_uploader :banner, AvatarUploader
   mount_uploader :thumb_image, AvatarUploader
