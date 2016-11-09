@@ -9,7 +9,7 @@ class Product < ApplicationRecord
   scope :is_main_body, -> { where(is_main_body: true) }
   scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
 
-  validates :position, uniqueness: { scope: :category_id }
+  # validates :position, uniqueness: { scope: :category_id }
 
   mount_uploader :banner, AvatarUploader
   mount_uploader :thumb_image, AvatarUploader
