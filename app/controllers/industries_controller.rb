@@ -5,4 +5,9 @@ class IndustriesController < ApplicationController
     @root_categories = Category.roots
     @industries = Industry.ordered.roots
   end
+
+  def products
+    @root_categories = Category.roots
+    @industries = Industry.ordered.roots
+  end
 end

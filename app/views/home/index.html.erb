@@ -121,7 +121,7 @@
 			<p class="hioki_f15 m_top5">&nbsp;&gt; 新闻一览</p>
 			<ul>
 				<% NewsCategory.all.each do |nc| %>
-      	<li>・<%= nc.name %></li>
+      	<li>・<%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
 				<% end %>
 			</ul>
 		</div>

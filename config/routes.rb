@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "sessions/logout" => "sessions#destroy"
   post "sessions/login_async" => "sessions#login_async"
   get "sessions/logout_async" => "sessions#logout_async"
+  get "industries/:id/products/" => "industries#products"
   # delete "logout_async" => "sessions#logout_async"
   resources :sessions
 
