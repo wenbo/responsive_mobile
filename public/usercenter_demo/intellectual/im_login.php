@@ -29,23 +29,9 @@
 </div>
 <div class="t_center"><img src="../images/intellectual_r1_c1.jpg" alt="HIOKI" width="1401" height="328" /></div>
 <div class="news_content clearfix">
-  <div class="product_left" >
-	<h3>智测会</h3>
-	<ul class="m_top10">
-	  <li><a href="im_login.html">会员登录</a></li>
-	  <li><a href="intellectual.html">智测会介绍</a></li>
-	  <li><a href="im_download.html">资料下载</a>
-      	<ul class="m_top5">
-		  <li><a href="im_download.html">· 说明书</a></li>
-          <li><a href="im_download.html">· 产品外观图</a></li>
-          <li><a href="im_download.html">· 电子报</a></li>
-          <li><a href="im_download.html">· 软件</a></li>
-          <li><a href="im_download.html">· 其它</a></li>
-        </ul>
-      </li>
-      <li><a href="im_modify.html">会员信息修改</a></li>
-	</ul>
-  </div>
+<?php 
+include("product_left.php");//加载template
+?>
   <div class="product_right">
   	<p class="current"><a href="../index.html">首页</a> > 智测会</p>
     <h3 class="product_f25 m_top20">HIOKI智测会欢迎您！</h3>
