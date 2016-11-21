@@ -93,7 +93,7 @@ function check()
         <input name="" type="submit" class="recorder_login" value="" />
 </form>
 
-        <p class="m_top35"><a href="../register.html"><img src="../images/recorder04_02.jpg" width="197" height="86" /></a></p>
+        <p class="m_top35"><a href="../register.php"><img src="../images/recorder04_02.jpg" width="197" height="86" /></a></p>
       </div>
     </div>
     
