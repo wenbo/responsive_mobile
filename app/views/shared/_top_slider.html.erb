@@ -1,0 +1,21 @@
+<div id="module_1" class="swiper-container swiper-container-horizontal">
+  <ul class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-5520px, 0px, 0px);"><li class="swiper-slide swiper-slide-duplicate" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c5.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="4"></li>
+    <li class="swiper-slide" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c1.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="0"></li>
+    <li class="swiper-slide swiper-slide-prev" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c2.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="1"></li>
+      <li class="swiper-slide swiper-slide-active" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c3.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="2"></li>
+      <li class="swiper-slide swiper-slide-next" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c4.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="3"></li>
+      <li class="swiper-slide" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c5.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="4"></li>
+    <li class="swiper-slide swiper-slide-duplicate" style="background: url(&quot;<%= asset_path 'front/hioki_r7_c1.jpg' %>&quot;) center top no-repeat; width: 1840px;" data-swiper-slide-index="0"></li></ul>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-clickable" style="text-align: right;"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+    <script>
+      var swiper = new Swiper('#module_1.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+        loopAdditionalSlides: 0,
+        autoplay: 5000, //可选选项，自动滑动
+        autoplayDisableOnInteraction: false
+      });
+    </script>
+  </div>

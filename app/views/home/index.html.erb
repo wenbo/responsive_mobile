@@ -23,7 +23,7 @@
 	});
 	});
 </script>
-<%= javascript_include_tag 'main' %>
+<%= javascript_include_tag 'main', 'swiper.min' %>
 <%= csrf_meta_tags %>
 <% end %>
 
@@ -66,7 +66,7 @@
 	</dl>
 </div>
 <%= render partial: "shared/top_header" %>
-<div class="t_center"><%= image_tag "front/hioki_r7_c1.jpg", width: 1401, height: 455, alt: "HIOKI" %></div>
+<%= render partial: "shared/top_slider" %>
 <div class="hioki_search_bg">
 	<div class="hioki_search">
   	<h3 class="hioki_search_title t_center">业界商品分类<br /><span>Search Applications</span></h3>
@@ -121,7 +121,7 @@
 			<p class="hioki_f15 m_top5">&nbsp;&gt; 新闻一览</p>
 			<ul>
 				<% NewsCategory.all.each do |nc| %>
-      	<li>・<%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
+      	<li>・<%= link_to nc.name, "/news_categories/#{nc.id}", style: "color:#FFF" %></li>
 				<% end %>
 			</ul>
 		</div>
