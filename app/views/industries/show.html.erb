@@ -61,13 +61,3 @@
   <p class="m_top45">&nbsp;</p>
 </div>
 <%= render partial: "shared/footer" %>
-<script type="text/javascript">
-$(document).ready(function () {
-    var industry_id = $("ul.news_content li.selectd").attr("id").split("_")[2];
-    $("li.hioki_category a").click(function(){
-      var href = $(this).attr("href");
-      window.location = href + "?industry_id=" + industry_id;
-      return false;
-       })
-    });
-</script>
