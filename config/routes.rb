@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   get 'repair' => 'home#repair'
   get 'company' => 'home#company'
   get 'contact' => 'home#contact'
+  get 'distribution' => 'home#distribution'
+  get 'speech' => 'home#speech'
+  get 'history' => 'home#history'
+  get 'counterfeit' => 'home#counterfeit'
+
 
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do

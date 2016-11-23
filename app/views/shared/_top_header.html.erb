@@ -32,15 +32,27 @@
   <% end %>
     <a href="/news.html">新　　闻</a>
     </li>
-    <% if controller_name == "products" %>
+    <% if controller_name == "products" || action_name == "products" %>
       <li class="nav_li">
   <% else %>
       <li>
   <% end %>
     <a href="/industries/1/products">产品一览</a>
     </li>
-    <li><a href="/company.html">公司介绍</a></li>
-    <li><a href="/contact.html">联系我们</a></li>
+    <% if action_name == "company" %>
+      <li class="nav_li">
+  <% else %>
+      <li>
+  <% end %>
+			<a href="/company.html">公司介绍</a>
+		</li>
+    <% if action_name == "contact" %>
+      <li class="nav_li">
+  <% else %>
+      <li>
+  <% end %>
+			<a href="/contact.html">联系我们</a>
+		</li>
     <% if controller_name == "home" && action_name == "repair" %>
       <li class="nav_li nav_li02">
   <% else %>

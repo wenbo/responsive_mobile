@@ -6,7 +6,7 @@
 <% end %>
 </ul>
 <ul class="fl m_top25">
-  <% @root_categories[(middle-1)..(size-1)].each do |cate| %>
+  <% @root_categories[(middle)..(size-1)].each do |cate| %>
     <li class="m_top10">&gt; <%= link_to cate.name, "/categories/#{cate.id}" %></li>
 <% end %>
 </ul>

@@ -5,12 +5,30 @@ class HomeController < ApplicationController
   end
 
   def repair
+    @root_categories = Category.roots
   end
 
   def company
     @root_categories = Category.roots
   end
 
+  def distribution
+    @root_categories = Category.roots
+  end
+  
+  def speech
+    @root_categories = Category.roots
+  end
+  
+  def history
+    @root_categories = Category.roots
+  end
+  
+  def counterfeit
+    @root_categories = Category.roots
+  end
+
   def contact
+    @root_categories = Category.roots
   end
 end
