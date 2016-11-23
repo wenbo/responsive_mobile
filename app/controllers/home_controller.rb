@@ -6,4 +6,11 @@ class HomeController < ApplicationController
 
   def repair
   end
+
+  def company
+    @root_categories = Category.roots
+  end
+
+  def contact
+  end
 end
