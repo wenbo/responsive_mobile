@@ -125,7 +125,7 @@ include("./header.php");//加载template
 	
   </div>
   <div class="product_right">
-  	<p class="current"><a href="index.html">首页</a> > 注册新会员</p>
+  	<p class="current"><a href="/">首页</a> > 注册新会员</p>
     <h3 class="hioki_category_title m_top20">注册新会员</h3>
     <p class="m_top10">红色星号标注的项目为必须填写的项目</p>
     <div class="register_content">

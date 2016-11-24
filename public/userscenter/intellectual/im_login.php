@@ -18,7 +18,7 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="../index.html">首页</a> > 智测会</p>
+  	<p class="current"><a href="/">首页</a> > 智测会</p>
     <h3 class="product_f25 m_top20">HIOKI智测会欢迎您！</h3>
     <div class="recorder_content recorder_f16">
       <div class="recorder_sign clearfix" style="margin:0;">
