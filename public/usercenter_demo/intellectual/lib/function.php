@@ -12,7 +12,7 @@ function user_login()
 {
 	if ($_SESSION['usercenter']['name']=='' || $_SESSION['usercenter']['user_id']=='')
 	{
-		header("Location: index.php");
+		header("Location: im_login.php");
 		exit;
 	}
 }
