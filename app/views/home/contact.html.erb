@@ -39,7 +39,7 @@ function check()
   var company_name = document.getElementById('contact_company_name').value;
   if (company_name =='')
   {
-    alert('公司名请输入');
+    alert('请输入公司名');
     document.getElementById('contact_company_name').focus();
     return false;
 }
@@ -47,7 +47,7 @@ function check()
   var contact_department = document.getElementById('contact_department').value;
   if (contact_department =='')
   {
-    alert('部门请输入');
+    alert('请输入部门');
     document.getElementById('contact_department').focus();
     return false;
   }
@@ -55,7 +55,7 @@ function check()
   var contact_address = document.getElementById('contact_address').value;
   if (contact_address =='')
   {
-    alert('地址请输入');
+    alert('请输入地址');
     document.getElementById('contact_address').focus();
     return false;
 }
@@ -63,45 +63,38 @@ function check()
   var contact_postcode = document.getElementById('contact_postcode').value;
   if (contact_postcode =='')
   {
-    alert('邮编请输入');
+    alert('请输入邮编');
     document.getElementById('contact_postcode').focus();
     return false;
 }
   var contact_tel = document.getElementById('contact_tel').value;
   if (contact_tel =='')
   {
-    alert('电话请输入');
+    alert('请输入电话');
     document.getElementById('contact_tel').focus();
     return false;
 }
   var contact_fax = document.getElementById('contact_fax').value;
   if (contact_fax =='')
   {
-    alert('传真请输入');
+    alert('请输入传真');
     document.getElementById('contact_fax').focus();
     return false;
 }
 
-  var email = document.getElementById('contact_email').value;
-  if (!/\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(email)){
-    alert('Email格式不合法');
+  var contact_email = document.getElementById('contact_email').value;
+  if (!/\w{1,}[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(contact_email)){
+    alert('Email格式不正确');
     document.getElementById('contact_email').focus();
     return false;
   }
 
-  var contact_email = document.getElementById('contact_email').value;
-  if (contact_email =='')
-  {
-    alert('公司名请输入');
-    document.getElementById('contact_email').focus();
-    return false;
-  }
 }
 
 </script>
 
 		<!-- <form action="/contacts" method="post" onsubmit="return check();"> -->
-			<%= form_for @contact, remote: true, html: { onsubmit: "return check()" } do |f| %>
+			<%= form_for @contact, html: { onsubmit: "return check()" } do |f| %>
     <div class="register_content">
       <dl class="register_dl clearfix">
       	<dd class="register_dd">姓名</dd>
@@ -170,3 +163,8 @@ function check()
 </div>
 <p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>
+<% if flash[:notice].present? %>
+<script type="text/javascript">
+  alert("<%= flash[:notice] %>");
+</script>
+<% end %>
