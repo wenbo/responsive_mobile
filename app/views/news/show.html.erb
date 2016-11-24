@@ -20,6 +20,7 @@ window.onload=window.onresize=function(){
 		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
 		<ul>
 			<% NewsCategory.all.each do |nc| %>
+			<% next if nc.news.count == 0 %>
       <li>&gt;<%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
 			<% end %>
 		</ul>
