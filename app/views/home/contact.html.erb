@@ -1,3 +1,6 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'jquery_ujs' %>
+<% end %>
 <a name="top" id="top"></a>
 <%= render partial: "shared/top_header" %>
 <div class="contact_banner"></div>
@@ -97,8 +100,8 @@ function check()
 
 </script>
 
-		<form action="/contacts" method="post" onsubmit="return check();">
-			<%= form_for @contact, html: { onsubmit: "return check()" } do |f| %>
+		<!-- <form action="/contacts" method="post" onsubmit="return check();"> -->
+			<%= form_for @contact, remote: true, html: { onsubmit: "return check()" } do |f| %>
     <div class="register_content">
       <dl class="register_dl clearfix">
       	<dd class="register_dd">姓名</dd>
@@ -157,7 +160,10 @@ function check()
       <p>※取得的顾客个人信息我们将严格进行管理，除了与贵公司之间的咨询外，一切禁止使用。<br />
 ※提交后，我们会尽快给您回复，请耐心等待。</p>
 	  <p class="recorder_red t_center m_top20">请问以上内容是否正确？如果正确的话请点选提交。</p>
-      <p class="counterfeit_fill"><input name="" type="submit" class="counterfeit_button01" value="" />　　<input name="" type="reset" class="contact_button03" value="" /></p>
+      <p class="counterfeit_fill">
+				<input name="" type="submit" class="counterfeit_button01" value="" />　　
+				<input name="" type="reset" class="contact_button03" value="" />
+			</p>
     </div>
 		<% end %>
   </div>
