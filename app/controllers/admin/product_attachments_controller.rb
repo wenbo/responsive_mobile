@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::ProductAttachmentsController < Admin::BaseController
   def index
     @product_attachments = ProductAttachment.page(params[:page]).per(20)
@@ -29,6 +30,15 @@ class Admin::ProductAttachmentsController < Admin::BaseController
       render 'edit'
     end
   end
+
+  def destroy
+    @product_attachment = ProductAttachment.find params[:id]
+    if @product_attachment.delete
+      flash[:notice] = "删除成功!"
+      redirect_to [:admin, :product_attachments]
+    end
+  end
+
 
   private
   def params_product_attachment
