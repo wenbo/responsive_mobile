@@ -2,7 +2,9 @@
 <div class="top_bg">
   <div class="top clearfix">
 	<p class="fl">中国区维修服务中心（日置(上海) 商贸有限公司）</p>
-    <p class="fr"><a href="#"><img src="/userscenter/images/hioki_r1_c30.jpg" width="28" height="26" />会员退出</a>　<img src="/userscenter/images/hioki_r1_c32.jpg" width="22" height="26" />400-920-6010</p>
+    <p class="fr">
+	 /* <a href="#"><img src="/userscenter/images/hioki_r1_c30.jpg" width="28" height="26" />会员退出</a>　 */
+	 <img src="/userscenter/images/hioki_r1_c32.jpg" width="22" height="26" />400-920-6010</p>
   </div>
 </div>
 <div class="header">

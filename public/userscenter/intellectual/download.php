@@ -8,7 +8,7 @@ user_login();
 $file_id = (int)$_GET['id'];
 if ($file_id==0)
 {
-	header('Location: list.php');
+	header('Location: im_download.php');
 	exit;
 }
 $sql = " SELECT * FROM `h_file` WHERE `file_id`=".$file_id." LIMIT 1";
@@ -18,7 +18,7 @@ $file = 'documents/'.$get['name'].'.'.$get['type'];
 $filename = mb_convert_encoding($file, "gbk", "UTF-8");
 if (!file_exists($filename))
 {
-	header('Location: list.php');
+	header('Location: im_download.php');
 	exit;
 }
 

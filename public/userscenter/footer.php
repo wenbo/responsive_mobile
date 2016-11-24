@@ -55,5 +55,5 @@
     <li><a href="/company.html">&gt; 公司介绍</a></li>
     <li><a href="/contact.html">&gt; 联系我们</a></li>
   </ul>
-  <p class="footer_icp clear">沪ICP备05013343号</p>
+  <p class="footer_icp clear"><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备05013343号</a></p>
 </div>

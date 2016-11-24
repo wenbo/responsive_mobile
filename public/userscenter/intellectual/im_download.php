@@ -164,7 +164,7 @@ foreach($select_list as $l)
                 </select>
 
           </li>　
-      <li class="product_number"><p>文件名称</p><input name="" type="text" /><input name="" type="submit" value="" /></li>
+      <li class="product_number"><p>文件名称</p><input name="name" value="<?php echo $name;?>" type="text" /><input name="submit" type="submit" value="" /></li>
     </ul>
                 </form>
     <div class="m_top20">
