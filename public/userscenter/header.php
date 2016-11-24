@@ -8,7 +8,7 @@
 <div class="header">
 	 <h1 class="fl"><a href="/"><img width="150" height="30" alt="HIOKI" src="/userscenter/images/hioki_r4_c3.jpg" /></a></h1>
 	 <ul>
-	 <li class="nav_li">
+	 <li>
 	 <a href="/">首　　页</a>
 	 </li>
 	 <li>

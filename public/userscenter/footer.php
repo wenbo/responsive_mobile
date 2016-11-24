@@ -51,7 +51,7 @@
   <ul class="fr">
     <li><a href="/">&gt; 首　页</a></li>
     <li><a href="/news.html">&gt; 新　闻</a></li>
-    <li><a href="/product.html">&gt; 产品一览</a></li>
+    <li><a href="/industries/1/products">&gt; 产品一览</a></li>
     <li><a href="/company.html">&gt; 公司介绍</a></li>
     <li><a href="/contact.html">&gt; 联系我们</a></li>
   </ul>

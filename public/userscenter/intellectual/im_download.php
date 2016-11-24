@@ -170,15 +170,15 @@ foreach($select_list as $l)
     <div class="m_top20">
       <table width="925" border="0" cellspacing="0" cellpadding="0" class="im_table">
   <tr>
-     <th nowrap="nowrap" bgcolor="#F0F7FD">编号</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">类别</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">型号</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">名称</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">备注</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">类型</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">大小</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">更新时间</th>^M
-    <th nowrap="nowrap" bgcolor="#F0F7FD">点击</th>^M
+     <th nowrap="nowrap" bgcolor="#F0F7FD">编号</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">类别</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">型号</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">名称</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">备注</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">类型</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">大小</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">更新时间</th>
+    <th nowrap="nowrap" bgcolor="#F0F7FD">点击</th>
   </tr>
 	<?php
 	if (!empty($list2))
