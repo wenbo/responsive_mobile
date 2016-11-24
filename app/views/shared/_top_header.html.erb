@@ -5,8 +5,8 @@
       <a style="display:none" id="logout_in_header" href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">
       <%= image_tag "front/hioki_r1_c30.jpg", width: 28, height: 26 %>
       会员退出
-    </a>
-    <% if session[:user_id].present? %>
+			</a>
+			<% if session[:user_name].present? %>
       <a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">
       <%= image_tag "front/hioki_r1_c30.jpg", width: 28, height: 26 %>
       会员退出
