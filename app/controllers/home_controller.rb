@@ -25,10 +25,12 @@ class HomeController < ApplicationController
   end
   
   def counterfeit
+    @counterfeit = Counterfeit.new
     @root_categories = Category.roots
   end
 
   def contact
+    @contact = Contact.new
     @root_categories = Category.roots
   end
 end

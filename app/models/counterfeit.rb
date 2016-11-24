@@ -1,0 +1,2 @@
+class Counterfeit < ApplicationRecord
+end

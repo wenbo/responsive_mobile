@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109052615) do
+ActiveRecord::Schema.define(version: 20161124060656) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -50,6 +50,33 @@ ActiveRecord::Schema.define(version: 20161109052615) do
     t.datetime "updated_at",                   null: false
     t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  end
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "username"
+    t.string   "company_name"
+    t.string   "department"
+    t.string   "address"
+    t.string   "postcode"
+    t.string   "tel"
+    t.string   "fax"
+    t.string   "email"
+    t.text     "content",      limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "counterfeits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "sku"
+    t.string   "serial_number"
+    t.string   "username"
+    t.string   "unit_name"
+    t.string   "address"
+    t.string   "tel"
+    t.string   "email"
+    t.text     "content",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

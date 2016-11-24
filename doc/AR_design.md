@@ -65,3 +65,6 @@ rails g migration add_search_keywords_to_products search_keywords:string
 rails g migration add_position_to_categories position:integer
 
 rails g migration add_position_to_products position:integer
+rails g model Contact username:string company_name:string  department:string  address:string postcode:string  tel:string  fax:string  email:string content:text
+rails g model counterfeit sku:string  serial_number:string username:string unit_name:string address:string tel:string email:string content:text
+

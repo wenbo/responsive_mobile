@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :news, only: [:show]
   resources :industries, only: [:show]
+  resources :contacts, only: [:create]
+  resources :counterfeits, only: [:create]
+
 
 
 
