@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::NewsController < Admin::BaseController
   def index
     @newss = News.page(params[:page]).per(20)
@@ -30,6 +31,15 @@ class Admin::NewsController < Admin::BaseController
       render 'edit'
     end
   end
+
+  def destroy
+    @news = News.find params[:id]
+    if @news.delete
+      flash[:notice] = "News #{@news.id} 删除成功!"
+      redirect_to admin_news_index_path
+    end
+  end
+
 
   private
   def params_news
