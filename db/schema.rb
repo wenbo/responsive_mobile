@@ -74,9 +74,8 @@ ActiveRecord::Schema.define(version: 20161124060656) do
     t.string   "address"
     t.string   "tel"
     t.string   "email"
-    t.text     "content",       limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

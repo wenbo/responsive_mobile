@@ -33,7 +33,9 @@
     <%= render partial: "options" %>
     <%= render partial: "pdf" %>
     <%= render partial: "upgrade" %>
+		<% if false %>
     <%= render partial: "case" %>
+		<% end %>
 		<% if @related_products.present? %>
     <%= render partial: "related_products" %>
 		<% end %>

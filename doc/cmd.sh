@@ -12,3 +12,5 @@ sed -i '' -e  "s/industries/categories/g" `grep industries -rl ./app/views/admin
 <%= image_tag "front/distribution_r9_c2.jpg", width: 173, height: 42 %>
 
 <img src="../images/distribution_r11_c2.jpg" width="173" height="43" />
+
+ln -s 

@@ -8,7 +8,6 @@ class CreateCounterfeits < ActiveRecord::Migration[5.0]
       t.string :address
       t.string :tel
       t.string :email
-      t.text :content
 
       t.timestamps
     end
