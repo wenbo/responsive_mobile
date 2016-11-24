@@ -6,9 +6,9 @@ class ContactsController < ApplicationController
     @root_categories = Category.roots
     @contact = Contact.new(params_contact)
     if @contact.save
-      flash[:notice] = "我们会尽快给您回复，请耐心等待"
+      flash[:contact] = "我们会尽快给您回复，请耐心等待"
       UserMailer.contact_email(@contact).deliver_now
-      redirect_to "/contact"
+      redirect_to "/contact.html"
     end
   end
   

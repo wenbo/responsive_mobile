@@ -6,9 +6,9 @@ class CounterfeitsController < ApplicationController
     @root_categories = Category.roots
     @counterfeit = Counterfeit.new(params_counterfeit)
     if @counterfeit.save
-      flash[:notice] = "我们会尽快给您回复，请耐心等待"
+      flash[:counterfeit] = "我们会尽快给您回复，请耐心等待"
       UserMailer.counterfeit_email(@counterfeit).deliver_now
-      redirect_to "/counterfeit"
+      redirect_to "/counterfeit.html"
     end
   end
   
