@@ -1,6 +1,6 @@
-<%=raw @product.upgraded_note if @product.upgraded_note.present? %>
 <% if !session[:user_name].present? %>
 <div id="pic_corpus_04" class="upgrade_login_form recorder_content recorder_f16" style="display:none;">
+	<%=raw @product.upgraded_note if @product.upgraded_note.present? %>
   <div class="recorder_sign clearfix">
     <p>如果还没有登陆客户信息，请先进行登录。</p>
     <div class="recorder_please">
