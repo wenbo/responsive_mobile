@@ -1,11 +1,6 @@
 <%=raw @product.upgraded_note if @product.upgraded_note.present? %>
 <% if !session[:user_name].present? %>
 <div id="pic_corpus_04" class="upgrade_login_form recorder_content recorder_f16" style="display:none;">
-  <div class="recorder_version">版本升级应由资格技术员来执行。<br />
-    与8860-50 或 8861-50的功能和操作类似，如对进程有何不明之处，请联系当地的HIOKI分支机构寻求协助。</div>
-  <p class="m_top25">升级前: 通过初始启动画面显示的版本号，确认当前8860-50或8861-50的固件。</p>
-  <p class="recorder_red m_top5">如8860-50或8861-50版本为Ver3.12，则无需升级仪器。</p>
-  <p class="m_top5">下载文件需要注册您的客户信息和8860-50或8861-50的序列号。</p>
   <div class="recorder_sign clearfix">
     <p>如果还没有登陆客户信息，请先进行登录。</p>
     <div class="recorder_please">
