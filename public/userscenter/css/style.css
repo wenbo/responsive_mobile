@@ -162,7 +162,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .product_category li a{width:270px; height:47px; float:left; font-size:18px; line-height:47px; padding-left:25px; margin:0 18px 18px 0; background:url(../images/product_r3_c4.jpg) no-repeat}
 .product_search{width:885px; height:43px; font-size:16px; line-height:30px; padding:12px 0 0 30px; border:#8FB1D4 3px solid; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px;}
 .product_search li{float:left; margin-right:30px;}
-.product_search li select[name=category_id]{width:240px;}
+.product_search li select[name=category_id]{width:239px;}
 .product_number{width:345px; height:28px; border:#DDDDDD 1px solid;}
 .product_number p{width:100px; height:28px; float:left; text-align:center; background:#F5F5F5;}
 .product_number input[type=text]{width:194px; height:28px; float:left; border:none; border-left:#DDDDDD 1px solid;}
