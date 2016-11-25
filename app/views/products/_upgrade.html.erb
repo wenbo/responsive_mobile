@@ -1,5 +1,5 @@
 <%= @product.upgraded_note if @product.upgraded_note.present? %>
-<% if !session[:user_id].present? %>
+<% if !session[:user_name].present? %>
 <div id="pic_corpus_04" class="upgrade_login_form recorder_content recorder_f16" style="display:none;">
   <div class="recorder_version">版本升级应由资格技术员来执行。<br />
     与8860-50 或 8861-50的功能和操作类似，如对进程有何不明之处，请联系当地的HIOKI分支机构寻求协助。</div>
@@ -14,7 +14,7 @@
         <p><a href="#">忘记密码</a></p></div>
     </div>
     <input id="submit" name="" type="submit" class="recorder_login" value="" />
-    <p class="m_top35"><a href="register.html"><%= image_tag "front/recorder04_02.jpg", width: 197, height: 86 %></a></p>
+    <p class="m_top35"><a href="/userscenter/register.php"><%= image_tag "front/recorder04_02.jpg", width: 197, height: 86 %></a></p>
   </div>
 </div>
 <%= render partial: "upgrade_content" %>
