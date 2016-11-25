@@ -10,8 +10,8 @@ if ($company=='' || $name=='' || $email=='')
 	exit;
 }
 
-require_once 'lib/conn.php';
-require_once 'lib/class.phpmailer.php';
+require_once 'intellectual/lib/conn.php';
+require_once 'intellectual/lib/class.phpmailer.php';
 
 $sql = " SELECT * FROM `h_user` WHERE `del_flag`='no' AND `check_flag`=9 AND `company`='".$company."' AND `name`='".$name."' AND `email`='".$email."' LIMIT 1 ";
 $query = mysql_query($sql);
