@@ -1,30 +1,5 @@
 <% content_for :head do %>
-<script type="text/javascript">           
-	$(document).ready(function(){
-	$(".sidebar_search").mouseover(function() {
-  $(this).stop();
-  $(this).animate({width: 425}, 400);
-	})
-	$(".sidebar_search").mouseout(function() {
-  $(this).stop();
-  $(this).animate({width: 135}, 400);
-	});
-	});
-</script>
-<script type="text/javascript">           
-	$(document).ready(function(){
-	$(".sidebar_search02").mouseover(function() {
-  $(this).stop();
-  $(this).animate({width: 425}, 400);
-	})
-	$(".sidebar_search02").mouseout(function() {
-  $(this).stop();
-  $(this).animate({width: 135}, 400);
-	});
-	});
-</script>
-<%= javascript_include_tag 'main', 'swiper.min' %>
-<%= csrf_meta_tags %>
+<%= javascript_include_tag 'swiper.min' %>
 <% end %>
 
 <%= render partial: "shared/top_search" %>
