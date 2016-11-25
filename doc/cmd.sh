@@ -14,3 +14,5 @@ sed -i '' -e  "s/industries/categories/g" `grep industries -rl ./app/views/admin
 <img src="../images/distribution_r11_c2.jpg" width="173" height="43" />
 
 sed -i "s/href=\"\/\"/href=\"\/demo\/\"/g" `grep -nR 'href="/"'  -rl ./app/views/`
+sed -i "s/<a name=\"top\" id=\"top\"><\/a>/<%= render partial: \"shared\/top_search\" %>/g" `grep -nR '<a name="top" id="top"></a>'  -rl ./app/views/`
+

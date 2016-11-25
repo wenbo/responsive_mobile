@@ -1,7 +1,7 @@
 <% content_for :head do %>
 <%= javascript_include_tag 'jquery_ujs' %>
 <% end %>
-<a name="top" id="top"></a>
+<%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
 <div class="counterfeit_banner"></div>
 <div class="news_content clearfix">

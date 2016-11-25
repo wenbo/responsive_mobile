@@ -6,6 +6,30 @@
 		<%= stylesheet_link_tag 'style' %>
 		<%= javascript_include_tag 'scrollsmoothly' %>
 		<%= javascript_include_tag 'jquery-1.9.1' %>
+		<script type="text/javascript">           
+	$(document).ready(function(){
+	$(".sidebar_search").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 425}, 400);
+	})
+	$(".sidebar_search").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 135}, 400);
+	});
+	});
+</script>
+<script type="text/javascript">           
+	$(document).ready(function(){
+	$(".sidebar_search02").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 425}, 400);
+	})
+	$(".sidebar_search02").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 135}, 400);
+	});
+	});
+</script>
 		<%= yield :head %>
 	</head>
 
