@@ -2,10 +2,18 @@
 <div class="m_top15 clearfix">
 	<% @product.related_products.each do |product| %>
   <div class="recorder_related">
-    <p class="recorder_jly"><%= product.category.name %></p>
-		<p><%= image_tag product.thumb_image.url, width: 250 %></p>
-    <p class="recorder_f18 m_top15"><%= product.title %></p>
-    <p class="recorder_blue"><%= product.desc %></p>
+		<p class="recorder_jly"><%= product.category.name %></p>
+		<p>
+			<a href="/products/<%= @product.id %>" >
+				<%= image_tag product.thumb_image.url, width: 250 %>
+			</a>
+		</p>
+		<p class="recorder_f18 m_top15">
+			<a href="/products/<%= @product.id %>" >
+				<%= product.title %>
+			</a>
+		</p>
+			<p class="recorder_blue"><%= product.desc %></p>
   </div>
 	<% end %>
 </div>
