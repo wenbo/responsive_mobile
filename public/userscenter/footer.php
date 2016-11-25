@@ -31,15 +31,13 @@
     </div>
     <div class="hioki_column03">
       <h3 class="hioki_f23">关于日置 <span class="hioki_f15">About HIOKI</span></h3>
-      <ul class="m_top25">
-        <li>&gt; 关于社长</li>
-        <li class="m_top10">&gt; HIOKI的企业目标</li>
-        <li class="m_top10">&gt; 事业内容</li>
-        <li class="m_top10">&gt; 环境・CSR</li>
-        <li class="m_top10">&gt; 公司概要</li>
-        <li class="m_top10">&gt; 公司分布・分公司</li>
-        <li>&nbsp;</li>
-      </ul>
+			app/views/shared/
+			<ul class="m_top25">
+				<li><a href="/distribution.html">&gt; 公司分布</a></li>
+				<li class="m_top10"><a href="/speech.html">&gt; 董事致辞</a></li>
+				<li class="m_top10"><a href="/company.html">&gt; 公司概要</a></li>
+				<li class="m_top10"><a href="/history.html">&gt; 公司沿革</a></li>
+			</ul>
     </div>
   </div>
 </div>
