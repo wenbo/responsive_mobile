@@ -137,7 +137,7 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/">首页</a> > <a href="intellectual.html">智测会</a> > 资料下载</p>
+  	<p class="current"><a href="/demo/">首页</a> > <a href="intellectual.html">智测会</a> > 资料下载</p>
     <h3 class="product_f25 m_top20">资料下载</h3>
     
     <div id="pic_corpus_01">

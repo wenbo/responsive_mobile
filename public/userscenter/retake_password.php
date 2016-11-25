@@ -43,11 +43,11 @@ function checkFrom()
 <?php 
 include("./header.php");//加载template
 ?>
-<div class="register_banner"></div>
+<div class="password_banner"></div>
 <div class="news_content clearfix">
   <div class="product_left" >
 	<h3>忘记密码<br />
-	<span class="hioki_f15">Retakepassword</span></h3>
+	<span class="hioki_f15">password</span></h3>
 	
   </div>
   <div class="product_right">

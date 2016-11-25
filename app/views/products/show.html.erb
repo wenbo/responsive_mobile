@@ -16,8 +16,11 @@
     </ul>
   </div>
   <div class="product_right">
-    <p class="current"><a href="/">首页</a> > <%= link_to "产品一览", "/products" %> > <%= @product.title %></p>
-    <h3 class="product_f25 m_top20"><%= @product.category.name %> <%= @product.sku%></h3>
+    <p class="current"><a href="/demo/">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= @product.title %></p>
+		 <div class="clearfix">
+			 <h3 class="product_f25 m_top20 fl"><%= @product.category.name %> <%= @product.sku%></h3>
+			 <p class="fr m_top20"><a href="javascript:history.go(-1)"><%= image_tag "front/recorder_return.jpg", width: "135", height: "35" %></a></p>
+    </div>
     <p class="m_top10"><%= @product.desc %></p>
     <p class="m_top30"><%= image_tag @product.banner.url %></p>
     <ul class="recorder_title m_top30 clearfix">

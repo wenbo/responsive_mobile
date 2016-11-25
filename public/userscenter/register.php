@@ -125,7 +125,7 @@ include("./header.php");//加载template
 	
   </div>
   <div class="product_right">
-  	<p class="current"><a href="/">首页</a> > 注册新会员</p>
+  	<p class="current"><a href="/demo/">首页</a> > 注册新会员</p>
     <h3 class="hioki_category_title m_top20">注册新会员</h3>
     <p class="m_top10">红色星号标注的项目为必须填写的项目</p>
     <div class="register_content">
@@ -314,7 +314,7 @@ include("./header.php");//加载template
         <dt><textarea name="feedback" id="feedback" cols="50" rows="6" class="register_textarea"></textarea>
         </dt>
       </dl>
-      <input name="" type="submit" value="" class="register_submit" /><input name="" type="reset" value="" class="register_reset" />
+      <div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button01" /><input name="" type="reset" value="" class="counterfeit_button02" />
    </form>
     </div>
     

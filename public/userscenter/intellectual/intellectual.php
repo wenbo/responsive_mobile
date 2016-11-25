@@ -17,7 +17,7 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/">首页</a> > <a href="intellectual.php">智测会</a> > 智测会介绍</p>
+  	<p class="current"><a href="/demo/">首页</a> > <a href="intellectual.php">智测会</a> > 智测会介绍</p>
     <h3 class="product_f25 recorder_blue m_top20">HIOKI智测会介绍</h3>
     <p class="recorder_f16">HIOKI智测会是用户免费注册为会员后，向其进一步提供详细产品信息和完善服务的系统。欢迎大家积极参与入会。</p>
     <h3 class="recorder_basic recorder_blue">会员招募</h3>

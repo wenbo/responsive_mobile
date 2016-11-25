@@ -47,7 +47,7 @@
   <p class="footer_dh"><img width="15" height="12" src="/userscenter/images/hioki_r32_c18.jpg" alt="Hioki r32 c18" /> info@hioki.com.cn</p>
   <p class="footer_dh">中国区维修服务中心（日置(上海) 商贸有限公司）</p>
   <ul class="fr">
-    <li><a href="/">&gt; 首　页</a></li>
+    <li><a href="/demo/">&gt; 首　页</a></li>
     <li><a href="/news.html">&gt; 新　闻</a></li>
     <li><a href="/industries/1/products">&gt; 产品一览</a></li>
     <li><a href="/company.html">&gt; 公司介绍</a></li>
