@@ -73,7 +73,7 @@ function check()
         <div class="recorder_please">
           <div class="m_top25 clearfix"><label>用户名<br />(邮箱地址)</label><input name="username" id="username" type="text" /></div>
           <div class="m_top25 clearfix"><label class="m_top10">密　码</label><input name="password" id="password" type="password" /><br />
-<p><a href="#">忘记密码</a></p></div>
+<p><a href="/userscenter/retake_password.php">忘记密码</a></p></div>
         </div>
         <input name="" type="submit" class="recorder_login" value="" />
 </form>
