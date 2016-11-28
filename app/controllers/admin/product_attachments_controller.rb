@@ -42,6 +42,6 @@ class Admin::ProductAttachmentsController < Admin::BaseController
 
   private
   def params_product_attachment
-    params.require(:product_attachment).permit(:name, :note, :pdf_category_id, product_ids: [])
+    params.require(:product_attachment).permit(:name, :note, :pdf, :pdf_category_id, product_ids: [])
   end
 end
