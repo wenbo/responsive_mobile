@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
     if session[:user_name].blank? && login_stub.present?
       decoded = Base64.decode64(login_stub)
       session[:user_id], session[:user_name] = decoded.split(',')
+    elsif session[:user_name].present? && login_stub.blank?
+      session[:user_name] = nil
     end
   end
 end
