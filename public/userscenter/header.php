@@ -1,7 +1,7 @@
 <?php
-if ($_COOKIE["user"])
+if ($_COOKIE["login_stub"])
 	{
-		$encrypted = $_COOKIE["user"];
+		$encrypted = $_COOKIE["login_stub"];
 		$decoded = explode( ",", base64_decode($encrypted));
 		$user_id = $decoded[0];
 		$username = $decoded[1];

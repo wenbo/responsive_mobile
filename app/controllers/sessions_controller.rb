@@ -8,10 +8,9 @@ class SessionsController < ApplicationController
     if user.present? && user.valid_password?(params[:password])
       
       encrypted = Base64.encode64("#{user.user_id},#{user.name}")
-      cookies[:user] = {
+      cookies[:login_stub] = {
         value: encrypted,
-	      expires: 1.day.from_now,
-	      path: '/userscenter/'
+	      expires: 1.day.from_now
       }
 
       session[:user_id] = user.id
@@ -23,6 +22,12 @@ class SessionsController < ApplicationController
   end
 
   def logout_async
+    cookies.delete(:login_stub)
+    cookies[:login_stub] = {
+      value: "",
+	    expires: 1.day.ago
+    }
+
     session[:user_id] = nil
     session[:user_name] = nil
     render json: {code: 200}
