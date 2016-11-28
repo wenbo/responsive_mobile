@@ -1,3 +1,18 @@
+<?php
+if ($_COOKIE["user"])
+	{
+		$encrypted = $_COOKIE["user"];
+		$decoded = explode( ",", base64_decode($encrypted));
+		$user_id = $decoded[0];
+		$username = $decoded[1];
+		if ($username=='' || $user_id =='')
+			{
+				session_start();
+				$_SESSION['usercenter']['user_id'] = $user_id;
+				$_SESSION['usercenter']['name'] = $username;
+			}
+	}
+?>
 <a name="top" id="top"></a>
 <div class="top_bg">
   <div class="top clearfix">

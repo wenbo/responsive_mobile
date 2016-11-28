@@ -6,6 +6,14 @@ class SessionsController < ApplicationController
   def login_async
     user = HUser.find_by(email: params[:email])
     if user.present? && user.valid_password?(params[:password])
+      
+      encrypted = Base64.encode64("#{user.user_id},#{user.name}")
+      cookies[:user] = {
+        value: encrypted,
+	      expires: 1.day.from_now,
+	      path: '/userscenter/'
+      }
+
       session[:user_id] = user.id
       session[:user_name] = user.name
         render json: {code: 200, user_name: user.name}

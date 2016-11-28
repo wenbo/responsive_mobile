@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<?php 
+<?php
 include("../header.php");//加载template
 ?>
 <div class="im_banner"></div>
