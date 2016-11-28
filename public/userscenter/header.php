@@ -5,7 +5,7 @@ if ($_COOKIE["login_stub"])
 		$decoded = explode( ",", base64_decode($encrypted));
 		$user_id = $decoded[0];
 		$username = $decoded[1];
-		if ($username=='' || $user_id =='')
+		if ($username!='' && $user_id !='')
 			{
 				session_start();
 				$_SESSION['usercenter']['user_id'] = $user_id;
