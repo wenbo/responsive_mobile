@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_COOKIE["login_stub"])
 	{
 		$encrypted = $_COOKIE["login_stub"];
@@ -7,7 +8,6 @@ if ($_COOKIE["login_stub"])
 		$username = $decoded[1];
 		if ($username!='' && $user_id !='')
 			{
-				session_start();
 				$_SESSION['usercenter']['user_id'] = $user_id;
 				$_SESSION['usercenter']['name'] = $username;
 			}
