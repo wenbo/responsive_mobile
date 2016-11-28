@@ -18,6 +18,7 @@ if ($total==1)
 	$get = mysql_fetch_assoc($query);
 	$_SESSION['usercenter']['user_id'] = $get['user_id'];
 	$_SESSION['usercenter']['name'] = $username;
+	setcookie("login_stub", base64_encode($get['user_id'].",".$username), time()+3600,'/');
 	header("Location: intellectual.php"); 
 	exit;
 }

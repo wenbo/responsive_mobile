@@ -10,7 +10,7 @@ function iscan_login()
 
 function user_login()
 {
-	if ($_SESSION['usercenter']['name']=='' || $_SESSION['usercenter']['user_id']=='')
+	if ($_SESSION['usercenter']['name']=='' || $_SESSION['usercenter']['user_id']=='' || $_COOKIE["login_stub"]=='')
 	{
 		header("Location: im_login.php");
 		exit;

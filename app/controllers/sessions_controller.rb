@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       encrypted = Base64.encode64("#{user.user_id},#{user.name}")
       cookies[:login_stub] = {
         value: encrypted,
-	      expires: 1.day.from_now
+	      expires: 1.day.from_now,
+        path: "/"
       }
 
       session[:user_id] = user.id
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
     cookies.delete(:login_stub)
     cookies[:login_stub] = {
       value: "",
+      path: "/",
 	    expires: 1.day.ago
     }
 
@@ -48,6 +50,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    cookies.delete(:login_stub)
+    cookies[:login_stub] = {
+      value: "",
+      path: "/",
+	    expires: 1.day.ago
+    }
+
     session[:user_id] = nil
     session[:user_name] = nil
     redirect_to "/demo/"
