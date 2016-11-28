@@ -14,6 +14,14 @@ if ($_COOKIE["login_stub"])
 		$_SESSION['usercenter']['user_id'] = $user_id;
 		$_SESSION['usercenter']['name'] = $username;
 		echo("<br/>");
+		echo("<br/>");
+		echo("<br/>");
+		echo("$_SESSION");
 		var_dump($_SESSION);
+		
+		echo("<br/>");
+		echo("<br/>");
+		echo("$_COOKIE");
+		print_r($_COOKIE);
 	}
 ?>
