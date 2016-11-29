@@ -71,8 +71,8 @@
 <% end %>
 
 <script>
-      $(function(){
- $("#datepicker").datepicker({
+			$(document).on("turbolinks:load", function (){
+			 $("#datepicker").datepicker({
       showOn: "button",
       dateFormat: "yy-mm-dd",
       minDate: <%= (Date.today + 1).strftime("%m/%d/%Y") %>, 
@@ -80,8 +80,6 @@
       buttonImageOnly: true,
       buttonText: "Select date"
       });
- })
-$(document).on("turbolinks:load", function (){
     CKEDITOR.replace("news_content");
     });
       </script>
