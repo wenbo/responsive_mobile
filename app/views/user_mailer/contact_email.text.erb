@@ -1,3 +1,12 @@
-<% @contact.attributes.each do |k, v| %>
-<%= k %>: <%= v %>
-<% end %>
+<!-- <% @contact.attributes.each do |k, v| %> -->
+<!-- <%= k %>: <%= v %> -->
+<!-- <% end %> -->
+姓名: <%= @contact.username %>
+公司名: <%= @contact.company_name %>
+部门: <%= @contact.department %>
+地址: <%= @contact.address %>
+邮编: <%= @contact.postcode %>
+电话: <%= @contact.tel %>
+传真: <%= @contact.fax %>
+E-mail: <%= @contact.email %>
+咨询内容: <%= @contact.content %>

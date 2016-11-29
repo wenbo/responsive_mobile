@@ -1,3 +1,10 @@
-<% @contact.attributes.each do |k, v| %>
-<%= k %>: <%= v %>
-<% end %>
+<!-- <% @contact.attributes.each do |k, v| %> -->
+<!-- <%= k %>: <%= v %> -->
+<!-- <% end %> -->
+日置产品型号 : <%= @contact.sku %>
+日置产品序列号 : <%= @contact.serial_number %>
+联系人姓名 : <%= @contact.username %>
+单位名称 : <%= @contact.unit_name %>
+通讯地址 : <%= @contact.addres %>
+联系电话 : <%= @contact.tel %>
+联系人邮箱 : <%= @contact.email %>
