@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
 
   def counterfeit_email(contact)
     @contact = contact
-    mail(from: contact.email, to: "yiyun6674@126.com", subject: 'Register Parallel')
+    mail(from: contact.email, to: "chenlu@hioki.com.cn", subject: 'Register Parallel')
   end
 end
