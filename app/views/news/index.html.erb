@@ -33,7 +33,21 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
 			<% end %>
 </ul>
 <ul class="news_flip t_center m_top20">
-  <%= paginate @news %> 
+	<ul class="news_flip t_center m_top20">
+		<% if @news.total_pages < 2 %>
+			 <li><a href="/news.html">首页</a>&nbsp;</li>
+			 <% else %>
+			 <li><a href="/news.html">首页</a>&nbsp;</li>
+			 <% 1.upto(@news.total_pages).to_a.each do |i| %>
+			 <% if @news.current_page == i %>
+			 <li> <%= i %> |</li>
+			 <% else %>
+			 <li class="news_flip_li01"><a href="/news.html?page=<%= i %>"> <%= i %> </a>|</li>
+			 <% end %>
+			 <% end %>
+			 <li>&nbsp;<a href="/news.html?page=<%= @news.total_pages %>">末页</a></li>
+			 <% end %>
+	</ul>
 </ul>
 </div>
 </div>
