@@ -83,7 +83,7 @@ if ($query)
 }
 else
 {
-	echo "<script>alert('此E-mail已被注册，请更换其它邮件地址！');location.href='reg.php';</script>";
+	echo "<script>alert('此E-mail已被注册，请更换其它邮件地址！');location.href='register.php';</script>";
 	exit;
 }
 ?>
