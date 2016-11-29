@@ -34,9 +34,7 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
 </ul>
 <ul class="news_flip t_center m_top20">
 	<ul class="news_flip t_center m_top20">
-		<% if @news.total_pages < 2 %>
-			 <li><a href="/news.html">首页</a>&nbsp;</li>
-			 <% else %>
+		<% if @news.total_pages > 1 %>
 			 <li><a href="/news.html">首页</a>&nbsp;</li>
 			 <% 1.upto(@news.total_pages).to_a.each do |i| %>
 			 <% if @news.current_page == i %>
