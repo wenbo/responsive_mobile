@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     when "news"
         @title = {index: "新闻", show: "新闻"}[action_name.to_sym]
     when "industries"
-        @title = {index: "产品一览", show: "业界商品分类"}[action_name.to_sym]
+        @title = {index: "业界商品分类", show: "业界商品分类", products: "业界商品分类"}[action_name.to_sym]
     when "categories"
         @title = {index: "产品一览", show: "产品一览"}[action_name.to_sym]
     when "products"
