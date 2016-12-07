@@ -6,7 +6,7 @@ function send_xhr(){
 
 $(document).ready(function() {
 		$("#pic_corpus_04 #submit").click(function() {
-				if ($("#email").val().length <= 4 || $("#password").val().length <= 4) {
+				if ($("#pic_corpus_04 #email").val().length <= 4 || $("#pic_corpus_04 #password").val().length <= 4) {
 						alert("请输入正确的邮件和密码")
 						return false;
         }
@@ -15,8 +15,8 @@ $(document).ready(function() {
 						type: "post",                                                                            
 						url: "/sessions/login_async",                                      
 						data: {
-								email: $("#email").val(),
-								password:  $("#password").val()
+								email: $("#pic_corpus_04 #email").val(),
+								password:  $("#pic_corpus_04 #password").val()
 						},
 						async: true,                                                                            
 						success: function (data) { 
@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
 
 		$("#login_form .sidebar_ld").click(function() {
-				if ($("#email").val().length <= 4 || $("#password").val().length <= 4) {
+				if ($("#login_form #email").val().length <= 4 || $("#login_form #password").val().length <= 4) {
 						alert("请输入正确的邮件和密码")
 						return false;
         }
@@ -46,8 +46,8 @@ $(document).ready(function() {
 						type: "post",                                                                            
 						url: "/sessions/login_async",                                      
 						data: {
-								email: $("#email").val(),
-								password:  $("#password").val()
+								email: $("#login_form #email").val(),
+								password:  $("#login_form #password").val()
 						},
 						async: true,                                                                            
 						success: function (data) { 
