@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def set_title
     case controller_name
     when "home"
-        @title = {index: "首页", company: "公司介绍", speech: "董事致辞", history: "公司沿革", repair: "维修中心", contact: "联系我们", counterfeit: "伪造品提示"}[action_name.to_sym]
+        @title = {index: "首页", company: "公司概要", distribution: "公司分布", speech: "董事致辞", history: "公司沿革", repair: "维修中心", contact: "联系我们", counterfeit: "伪造品提示"}[action_name.to_sym]
     when "news"
         @title = {index: "新闻", show: "新闻"}[action_name.to_sym]
     when "industries"
