@@ -4,6 +4,7 @@ class IndustriesController < ApplicationController
     # @root_categories = Category.roots
     @root_categories = Category.roots
     @industries = Industry.ordered.roots
+    #@title = @industries[params[:id].to_i-1].name
   end
 
   def products

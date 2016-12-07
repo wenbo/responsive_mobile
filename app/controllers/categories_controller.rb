@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find params[:id]
+    @title = @category.name
     if params[:industry_id].present?
       industry_ids = Industry.find(params[:industry_id]).children.map(&:id)
       @products_in_industry = industry_ids.collect do |industry_id| Industry.find(industry_id).products end.flatten

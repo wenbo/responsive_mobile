@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   def show
     @root_categories = Category.roots
     @product = Product.find params[:id]
+    @title = @product.title
     @product.visited
     @related_products = @product.related_products
   end
