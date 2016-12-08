@@ -1,7 +1,7 @@
 # coding: utf-8
 class Admin::ProductAttachmentsController < Admin::BaseController
   def index
-    @product_attachments = ProductAttachment.page(params[:page]).per(20)
+    @product_attachments = ProductAttachment.search(params[:search]).page(params[:page]).per(20)
   end
 
   def new

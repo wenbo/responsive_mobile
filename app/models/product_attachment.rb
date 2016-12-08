@@ -10,4 +10,8 @@ class ProductAttachment < ApplicationRecord
   def skip_for_zip
     !%w(application/zip application/x-zip application/pdf application/octet-stream).include?(pdf_content_type)
   end
+
+  def self.search(search)      
+    where("name LIKE :search", {search: "%#{search}%"})
+  end
 end
