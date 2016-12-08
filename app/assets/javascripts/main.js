@@ -25,7 +25,7 @@ $(document).ready(function() {
 										$(".upgrade_login_form").remove();
 										$("#login_form dd").html(
 														'<p class="sidebar_p recorder_f18">'+ data.user_name + '，HIOKI欢迎您</p>'+
-														'<p class="sidebar_tc"><a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">退出登录</a></p>'
+                        '<ul class="m_top15"><li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a></li><li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li></ul>'
 										);
                                                                                 $("#logout_in_header").show();
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
 								if (data.code == 200) {
 										$("#login_form dd").html(
 														'<p class="sidebar_p recorder_f18">'+ data.user_name + '，HIOKI欢迎您</p>'+
-														'<p class="sidebar_tc"><a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">退出登录</a></p>'
+                        '<ul class="m_top15"><li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a></li><li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li></ul>'
 										);
                                                                                 $("#logout_in_header").show();
 

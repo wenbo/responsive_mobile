@@ -31,7 +31,14 @@
 		<% else %>
 		<dd>
 			<p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
-      <p class="sidebar_tc"><a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">退出登录</a></p>
+                        <ul class="m_top15">
+                          <li>
+                        <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
+                        </li>
+                        <li>
+                        <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
+                        </li>
+                      </ul>
     </dd>
 		<% end %>
 	</dl>

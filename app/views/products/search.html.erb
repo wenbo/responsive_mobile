@@ -15,44 +15,44 @@
     <ul class="product_list m_top30">
       <% @products.each do |product| %>
         <% if product.is_recommended? %>
-        <li>
+        <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
       <dl class="product_tj">
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
         <dt class="product_dt01">
         <h3 class="product_f21"><%= product.title %></h3>
         <p class="product_f16 m_top5"><%= product.desc %> </p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
+        <p class="product_xx m_top15">查看详情</p>
         </dt>
         <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
+    </dl></a>
       </li>
     <% end %>
       <% if product.is_new? %>
-        <li>
+        <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
       <dl class="product_new">
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
         <dt class="product_dt01">
         <h3 class="product_f21"><%= product.title %></h3>
         <p class="product_f16 m_top5"><%= product.desc %></p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
+        <p class="product_xx m_top15">查看详情</p>
         </dt>
         <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
+    </dl></a>
       </li>
     <% end %>
       <% if !product.is_new? and !product.is_recommended? %>
-        <li>
+        <li><a href="/products/<%= product.id %>">
       <dl>
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
         <dt class="product_dt01">
         <h3 class="product_f21"><%= product.title %></h3>
         <p class="product_f16 m_top5"><%= product.desc %></p>
-        <p class="product_xx m_top15"><a href="/products/<%= product.id %>">查看详情</a></p>
+        <p class="product_xx m_top15">查看详情</p>
         </dt>
         <dt class="product_dt02"><%= product.category.name %></dt>
-      </dl>
+    </dl></a>
       </li>
     <% end %>
     <% end %>
