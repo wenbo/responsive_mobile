@@ -1,9 +1,13 @@
 <div id="pic_corpus_03" class="recorder_content" style="display:none;">
+  <% if @product.product_attachments.exclude_english.present? %>
   <p class="product_f25">PDF样张</p>
 
   <ul class="m_top30 clearfix">
 		<% @product.product_attachments.each do |p_a| %>
-    <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>"><%= p_a.name %></a></li>
+    <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>"><%= @product.title %></a></li>
 		<% end %>
   </ul>
+<% else %>
+  <p class="product_f25">非常抱歉，暂无可下载样本。</p>
+<% end %>
 </div>

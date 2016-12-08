@@ -1,4 +1,5 @@
 class ProductAttachment < ApplicationRecord
+  scope :exclude_english, -> {where("name not like '%英文%'")}
   belongs_to :pdf_category
   has_attached_file :pdf, styles: {thumbnail: ["60x60#", :png]}
   #validates_attachment :pdf, content_type: { content_type: "application/pdf" }
