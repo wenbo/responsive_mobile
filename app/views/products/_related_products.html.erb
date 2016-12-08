@@ -13,7 +13,7 @@
 				<%= product.title %>
 			</a>
 		</p>
-			<p class="recorder_blue"><%= product.desc %></p>
+			<p class="recorder_blue"><%= truncate(product.desc, length: 63) %></p>
   </div>
 	<% end %>
 </div>
