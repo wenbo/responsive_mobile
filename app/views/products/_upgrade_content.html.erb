@@ -1,7 +1,6 @@
 <div id="pic_corpus_04" class="upgrade_content recorder04_content" style="display:none;">
 	<% @product.upgrade_attachments.group_by do |file| file.classifier_id end.each do |id, files| %>
   <h3 class="recorder04_basic"><%= Product::UpgradeClassifier[id-1][0] %></h3>
-  <p class="recorder_f23 m_top25">电力测试仪</p>
   <div class="m_top20"><table width="1000" border="0" cellspacing="0" cellpadding="0" class="recorder_upgrade">
       <tr>
         <th width="130" height="50" bgcolor="#FFFEE2">型号</th>
