@@ -7,7 +7,7 @@
 			<%= form_tag "/products", method: :get, id: "search_form", name: "search_form" do %>
 			<label>
 				<input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
-			<p><input name="" type="checkbox" value="" />包含已停产的产品</p>
+			<p><input name="is_deleted" type="checkbox" value="1" />包含已停产的产品</p>
 			<% end %>
 		</dd>
 	</dl>

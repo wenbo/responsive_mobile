@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   def index
     @root_categories = Category.roots
     if params[:search].present?
-      @products = Product.search(params[:search]).is_display.is_main_body
+      if params[:is_deleted].present?
+        @products = Product.search(params[:search]).is_deleted.is_main_body
+      else
+        @products = Product.search(params[:search]).is_display.is_main_body
+      end
       render :search
     else
       @products = Product.ordered.is_display.is_main_body
