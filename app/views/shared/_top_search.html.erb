@@ -1,7 +1,7 @@
 <a name="top" id="top"></a>
 <div class="sidebar_search">
 	<dl>
-		<dt class="fl"><%= image_tag "front/sidebar_search01.jpg", width: 135 %></dt>
+		<dt class="fl"><%= image_tag "front/sidebar_search01.png", width: 75 %></dt>
 		<dd>
 			<h3>HIOKI商品搜索</h3>
 			<%= form_tag "/products", method: :get, id: "search_form", name: "search_form" do %>
@@ -14,7 +14,7 @@
 </div>
 <div class="sidebar_search02">
 	<dl>
-		<dt class="fl"><%= image_tag "front/sidebar_search11.jpg", width: 135 %></dt>
+		<dt class="fl"><%= image_tag "front/sidebar_search11.png", width: 75 %></dt>
 		<% if !session[:user_name].present? %>
 		<%= form_tag "sessions/", id: "login_form" do |f| %>
 		<dd>
