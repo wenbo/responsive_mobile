@@ -24,6 +24,7 @@ class Admin::BaseController < ApplicationController
 
   private
   def valid_access
+    ActiveRecord::Base.connection.execute "SET FOREIGN_KEY_CHECKS=0;"
     return redirect_to([:admin, :login]) unless session_user.present?
   end
 
