@@ -22,7 +22,7 @@
     <h3 class="product_f25 m_top20"><%= @category.name %></h3>
     <ul class="product_category m_top25 clearfix">
 			<% @category.children.each do |category| %>
-                          <% if category.products.count > 0 %>
+                          <% if category.products.is_display.count > 0 %>
       <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
     <% end %>
 			<% end %>

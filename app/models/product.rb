@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   scope :ordered, -> {order(is_recommended: :desc, is_new: :desc, position: :asc, visited_count: :desc)}
   scope :options, -> { where(is_option: true) }
   scope :is_display, -> { where(is_display: true, is_deleted: false) }
-  scope :is_deleted, -> { where(is_display: true) }
+  scope :include_deleted, -> { where(is_display: true) }
   scope :is_main_body, -> { where(is_main_body: true) }
   scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
 

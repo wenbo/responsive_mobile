@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @root_categories = Category.roots
     if params[:search].present?
       if params[:is_deleted].present?
-        @products = Product.search(params[:search]).is_deleted.is_main_body
+        @products = Product.search(params[:search]).include_deleted.is_main_body
       else
         @products = Product.search(params[:search]).is_display.is_main_body
       end
