@@ -13,10 +13,12 @@
   <div class="product_right">
   	<p class="current">
 			<a href="/demo/">首页</a>
+                        > <%= link_to "产品一览", "/industries/1/products" %> 
 			<% if @category_parent.present? %>
 			> <a href="/categories/<%= @category_parent.id %>"><%= @category_parent.name %></a>
 			<% end %>
-                        > <%= link_to "产品一览", "/industries/1/products" %> > <%= @category.name %></p>
+                        > <%= @category.name %>
+                      </p>
     <h3 class="product_f25 m_top20"><%= @category.name %></h3>
     <ul class="product_category m_top25 clearfix">
 			<% @category.children.each do |category| %>

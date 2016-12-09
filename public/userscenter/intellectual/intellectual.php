@@ -29,7 +29,7 @@ include("product_left.php");//加载template
     </p>
     <h3 class="recorder_basic recorder_blue">联系我们</h3>
     <p class="recorder_f18 m_top25"><img src="../images/intellectual_r4_c2.jpg" width="18" height="13" /> <a href="mailto:chenlu@hioki.com.cn">chenlu@hioki.com.cn</a></p>
-    <p class="recorder_f18 m_top10"><img src="../images/intellectual_r6_c2.jpg" width="18" height="18" /> 021-63343307/3308</p>
+    <p class="recorder_f18 m_top10"><img src="../images/intellectual_r6_c2.jpg" width="18" height="18" /> 400-920-6010</p>
     <p class="news_title_x">&nbsp;</p>
     <h3 class="product_f25 recorder_blue m_top20">HIOKI智测会入会方法</h3>
     <p class="recorder_f16 m_top15">1.　点击下方【会员注册】后，在会员注册表格中完整填写信息并点击提交。</p>
