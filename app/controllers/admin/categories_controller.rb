@@ -34,7 +34,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     @category = Category.find params[:id]
-    if @category.delete
+    if @category.products.blank? && @category.delete
       flash[:notice] = "删除成功!"
       redirect_to [:admin, :categories]
     end

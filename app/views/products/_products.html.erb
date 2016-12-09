@@ -24,7 +24,7 @@
     <p class="product_f16 m_top5"></p>
     <p class="product_xx m_top15">查看详情</p>
     </dt>
-    <dt class="product_dt02"><%= product.category.name %></dt>
+    <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
   </dl></a>
   </li>
 <% end %>
@@ -37,7 +37,7 @@
     <p class="product_f16 m_top5"></p>
     <p class="product_xx m_top15">查看详情</p>
     </dt>
-    <dt class="product_dt02"><%= product.category.name %></dt>
+    <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
   </dl></a>
   </li>
 <% end %>
