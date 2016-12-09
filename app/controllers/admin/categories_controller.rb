@@ -37,6 +37,9 @@ class Admin::CategoriesController < Admin::BaseController
     if @category.products.blank? && @category.delete
       flash[:notice] = "删除成功!"
       redirect_to [:admin, :categories]
+    else
+      flash[:notice] = "该分类下有产品，故无法删除!"
+      redirect_to [:admin, :categories]
     end
   end
 
