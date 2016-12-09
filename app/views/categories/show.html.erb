@@ -16,7 +16,7 @@
 			<% if @category_parent.present? %>
 			> <a href="/categories/<%= @category_parent.id %>"><%= @category_parent.name %></a>
 			<% end %>
-			> 产品一览</p>
+                        > 产品一览 <%= @category.name %></p>
     <h3 class="product_f25 m_top20"><%= @category.name %></h3>
     <ul class="product_category m_top25 clearfix">
 			<% @category.children.each do |category| %>

@@ -15,7 +15,7 @@
     </ul>
   </div>
   <div class="product_right">
-    <p class="current"><a href="/demo/">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= @product.title %></p>
+    <p class="current"><a href="/demo/">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= link_to @product.category.name, "/categories/#{@product.category_id}" %> > <%= @product.title %></p>
 		 <div class="clearfix">
 			 <h3 class="product_f25 m_top20 fl"><%= @product.title %></h3>
 			 <p class="fr m_top20"><a href="javascript:history.go(-1)"><%= image_tag "front/recorder_return.jpg", width: "135", height: "35" %></a></p>
