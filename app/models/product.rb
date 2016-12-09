@@ -1,7 +1,7 @@
 # coding: utf-8
 require File.join(Rails.root, "app/uploaders/avatar_uploader.rb")
 class Product < ApplicationRecord
-  UpgradeClassifier = [["下载文件", 1], ["操作说明书", 2]]
+  UpgradeClassifier = [["下载软件", 1], ["操作说明书", 2]]
   scope :ordered, -> {order('created_at DESC')} #{order(is_recommended: :desc, is_new: :desc)}
   scope :ordered, -> {order(is_recommended: :desc, is_new: :desc, position: :asc, visited_count: :desc)}
   scope :options, -> { where(is_option: true) }
