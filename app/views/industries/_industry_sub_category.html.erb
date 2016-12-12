@@ -1,5 +1,6 @@
 <ul class="m_top45 clearfix">
 		<% industry.categories.each_with_index do |r_c, index| %>
+                  <% next if r_c.id == 40 %>
 		<% if index % 4 == 0 %>
   	<li class="hioki_category">
 			<% else %>

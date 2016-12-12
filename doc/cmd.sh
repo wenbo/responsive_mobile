@@ -16,3 +16,4 @@ sed -i '' -e  "s/industries/categories/g" `grep industries -rl ./app/views/admin
 sed -i "s/href=\"\/\"/href=\"\/demo\/\"/g" `grep -nR 'href="/"'  -rl ./app/views/`
 sed -i "s/<a name=\"top\" id=\"top\"><\/a>/<%= render partial: \"shared\/top_search\" %>/g" `grep -nR '<a name="top" id="top"></a>'  -rl ./app/views/`
 
+sed -i "s/href=\"\/demo\/\"/href=\"\/index.html\"/g" `grep -nR 'href="/demo/"'  -rl ./app/views/`
