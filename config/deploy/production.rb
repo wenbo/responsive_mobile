@@ -7,6 +7,6 @@ role :app, %w{222.73.5.207}
 role :web, %w{222.73.5.207}
 role :db,  %w{222.73.5.207}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets bundle  public/assets public/uploads public/projects public/ckeditor_assets public/system public/userscenter/intellectual/documents}
-set :linked_files, %w{  puma.rb config/database.yml  }
+set :linked_files, %w{  puma.rb config/database.yml hioki.god }
 
 server '222.73.5.207',port: 22, user: 'admin', roles: %w{web app db}
