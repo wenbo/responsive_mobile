@@ -13,7 +13,6 @@
 .DS_Store
 /app/.DS_Store
 /public/system/
-Gemfile.lock
 *swo
 
 config/database.yml
