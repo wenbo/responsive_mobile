@@ -39,7 +39,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "paperclip", "~> 5.0.0"
 gem 'awesome_nested_set'
-gem 'ckeditor'
+gem 'ckeditor', "4.2.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
