@@ -56,7 +56,7 @@
 	<div class="hioki_search clearfix">
   	<div class="hioki_news_title">
 			<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
-			<p class="hioki_f15 m_top5">&nbsp;&gt; 新闻一览</p>
+                        <p class="hioki_f15 m_top5">&nbsp;&gt; <a href="/news.html" style="color:#FFF" target="_blank">新闻一览</a></p>
 			<ul>
 				<% NewsCategory.all.each do |nc| %>
 				<% next if nc.news.count == 0 %>
