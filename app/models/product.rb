@@ -34,6 +34,10 @@ class Product < ApplicationRecord
     self.sku = sku.strip
   end
 
+  def option_no_products
+    OptionCategory.where("option_sku_collection LIKE ?", "%#{sku}%").first.product
+  end
+
   def category_parent_position
     if category.parent.present?
       category.parent.position
