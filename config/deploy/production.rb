@@ -1,4 +1,4 @@
-set :branch, 'master'
+set :branch, 'production'
 set :deploy_to, '/home/admin/www/hioki_rails/production'
 set :bundle_flags, "--no-binstubs"
 set :log_level, :debug
