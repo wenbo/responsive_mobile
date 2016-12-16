@@ -34,6 +34,14 @@ class Product < ApplicationRecord
     self.sku = sku.strip
   end
 
+  def category_parent_position
+    if category.parent.present?
+      category.parent.position
+    else
+      category.position
+    end
+  end
+
   def self.search(search)      
     where("sku LIKE :search OR title LIKE :search OR search_keywords LIKE :search", {search: "%#{search}%"})
   end

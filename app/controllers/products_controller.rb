@@ -10,6 +10,13 @@ class ProductsController < ApplicationController
       render :search
     else
       @products = Product.ordered.is_display.is_main_body
+      
+      recommended_products = @products.select do |pro| pro.is_recommended end.sort_by do |pro| [pro.category_parent_position, pro.category.position, pro.position] end || []
+      new_products = @products.select do |pro| pro.is_new end.sort_by do |pro| [pro.category_parent_position, pro.category.position, pro.position] end
+      remains = (@products - recommended_products - new_products).sort_by do |pro| [pro.category_parent_position, pro.category.position, pro.position] end
+      @products = recommended_products + new_products + remains
+
+      # @products = Product.find_by_sql("SELECT * FROM `products` LEFT OUTER JOIN `categories` ON `categories`.`id` = `products`.`category_id` WHERE `products`.`is_display` = 1 AND `products`.`is_deleted` = 0 AND `products`.`is_main_body` = 1 ORDER BY is_recommended desc, is_new desc, categories.position asc, products.position asc, visited_count desc")
     end
   end
 
