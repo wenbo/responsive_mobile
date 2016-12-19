@@ -51,11 +51,9 @@
       </li>
     <% end %>
       <% if !product.is_new? and !product.is_recommended? %>
-        <% if product.is_option? && !product.is_main_body %>
-        <li><a href="/products/<%= product.option_no_products.id %>?tag=option">
-        <% else %>
-        <li><a href="/products/<%= product.id %>">
-        <% end %>
+      <% if product.is_option? && !product.is_main_body %>
+			<% product.option_no_products.each do |product| %>
+        <li><a href="/products/<%= product.id %>?tag=option">
       <dl>
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
         <dt class="product_dt01">
@@ -65,9 +63,23 @@
         </dt>
         <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
     </dl></a>
-      </li>
-    <% end %>
-    <% end %>
+				</li>
+				<% end %>
+				<% else %>
+      <li><a href="/products/<%= product.id %>">
+					<dl>
+						<dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
+						<dt class="product_dt01">
+							<h3 class="product_f21"><%= product.title %></h3>
+							<p class="product_f16 m_top5"></p>
+							<p class="product_xx m_top15">查看详情</p>
+						</dt>
+						<dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
+				</dl></a>
+			</li>
+        <% end %>
+				<% end %>
+				<% end %>
     </ul>
     <p class="m_top45">&nbsp;</p>
   </div>
