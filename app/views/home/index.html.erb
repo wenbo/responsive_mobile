@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= javascript_include_tag 'bootstrap.min' %>
+  <%= javascript_include_tag 'bplayer' %>
 <% end %>
 
 <%= render partial: "shared/top_search" %>
@@ -8,9 +8,9 @@
 <div class="hioki_search_bg">
 	<div class="hioki_search">
   	<h3 class="hioki_search_title t_center">业界商品分类<br /><span>Search Applications</span></h3>
-		<div class="swiper-pagination2 m_top15 clearfix">
+		<div class="m_top15 clearfix" id="myjQueryNav">
 			<a href="/industries/1">
-                          <dl class="hioki_categories active" data-target="#myCarousel" data-slide-to="0">
+        <dl class="hioki_categories">
       		<dt class="hioki_f31">电力/新能源</dt>
 					<dt class="m_top5">Power, Energy, Environment</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
@@ -18,7 +18,7 @@
 				</dl>
 			</a>
 			<a href="/industries/2">
-                          <dl class="hioki_categories m_left20" data-target="#myCarousel" data-slide-to="1">
+        <dl class="hioki_categories m_left20">
       		<dt class="hioki_f31">汽车</dt>
 					<dt class="m_top5">Automotive, Transport</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
@@ -26,7 +26,7 @@
 				</dl>
 			</a>
 			<a href="/industries/3">
-                          <dl class="hioki_categories m_left20" data-target="#myCarousel" data-slide-to="2">
+        <dl class="hioki_categories m_left20">
       		<dt class="hioki_f31">电子零件</dt>
 					<dt class="m_top5">Components, Semiconductors</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
@@ -34,7 +34,7 @@
 				</dl>
 			</a>
 			<a href="/industries/4">
-                          <dl class="hioki_categories m_left20" data-target="#myCarousel" data-slide-to="3">
+        <dl class="hioki_categories m_left20">
       		<dt class="hioki_f31">电池</dt>
 					<dt class="m_top5">Battery</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %> 查看详情</dt>
@@ -42,7 +42,7 @@
 				</dl>
 			</a>
 			<a href="/industries/5">
-                          <dl class="hioki_categories m_left20" data-target="#myCarousel" data-slide-to="4">
+        <dl class="hioki_categories m_left20">
       		<dt class="hioki_f31">交通<span class="hioki_f15">（地铁、铁道、航空）</span></dt>
 					<dt class="m_top5">Underground, Railway, Aviation</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
