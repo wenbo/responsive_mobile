@@ -52,7 +52,7 @@
     <% end %>
       <% if !product.is_new? and !product.is_recommended? %>
         <% if product.is_option? && !product.is_main_body %>
-        <li><a href="/products/<%= product.option_no_products.id %>">
+        <li><a href="/products/<%= product.option_no_products.id %>?tag=option">
         <% else %>
         <li><a href="/products/<%= product.id %>">
         <% end %>

@@ -1,5 +1,11 @@
 <% content_for :head do %>
 <%= javascript_include_tag 'tab' %>
+<script type="text/javascript">        
+$(document).ready(function(){
+if(location.search.indexOf("option")>0)
+ShowSub(0,2);
+});
+</script>
 <% end %>
 
 <%= render partial: "shared/top_search" %>
