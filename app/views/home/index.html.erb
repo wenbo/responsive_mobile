@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= javascript_include_tag 'bplayer' %>
+  <%= javascript_include_tag 'jquery', 'script', 'tabslide' %>
 <% end %>
 
 <%= render partial: "shared/top_search" %>
@@ -8,7 +8,7 @@
 <div class="hioki_search_bg">
 	<div class="hioki_search">
   	<h3 class="hioki_search_title t_center">业界商品分类<br /><span>Search Applications</span></h3>
-		<div class="m_top15 clearfix" id="myjQueryNav">
+		<div class="m_top15 clearfix" id="img_handle">
 			<a href="/industries/1">
         <dl class="hioki_categories">
       		<dt class="hioki_f31">电力/新能源</dt>

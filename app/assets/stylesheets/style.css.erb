@@ -40,21 +40,9 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .header ul li a:hover,.header ul li.nav_li a{text-decoration:none; background:url(<%= asset_path "front/hioki_r5_c5.jpg" %>) no-repeat center bottom;}
 .header ul li.nav_li02 a:hover,.header ul li.nav_li02.nav_li a{background:url(<%= asset_path "front/hioki_r5_c5.jpg" %>) no-repeat right bottom;}
 /*banner--------------------*/
-#myjQuery{width:100%; height:463px; margin:0 auto; position:relative;}
-#myjQueryContent{width:100%; height:463px; position:absolute;}
-#myjQueryContent li{position:absolute; height:463px; width:100%;}
+.img-scroll{ position:relative; width:100%; height:463px; margin:0 auto; overflow:hidden;}
+#img-show li{width:100%; height:463px;}
 
-.carousel{position:relative}
-.carousel-inner{position:relative;overflow:hidden;width:100%; padding:0; margin:0; }
-.carousel-inner>.item{height:463px; padding:0; margin:0; list-style-type:none; display:none;position:relative;-webkit-transition:.6s ease-in-out left;transition:.6s ease-in-out left}
-.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}
-.carousel-inner>.active{left:0}
-.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:100%}
-.carousel-inner>.next{left:100%}
-.carousel-inner>.prev{left:-100%}
-.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}
-.carousel-inner>.active.left{left:-100%}
-.carousel-inner>.active.right{left:100%}
 
 .hioki_search_bg{width:100%; padding:35px 0 70px 0; background:url(<%= asset_path "front/hioki_r8_c1.jpg" %>) repeat;}
 .hioki_search{width:1260px; margin:0 auto;}
