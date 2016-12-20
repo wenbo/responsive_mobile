@@ -15,11 +15,7 @@
     <ul class="product_list m_top30">
       <% @products.each do |product| %>
         <% if product.is_recommended? %>
-          <% if product.is_option? && !product.is_main_body %>
-          <li><a href="/products/<%= product.option_no_products.id %>">
-        <% else %>
-            <li><a href="/products/<%= product.id %>">
-          <% end %>
+      <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
       <dl class="product_tj">
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
@@ -33,11 +29,7 @@
       </li>
     <% end %>
       <% if product.is_new? %>
-        <% if product.is_option? && !product.is_main_body %>
-        <li><a href="/products/<%= product.option_no_products.id %>">
-      <% else %>
-          <li><a href="/products/<%= product.id %>">
-        <% end %>
+      <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
       <dl class="product_new">
         <dd><%= image_tag product.thumb_image.url, width: 160 %></dd>
@@ -49,7 +41,7 @@
         <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
     </dl></a>
       </li>
-    <% end %>
+			<% end %>
       <% if !product.is_new? and !product.is_recommended? %>
       <% if product.is_option? && !product.is_main_body %>
 			<% product.option_no_products.each do |product| %>
