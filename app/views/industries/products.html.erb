@@ -1,22 +1,22 @@
 <% content_for :head do %>
 <%= javascript_include_tag 'tab' %>
-<% end %>
 <style type="text/css">
 	#banner_industry_<%= params[:id] %>{
 	background:url(<%= asset_path("front/banner_industry_#{params[:id]}.jpg")%>)
 	}
 </style>
+<% end %>
 
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="product_banner"></div>
+<div class="product_banner" id="banner_industry_<%= params[:id] %>"></div>
 <div class="product_title">
   <ul class="news_content">
 		<% (1..5).each do |i| %>
 		<% if params[:id].to_i == i %>
-		<li onclick="window.location='/industries/<%= i %>'" id=S_Menu_0<%= i %> class="selectd">
+		<li onclick="window.location='/industries/<%= i %>/products'" id=S_Menu_0<%= i %> class="selectd">
 			<% else %>
-		<li onclick="window.location='/industries/<%= i %>'" id=S_Menu_0<%= i %> >
+		<li onclick="window.location='/industries/<%= i %>/products'" id=S_Menu_0<%= i %> >
 			<% end %>
 			<p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p>
 		</li>
