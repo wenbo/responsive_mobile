@@ -14,7 +14,6 @@
 </div>
 <%= render partial: "upgrade_content" %>
 <% else %>
-<%=raw @product.upgraded_note if @product.upgraded_note.present? %>
-<%=raw @product.upgraded if @product.upgraded.present? %>
 <%= render partial: "upgrade_content" %>
 <% end %>
+
