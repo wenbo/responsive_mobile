@@ -35,7 +35,7 @@ class Product < ApplicationRecord
   end
 
   def option_no_products
-    OptionCategory.where("option_sku_collection LIKE ?", "%#{sku}%").map(&:product)
+    OptionCategory.where("option_sku_collection LIKE ?", "%#{sku}%").map(&:product).uniq
   end
 
   def category_parent_position
