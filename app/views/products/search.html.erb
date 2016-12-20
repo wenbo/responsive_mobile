@@ -14,7 +14,7 @@
     <p class="current"><a href="/index.html">首页</a> > 搜索结果一览</p>
     <ul class="product_list m_top30">
       <% @products.each do |product| %>
-        <% if product.is_recommended? %>
+        <% if product.is_recommended? && product.is_main_body %>
       <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_tj.png", width: 93, height: 93 %></p>
       <dl class="product_tj">
@@ -28,7 +28,7 @@
     </dl></a>
       </li>
     <% end %>
-      <% if product.is_new? %>
+      <% if product.is_new? && product.is_main_body %>
       <li><a href="/products/<%= product.id %>">
       <p class="product_dz"><%= image_tag "front/product_new.png", width: 93, height: 93 %></p>
       <dl class="product_new">
@@ -42,7 +42,6 @@
     </dl></a>
       </li>
 			<% end %>
-      <% if !product.is_new? and !product.is_recommended? %>
       <% if product.is_option? && !product.is_main_body %>
 			<% product.option_no_products.each do |product| %>
         <li><a href="/products/<%= product.id %>?tag=option">
@@ -70,7 +69,6 @@
 				</dl></a>
 			</li>
         <% end %>
-				<% end %>
 				<% end %>
     </ul>
     <p class="m_top45">&nbsp;</p>
