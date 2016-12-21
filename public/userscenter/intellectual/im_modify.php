@@ -24,7 +24,7 @@ if ($get['email']!=$email)
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HIOKI-中国区维修服务中心（日置(上海) 商贸有限公司）</title>
+<title>会员信息修改｜HIOKI-日置(上海) 商贸有限公司</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/scrollsmoothly.js"></script>
 <script language="javascript" type="text/javascript">
@@ -120,7 +120,7 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/demo/">首页</a> > <a href="intellectual.html">智测会</a> > 会员信息修改</p>
+  	<p class="current"><a href="/index.html">首页</a> > <a href="intellectual.html">智测会</a> > 会员信息修改</p>
     <h3 class="product_f25 m_top20">会员信息修改</h3>
     <div class="register_content">
 <form name="FORMADD" method="post" action="modifiy_check.php" onsubmit="return checkFrom();">

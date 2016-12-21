@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HIOKI-中国区维修服务中心（日置(上海) 商贸有限公司）</title>
+<title>忘记密码｜HIOKI-日置(上海) 商贸有限公司</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/scrollsmoothly.js"></script>
 <script type="text/javascript" src="js/tab.js"></script>

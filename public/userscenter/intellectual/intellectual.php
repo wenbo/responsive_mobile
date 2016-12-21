@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HIOKI-中国区维修服务中心（日置(上海) 商贸有限公司）</title>
+<title>智测会｜HIOKI-日置(上海) 商贸有限公司</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/scrollsmoothly.js"></script>
 </head>
@@ -17,7 +17,7 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/demo/">首页</a> > <a href="intellectual.php">智测会</a> > 智测会介绍</p>
+  	<p class="current"><a href="/index.html">首页</a> > <a href="intellectual.php">智测会</a> > 智测会介绍</p>
     <h3 class="product_f25 recorder_blue m_top20">HIOKI智测会介绍</h3>
     <p class="recorder_f16">HIOKI智测会是用户免费注册为会员后，向其进一步提供详细产品信息和完善服务的系统。欢迎大家积极参与入会。</p>
     <h3 class="recorder_basic recorder_blue">会员招募</h3>

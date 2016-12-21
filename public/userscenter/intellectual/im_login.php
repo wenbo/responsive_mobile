@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>HIOKI-中国区维修服务中心（日置(上海) 商贸有限公司）</title>
+<title>登录｜HIOKI-日置(上海) 商贸有限公司</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/scrollsmoothly.js"></script>
 <script type="text/javascript" src="../js/tab.js"></script>
@@ -18,11 +18,11 @@ include("../header.php");//加载template
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/demo/">首页</a> > 智测会</p>
+  	<p class="current"><a href="/index.html">首页</a> > 智测会</p>
     <h3 class="product_f25 m_top20">HIOKI智测会欢迎您！</h3>
     <div class="recorder_content recorder_f16">
       <div class="recorder_sign clearfix" style="margin:0;">
-      	<p>如果还没有登陆客户信息，请先进行登录。</p>
+      	<p>如果还没有登录客户信息，请先进行登录。</p>
 <script language="javascript">
 
 function check()
