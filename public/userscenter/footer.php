@@ -31,7 +31,6 @@
     </div>
     <div class="hioki_column03">
       <h3 class="hioki_f23">关于日置 <span class="hioki_f15">About HIOKI</span></h3>
-			app/views/shared/
 			<ul class="m_top25">
 				<li><a href="/distribution.html">&gt; 公司分布</a></li>
 				<li class="m_top10"><a href="/speech.html">&gt; 董事致辞</a></li>
@@ -45,7 +44,7 @@
   <h1 class="fl"><img width="148" height="30" src="/userscenter/images/hioki_r30_c2.jpg" alt="Hioki r30 c2" /></h1>
   <p class="footer_dh"><img width="17" height="17" src="/userscenter/images/hioki_r31_c14.jpg" alt="Hioki r31 c14" /> 400-920-6010</p>
   <p class="footer_dh"><img width="15" height="12" src="/userscenter/images/hioki_r32_c18.jpg" alt="Hioki r32 c18" /> info@hioki.com.cn</p>
-  <p class="footer_dh">中国区维修服务中心（日置(上海) 商贸有限公司）</p>
+  <p class="footer_dh">日置(上海)商贸有限公司</p>
   <ul class="fr">
     <li><a href="/demo/">&gt; 首　页</a></li>
     <li><a href="/news.html">&gt; 新　闻</a></li>

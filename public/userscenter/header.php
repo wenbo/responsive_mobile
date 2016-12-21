@@ -16,7 +16,7 @@ if ($_COOKIE["login_stub"])
 <a name="top" id="top"></a>
 <div class="top_bg">
   <div class="top clearfix">
-	<p class="fl">中国区维修服务中心（日置(上海) 商贸有限公司）</p>
+        <p class="fl">日置(上海)商贸有限公司</p>
     <p class="fr">
 	<?php if($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])
 	echo "<a href=\"/userscenter/im_logout.php\"><img src=\"/userscenter/images/hioki_r1_c30.jpg\" width=\"28\" height=\"26\" />会员退出</a>";
