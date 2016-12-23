@@ -36,7 +36,7 @@ $(document).ready(function() {
         });
     });
 
-		$("#login_form .sidebar_ld").click(function() {
+		$("#login_form #login_button").click(function() {
 				if ($("#login_form #email").val().length <= 4 || $("#login_form #password").val().length <= 4) {
 						alert("请输入正确的邮件和密码")
 						return false;

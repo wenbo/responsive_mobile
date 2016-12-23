@@ -168,7 +168,7 @@ include("./header.php");//加载template
 						<dt>
 							<label class="register_dx"><input name="area" type="radio" value="华北" />&nbsp;&nbsp;华北</label>
 							<label class="register_dx"><input name="area" type="radio" value="华东" />&nbsp;&nbsp;华东</label>
-							<label class="register_dx"><input name="area" type="radio" value="中南" />&nbsp;&nbsp;中南</label>
+							<label class="register_dx"><input name="area" type="radio" value="华南" />&nbsp;&nbsp;华南</label>
 							<label class="register_dx"><input name="area" type="radio" value="中西" />&nbsp;&nbsp;中西</label>
 							<p class="register_f14 clear">华北：北京、天津、黑龙江、吉林、辽宁、山东、河北、河南、山西、内蒙古、新疆<br />
 								华东：上海、江苏、浙江、安徽、江西<br />
