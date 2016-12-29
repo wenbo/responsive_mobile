@@ -41,7 +41,7 @@ echo "<a href=\"/userscenter/im_logout.php\"><img src=\"/userscenter/images/hiok
 	 <h1 class="fl"><a href="/index.html"><img width="220" height="30" alt="HIOKI" src="/userscenter/images/hioki_r4_c3.jpg" /></a></h1>
 	 <ul>
 	 <li>
-	 <a href="/demo/">首　　页</a>
+	 <a href="/index.html">首　　页</a>
 	 </li>
 	 <li>
 	 <a href="/news.html">新　　闻</a>
