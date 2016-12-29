@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get '/index.html' => 'home#index'
   get 'repair' => 'home#repair'
+  get 'recruit' => 'home#recruit'
   get 'company' => 'home#company'
   get 'contact' => 'home#contact'
   get 'distribution' => 'home#distribution'

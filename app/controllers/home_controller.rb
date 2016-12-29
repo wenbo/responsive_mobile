@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @root_categories = Category.roots
   end
 
+  def recruit
+    @root_categories = Category.roots
+  end
+
   def company
     @root_categories = Category.roots
   end
