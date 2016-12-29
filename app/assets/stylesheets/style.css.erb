@@ -29,13 +29,20 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 
 .top_bg{width:100%; height:40px; color:#FFF; font-size:15px; line-height:40px; background:#1A5FAA;}
 .top{width:1300px; margin:0 auto;}
-.top_bg .fr{font-size:20px;}
 .top_bg .fr a{color:#FFF;}
-.top_bg .fr img{margin:7px 10px 0 0; vertical-align:top;}
+.top_bg .top_li1{float:left; font-size:20px;}
+.top_bg .top_li1 img{margin:7px 10px 0 15px; vertical-align:top;}
+.top_bg .top_li2{width:150px; float:left; font-size:14px; margin:10px 0 0 10px; position:relative; z-index:10; background:#FFF;}
+.top_bg .top_li2 a{width:140px; height:21px; color:#333; line-height:21px; text-decoration:none; display:block; padding-left:10px; background:url(<%= asset_path "front/hioki_r1_c35.jpg" %>) no-repeat;}
+.top_bg .top_li2 ul{display:none; border-left:#96A8CC 1px solid;  border-right:#96A8CC 1px solid;  border-bottom:#96A8CC 1px solid; background:#FFF; position:absolute;}
+.top_bg .top_li2:hover ul{display:block;}
+.top_bg .top_li2 li{width:148px; color:#333;}
+.top_bg .top_li2 li a{width:138px; background:none;}
+.top_bg .top_li2 li a:hover{background:#EFEFEF;}
 .header{width:1300px; height:45px; margin:0 auto; padding-top:25px;}
 .header ul{float:right; padding-top:5px;}
-.header ul li{width:180px; height:25px; float:left; color:#195FA9; font-size:15px; line-height:25px; text-align:center; border-right:#000000 1px dotted;}
-.header ul li.nav_li02{width:120px; text-align:right; border-right:none;}
+.header ul li{width:150px; height:25px; float:left; color:#195FA9; font-size:15px; line-height:25px; text-align:center; border-right:#000000 1px dotted;}
+.header ul li.nav_li02{width:105px; text-align:right; border-right:none;}
 .header ul li a{color:#195FA9; display:block;}
 .header ul li a:hover,.header ul li.nav_li a{text-decoration:none; background:url(<%= asset_path "front/hioki_r5_c5.jpg" %>) no-repeat center bottom;}
 .header ul li.nav_li02 a:hover,.header ul li.nav_li02.nav_li a{background:url(<%= asset_path "front/hioki_r5_c5.jpg" %>) no-repeat right bottom;}
@@ -71,6 +78,9 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .m_left25{margin-left:25px;}
 .hioki_category02{width:295px; height:102px; float:left; margin-bottom:25px; background:#1A5FAA;}
 .hioki_category02 a{color:#FFF; font-size:19px; padding:40px 0 40px 80px; display:block;}
+.hioki_category03{width:295px; height:102px; float:left; margin-bottom:25px; border:#E1E2E6 1px solid; background:#F0F7FF;}
+.hioki_category03 a{color:##000; font-size:19px; padding:40px 0 40px 80px; display:block;}
+.hioki_activity{width:100%; padding:10px 0 50px 0; background:url(<%= asset_path "front/hioki_r24_c1.jpg" %>) repeat-x;}
 .hioki_page{position:fixed; right:80px; bottom:130px;}
 .hioki_column{width:100%; padding:35px 0 55px 0; background:#F7F7F7;}
 .hioki_column01{width:365px; float:left; padding-left:30px; border-right:#000000 1px dotted;}
@@ -276,3 +286,14 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 
 
 .password_banner{width:100%; height:328px; background:url(<%= asset_path "front/password_r1_c1.jpg" %>) no-repeat top center;}
+
+.recruit_banner{width:100%; height:328px; background:url(<%= asset_path "front/recruit_r1_c1.jpg" %>) no-repeat top center;}
+.recruit_table{border-top:#C5C6C7 1px solid;}
+.recruit_table th{border-bottom:#C5C6C7 1px solid; color:#FFF; padding:10px 15px; text-align:left;}
+.recruit_table td{border-bottom:#C5C6C7 1px solid; padding:10px 20px; color:#666;}
+.recruit_f20{color:#195FA6; font-size:20px; line-height:30px;}
+
+
+.soft_parameter{border-top:#C5C6C7 1px solid; border-left:#C5C6C7 1px solid;}
+.soft_parameter th{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; font-size:15px; padding:15px 12px;}
+.soft_parameter td{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; padding:12px; color:#666;}
