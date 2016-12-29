@@ -43,9 +43,9 @@ class SessionsController < ApplicationController
     if user.present? && user.valid_password?(params[:password])
       session[:user_id] = user.id
       session[:user_name] = user.name
-      redirect_to "/demo/"
+      redirect_to "/index.html"
     else
-      redirect_to "/demo/"
+      redirect_to "/index.html"
     end    
   end
 
@@ -59,7 +59,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = nil
     session[:user_name] = nil
-    redirect_to "/demo/"
+    redirect_to "/index.html"
   end
   
 end
