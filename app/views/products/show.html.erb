@@ -31,22 +31,32 @@ ShowSub(0,4);
     <p class="m_top30"><%= image_tag @product.banner.url %></p>
     <ul class="recorder_title m_top30 clearfix">
       <li onclick=ShowSub(0,1) id=S_Menu_01 class=selectd>概　要</li>
+    <% if @spec_table.present? %>
       <li onclick=ShowSub(0,6) id=S_Menu_06>规格表</li>
+    <% end %>
+      <% if @option_categories.present? %>
       <li onclick=ShowSub(0,2) id=S_Menu_02>选　件</li>
+    <% end %>
       <li onclick=ShowSub(0,3) id=S_Menu_03>PDF样本</li>
       <li onclick=ShowSub(0,4) id=S_Menu_04>升级・软件</li>
+      <% if @utilities.present? %>
       <li onclick=ShowSub(0,5) id=S_Menu_05>解决方案</li>
+    <% end %>
     </ul>
     <div id="pic_corpus_01" class="recorder_content">
       <%=raw @product.summary %>
     </div>
+    <% if @spec_table.present? %>
     <%= render partial: "spec_table" %>
-    <%= render partial: "options" %>
+  <% end %>
+    <% if @option_categories.present? %>
+      <%= render partial: "options" %>
+  <% end %>
     <%= render partial: "pdf" %>
     <%= render partial: "upgrade" %>
-		<% if false %>
+      <% if @utilities.present? %>
     <%= render partial: "case" %>
-		<% end %>
+  <% end %>
 		<% if @related_products.present? %>
     <%= render partial: "related_products" %>
 		<% end %>

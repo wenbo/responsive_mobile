@@ -29,6 +29,9 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
     @title = @product.title
     @product.visited
+    @spec_table = @product.spec_table
+    @utilities = @product.utilities
+    @option_categories = @product.option_categories 
     @related_products = @product.related_products
   end
 end

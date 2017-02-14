@@ -2,7 +2,7 @@
 	<% if @product.red_desc_as_option.present? %>
   <p class="recorder_f16 recorder_red">注意：无论何种情况，都需要1种内存扩展板。8861-50同种类的需2块，订货时请指定</p>
 	<% end %>
-	<% @product.option_categories.each do |option_cate| %>
+	<% @option_categories.each do |option_cate| %>
 	<% options = option_cate.options %>
 	<% if options.present? %>
   <h3 class="recorder_basic"><%= option_cate.name %></h3>
