@@ -199,6 +199,15 @@
     </div>
 
     <div class="form-inputs">
+      <div class="form-group text requirede">
+        <label class="col-sm-2 control-label"> 规格表 </label>
+        <div class="col-sm-9">
+          <%= f.text_area :spec_table %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
       <label class="col-sm-2 control-label"> 软件升级文档 </label>
       <div id="option_fieldsets" class="control-label"><%= link_to_add_fields "添加文档 ", f, :upgrade_attachments %></div>
       <%= f.fields_for :upgrade_attachments, @upgrade_attachments do |upgrade_attachment_fields| %>
@@ -248,6 +257,7 @@
 			$(document).ready(function (){
 
   CKEDITOR.replace("product_summary");
+  CKEDITOR.replace("product_spec_table");
 	CKEDITOR.replace("product_upgraded");
 	CKEDITOR.replace("product_upgraded_note");
 	});
