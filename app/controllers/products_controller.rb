@@ -29,8 +29,11 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
     @title = @product.title
     @product.visited
+    @summary = @product.summary
+    @product_attachments = @product.product_attachments.exclude_english
     @spec_table = @product.spec_table
     @utilities = @product.utilities
+    @upgraded_flag = true if @product.upgraded.present? || @product.upgraded_note.present?
     @option_categories = @product.option_categories 
     @related_products = @product.related_products
   end

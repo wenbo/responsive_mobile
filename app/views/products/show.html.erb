@@ -30,30 +30,42 @@ ShowSub(0,4);
     </div>
     <p class="m_top30"><%= image_tag @product.banner.url %></p>
     <ul class="recorder_title m_top30 clearfix">
+    <% if @summary.present? %>
       <li onclick=ShowSub(0,1) id=S_Menu_01 class=selectd>概　要</li>
+    <% end %>
     <% if @spec_table.present? %>
       <li onclick=ShowSub(0,6) id=S_Menu_06>规格表</li>
     <% end %>
       <% if @option_categories.present? %>
       <li onclick=ShowSub(0,2) id=S_Menu_02>选　件</li>
     <% end %>
+  <% if @product_attachments.present? %>
       <li onclick=ShowSub(0,3) id=S_Menu_03>PDF样本</li>
+    <% end %>
+  <% if @upgraded_flag.present? %>
       <li onclick=ShowSub(0,4) id=S_Menu_04>升级・软件</li>
+    <% end %>
       <% if @utilities.present? %>
       <li onclick=ShowSub(0,5) id=S_Menu_05>解决方案</li>
     <% end %>
     </ul>
-    <div id="pic_corpus_01" class="recorder_content">
-      <%=raw @product.summary %>
+    <% if @summary.present? %>
+      <div id="pic_corpus_01" class="recorder_content">
+      <%=raw @summary %>
     </div>
+  <% end %>
     <% if @spec_table.present? %>
     <%= render partial: "spec_table" %>
   <% end %>
     <% if @option_categories.present? %>
       <%= render partial: "options" %>
   <% end %>
+  <% if @product_attachments.present? %>
     <%= render partial: "pdf" %>
+  <% end %>
+  <% if @upgraded_flag.present? %>
     <%= render partial: "upgrade" %>
+  <% end %>
       <% if @utilities.present? %>
     <%= render partial: "case" %>
   <% end %>
