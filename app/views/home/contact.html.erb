@@ -1,5 +1,28 @@
 <% content_for :head do %>
+<%= stylesheet_link_tag 'colorbox.css' %>
+<%= javascript_include_tag 'jquery.colorbox' %>
 <%= javascript_include_tag 'jquery_ujs' %>
+<script>
+	$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+		$(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:600});
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
 <% end %>
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
@@ -11,10 +34,11 @@
   </div>
   <div class="product_right">
   	<p class="current"><a href="index.html">首页</a> > 联系我们</p>
-    <div class="contact_lx t_center">
-      <p class="contact_bt"><strong>日置(上海) 商贸有限公司联系方式</strong></p>
-      <p class="product_f20 m_top25">客户服务中心电话：<strong>400-920-6010</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/distribution.html#d1" style="color:#195FA9">中国分支机构详细信息请点击</a></p>
-      <p class="m_top15">地址：上海市黄浦区西藏中路268号来福士广场4705室 邮编：200001</p>
+    <div class="contact_lx">
+      <p class="contact_bt t_center"><strong>日置(上海) 商贸有限公司联系方式</strong></p>
+      <p class="product_f20 m_top25" style="padding-left:280px;">产品、维修/校正请咨询：<strong>400-920-6010</strong></p>
+      <p class="m_top10" style="padding-left:280px;">地址：上海市黄浦区西藏中路268号来福士广场4705室</p>
+      <p class="product_f20 m_top10" style="padding-left:280px;">销售（报价、交期）及其他请咨询：<a id="try-1" class="health01 cboxElement" href="/assets_doc/china.html" style="color:#195FA9">中国分支机构</a></p>
     </div>
     <p class="m_top30">红色星号标注的项目为必须填写的项目</p>
 		<script language="javascript">
