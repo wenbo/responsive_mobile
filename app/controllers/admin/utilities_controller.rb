@@ -33,6 +33,14 @@ class Admin::UtilitiesController < Admin::BaseController
     end
   end
 
+  def destroy
+    @utility = Utility.find params[:id]
+    if @utility.delete
+      flash[:notice] = "删除成功!"
+      redirect_to [:admin, :utilities]
+    end
+  end
+
   private
   def params_utility
     params.require(:utility).permit(:title, :description, :link, product_ids: [])

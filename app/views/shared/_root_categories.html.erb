@@ -2,7 +2,11 @@
 <% middle = (size%2 == 1 ? size/2+1 : size/2) %>
 <ul class="hioki_w205 m_top25">
   <% @root_categories[0..(middle-1)].each do |cate| %>
+    <% if cate.id == 31 %>
+    <li>&gt; <%= link_to cate.name, "/categories/#{cate.id}" %></li>
+    <% else %>
     <li class="m_top10">&gt; <%= link_to cate.name, "/categories/#{cate.id}" %></li>
+    <% end %>
 <% end %>
 </ul>
 <ul class="fl m_top25">
