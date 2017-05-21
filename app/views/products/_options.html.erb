@@ -4,8 +4,11 @@
 	<% end %>
 	<% @option_categories.each do |option_cate| %>
 	<% options = option_cate.options %>
-	<% if options.present? %>
   <h3 class="recorder_basic"><%= option_cate.name %></h3>
+  <% if option_cate.present? %>
+  <p class="recorder_f16 recorder_red m_top20"><%= option_cate.note %></p>
+  <% end %>
+  <% if options.present? %>
   <div class="recorder_option clearfix">
 		<% options.each do |option| %>
     <dl class="recorder_assembly">
