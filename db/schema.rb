@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214140304) do
+ActiveRecord::Schema.define(version: 20170813103002) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -121,8 +121,9 @@ ActiveRecord::Schema.define(version: 20170214140304) do
     t.string   "note"
     t.string   "option_sku_collection"
     t.integer  "product_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "position",              default: 99999
     t.index ["product_id"], name: "index_option_categories_on_product_id", using: :btree
   end
 
