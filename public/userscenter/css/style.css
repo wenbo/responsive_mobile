@@ -93,7 +93,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .footer{width:1300px; margin:0 auto; padding:25px 0 10px 0;}
 .footer_dh{float:left; padding:10px 0 0 20px;}
 .footer_dh img{vertical-align:middle;}
-.footer .fr li{float:left; margin-top:10px; padding-left:25px;}
+.footer .fr li{float:left; margin-top:10px; padding-left:22px;}
 .footer_icp{color:#999; font-size:12px; text-align:center; padding-top:40px;}
 .sidebar_search{width:135px; height:140px; position:fixed; top:180px; right:0; overflow:hidden; z-index:9999;}
 .sidebar_search dl{width:425px; height:140px;}

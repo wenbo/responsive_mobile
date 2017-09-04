@@ -68,5 +68,7 @@ gem 'capistrano-rails', group: :development
 gem 'capistrano-rbenv', group: :development
 gem 'capistrano-bundler', group: :development 
 gem 'capistrano3-puma' , group: :development
+gem 'capistrano-upload', group: :development
+
 
 

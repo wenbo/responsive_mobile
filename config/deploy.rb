@@ -1,4 +1,5 @@
 lock '3.7.0'
+require 'capistrano/upload'
 
 set :application, 'hioki_rails'
 set :repo_url, 'git@gitlab.com:hioki/hiroki_rails.git'

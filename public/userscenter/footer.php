@@ -43,7 +43,7 @@
 <div class="footer clearfix">
   <h1 class="fl"><img width="220" height="30" src="/userscenter/images/hioki_r30_c2.jpg" alt="Hioki r30 c2" /></h1>
   <p class="footer_dh"><img width="17" height="17" src="/userscenter/images/hioki_r31_c14.jpg" alt="Hioki r31 c14" /> 400-920-6010</p>
-  <p class="footer_dh"><img width="15" height="12" src="/userscenter/images/hioki_r32_c18.jpg" alt="Hioki r32 c18" /> info@hioki.com.cn</p>
+  <p class="footer_dh"><img width="136" height="18" src="/userscenter/images/hioki_r32_c18.jpg" alt="Hioki r32 c18" /></p>
   <p class="footer_dh">日置(上海)商贸有限公司</p>
   <ul class="fr">
     <li><a href="/index.html">&gt; 首　页</a></li>
