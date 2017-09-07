@@ -69,3 +69,7 @@ rails g model Contact username:string company_name:string  department:string  ad
 rails g model counterfeit sku:string  serial_number:string username:string unit_name:string address:string tel:string email:string content:text
 rails g migration add_upgraded_note_to_products upgraded_note:text
 rails g migration add_spec_table_to_products spec_table:text
+
+rails g model Seihin product_name:string product_number:string model_name:name note:string
+rails g model registration h_user_id:integer seihin_id:interger
+
