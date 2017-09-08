@@ -225,7 +225,6 @@ ActiveRecord::Schema.define(version: 20170908142743) do
 
   create_table "seihins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "product_name"
-    t.string   "product_number"
     t.string   "product_model_name"
     t.string   "note"
     t.datetime "created_at",         null: false

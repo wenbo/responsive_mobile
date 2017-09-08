@@ -77,3 +77,4 @@ rails g model registration h_user_id:integer seihin_id:integer
 rake db:migrate:redo VERSION=20170908142743
 rake db:migrate:redo VERSION=20170908142722
 rake import:seihin
+HUser.first.registrations

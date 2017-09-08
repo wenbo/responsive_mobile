@@ -1,0 +1,56 @@
+<div class="tabWrap-03 current type01 clearfix">
+  <h2 class="h2_basic01">ご登録製品</h2>
+  <table class="table_basic02">
+    <colgroup>
+      <col width="90px">
+      <col width="auto">
+      <col width="auto">
+      <col width="auto">
+      <col width="180px">
+    </colgroup> 
+    <thead>
+      <tr> 
+        <th>&nbsp;</th> 
+        <th>製品名</th> 
+        <th>形名</th> 
+        <th>製造番号</th> 
+        <th>ご登録日</th> 
+      </tr>
+    </thead>
+    <tbody>
+    <!-- id= title=製品ユーザー登録一覧エントリー -->
+    <% @registrations.each do |registration| %>
+      <tr>
+      <td style="text-align:center">
+        <%= link_to "削除", registration, method: :delete, data: { confirm: "确认删除吗?" } %>
+      </td>
+      <td><%= registration.seihin.product_name %></td>
+      <td><%= registration.seihin.product_model_name %></td>
+      <td><%= registration.product_number %></td>
+      <td><%= registration.purchase_on %></td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
+  <style>
+.table_popup{}
+.table_popup td{}
+.table_popup td.td-head{
+  padding: 10px 10px 10px 20px !important;
+  border-left:none !important;
+  background: #f9f9f9;
+}
+.table_popup td.td-desc{
+  padding: 10px !important;
+}
+.table_popup td.td-ctrl{
+  padding: 10px 10px 50px 10px !important;
+  text-align: center;
+}
+
+.table_popup .cbox-deli-mail{
+  font-size: 120%;
+  line-height: 1.8;
+}
+  </style>
+</div>

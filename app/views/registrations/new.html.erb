@@ -1,13 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>智测会｜HIOKI-日置(上海) 商贸有限公司</title>
+<% content_for :head do %>
 <link href="/userscenter/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/userscenter/css/registration.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/userscenter/js/scrollsmoothly.js"></script>
-</head>
-
-<body>
+<% end %>
+<%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
 <div class="im_banner"></div>
 <div class="news_content clearfix">
@@ -15,8 +11,10 @@
   <div class="product_right">
     <p class="current"><a href="/index.html">首页</a> > <a href="/userscenter/intellectual/intellectual.php">智测会</a> >製品ユーザ登録・登録製品リスト </p>
     <%= render partial: "main" %>
+    <% if @registrations.size > 0 %>
+      <%= render partial: "registered" %>
+    <% end %>
   </div>
 </div>
+<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>
-</body>
-</html>

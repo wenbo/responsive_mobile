@@ -18,7 +18,7 @@
 </div>
 <!-- /.boxBasic01 -->
 <div class="boxBasic01">
-  <h2 class="h2_basic01 btn-regist-product" id="btn-regist-product" onclick="ChgRegistProductArea();">製品ユーザ登録▲</h2>
+  <h2 class="h2_basic01 btn-regist-product" id="btn-regist-product" onclick="ChgRegistProductArea();">製品ユーザ登録▼</h2>
   <style>
 .search-products-area{
   margin:5px 0px;
@@ -45,8 +45,9 @@
 .disp-block{display:block;}
 .disp-none{display:none;}
   </style>
-  <div id="regist-product-area" class="disp-block">
+  <div id="regist-product-area" class="disp-none">
 
+    <%= form_for @registration, html: {name: "regist-product"} do |f| %>
     <form action="/post.jsp?database=hdProductUser" method="post" name="regist-product">
       <table class="table_basic01 inq">
         <colgroup>
@@ -137,7 +138,7 @@ dataType: 'html',
   $('#result-search-products').html(contents);
 
   //製造番号と購入年月日を入力可能にする
-  $('input[name="model_name"]').change(function(){
+  $('input[name="product_model_name"]').change(function(){
     $('[name="serial_number"]').prop('disabled',false);
     $('[name="buy_date"]').prop('disabled',false);
     });
@@ -158,7 +159,7 @@ dataType: 'html',
  ******************************************/
 function chkPostData(){
   //製品選択チェック
-  var select_model_name = $('#result-search-products').find($('[name="model_name"]:checked')).length;
+  var select_model_name = $('#result-search-products').find($('[name="product_model_name"]:checked')).length;
   if(select_model_name == '0'){
     alert('“製品”を選択してください。');
     return false;
@@ -232,7 +233,7 @@ function resetSearchWord(){
 }
       </script>
 
-    </form>
+    <% end %>
   </div><!-- /#regist-product-area -->
 </div>
 <!-- /.boxBasic01 -->

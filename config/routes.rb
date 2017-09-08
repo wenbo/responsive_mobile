@@ -15,9 +15,7 @@ Rails.application.routes.draw do
   resources :industries, only: [:show]
   resources :contacts, only: [:create]
   resources :counterfeits, only: [:create]
-
-
-
+  resources :registrations, only: [:create, :destroy]
 
   get 'products' => 'products#index'
   get 'products/:id' => 'products#show'

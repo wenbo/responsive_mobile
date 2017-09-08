@@ -3,6 +3,7 @@
         <ul class="m_top10">
           <li><a href="im_login.php">会员登录</a></li>
           <li><a href="intellectual.php">智测会介绍</a></li>
+          <li><a href="/mypage/registration/">製品ユーザ登録</a></li>
           <li><a href="im_download.php">资料下载</a>
         <ul>
                   <li><a href="im_download.php?category_id=1">· 说明书</a></li>
