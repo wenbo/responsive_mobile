@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813103002) do
+ActiveRecord::Schema.define(version: 20170908142743) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -212,6 +212,24 @@ ActiveRecord::Schema.define(version: 20170813103002) do
     t.integer "utility_id"
     t.index ["product_id"], name: "index_products_utilities_on_product_id", using: :btree
     t.index ["utility_id"], name: "index_products_utilities_on_utility_id", using: :btree
+  end
+
+  create_table "registrations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "h_user_id"
+    t.integer  "seihin_id"
+    t.string   "product_number"
+    t.date     "purchase_on"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "seihins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "product_name"
+    t.string   "product_number"
+    t.string   "product_model_name"
+    t.string   "note"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "simple_captcha_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

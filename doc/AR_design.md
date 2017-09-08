@@ -21,6 +21,7 @@ rails g controller admin/base
 rails g controller admin/sessions new
 rails generate simple_captcha
 rails g controller admin/home index
+rails g controller registrations new 
 
 rails g controller admin/industries index
 rails g controller admin/categories index
@@ -70,6 +71,9 @@ rails g model counterfeit sku:string  serial_number:string username:string unit_
 rails g migration add_upgraded_note_to_products upgraded_note:text
 rails g migration add_spec_table_to_products spec_table:text
 
-rails g model Seihin product_name:string product_number:string model_name:name note:string
-rails g model registration h_user_id:integer seihin_id:interger
+rails g model Seihin product_name:string product_number:string product_model_name:string note:string
+rails g model registration h_user_id:integer seihin_id:integer
 
+rake db:migrate:redo VERSION=20170908142743
+rake db:migrate:redo VERSION=20170908142722
+rake import:seihin

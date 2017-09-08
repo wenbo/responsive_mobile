@@ -1,0 +1,239 @@
+<h1 class="h1_basic01">製品ユーザ登録・登録製品リスト</h1>
+<div class="boxBasic01">
+  <p>
+  このたびは日置電機株式会社の製品をお買い上げいただき誠にありがとうございます。<br>
+  弊社では製品ユーザ登録されたお客様に、以下のサービスを行っております。<br>
+  </p><ul style="list-style-type: disc; margin:5px 0px 5px 20px;">
+    <li class="first"><b>サポートおよびバージョンアップの情報提供サービス</b></li>
+    <li class="last"><b>「修理・校正Direct」サービスの提供　　<span class="marker_blue">- WEBによる直接申込み可能！　次回校正時期のお知らせメール機能付 -</span></b></li>
+  </ul>
+  <a href="https://www.hioki.co.jp/calibration/" target="_blank">修理・校正Directとは</a>
+  <p></p>
+  <br>
+  <p>
+  新規に製品ユーザ登録を行うお客様は下記より登録をお願いいたします。<br>
+  入力していただきました個人情報は、登録製品のサポートおよびバージョンアップの情報提供に使用します。<br>
+  <a href="/jp/privacy_policy">（個人情報の利用目的）</a>
+  </p>
+</div>
+<!-- /.boxBasic01 -->
+<div class="boxBasic01">
+  <h2 class="h2_basic01 btn-regist-product" id="btn-regist-product" onclick="ChgRegistProductArea();">製品ユーザ登録▲</h2>
+  <style>
+.search-products-area{
+  margin:5px 0px;
+}
+.btn-search-products{
+  border:1px solid #000;
+  border-radius: 4px;
+  padding:4px 10px;
+}
+.result-search-products{
+  margin:20px 0px 0px 0px;
+}
+.btn-area-products-user{
+  text-align:center;
+  margin:0 0 20px 0;
+}
+.search-list-ctrl{
+  vertical-align: middle !important;
+  text-align:center;
+}
+.btn-regist-product{
+  cursor: pointer;
+}
+.disp-block{display:block;}
+.disp-none{display:none;}
+  </style>
+  <div id="regist-product-area" class="disp-block">
+
+    <form action="/post.jsp?database=hdProductUser" method="post" name="regist-product">
+      <table class="table_basic01 inq">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:auto;">
+        </colgroup>
+        <tbody>
+        <tr>
+          <th>製品選択</th>
+          <td>
+            <p>ご登録されたい製品名の「アルファベット・数字」４文字以上入力して、「検索」ボタンを押してください。</p>
+            <div class="search-products-area">
+              <input type="text" name="search-word" value="" style="width:300px;">&nbsp;&nbsp;
+              <input type="button" id="btn-search-word" value="検索" onclick="SearchWord();">&nbsp;&nbsp;
+              （例：MR8847 など）
+            </div>
+            <p style="font-size:90%;">※半角英数字のみ入力可能 <a href="/image/jp/model_no.jpg" data-lightbox="model_name2">（形名の確認方法）</a></p>
+            <div id="result-search-products" class="result-search-products" style="display:none;"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>製造番号</th>
+          <td>
+            <p>9ケタの製造番号を入力してください。（9ケタでない製品もございます。）&nbsp;&nbsp;<a href="/image/jp/serial_no.png" data-lightbox="serial_no1">製造番号の例</a></p>
+            <input type="text" name="serial_number" value="" style="width:200px;" disabled="disabled">
+          </td>
+        </tr>
+        <tr>
+          <th>購入年月日</th>
+          <td>
+            <p>半角英数字で入力してください。（例：2005-02-05）</p>
+            <input type="text" name="buy_date" value="" style="width:200px;" disabled="disabled">
+          </td>
+        </tr>
+        <tr>
+          <th>ご使用者名</th>
+          <td><%= @h_user.name %></td>
+        </tr>
+        <tr>
+          <th>E-Mail</th>
+          <td><%= @h_user.email %></td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="btn-area-products-user">
+        <input type="button" value="登録" onclick="return chkPostData();">
+        <input type="reset" value="リセット" onclick="resetSearchWord();">
+      </div>
+
+      <script>
+/*****************************************
+  製品ユーザ登録の表示非表示のイベント 
+ ******************************************/
+      function ChgRegistProductArea(){
+        if($('#regist-product-area').hasClass("disp-block")){
+          $('#regist-product-area').removeClass("disp-block");
+          $('#regist-product-area').addClass("disp-none");
+          $('#btn-regist-product').html('製品ユーザ登録▼');
+        }else{
+          $('#regist-product-area').removeClass("disp-none");
+          $('#regist-product-area').addClass("disp-block");
+          $('#btn-regist-product').html('製品ユーザ登録▲');
+        }
+      }
+
+/*****************************************
+  検索ボタン押下時のイベント 
+ ******************************************/
+function SearchWord(){
+  var keyword = '';
+  keyword = $('[name="search-word"]').val();
+  if(keyword.length < 4){
+    alert('検索項目には4文字以上入力してください。');
+    return false;
+  }
+  if(keyword.match(/[^A-Za-z0-9-+\/ ]+/)){
+    alert('検索項目には半角英数字で入力してください。');
+    return false;
+  }
+
+  /* サーバサイドから検索結果コンテンツを取得 */
+  $.ajax({
+url: "/mypage/registration/search_ajax?search_word=" + keyword,
+type:'post',
+dataType: 'html',
+}).done(function(data){
+  var contents = $(data).filter('#ajax-result-search-products').html();
+  $('#result-search-products').html(contents);
+
+  //製造番号と購入年月日を入力可能にする
+  $('input[name="model_name"]').change(function(){
+    $('[name="serial_number"]').prop('disabled',false);
+    $('[name="buy_date"]').prop('disabled',false);
+    });
+
+  //検索結果のテーブルを表示
+  $('.result-search-products').css('display','block');
+
+  }).fail(function(data) {
+    });
+
+};
+
+
+
+
+/*****************************************
+  登録ボタン押下時のイベント 
+ ******************************************/
+function chkPostData(){
+  //製品選択チェック
+  var select_model_name = $('#result-search-products').find($('[name="model_name"]:checked')).length;
+  if(select_model_name == '0'){
+    alert('“製品”を選択してください。');
+    return false;
+  }
+  //製造番号入力チェック
+  if($('[name="serial_number"]').val() == ''){
+    alert('“製造番号”を入力してください。');
+    return false;
+  }
+  //購入年月日入力チェック
+  var chkBuyDate = $('[name="buy_date"]').val();
+  if(chkBuyDate == ''){
+    alert('“購入年月日”を入力してください。');
+    return false;
+  }else if(chkBuyDate.match( /[^0-9\-]+/ )){
+    alert( "購入年月日はYYYY-MM-DDの形式で半角で入力してください。" );
+    return false;
+  };
+  if( !ckDate(chkBuyDate) ) {
+    alert( "購入年月日はYYYY-MM-DDの形式で有効な日付を入力してください。" );
+    return false;
+  }
+
+  //形名から製品名を設定する
+  var product_name = '';
+  product_name += $('[name="model_name"]:checked').parent().parent().find($('.product-name')).html();
+  $('[name="product_name"]').val(product_name);
+
+  //最終確認メッセージ
+  if ( window.confirm('製品をご登録いたします。よろしいですか？') ) {
+    $('form[name="regist-product"]').submit();
+  } else {
+    return false;
+  }
+}
+
+/*****************************************
+  日付チェック 
+ ******************************************/
+function ckDate(datestr) {
+  // 正規表現による書式チェック
+  if(!datestr.match(/^\d{4}\-\d{2}\-\d{2}$/)){
+    return false;
+  }
+  var vYear = datestr.substr(0, 4) - 0;
+  var vMonth = datestr.substr(5, 2) - 1; // Javascriptは、0-11で表現
+  var vDay = datestr.substr(8, 2) - 0;
+  // 月,日の妥当性チェック
+  if(vMonth >= 0 && vMonth <= 11 && vDay >= 1 && vDay <= 31){
+    var vDt = new Date(vYear, vMonth, vDay);
+    if(isNaN(vDt)){
+      return false;
+    }else if(vDt.getFullYear() == vYear && vDt.getMonth() ==vMonth && vDt.getDate() == vDay){
+      return true;
+    }else{
+      return false;
+    }
+  }else{
+    return false;
+  }
+}
+
+
+/*****************************************
+  リセットボタン押下時のイベント 
+ ******************************************/
+function resetSearchWord(){
+  $('.result-search-products').css('display','none');
+  $('[name="serial_number"]').prop('disabled',true);
+  $('[name="buy_date"]').prop('disabled',true);
+}
+      </script>
+
+    </form>
+  </div><!-- /#regist-product-area -->
+</div>
+<!-- /.boxBasic01 -->
+

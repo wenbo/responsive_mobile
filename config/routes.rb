@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post "sessions/login_async" => "sessions#login_async"
   get "sessions/logout_async" => "sessions#logout_async"
   get "industries/:id/products/" => "industries#products"
+  get "/mypage/registration/" => "registrations#new"
+  post "/mypage/registration/search_ajax" => "registrations#search_ajax"
   # delete "logout_async" => "sessions#logout_async"
   resources :sessions
 
