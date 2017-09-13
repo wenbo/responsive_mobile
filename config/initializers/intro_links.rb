@@ -1,0 +1,25 @@
+IntroLinks = {
+  "32"=> {
+    "存储记录仪的原理" => "https://www.hioki.cn/html/methods/rec.html",
+    "数据采集仪的使用方法" => "https://www.hioki.cn/html/methods/rec_method.html"
+  },
+  "23"=> {
+    "LCR测试仪/阻抗分析仪的原理、测量方法和使用方法"=> "https://www.hioki.cn/html/methods/power.html",
+    "电阻计/电池测试仪的使用方法"=> "https://www.hioki.cn/html/methods/power_method.html"
+  },
+  "14"=> {
+    "使用方法"=> "https://www.hioki.cn/html/methods/safety.html"
+  },
+  "28"=> {
+    "使用方法"=> "https://www.hioki.cn/html/methods/current.html"
+  },
+  "10"=> {
+    "使用方法"=> "https://www.hioki.cn/html/methods/enviro.html"
+  },
+  "1"=> {
+    "钳形表的功能、使用方法和选择方法"=> "https://www.hioki.cn/html/methods/field.html",
+    "万用表的使用方法"=> "https://www.hioki.cn/html/methods/field_multimeter.html",
+    "绝缘电阻表的使用方法"=> "https://www.hioki.cn/html/methods/field_insulated.html",
+    "接地电阻计/相序表/验电笔的使用方法"=> "https://www.hioki.cn/html/methods/field_earthing.html"
+  }
+}

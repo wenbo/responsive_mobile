@@ -21,11 +21,16 @@
                       </p>
     <h3 class="product_f25 m_top20"><%= @category.name %></h3>
     <ul class="product_category m_top25 clearfix">
-			<% @category.children.each do |category| %>
-                          <% if category.products.is_display.count > 0 %>
-      <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
+      <% @category.children.each do |category| %>
+        <% if category.products.is_display.count > 0 %>
+        <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
     <% end %>
-			<% end %>
+    <% end %>
+      <% if IntroLinks.keys.include? params[:id] %>
+        <% IntroLinks[params[:id]].each do |k, v| %>
+        <li class="product_category_li"><a href="<%= v %>" target="_blank"><%= k %></a></li>
+    <% end %>
+    <% end %>
     </ul>
 		<% if false %>
     <ul class="product_search">
