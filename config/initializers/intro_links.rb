@@ -4,7 +4,7 @@ IntroLinks = {
     "数据采集仪的使用方法" => "https://www.hioki.cn/html/methods/rec_method.html"
   },
   "23"=> {
-    "LCR测试仪/阻抗分析仪的原理、测量方法和使用方法"=> "https://www.hioki.cn/html/methods/power.html",
+    "LCR/阻抗分析仪的原理、使用方法等"=> "https://www.hioki.cn/html/methods/power.html",
     "电阻计/电池测试仪的使用方法"=> "https://www.hioki.cn/html/methods/power_method.html"
   },
   "14"=> {
