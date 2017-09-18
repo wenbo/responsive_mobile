@@ -1,15 +1,16 @@
 <% content_for :head do %>
+<%= javascript_include_tag 'jquery_ujs' %>
 <link href="/userscenter/css/style.css" rel="stylesheet" type="text/css" />
 <link href="/userscenter/css/registration.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/userscenter/js/scrollsmoothly.js"></script>
-<%= javascript_include_tag 'application' %>
+<link href="/assets_doc/registrations/css/lightbox.css" rel="stylesheet" type="text/css" />
 <% end %>
 <%= render partial: "shared/top_header" %>
 <div class="im_banner"></div>
 <div class="news_content clearfix">
   <%= render partial: "product_left" %>
   <div class="product_right">
-    <p class="current"><a href="/index.html">首页</a> > <a href="/userscenter/intellectual/intellectual.php">智测会</a> >製品ユーザ登録・登録製品リスト </p>
+    <p class="current"><a href="/index.html">首页</a> > <a href="/userscenter/intellectual/intellectual.php">智测会</a> >产品注册・注册产品列表</p>
     <%= render partial: "main" %>
     <% if @registrations.size > 0 %>
       <%= render partial: "registered" %>
@@ -17,4 +18,5 @@
   </div>
 </div>
 <p class="m_top45">&nbsp;</p>
+<script type="text/javascript" src="/assets_doc/registrations/js/lightbox.js"></script>
 <%= render partial: "shared/footer" %>

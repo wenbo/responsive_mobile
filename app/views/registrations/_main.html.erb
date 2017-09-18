@@ -1,24 +1,22 @@
-<h1 class="h1_basic01">製品ユーザ登録・登録製品リスト</h1>
+<h1 class="h1_basic01">产品注册・注册产品列表</h1>
 <div class="boxBasic01">
   <p>
-  このたびは日置電機株式会社の製品をお買い上げいただき誠にありがとうございます。<br>
-  弊社では製品ユーザ登録されたお客様に、以下のサービスを行っております。<br>
-  </p><ul style="list-style-type: disc; margin:5px 0px 5px 20px;">
-    <li class="first"><b>サポートおよびバージョンアップの情報提供サービス</b></li>
-    <li class="last"><b>「修理・校正Direct」サービスの提供　　<span class="marker_blue">- WEBによる直接申込み可能！　次回校正時期のお知らせメール機能付 -</span></b></li>
+  非常感谢您购买日置电机株式会社（HIOKI）的产品。<br>
+  我们为已经进行产品注册的用户提供以下服务。<br>
+  </p>
+  <ul style="list-style-type: disc; margin:5px 0px 5px 20px;">
+    <li class="first"><b>后续服务和版本升级的信息提供服务</b></li>
   </ul>
-  <a href="https://www.hioki.co.jp/calibration/" target="_blank">修理・校正Directとは</a>
   <p></p>
   <br>
   <p>
-  新規に製品ユーザ登録を行うお客様は下記より登録をお願いいたします。<br>
-  入力していただきました個人情報は、登録製品のサポートおよびバージョンアップの情報提供に使用します。<br>
-  <a href="/jp/privacy_policy">（個人情報の利用目的）</a>
+  第一次进行产品注册的用户请填写以下内容。<br>
+  您所填写的个人信息，仅用于我们注册产品的后续服务和提供版本升级信息。<br>
   </p>
 </div>
 <!-- /.boxBasic01 -->
 <div class="boxBasic01">
-  <h2 class="h2_basic01 btn-regist-product" id="btn-regist-product" onclick="ChgRegistProductArea();">製品ユーザ登録▼</h2>
+  <h2 class="h2_basic01 btn-regist-product" id="btn-regist-product" onclick="ChgRegistProductArea();">产品用户登录▼</h2>
   <style>
 .search-products-area{
   margin:5px 0px;
@@ -56,34 +54,34 @@
         </colgroup>
         <tbody>
         <tr>
-          <th>製品選択</th>
+          <th>产品选择</th>
           <td>
-            <p>ご登録されたい製品名の「アルファベット・数字」４文字以上入力して、「検索」ボタンを押してください。</p>
+            <p>请填写您想注册的产品名称4位以上的【字母/数字】，并按【查找】按钮。</p>
             <div class="search-products-area">
               <input type="text" name="search-word" value="" style="width:300px;">&nbsp;&nbsp;
-              <input type="button" id="btn-search-word" value="検索" onclick="SearchWord();">&nbsp;&nbsp;
-              （例：MR8847 など）
+              <input type="button" id="btn-search-word" value="查找" onclick="SearchWord();">&nbsp;&nbsp;
+              （例：MR8847 等）
             </div>
-            <p style="font-size:90%;">※半角英数字のみ入力可能 <a href="/image/jp/model_no.jpg" data-lightbox="model_name2">（形名の確認方法）</a></p>
+            <p style="font-size:90%;">※仅限半角英文输入<a style="color:#005EAD" href="/assets_doc/registrations/model_no.jpg" data-lightbox="model_name2">（型号的确认方法）</a></p>
             <div id="result-search-products" class="result-search-products" style="display:none;"></div>
           </td>
         </tr>
         <tr>
-          <th>製造番号</th>
+          <th>生产编号</th>
           <td>
-            <p>9ケタの製造番号を入力してください。（9ケタでない製品もございます。）&nbsp;&nbsp;<a href="/image/jp/serial_no.png" data-lightbox="serial_no1">製造番号の例</a></p>
+            <p>请输入9位生产编号。（也有生产编号不足9位的产品）&nbsp;&nbsp;<a style="color:#005EAD" href="/assets_doc/registrations/serial_no.png" data-lightbox="serial_no1">生产编号示例</a></p>
             <input type="text" name="serial_number" value="" style="width:200px;" disabled="disabled">
           </td>
         </tr>
         <tr>
-          <th>購入年月日</th>
+          <th>购买年月日</th>
           <td>
-            <p>半角英数字で入力してください。（例：2005-02-05）</p>
+            <p>请用半角英文输入。（例：2005-02-05）</p>
             <input type="text" name="buy_date" value="" style="width:200px;" disabled="disabled">
           </td>
         </tr>
         <tr>
-          <th>ご使用者名</th>
+          <th>使用者姓名</th>
           <td><%= @h_user.name %></td>
         </tr>
         <tr>
@@ -93,8 +91,8 @@
         </tbody>
       </table>
       <div class="btn-area-products-user">
-        <input type="button" value="登録" onclick="return chkPostData();">
-        <input type="reset" value="リセット" onclick="resetSearchWord();">
+        <input type="button" value="提交" onclick="return chkPostData();">
+        <input type="reset" value="重置" onclick="resetSearchWord();">
       </div>
 
       <script>
@@ -105,11 +103,11 @@
         if($('#regist-product-area').hasClass("disp-block")){
           $('#regist-product-area').removeClass("disp-block");
           $('#regist-product-area').addClass("disp-none");
-          $('#btn-regist-product').html('製品ユーザ登録▼');
+          $('#btn-regist-product').html('产品用户登录▼');
         }else{
           $('#regist-product-area').removeClass("disp-none");
           $('#regist-product-area').addClass("disp-block");
-          $('#btn-regist-product').html('製品ユーザ登録▲');
+          $('#btn-regist-product').html('产品用户登录▲');
         }
       }
 
@@ -120,11 +118,11 @@ function SearchWord(){
   var keyword = '';
   keyword = $('[name="search-word"]').val();
   if(keyword.length < 4){
-    alert('検索項目には4文字以上入力してください。');
+    alert('检索时请输入四个以上的文字');
     return false;
   }
   if(keyword.match(/[^A-Za-z0-9-+\/ ]+/)){
-    alert('検索項目には半角英数字で入力してください。');
+    alert('检索时请输入半角的字母或数字');
     return false;
   }
 
