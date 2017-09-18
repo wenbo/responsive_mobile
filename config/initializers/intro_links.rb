@@ -1,5 +1,5 @@
 IntroLinks = {
-  "32"=> {
+  "31"=> {
     "存储记录仪的原理" => "https://www.hioki.cn/html/methods/rec.html",
     "数据采集仪的使用方法" => "https://www.hioki.cn/html/methods/rec_method.html"
   },
