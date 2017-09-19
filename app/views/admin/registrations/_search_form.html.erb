@@ -7,7 +7,7 @@
             型号
           </label>
           <div class="col-sm-4">
-            <input type="text" name="search[product_model_name]" value="<%= params[:search][:product_model_name] %>" class="form-control" id="exampleInputAmount">
+            <input type="text" name="search[product_model_name]" value="<%= params[:search].present? ? params[:search][:product_model_name] : '' %>" class="form-control" id="exampleInputAmount">
           </div>
         </div>
       </div>
@@ -18,7 +18,7 @@
             产品名称
           </label>
           <div class="col-sm-4">
-            <input type="text" name="search[product_name]" value="<%= params[:search][:product_name] %>" class="form-control" id="exampleInputAmount">
+            <input type="text" name="search[product_name]" value="<%= params[:search].present? ? params[:search][:product_name] : '' %>" class="form-control" id="exampleInputAmount">
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
             生产编号
           </label>
           <div class="col-sm-4">
-            <input type="text" name="search[product_number]" value="<%= params[:search][:product_number] %>" class="form-control" id="exampleInputAmount">
+            <input type="text" name="search[product_number]" value="<%= params[:search].present? ? params[:search][:product_number] : ''%>" class="form-control" id="exampleInputAmount">
           </div>
         </div>
       </div>
@@ -40,7 +40,18 @@
             使用者名
           </label>
           <div class="col-sm-4">
-            <input type="text" name="search[h_user_name]" value="<%= params[:search][:h_user_name] %>" class="form-control" id="exampleInputAmount">
+            <input type="text" name="search[h_user_name]" value="<%= params[:search].present? ? params[:search][:h_user_name] : ''%>" class="form-control" id="exampleInputAmount">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-inputs">
+        <div class="form-group string requirede">
+          <label class="string required col-sm-2 control-label">
+            Email
+          </label>
+          <div class="col-sm-4">
+            <input type="text" name="search[h_user_email]" value="<%= params[:search].present? ? params[:search][:h_user_email] : ''%>" class="form-control" id="exampleInputAmount">
           </div>
         </div>
       </div>

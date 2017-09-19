@@ -15,9 +15,12 @@ class RegistrationsController < ApplicationController
 
   def create 
     @seihin = Seihin.find_by(product_model_name: params[:product_model_name])
+    h_user = HUser.find(session[:user_id])
     @registration = Registration.new(
       seihin_id: @seihin.id,
-      h_user_id: session[:user_id],
+      h_user_id: h_user.id,
+      h_user_email: h_user.email,
+      h_user_name: h_user.name,
       product_number: params[:serial_number],
       purchase_on: params[:buy_date]
     )

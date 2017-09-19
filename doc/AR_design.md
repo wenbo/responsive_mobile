@@ -78,3 +78,7 @@ rake db:migrate:redo VERSION=20170908142743
 rake db:migrate:redo VERSION=20170908142722
 rake import:seihin
 HUser.first.registrations
+Registration.includes(:seihin).where("seihins.product_model_name LIKE :search", {search: "%000%"})
+Registration.joins(:seihin).where("'seihins.product_model_name' LIKE :search", {search: "%000%"})
+Registration.product_name("000")
+Registration.product_model_name("000")
