@@ -52,6 +52,11 @@
     <% end %>
   </li>
 
+  <li class="<%= active?(:registrations) %>">
+  <%= link_to [:admin, :registrations] do %>
+    <i class="fa fa-th"></i> <span>产品注册管理</span>
+<% end %>
+  </li>
   <li class="<%#= active?(:users) %>">
 			 <%= link_to "/usercenter/admin/login.php" do %>
        <i class="fa fa-users"></i> <span>会员系统</span>

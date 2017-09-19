@@ -1,0 +1,54 @@
+<form action="/admin/registrations/" class="form-horizontal" >
+  <div class="box-body">
+    <fieldset>
+      <div class="form-inputs">
+        <div class="form-group string requirede">
+          <label class="string required col-sm-2 control-label">
+            型号
+          </label>
+          <div class="col-sm-4">
+            <input type="text" name="search[product_model_name]" value="<%= params[:search][:product_model_name] %>" class="form-control" id="exampleInputAmount">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-inputs">
+        <div class="form-group string requirede">
+          <label class="string required col-sm-2 control-label">
+            产品名称
+          </label>
+          <div class="col-sm-4">
+            <input type="text" name="search[product_name]" value="<%= params[:search][:product_name] %>" class="form-control" id="exampleInputAmount">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-inputs">
+        <div class="form-group string requirede">
+          <label class="string required col-sm-2 control-label">
+            生产编号
+          </label>
+          <div class="col-sm-4">
+            <input type="text" name="search[product_number]" value="<%= params[:search][:product_number] %>" class="form-control" id="exampleInputAmount">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-inputs">
+        <div class="form-group string requirede">
+          <label class="string required col-sm-2 control-label">
+            使用者名
+          </label>
+          <div class="col-sm-4">
+            <input type="text" name="search[h_user_name]" value="<%= params[:search][:h_user_name] %>" class="form-control" id="exampleInputAmount">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary">检索</button>
+      </div>
+    </div>
+  </div>
+</form>
