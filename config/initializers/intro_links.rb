@@ -14,7 +14,8 @@ IntroLinks = {
     "使用方法"=> "https://www.hioki.cn/html/methods/current.html"
   },
   "10"=> {
-    "使用方法"=> "https://www.hioki.cn/html/methods/enviro.html"
+     "温度、噪音、照度计等的使用方法"=> "https://www.hioki.cn/html/methods/enviro.html",
+     "迷你数采/环境测量仪的使用方法"=> "https://www.hioki.cn/html/methods/enviro_field.html"
   },
   "1"=> {
     "钳形表的功能、使用方法和选择方法"=> "https://www.hioki.cn/html/methods/field.html",
