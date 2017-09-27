@@ -77,6 +77,7 @@ rails g model registration h_user_id:integer seihin_id:integer
 rake db:migrate:redo VERSION=20170908142743
 rake db:migrate:redo VERSION=20170908142722
 rake import:seihin
+Seihin.count
 HUser.first.registrations
 Registration.includes(:seihin).where("seihins.product_model_name LIKE :search", {search: "%000%"})
 Registration.joins(:seihin).where("'seihins.product_model_name' LIKE :search", {search: "%000%"})
