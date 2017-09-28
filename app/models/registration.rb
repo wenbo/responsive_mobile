@@ -17,4 +17,20 @@ class Registration < ApplicationRecord
     re
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << csv_column_names
+      all.each do |registration|
+        csv << registration.csv_column_values
+      end
+    end
+  end
+
+  def self.csv_column_names
+    ["型号", "产品名称", "生产编号", "使用者名", "Email", "购入年月日"]
+  end
+
+  def csv_column_values
+    [self.seihin.product_model_name, self.seihin.product_name, self.product_number, self.h_user.try(:name), self.h_user.try(:email), purchase_on]
+  end
 end

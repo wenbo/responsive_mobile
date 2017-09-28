@@ -51,7 +51,9 @@ Rails.application.routes.draw do
     resources :product_attachments
     resources :pdf_categories
     resources :utilities
-    resources :registrations
+    resources :registrations do
+      get 'export', on: :collection
+    end
     resources :news_categories
     resources :news
   end
