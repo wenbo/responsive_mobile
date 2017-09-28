@@ -854,7 +854,10 @@ body#g05 #gNav05 a  { margin-top: -45px;}
 
 /* !boxBasic
  * ---------------------------------------------------------- */
-.boxBasic01 { margin-bottom: 20px;}
+.boxBasic01 { 
+  margin-bottom: 20px; 
+  font-size: 16px;
+}
 .boxBasic01 .col01 {
   float: left;
   width: 420px;

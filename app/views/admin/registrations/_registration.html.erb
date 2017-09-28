@@ -8,7 +8,7 @@
   <th> 
     <%= registration.product_number %> 
   </th>
-  <th><%= link_to registration.h_user.try(:name), "/usercenter/admin/user_view.php?id=#{registration.h_user.try(:user_id)" %></th>
+  <th><%= link_to registration.h_user.try(:name), "/usercenter/admin/user_view.php?id=#{registration.h_user.try(:user_id)}" %></th>
   <th><%= registration.h_user.try(:email) %></th>
   <th> 
     <%= registration.purchase_on %> 
