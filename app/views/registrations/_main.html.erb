@@ -159,25 +159,25 @@ function chkPostData(){
   //製品選択チェック
   var select_model_name = $('#result-search-products').find($('[name="product_model_name"]:checked')).length;
   if(select_model_name == '0'){
-    alert('“製品”を選択してください。');
+    alert('请选择型号');
     return false;
   }
   //製造番号入力チェック
   if($('[name="serial_number"]').val() == ''){
-    alert('“製造番号”を入力してください。');
+    alert('请选择生产编号');
     return false;
   }
   //購入年月日入力チェック
   var chkBuyDate = $('[name="buy_date"]').val();
   if(chkBuyDate == ''){
-    alert('“購入年月日”を入力してください。');
+    alert('请输入购入年月日');
     return false;
   }else if(chkBuyDate.match( /[^0-9\-]+/ )){
-    alert( "購入年月日はYYYY-MM-DDの形式で半角で入力してください。" );
+    alert( "请以半角的YYYY-MM-DD的形式输入购入年月日" );
     return false;
   };
   if( !ckDate(chkBuyDate) ) {
-    alert( "購入年月日はYYYY-MM-DDの形式で有効な日付を入力してください。" );
+    alert( "请输入有效的购入年月日" );
     return false;
   }
 
@@ -187,7 +187,7 @@ function chkPostData(){
   $('[name="product_name"]').val(product_name);
 
   //最終確認メッセージ
-  if ( window.confirm('製品をご登録いたします。よろしいですか？') ) {
+  if ( window.confirm('确认注册产品信息吗?') ) {
     $('form[name="regist-product"]').submit();
   } else {
     return false;
