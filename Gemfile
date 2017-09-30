@@ -41,6 +41,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'awesome_nested_set'
 gem 'ckeditor'
 gem "roo", "~> 2.7.0"
+gem "spreadsheet"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
