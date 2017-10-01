@@ -15,7 +15,7 @@ class Admin::RegistrationsController < Admin::BaseController
    sheet = book.worksheet 0
    Registration.all.each_with_index do |reg, l|
      line = l + 1
-     data = [reg.seihin.product_model_name, reg.seihin.product_name, reg.product_number, reg.h_user.try(:name), reg.h_user.try(:email), reg.purchase_on.to_s]
+     data = [reg.seihin.product_model_name, reg.created_at.strftime('%Y-%m-%d'), reg.seihin.product_name, reg.product_number, reg.h_user.try(:name), reg.h_user.try(:email), reg.purchase_on.to_s]
      sheet.row(line).replace(data)
    end
 
