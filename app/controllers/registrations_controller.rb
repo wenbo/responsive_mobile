@@ -25,13 +25,13 @@ class RegistrationsController < ApplicationController
       purchase_on: params[:buy_date]
     )
     @registration.save
-    redirect_to "/mypage/registration/"
+    redirect_to "/products/registration/"
   end
 
   def destroy
     @registration = Registration.find params[:id]
     if @registration.delete
-      redirect_to "/mypage/registration/"
+      redirect_to "/products/registration/"
     end
   end
   

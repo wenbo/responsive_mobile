@@ -128,7 +128,7 @@ function SearchWord(){
 
   /* サーバサイドから検索結果コンテンツを取得 */
   $.ajax({
-url: "/mypage/registration/search_ajax?search_word=" + keyword,
+url: "/products/registration/search_ajax?search_word=" + keyword,
 type:'post',
 dataType: 'html',
 }).done(function(data){
