@@ -19,7 +19,7 @@ class Admin::SessionsController < Admin::BaseController
     end
     # return render('new') if  code_valid?
     
-    session[:user_id] = @user.id.to_s
+    session[:admin_user_id] = @user.id.to_s
     if params[:remember_me]
       cookies.signed[:user] = {
         value:  @user.encrypt_cookie_value,
@@ -43,7 +43,7 @@ class Admin::SessionsController < Admin::BaseController
 	    expires: 1.day.ago,
 	    path: '/usercenter/admin/'
     }
-    session[:user_id] = nil
+    session[:admin_user_id] = nil
     redirect_to [:admin, :login]
   end
 

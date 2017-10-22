@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
   before_filter :current_user
-  protect_from_forgery :except => ["search_ajax"]
+  skip_before_action :verify_authenticity_token
 
   def new
     @root_categories = Category.roots

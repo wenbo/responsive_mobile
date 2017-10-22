@@ -5,13 +5,13 @@ class Admin::BaseController < ApplicationController
   layout "admin"
 
   def session_user
-    _id = session[:user_id]
+    _id = session[:admin_user_id]
     @session_user ||= User.find_by(id: _id) if _id.present?
     return @session_user if @session_user.present?
 
     if cookies.signed[:user].present?
       if @session_user = User.validate_cookie(cookies.signed[:user])
-        session[:user_id] = @session_user.id.to_s
+        session[:admin_user_id] = @session_user.id.to_s
         return @session_user
       end
     end
