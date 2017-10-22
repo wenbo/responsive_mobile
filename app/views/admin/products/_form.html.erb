@@ -42,7 +42,7 @@
           产品分类<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
-          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control" %>
+          <%= f.select :category_ids, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control", multiple: true %>
         </div>
       </div>
     </div>

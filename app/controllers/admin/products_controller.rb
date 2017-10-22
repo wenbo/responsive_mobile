@@ -12,7 +12,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def create
-    @product = Product.new params_product
+    @product = Product.new params_product.merge(category_ids: params_product[:category_ids].reject(&:blank?).join(';'))
     if @product.save
       flash[:notice] = "保存成功"
       redirect_to [:edit, :admin, @product]
@@ -30,7 +30,8 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     @product = Product.find params[:id]
-    if @product.update_attributes params_product
+    if @product.update_attributes params_product.merge(category_ids: params_product[:category_ids].reject(&:blank?).join(';'))
+
       flash[:notice] = "更新成功"
       redirect_to [:edit, :admin, @product]
     else
@@ -51,7 +52,7 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def params_product
-    params.require(:product).permit(:sku, :title, :feature, :search_keywords, :position, :note_for_option, :desc, :video_path, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :option_avatar, :summary, :spec_table, :upgraded_note, :upgraded, :upgraded_note, :category_id, option_categories_attributes: [:name, :position, :note, :option_sku_collection, :_destroy, :id], upgrade_attachments_attributes: [:sku, :name, :desc, :attachment, :classifier_id, :_destroy, :id], industry_ids: [])
+    params.require(:product).permit(:sku, :title, :feature, :search_keywords, :position, :note_for_option, :desc, :video_path, :is_main_body, :is_option, :is_new, :is_recommended, :is_display, :is_deleted, :banner, :thumb_image, :option_avatar, :summary, :spec_table, :upgraded_note, :upgraded, :upgraded_note, category_ids: [], option_categories_attributes: [:name, :position, :note, :option_sku_collection, :_destroy, :id], upgrade_attachments_attributes: [:sku, :name, :desc, :attachment, :classifier_id, :_destroy, :id], industry_ids: [])
   end
 
   def sort_column

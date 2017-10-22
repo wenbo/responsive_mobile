@@ -83,3 +83,9 @@ Registration.includes(:seihin).where("seihins.product_model_name LIKE :search", 
 Registration.joins(:seihin).where("'seihins.product_model_name' LIKE :search", {search: "%000%"})
 Registration.product_name("000")
 Registration.product_model_name("000")
+
+rails g migration AddCategoryIdsToProducts category_ids:string
+
+https://stackoverflow.com/questions/4864513/ruby-on-rails-multiple-selection-in-f-select
+Product.first.category_ids
+Product.first.categories

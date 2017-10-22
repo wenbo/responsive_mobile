@@ -73,4 +73,8 @@ class Product < ApplicationRecord
     end
   end
 
+  def categories
+    Category.find(self.category_ids.split(';'))
+  end
+
 end
