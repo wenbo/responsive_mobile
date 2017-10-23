@@ -10,6 +10,9 @@ class Product < ApplicationRecord
   scope :is_main_body, -> { where(is_main_body: true) }
   scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
 
+# http://bashalog.c-brains.jp/15/09/29-100000.php
+  scope :category_ids_all_products, -> (category) {  where(["products.category_ids REGEXP CONCAT("(^|,)", ma.id, "(,|$)") (?)", (category.self_and_descendants_id)]) }
+
   # validates :position, uniqueness: { scope: :category_id }
 
   mount_uploader :banner, AvatarUploader
