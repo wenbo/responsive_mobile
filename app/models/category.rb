@@ -3,7 +3,8 @@ class Category < ApplicationRecord
   validates :position, uniqueness: true
   validates :name, uniqueness: { scope: :parent_id }
   #acts_as_tree order: "name"
-  has_many :products
+  has_many :prod_categories
+  has_many :products, through: :prod_categories
   has_and_belongs_to_many :industries
   
   acts_as_nested_set

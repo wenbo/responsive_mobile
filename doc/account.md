@@ -39,3 +39,56 @@ irb(main):012:0* HUser.count
 
 ## sql
 select CONCAT("(^|,)", 33, "(,|$)");
+
+products 这个表里有 category_ids 这个字段，里面保存的值是以分号分隔的数字，这些数字表示和这个product相关联的分类。
+现在给定一个分类的数组,例如[1, 2, 3],  请用ＳＱＬ找出所以和这个数组相关的产品。
+
+select * from products where split(products.category_ids, ";")  [1, 2, 3]
+
+
+use hioki_rails5_development;
+
+DELIMITER $$    
+    
+DROP FUNCTION IF EXISTS `func_get_split_string_total`$$  
+  
+CREATE FUNCTION `func_get_split_string_total`(  
+f_string varchar(255),f_delimiter varchar(5)  
+) RETURNS int(11)  
+BEGIN  
+  return 1+(length(f_string) - length(replace(f_string,f_delimiter,'')));  
+END$$  
+DELIMITER ;  
+
+
+
+DELIMITER $$  
+    
+DROP FUNCTION IF EXISTS `func_split_string`$$   
+  
+CREATE FUNCTION `func_split_string`(v_str varchar(100),v_desc varchar(100)) RETURNS varchar(100) CHARSET utf8    
+BEGIN    
+              
+          DECLARE i int(4);    
+          DECLARE splitValue varchar(100);    
+          DECLARE returnStr varchar(100);     
+            
+          set i = 1;          
+              
+          if(v_str is null or length(v_str)=0) then    
+               return 'error';    
+          else    
+              
+          while i<=func_get_split_string_total(v_str,'.')    
+          do    
+             insert into itxxzb(a,b) values (func_get_split_string(v_str,'.',i),v_desc);   
+               
+          set i = i+1;    
+          end while;     
+          return 'success';    
+               
+          end if;    
+END$$  
+DELIMITER ;  
+
+select func_split_string(category_ids, id) result,  products.* from products

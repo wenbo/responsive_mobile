@@ -11,9 +11,7 @@ class Product < ApplicationRecord
   scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
 
 # http://bashalog.c-brains.jp/15/09/29-100000.php
-  scope :category_ids_all_products, -> (category) {  where(["products.category_ids REGEXP CONCAT("(^|,)", ma.id, "(,|$)") (?)", (category.self_and_descendants_id)]) }
-
-  # validates :position, uniqueness: { scope: :category_id }
+  # scope :category_ids_all_products, -> (category) {  where(["￥products.category_ids REGEXP CONCAT("(^|,)", ma.id, "(,|$)") (?)", (category.self_and_descendants_id)]) }
 
   mount_uploader :banner, AvatarUploader
   mount_uploader :thumb_image, AvatarUploader
@@ -28,9 +26,10 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :utilities
   has_and_belongs_to_many :industries
   has_and_belongs_to_many :product_attachments
+  has_many :prod_categories
+  has_many :categories, through: :prod_categories
 
   validates :sku, :title, presence: true
-  validates :sku, uniqueness: true
   before_save :strip_sku
 
   def strip_sku
@@ -76,8 +75,26 @@ class Product < ApplicationRecord
     end
   end
 
-  def categories
-    Category.find(self.category_ids.split(';'))
+  def category_ids_arr
+    self.category_ids
+  end
+
+  def category_ids_arr=(arr)
+    self.category_ids = arr.reject(&:blank?)
+    # category_ids_array = arr.reject(&:blank?)
+    # category_ids_array.each do |cate_id|
+    #   self.prod_categories.build(
+    #     category_id: cate_id
+    #   )
+    # end
+  end
+
+  def category_ids_arr_names
+    begin
+      Category.find(self.category_ids).map(&:name).join(" ")
+    rescue
+      category.try(name)
+    end
   end
 
 end
