@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   scope :is_display, -> { where(is_display: true, is_deleted: false) }
   scope :include_deleted, -> { where(is_display: true) }
   scope :is_main_body, -> { where(is_main_body: true) }
-  scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
+  # scope :category_all_products, -> (category) {  where(["products.category_id in (?)", (category.self_and_descendants_id)]) }
 
 # http://bashalog.c-brains.jp/15/09/29-100000.php
   # scope :category_ids_all_products, -> (category) {  where(["￥products.category_ids REGEXP CONCAT("(^|,)", ma.id, "(,|$)") (?)", (category.self_and_descendants_id)]) }
@@ -46,6 +46,11 @@ class Product < ApplicationRecord
     else
       category.position
     end
+  end
+
+  def self.category_all_products(category)
+    product_ids = ProdCategory.where(["category_id in (?)", (category.self_and_descendants_id)]).map(&:product_id)
+    Product.where(id: product_ids)
   end
 
   def self.search(search)      

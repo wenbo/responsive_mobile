@@ -94,6 +94,7 @@ https://stackoverflow.com/questions/4864513/ruby-on-rails-multiple-selection-in-
 ## code
 Product.first.category_ids
 Product.first.categories
+Product.where(id: [1, 2])
 
 Product.all.each do |pro|
 begin 
