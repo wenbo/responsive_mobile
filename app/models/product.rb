@@ -96,10 +96,22 @@ class Product < ApplicationRecord
 
   def category_ids_arr_names
     begin
-      Category.find(self.category_ids).map(&:name).join(" ")
+      Category.find(self.category_ids).map(&:name)
     rescue
-      category.try(name)
+      []
     end
+  end
+
+  def category_ids_hash
+    hash = {}
+    begin
+      Category.find(self.category_ids).each do |cate|
+        hash[cate.name] = cate.id
+      end
+    rescue
+      {}
+    end
+    hash
   end
 
 end

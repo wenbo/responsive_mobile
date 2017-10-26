@@ -54,4 +54,11 @@ end
     end
     return 
   end
+  def product_category_links(name_id_hash)
+    arr = []
+    name_id_hash.each do |name, id|
+      arr << link_to(name, "/categories/#{id}")
+    end
+    arr.join(" , ")
+  end
 end

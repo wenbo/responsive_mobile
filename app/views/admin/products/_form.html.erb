@@ -52,7 +52,7 @@
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
-          相关的产品分类<abbr title="required">*</abbr>
+          产品分类<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
           <%= f.select :category_ids_arr, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control", multiple: true %>

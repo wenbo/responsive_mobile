@@ -10,7 +10,9 @@
     <p class="product_f16 m_top5"><%= truncate(product.desc, length: 50) %> </p>
     <p class="product_xx m_top15">查看详情</p>
     </dt>
-    <dt class="product_dt02"><%= product.category.name %></dt>
+    <% product.category_ids_arr_names.each_with_index do |name, i| %>
+      <dt class="product_dt0<%=i+2%>"><%= name %></dt>
+    <% end %>
   </dl></a>
   </li>
 <% end %>
@@ -24,7 +26,9 @@
     <p class="product_f16 m_top5"><%= truncate(product.desc, length: 50) %> </p>
     <p class="product_xx m_top15">查看详情</p>
     </dt>
-    <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
+    <% product.category_ids_arr_names.each_with_index do |name, i| %>
+      <dt class="product_dt0<%=i+2%>"><%= name %></dt>
+    <% end %>
   </dl></a>
   </li>
 <% end %>
@@ -37,7 +41,9 @@
     <p class="product_f16 m_top5"><%= truncate(product.desc, length: 50) %> </p>
     <p class="product_xx m_top15">查看详情</p>
     </dt>
-    <dt class="product_dt02"><%= product.try(:category).try(:name) %></dt>
+    <% product.category_ids_arr_names.each_with_index do |name, i| %>
+      <dt class="product_dt0<%=i+2%>"><%= name %></dt>
+    <% end %>
   </dl></a>
   </li>
 <% end %>
