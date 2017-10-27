@@ -1,11 +1,22 @@
 <div id="pic_corpus_03" class="recorder_content" style="display:none;">
   <% if @product_attachments.present? %>
-  <p class="product_f25">PDF样本</p>
 
+    <% if false %>
+  <p class="product_f25">PDF样本</p>
   <ul class="m_top30 clearfix">
 		<% @product_attachments.each do |p_a| %>
     <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>" target="_blank"><%= @product.title %></a></li>
 		<% end %>
+  </ul>
+<% end %>
+
+  <h3 class="recorder_basic01">PDF样张</h3>
+  <ul class="m_top30 clearfix">
+    <% @product_attachments.each do |p_a| %>
+      <li class="recorder_pdf">
+      <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %>
+      </li>
+  <% end %>
   </ul>
 <% else %>
   <p class="product_f25">非常抱歉，暂无可下载样本。</p>
