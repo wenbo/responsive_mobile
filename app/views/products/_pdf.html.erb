@@ -10,14 +10,16 @@
   </ul>
 <% end %>
 
-  <h3 class="recorder_basic01">PDF样张</h3>
-  <ul class="m_top30 clearfix">
-    <% @product_attachments.each do |p_a| %>
-      <li class="recorder_pdf">
-      <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %>
-      </li>
+<% @product_attachments.each do |pdf_cate_id, arr| %>
+  <h3 class="recorder_basic01"><%= PdfCategory.find_by(id: pdf_cate_id).name %></h3>
+<ul class="m_top30 clearfix">
+  <% arr.each do |p_a| %>
+    <li class="recorder_pdf">
+  <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %>
+  </li>
   <% end %>
   </ul>
+<% end %>
 <% else %>
   <p class="product_f25">非常抱歉，暂无可下载样本。</p>
 <% end %>
