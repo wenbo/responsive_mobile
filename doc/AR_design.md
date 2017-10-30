@@ -96,11 +96,31 @@ Product.first.category_ids
 Product.first.categories
 Product.where(id: [1, 2])
 
+errors = []
 Product.all.each do |pro|
 begin 
 pro.category_ids_arr = [pro.category.id]
 pro.save
-rescue
+rescue => e
+errors << [pro.id, e.message]
 puts pro.id
+end
+end
+
+nil_p = Product.where("category_id is ?", nil)
+ProdCategory.count
+ActiveRecord::Base.connection.execute("truncate table prod_categories")
+errors = []
+Product.all.each do |pro|
+begin 
+if pro.category.present?
+pro_c = ProdCategory.create(
+    product: pro, 
+    category: pro.category
+    )
+pro_c.save
+  end
+rescue => e
+errors << [pro.id, e.message]
 end
 end
