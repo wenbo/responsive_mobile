@@ -36,13 +36,26 @@
       </div>
     </div>
 
+    <% if false  %>
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          从属的产品分类<abbr title="required">*</abbr>
+        </label>
+        <div class="col-sm-4">
+          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
     <div class="form-inputs">
       <div class="form-group string requirede">
         <label class="string required col-sm-2 control-label">
           产品分类<abbr title="required">*</abbr>
         </label>
         <div class="col-sm-4">
-          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control" %>
+          <%= f.select :category_ids_arr, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control", multiple: true %>
         </div>
       </div>
     </div>

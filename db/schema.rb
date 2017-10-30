@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912133238) do
+ActiveRecord::Schema.define(version: 20171025114246) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,14 +18,13 @@ ActiveRecord::Schema.define(version: 20170912133238) do
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
-    t.text     "intro_links",        limit: 65535
     t.index ["lft"], name: "index_categories_on_lft", using: :btree
     t.index ["rgt"], name: "index_categories_on_rgt", using: :btree
   end
@@ -75,8 +74,9 @@ ActiveRecord::Schema.define(version: 20170912133238) do
     t.string   "address"
     t.string   "tel"
     t.string   "email"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "content",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -145,6 +145,15 @@ ActiveRecord::Schema.define(version: 20170912133238) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_pdf_categories_on_parent_id", using: :btree
+  end
+
+  create_table "prod_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_prod_categories_on_category_id", using: :btree
+    t.index ["product_id"], name: "index_prod_categories_on_product_id", using: :btree
   end
 
   create_table "product_access_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

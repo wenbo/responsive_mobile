@@ -25,7 +25,8 @@ ShowSub(0,5);
     </ul>
   </div>
   <div class="product_right">
-    <p class="current"><a href="/index.html">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= link_to @product.category.name, "/categories/#{@product.category_id}" %> > <%= @product.title %></p>
+    <p class="current"><a href="/index.html">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= raw(product_category_links(@product.category_ids_hash)) %>
+> <%= @product.title %></p>
 		 <div class="clearfix">
 			 <h3 class="product_f25 m_top20 fl"><%= @product.title %></h3>
 			 <p class="fr m_top20"><a href="javascript:history.go(-1)"><%= image_tag "front/recorder_return.jpg", width: "135", height: "35" %></a></p>
@@ -42,7 +43,7 @@ ShowSub(0,5);
       <li onclick=ShowSub(0,2) id=S_Menu_02>选　件</li>
     <% end %>
   <% if @product_attachments.present? %>
-      <li onclick=ShowSub(0,3) id=S_Menu_03>PDF样本</li>
+    <li onclick=ShowSub(0,3) id=S_Menu_03>产品样本/<br />技术资料等下载</li>
     <% end %>
   <% if @upgraded_flag.present? %>
       <li onclick=ShowSub(0,4) id=S_Menu_04>升级・软件</li>

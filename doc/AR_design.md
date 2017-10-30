@@ -76,6 +76,9 @@ rails g model registration h_user_id:integer seihin_id:integer
 
 rake db:migrate:redo VERSION=20170908142743
 rake db:migrate:redo VERSION=20170908142722
+
+bundle exec rake db:migrate:down VERSION=20171022141940
+
 rake import:seihin
 Seihin.count
 HUser.first.registrations
@@ -83,3 +86,21 @@ Registration.includes(:seihin).where("seihins.product_model_name LIKE :search", 
 Registration.joins(:seihin).where("'seihins.product_model_name' LIKE :search", {search: "%000%"})
 Registration.product_name("000")
 Registration.product_model_name("000")
+
+rails g migration AddCategoryIdsToProducts category_ids:string
+rails g model ProdCategory 
+https://stackoverflow.com/questions/4864513/ruby-on-rails-multiple-selection-in-f-select
+
+## code
+Product.first.category_ids
+Product.first.categories
+Product.where(id: [1, 2])
+
+Product.all.each do |pro|
+begin 
+pro.category_ids_arr = [pro.category.id]
+pro.save
+rescue
+puts pro.id
+end
+end
