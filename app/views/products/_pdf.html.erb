@@ -4,9 +4,9 @@
     <% if false %>
   <p class="product_f25">PDF样本</p>
   <ul class="m_top30 clearfix">
-		<% @product_attachments.each do |p_a| %>
-    <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>" target="_blank"><%= @product.title %></a></li>
-		<% end %>
+    <% @product_attachments.each do |p_a| %>
+      <li class="recorder_pdf"><a href="<%= p_a.pdf.url %>" target="_blank"><%= @product.title %></a></li>
+  <% end %>
   </ul>
 <% end %>
 
@@ -15,7 +15,7 @@
 <ul class="m_top30 clearfix">
   <% arr.each do |p_a| %>
     <li class="recorder_pdf">
-  <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %>
+    <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %></a>
   </li>
   <% end %>
   </ul>

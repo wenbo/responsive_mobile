@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     @title = @product.title
     @product.visited
     @summary = @product.summary
-    @product_attachments = @product.product_attachments.exclude_english.group_by do |pdf| pdf.pdf_category_id end
+    @product_attachments = @product.product_attachments.group_by do |pdf| pdf.pdf_category_id end
     @spec_table = @product.spec_table
     @utilities = @product.utilities
     @upgraded_flag = true if @product.upgraded.present? || @product.upgraded_note.present?
