@@ -314,7 +314,7 @@ include("./header.php");//加载template
 						<dt><textarea name="feedback" id="feedback" cols="50" rows="6" class="register_textarea"></textarea>
 						</dt>
 					</dl>
-					<div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button01" /><input name="" type="reset" value="" class="counterfeit_button02" />
+					<div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button04" />&nbsp;&nbsp;<input name="" type="reset" value="" class="counterfeit_button02" />
 					</form>
 				</div>
 				

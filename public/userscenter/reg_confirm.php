@@ -70,187 +70,179 @@ include("./header.php");//加载template
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">公司名</dd>
 						<dt>
-							<input name="company" id="company" type="text" value="<?php echo $company;?>" class="register_text" /><span class="register_f14">　例：日置（上海）商贸 有限公司</span>
+                                                        <input name="company" type="hidden" id="company" type="text" value="<?php echo $company;?>" class="register_text" /><span class="register_f14">　<?php echo $company;?>"</span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">部门</dd>
 						<dt>
-							<input name="dept" id="dept" type="text" value="<?php echo $dept;?>" class="register_text" /><span class="register_f14">　例：营业支援部</span>
+							<input name="dept" type="hidden" id="dept" type="text" value="<?php echo $dept;?>" class="register_text" /><span class="register_f14"><?php echo $dept;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">职位</dd>
 						<dt>
-							<input name="job" id="job" type="text" value="<?php echo $job;?>" class="register_text" /><span class="register_f14">　例：助理</span>
+							<input name="job" type="hidden" id="job" type="text" value="<?php echo $job;?>" class="register_text" /><span class="register_f14"><?php echo $job;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">姓名</dd>
 						<dt>
-							<input name="name" id="name" type="text" value="<?php echo $name;?>" class="register_text" /><span class="register_f14">　例：张三</span>
+							<input name="name" type="hidden" id="name" type="text" value="<?php echo $name;?>" class="register_text" /><span class="register_f14"><?php echo $name;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">类别</dd>
 						<dt>
-							<label class="register_dx"><input name="type" type="radio" value="最终用户" <?php if($type=="最终用户") echo "checked"; ?> />&nbsp;&nbsp;最终用户</label>
-							<label class="register_dx"><input name="type" type="radio" value="仪器代理商" <?php if($type=="仪器代理商") echo "checked"; ?> />&nbsp;&nbsp;仪器代理商</label>
-							<label class="register_dx"><input name="type" type="radio" value="系统集成商" <?php if($type=="系统集成商") echo "checked"; ?> />&nbsp;&nbsp;系统集成商</label>
-							<label class="register_dx"><input name="type" type="radio" value="其它" <?php if($type=="其它") echo "checked"; ?> />&nbsp;&nbsp;其它</label>
+							<label class="register_dx"><input type="hidden" name="type" type="radio" value="最终用户" <?php if($type=="最终用户") echo "checked"; ?> /><?php if($type=="最终用户") echo "最终用户"; ?></label>
+							<label class="register_dx"><input type="hidden" name="type" type="radio" value="仪器代理商" <?php if($type=="仪器代理商") echo "checked"; ?> /><?php if($type=="仪器代理商") echo "仪器代理商"; ?></label>
+							<label class="register_dx"><input type="hidden" name="type" type="radio" value="系统集成商" <?php if($type=="系统集成商") echo "checked"; ?> /><?php if($type=="系统集成商") echo "系统集成商"; ?></label>
+							<label class="register_dx"><input type="hidden" name="type" type="radio" value="其它" <?php if($type=="其它") echo "checked"; ?> /><?php if($type=="其它") echo "其它"; ?></label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">区域</dd>
 						<dt>
-							<label class="register_dx"><input name="area" type="radio" value="华北" <?php if($area=="华北") echo "checked"; ?>/>&nbsp;&nbsp;华北</label>
-							<label class="register_dx"><input name="area" type="radio" value="华东" <?php if($area=="华东") echo "checked"; ?>/>&nbsp;&nbsp;华东</label>
-							<label class="register_dx"><input name="area" type="radio" value="中南" <?php if($area=="中南") echo "checked"; ?>/>&nbsp;&nbsp;中南</label>
-							<label class="register_dx"><input name="area" type="radio" value="中西" <?php if($area=="中西") echo "checked"; ?>/>&nbsp;&nbsp;中西</label>
-							<p class="register_f14 clear">华北：北京、天津、黑龙江、吉林、辽宁、山东、河北、河南、山西、内蒙古、新疆<br />
-								华东：上海、江苏、浙江、安徽、江西<br />
-								华南：湖南、福建、广东、广西、海南、香港<br />
-								中西：重庆、湖北、陕西、宁夏、甘肃、四川、贵州、云南、青海、西藏
-							</p>
+							<label class="register_dx"><input type="hidden" name="area" type="radio" value="华北" <?php if($area=="华北") echo "checked"; ?>/><?php if($area=="华北") echo "华北"; ?></label>
+							<label class="register_dx"><input type="hidden" name="area" type="radio" value="华东" <?php if($area=="华东") echo "checked"; ?>/><?php if($area=="华东") echo "华东"; ?></label>
+							<label class="register_dx"><input type="hidden" name="area" type="radio" value="中南" <?php if($area=="中南") echo "checked"; ?>/><?php if($area=="中南") echo "中南"; ?></label>
+							<label class="register_dx"><input type="hidden" name="area" type="radio" value="中西" <?php if($area=="中西") echo "checked"; ?>/><?php if($area=="中西") echo "中西"; ?>中西</label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">业种</dd>
 						<dt>
-							<label class="register_dx"><input name="work1" type="radio" value="1" <?php if($work1=="1") echo "checked"; ?>/>&nbsp;&nbsp;食品、纤维</label>
-							<label class="register_dx"><input name="work1" type="radio" value="2" <?php if($work1=="2") echo "checked"; ?>/>&nbsp;&nbsp;工业、化学</label>
-							<label class="register_dx"><input name="work1" type="radio" value="3" <?php if($work1=="3") echo "checked"; ?>/>&nbsp;&nbsp;钢铁、金属</label>
-							<label class="register_dx"><input name="work1" type="radio" value="4" <?php if($work1=="4") echo "checked"; ?>/>&nbsp;&nbsp;运输用机械制造</label>
-							<label class="register_dx"><input name="work1" type="radio" value="5" <?php if($work1=="5") echo "checked"; ?>/>&nbsp;&nbsp;其他机械制造</label>
-							<label class="register_dx"><input name="work1" type="radio" value="6" <?php if($work1=="6") echo "checked"; ?>/>&nbsp;&nbsp;电机制造</label>
-							<label class="register_dx"><input name="work1" type="radio" value="7" <?php if($work1=="7") echo "checked"; ?>/>&nbsp;&nbsp;电力、燃气</label>
-							<label class="register_dx"><input name="work1" type="radio" value="8" <?php if($work1=="8") echo "checked"; ?>/>&nbsp;&nbsp;运输、通讯</label>
-							<label class="register_dx"><input name="work1" type="radio" value="9" <?php if($work1=="9") echo "checked"; ?>/>&nbsp;&nbsp;服务业</label>
-							<label class="register_dx"><input name="work1" type="radio" value="10" <?php if($work1=="10") echo "checked"; ?> />&nbsp;&nbsp;政府、学校、研究所</label>
-							<label class="register_dx"><input name="work1" type="radio" value="11" <?php if($work1=="11") echo "checked"; ?>/>&nbsp;&nbsp;其它</label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="1" <?php if($work1=="1") echo "checked"; ?>/><?php if($work1=="1") echo "食品、纤维"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="2" <?php if($work1=="2") echo "checked"; ?>/><?php if($work1=="2") echo "工业、化学"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="3" <?php if($work1=="3") echo "checked"; ?>/><?php if($work1=="3") echo "钢铁、金属"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="4" <?php if($work1=="4") echo "checked"; ?>/><?php if($work1=="4") echo "运输用机械制造"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="5" <?php if($work1=="5") echo "checked"; ?>/><?php if($work1=="5") echo "其他机械制造"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="6" <?php if($work1=="6") echo "checked"; ?>/><?php if($work1=="6") echo "电机制造"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="7" <?php if($work1=="7") echo "checked"; ?>/><?php if($work1=="7") echo "电力、燃气"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="8" <?php if($work1=="8") echo "checked"; ?>/><?php if($work1=="8") echo "运输、通讯"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="9" <?php if($work1=="9") echo "checked"; ?>/><?php if($work1=="9") echo "服务业"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="10" <?php if($work1=="10") echo "checked"; ?> /><?php if($work1=="10") echo "政府、学校、研究所"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work1" type="radio" value="11" <?php if($work1=="11") echo "checked"; ?>/><?php if($work1=="11") echo "其它"; ?></label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">职种</dd>
 						<dt>
-							<label class="register_dx"><input name="work2" type="radio" value="1" <?php if($work2=="1") echo "checked"; ?> />&nbsp;&nbsp;研究、开发</label>
-							<label class="register_dx"><input name="work2" type="radio" value="2" <?php if($work2=="2") echo "checked"; ?>/>&nbsp;&nbsp;技术、设计</label>
-							<label class="register_dx"><input name="work2" type="radio" value="3" <?php if($work2=="3") echo "checked"; ?>/>&nbsp;&nbsp;生产技术</label>
-							<label class="register_dx"><input name="work2" type="radio" value="4" <?php if($work2=="4") echo "checked"; ?>/>&nbsp;&nbsp;制造</label>
-							<label class="register_dx"><input name="work2" type="radio" value="5" <?php if($work2=="5") echo "checked"; ?>/>&nbsp;&nbsp;采购</label>
-							<label class="register_dx"><input name="work2" type="radio" value="6" <?php if($work2=="6") echo "checked"; ?>/>&nbsp;&nbsp;行政</label>
-							<label class="register_dx"><input name="work2" type="radio" value="7" <?php if($work2=="7") echo "checked"; ?>/>&nbsp;&nbsp;销售</label>
-							<label class="register_dx"><input name="work2" type="radio" value="8" <?php if($work2=="8") echo "checked"; ?>/>&nbsp;&nbsp;服务人员</label>
-							<label class="register_dx"><input name="work2" type="radio" value="9" <?php if($work2=="9") echo "checked"; ?>/>&nbsp;&nbsp;政府人员</label>
-							<label class="register_dx"><input name="work2" type="radio" value="10" <?php if($work2=="10") echo "checked"; ?>/>&nbsp;&nbsp;学校、学生</label>
-							<label class="register_dx"><input name="work2" type="radio" value="11" <?php if($work2=="11") echo "checked"; ?>/>&nbsp;&nbsp;其它</label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="1" <?php if($work2=="1") echo "checked"; ?>/><?php if($work2=="1") echo "研究、开发<"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="2" <?php if($work2=="2") echo "checked"; ?>/><?php if($work2=="2") echo "技术、设计"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="3" <?php if($work2=="3") echo "checked"; ?>/><?php if($work2=="3") echo "生产技术"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="4" <?php if($work2=="4") echo "checked"; ?>/><?php if($work2=="4") echo "制造"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="5" <?php if($work2=="5") echo "checked"; ?>/><?php if($work2=="5") echo "采购"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="6" <?php if($work2=="6") echo "checked"; ?>/><?php if($work2=="6") echo "行政"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="7" <?php if($work2=="7") echo "checked"; ?>/><?php if($work2=="7") echo "销售"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="8" <?php if($work2=="8") echo "checked"; ?>/><?php if($work2=="8") echo "服务人员"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="9" <?php if($work2=="9") echo "checked"; ?>/><?php if($work2=="9") echo "政府人员"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="10" <?php if($work2=="10") echo "checked"; ?>/><?php if($work2=="10") echo "学校、学生"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="11" <?php if($work2=="11") echo "checked"; ?>/><?php if($work2=="11") echo "其它"; ?></label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">Email</dd>
 						<dt>
-							<input name="email" id="email" type="text" value="<?php echo $email;?>" class="register_text" /><span class="register_f14">　例：info@hioki.com.cn</span>
+							<input type="hidden" name="email" id="email" type="text" value="<?php echo $email;?>" class="register_text" /><span class="register_f14"><?php echo $email;?></span>
 						</dt>
 					</dl>
-					<dl class="register_dl clearfix">
-      			<dd class="register_dd">密码</dd>
-						<dt>
-							<input name="password" id="password" value="<?php echo $password;?>" type="password" class="register_text" />
-						</dt>
-					</dl>
+							<input type="hidden" name="password" id="password" value="<?php echo $password;?>" type="password" class="register_text" />
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">地址</dd>
 						<dt>
-							<input name="address" id="address" value="<?php echo $address;?>" type="text" class="register_text" /><span class="register_f14">　例：上海市淮海中路93号大上海时代广场1608-1610室</span>
+							<input type="hidden" name="address" id="address" value="<?php echo $address;?>" type="text" class="register_text" /><span class="register_f14"><?php echo $address;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">邮编</dd>
 						<dt>
-							<input name="postcode" id="postcode" value="<?php echo $postcode;?>" type="text" class="register_text" /><span class="register_f14">　例：200021</span>
+							<input type="hidden" name="postcode" id="postcode" value="<?php echo $postcode;?>" type="text" class="register_text" /><span class="register_f14"><?php echo $postcode;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">TEL</dd>
 						<dt>
-							<input name="tel" id="tel" type="text" value="<?php echo $tel;?>" class="register_text" /><span class="register_f14">　例：021-63910090</span>
+							<input type="hidden" name="tel" id="tel" type="text" value="<?php echo $tel;?>" class="register_text" /><span class="register_f14"><?php echo $tel;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>FAX</dd>
 						<dt>
-							<input name="fax" id="fax" type="text" value="<?php echo $fax;?>" class="register_text" /><span class="register_f14">　例：021-63910360</span>
+							<input type="hidden" name="fax" id="fax" type="text" value="<?php echo $fax;?>" class="register_text" /><span class="register_f14"><?php echo $fax;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>是否使用日置产品</dd>
 						<dt>
-							<label class="register_dx"><input name="is_used" type="radio" value="yes" <?php if($is_used=="yes") echo "checked"; ?>/>&nbsp;&nbsp;是</label>
-							<label class="register_dx"><input name="is_used" type="radio" value="no" <?php if($is_used=="no") echo "checked"; ?>/>&nbsp;&nbsp;否</label>
+							<label class="register_dx"><input type="hidden" name="is_used" type="radio" value="yes" <?php if($is_used=="yes") echo "checked"; ?>/><?php if($is_used=="yes") echo "是"; ?></label>
+							<label class="register_dx"><input type="hidden" name="is_used" type="radio" value="no" <?php if($is_used=="no") echo "checked"; ?>/><?php if($is_used=="no") echo "否"; ?></label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>日置产品1</dd>
 						<dt>
-							型号　<input name="hioki_code1" id="hioki_code1" type="text" class="register_text" value="<?php echo $hioki_code1;?>" /><span class="register_f14">　例：8870-21</span>
-							<p class="m_top30">名称　<input name="hioki_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $name1;?>"/><span class="register_f14">　例：存储记录仪</span>
+							型号　<input type="hidden" name="hioki_code1" id="hioki_code1" type="text" class="register_text" value="<?php echo $hioki_code1;?>" /><span class="register_f14"><?php echo $hioki_code1;?></span>
+							<p class="m_top30">名称<input type="hidden" name="hioki_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $name1;?>"/><span class="register_f14"><?php echo $name1;?></span>
 							</p>
 						</dt>
 					</dl>
+
 					<dl class="register_dl clearfix">
       			<dd>日置产品2</dd>
 						<dt>
-							型号　<input name="hioki_code2" id="hioki_code2" type="text" class="register_text" value="<?php echo $hioki_code2;?>"/>
-							<p class="m_top30">名称　<input name="hioki_name2" id="hioki_name2" type="text" class="register_text" value="<?php echo $hioki_name2;?>"/>
+							型号　<input type="hidden" name="hioki_code2" id="hioki_code2" type="text" class="register_text" value="<?php echo $hioki_code2;?>"/><span class="register_f14"><?php echo $hioki_code2;?></span>
+							<p class="m_top30">名称　<input type="hidden" name="hioki_name2" id="hioki_name2" type="text" class="register_text" value="<?php echo $hioki_name2;?>"/>
 							</p>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>日置产品3</dd>
 						<dt>
-							型号　<input name="hioki_code3" id="hioki_code3" type="text" class="register_text" value="<?php echo $hioki_code3;?>"/>
-							<p class="m_top30">名称　<input name="hioki_name3" id="hioki_name3" type="text" class="register_text" value="<?php echo $hioki_name3;?>"/>
+							型号　<input type="hidden" name="hioki_code3" id="hioki_code3" type="text" class="register_text" value="<?php echo $hioki_code3;?>"/><span class="register_f14"><?php echo $hioki_code3;?></span>
+							<p class="m_top30">名称　<input type="hidden" name="hioki_name3" id="hioki_name3" type="text" class="register_text" value="<?php echo $hioki_name3;?>"/><span class="register_f14"><?php echo $hioki_name3;?></span>
 							</p>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>其它产品1</dd>
 						<dt>
-							型号　<input name="other_code1" id="other_code1" type="text" class="register_text" value="<?php echo $other_code1;?>"/>
-							<p class="m_top30">名称　<input name="other_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $other_name1;?>"/>
+							型号　<input type="hidden" name="other_code1" id="other_code1" type="text" class="register_text" value="<?php echo $other_code1;?>"/><span class="register_f14"><?php echo $other_code1;?></span>
+							<p class="m_top30">名称　<input type="hidden" name="other_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $other_name1;?>"/><span class="register_f14"><?php echo $other_name1;?></span>
 							</p>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>其它产品2</dd>
 						<dt>
-							型号　<input name="other_code2" id="other_code2" type="text" class="register_text" value="<?php echo $other_code2;?>"/>
-							<p class="m_top30">名称　<input name="other_name2" id="other_name2" type="text" class="register_text" value="<?php echo $other_name2;?>"/>
+							型号　<input type="hidden" name="other_code2" id="other_code2" type="text" class="register_text" value="<?php echo $other_code2;?>"/><span class="register_f14"><?php echo $other_code2;?></span>
+							<p class="m_top30">名称　<input type="hidden" name="other_name2" id="other_name2" type="text" class="register_text" value="<?php echo $other_name2;?>"/><span class="register_f14"><?php echo $other_name2;?></span>
 							</p>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>其它产品3</dd>
 						<dt>
-							型号　<input name="other_code3" id="other_code3" type="text" class="register_text" value="<?php echo $other_code3;?>"/>
-							<p class="m_top30">名称　<input name="other_name3" id="other_name3" type="text" class="register_text" value="<?php echo $other_name3;?>"/>
+							型号　<input type="hidden" name="other_code3" id="other_code3" type="text" class="register_text" value="<?php echo $other_code3;?>"/><span class="register_f14"><?php echo $other_code3;?></span>
+							<p class="m_top30">名称　<input type="hidden" name="other_name3" id="other_name3" type="text" class="register_text" value="<?php echo $other_name3;?>"/><span class="register_f14"><?php echo $other_name3;?></span>
 							</p>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
       			<dd>希望得到哪种信息</dd>
 						<dt>
-							<label class="register_dx"><input name="info_type[]" type="checkbox" value="1" <?php if(in_array("1", $info_type)) echo "checked"; ?>/>&nbsp;&nbsp;综合样本</label>
-							<label class="register_dx"><input name="info_type[]" type="checkbox" value="2" <?php if(in_array("2", $info_type)) echo "checked"; ?>/>&nbsp;&nbsp;新产品信息</label>
-							<label class="register_dx"><input name="info_type[]" type="checkbox" value="3" <?php if(in_array("3", $info_type)) echo "checked"; ?>/>&nbsp;&nbsp;研讨会通知 </label>
-							<label class="register_dx"><input name="info_type[]" type="checkbox" value="4" <?php if(in_array("4", $info_type)) echo "checked"; ?>/>&nbsp;&nbsp;展会通知</label>
+							<label class="register_dx"><input type="hidden" name="info_type[]" type="checkbox" value="1" <?php if(in_array("1", $info_type)) echo "checked"; ?>/><?php if(in_array("1", $info_type)) echo "综合样本"; ?></label>
+							<label class="register_dx"><input type="hidden" name="info_type[]" type="checkbox" value="2" <?php if(in_array("2", $info_type)) echo "checked"; ?>/><?php if(in_array("2", $info_type)) echo "新产品信息"; ?></label>
+							<label class="register_dx"><input type="hidden" name="info_type[]" type="checkbox" value="3" <?php if(in_array("3", $info_type)) echo "checked"; ?>/><?php if(in_array("3", $info_type)) echo "研讨会通知"; ?></label>
+							<label class="register_dx"><input type="hidden" name="info_type[]" type="checkbox" value="4" <?php if(in_array("4", $info_type)) echo "checked"; ?>/><?php if(in_array("4", $info_type)) echo "展会通知"; ?></label>
 						</dt>
 					</dl>
-					<dl class="register_dl clearfix" style="border:none;">
-      			<dd>意见和建议</dd>
-						<dt><textarea name="feedback" id="feedback" cols="50" rows="6" class="register_textarea"><?php echo nl2br($feedback);?></textarea>
-						</dt>
-					</dl>
+                                        <dl class="register_dl clearfix" style="border:none;">
+                        <dd>意见和建议</dd>
+                                                <dt><textarea style="display:none;" name="feedback" id="feedback" cols="50" rows="6" class="register_textarea"><?php echo nl2br($feedback);?></textarea>
+<?php echo nl2br($feedback);?>
+                                                </dt>
+                                        </dl>
 					<div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button01" /><input name="" type="reset" value="" class="counterfeit_button03" />
 					</form>
 				</div>
