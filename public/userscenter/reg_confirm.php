@@ -70,7 +70,7 @@ include("./header.php");//加载template
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">公司名</dd>
 						<dt>
-                                                        <input name="company" type="hidden" id="company" type="text" value="<?php echo $company;?>" class="register_text" /><span class="register_f14">　<?php echo $company;?>"</span>
+                                                        <input name="company" type="hidden" id="company" type="text" value="<?php echo $company;?>" class="register_text" /><span class="register_f14">　<?php echo $company;?></span>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -106,7 +106,7 @@ include("./header.php");//加载template
 							<label class="register_dx"><input type="hidden" name="area" type="radio" value="华北" <?php if($area=="华北") echo "checked"; ?>/><?php if($area=="华北") echo "华北"; ?></label>
 							<label class="register_dx"><input type="hidden" name="area" type="radio" value="华东" <?php if($area=="华东") echo "checked"; ?>/><?php if($area=="华东") echo "华东"; ?></label>
 							<label class="register_dx"><input type="hidden" name="area" type="radio" value="中南" <?php if($area=="中南") echo "checked"; ?>/><?php if($area=="中南") echo "中南"; ?></label>
-							<label class="register_dx"><input type="hidden" name="area" type="radio" value="中西" <?php if($area=="中西") echo "checked"; ?>/><?php if($area=="中西") echo "中西"; ?>中西</label>
+							<label class="register_dx"><input type="hidden" name="area" type="radio" value="中西" <?php if($area=="中西") echo "checked"; ?>/><?php if($area=="中西") echo "中西"; ?></label>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -128,7 +128,7 @@ include("./header.php");//加载template
 					<dl class="register_dl clearfix">
       			<dd class="register_dd">职种</dd>
 						<dt>
-							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="1" <?php if($work2=="1") echo "checked"; ?>/><?php if($work2=="1") echo "研究、开发<"; ?></label>
+							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="1" <?php if($work2=="1") echo "checked"; ?>/><?php if($work2=="1") echo "研究、开发"; ?></label>
 							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="2" <?php if($work2=="2") echo "checked"; ?>/><?php if($work2=="2") echo "技术、设计"; ?></label>
 							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="3" <?php if($work2=="3") echo "checked"; ?>/><?php if($work2=="3") echo "生产技术"; ?></label>
 							<label class="register_dx"><input type="hidden" name="work2" type="radio" value="4" <?php if($work2=="4") echo "checked"; ?>/><?php if($work2=="4") echo "制造"; ?></label>
@@ -183,7 +183,7 @@ include("./header.php");//加载template
       			<dd>日置产品1</dd>
 						<dt>
 							型号　<input type="hidden" name="hioki_code1" id="hioki_code1" type="text" class="register_text" value="<?php echo $hioki_code1;?>" /><span class="register_f14"><?php echo $hioki_code1;?></span>
-							<p class="m_top30">名称<input type="hidden" name="hioki_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $name1;?>"/><span class="register_f14"><?php echo $name1;?></span>
+							<p class="m_top30">名称  <input type="hidden" name="hioki_name1" id="hioki_name1" type="text" class="register_text" value="<?php echo $hioki_name1;?>"/><span class="register_f14"><?php echo $hioki_name1;?></span>
 							</p>
 						</dt>
 					</dl>
@@ -192,7 +192,8 @@ include("./header.php");//加载template
       			<dd>日置产品2</dd>
 						<dt>
 							型号　<input type="hidden" name="hioki_code2" id="hioki_code2" type="text" class="register_text" value="<?php echo $hioki_code2;?>"/><span class="register_f14"><?php echo $hioki_code2;?></span>
-							<p class="m_top30">名称　<input type="hidden" name="hioki_name2" id="hioki_name2" type="text" class="register_text" value="<?php echo $hioki_name2;?>"/>
+							<p class="m_top30">名称　<input type="hidden" name="hioki_name2" id="hioki_name2" type="text" class="register_text" value="<?php echo $hioki_name2;?>"/><span class="register_f14"><?php echo $hioki_name2;?></span>
+
 							</p>
 						</dt>
 					</dl>
@@ -243,7 +244,7 @@ include("./header.php");//加载template
 <?php echo nl2br($feedback);?>
                                                 </dt>
                                         </dl>
-					<div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button01" /><input name="" type="reset" value="" class="counterfeit_button03" />
+					<div class="counterfeit_fill"><input name="" type="submit" value="" class="counterfeit_button01" />&nbsp;&nbsp;<input name="" type="reset" value="" class="counterfeit_button03" />
 					</form>
 				</div>
 				
