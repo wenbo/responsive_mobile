@@ -228,6 +228,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .register_dl dd{width:160px; float:left; line-height:35px; padding-left:35px;}
 .register_dl dd.register_dd{background:url(../images/register_r3_c2.jpg) no-repeat 10px center;}
 .register_dl dt{width:805px; float:left;}
+.register_lh35 .register_dl dt{line-height:35px;}
 .register_text{width:450px; height:33px; font-size:15px; border:#D8D9D9 1px solid; background:#ECECEC;}
 .register_f14{color:#666; font-size:14px;}
 .register_dx{width:175px; float:left; padding:8px 0 12px 0;}
