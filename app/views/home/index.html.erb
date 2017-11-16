@@ -31,6 +31,7 @@
                     });
         });
 </script>
+<%= javascript_include_tag 'default', 'Effect', 'common' %>
 <% end %>
 
 <%= render partial: "shared/top_search" %>
@@ -46,7 +47,10 @@
       		<dt class="hioki_f31">电力/新能源</dt>
 					<dt class="m_top5">Power, Energy, Environment</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-					<dd class="m_top10"><%= image_tag "front/hioki_r12_c10.jpg", width: 65, height: 110 %></dd>
+          <dt class="sp_block">
+            <%= image_tag "mobile/hioki_r10_c9_sp.jpg", width: 20 %>
+          </dt>
+					<dd class="m_top10"><%= image_tag "front/hioki_r12_c10.jpg", width: 65, height: 110, class: "imgChange imgChange2" %></dd>
 				</dl>
 			</a>
 			<a href="/industries/2">
@@ -54,7 +58,10 @@
       		<dt class="hioki_f31">汽车</dt>
 					<dt class="m_top5">Automotive, Transport</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-					<dd class="m_top10"><%= image_tag "front/hioki_r12_c17.jpg", width: 236, height: 110 %></dd>
+          <dt class="sp_block">
+            <%= image_tag "mobile/hioki_r10_c9_sp.jpg", width: 20 %>
+          </dt>
+					<dd class="m_top10"><%= image_tag "front/hioki_r12_c17.jpg", width: 236, height: 110, class: "imgChange imgChange2" %></dd>
 				</dl>
 			</a>
 			<a href="/industries/3">
@@ -62,7 +69,10 @@
       		<dt class="hioki_f31">电子零件</dt>
 					<dt class="m_top5">Components, Semiconductors</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-					<dd class="m_top10"><%= image_tag "front/hioki_r12_c25.jpg", width: 110, height: 110 %></dd>
+          <dt class="sp_block">
+            <%= image_tag "mobile/hioki_r10_c9_sp.jpg", width: 20 %>
+          </dt>
+					<dd class="m_top10"><%= image_tag "front/hioki_r12_c25.jpg", width: 110, height: 110, class: "imgChange imgChange2" %></dd>
 				</dl>
 			</a>
 			<a href="/industries/4">
@@ -70,7 +80,10 @@
       		<dt class="hioki_f31">电池</dt>
 					<dt class="m_top5">Battery</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %> 查看详情</dt>
-					<dd class="m_top10"><%= image_tag "front/hioki_r12_c28.jpg", width: 236, height: 110 %></dd>
+          <dt class="sp_block">
+            <%= image_tag "mobile/hioki_r10_c9_sp.jpg", width: 20 %>
+          </dt>
+					<dd class="m_top10"><%= image_tag "front/hioki_r12_c28.jpg", width: 236, height: 110, class: "imgChange imgChange2" %></dd>
 				</dl>
 			</a>
 			<a href="/industries/5">
@@ -78,7 +91,10 @@
       		<dt class="hioki_f31">交通<span class="hioki_f15">（地铁、铁道、航空）</span></dt>
 					<dt class="m_top5">Underground, Railway, Aviation</dt>
 					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-					<dd class="m_top10"><%= image_tag "front/hioki_r12_c33.jpg", width: 185, height: 110 %></dd>
+          <dt class="sp_block">
+            <%= image_tag "mobile/hioki_r10_c9_sp.jpg", width: 20 %>
+          </dt>
+					<dd class="m_top10"><%= image_tag "front/hioki_r12_c33.jpg", width: 185, height: 110, class: "imgChange imgChange2" %></dd>
 				</dl>
 			</a>
 		</div>
@@ -89,7 +105,7 @@
 	<div class="hioki_search clearfix">
   	<div class="hioki_news_title">
 			<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
-                        <p class="hioki_f15 m_top5">&nbsp;&gt; <a href="/news.html" style="color:#FFF" target="_blank">新闻一览</a></p>
+                        <p class="hioki_f15 m_top5"><span class="sp_none pad_none">&nbsp;&gt; </span><a href="/news.html" style="color:#FFF" target="_blank">新闻一览<span class="sp_inline pad_inline">&nbsp;&gt;</span></a></p>
 			<ul>
 				<% NewsCategory.all.each do |nc| %>
 				<% next if nc.news.count == 0 %>
@@ -99,7 +115,13 @@
 		</div>
 		<ul class="hioki_news">
 			<% @news.each do |news| %>
-			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="/news/<%= news.id %>"><%= news.name %></a></li>
+			<li><span class="sp_none"><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %></span><a href="/news/<%= news.id %>">
+          <p class="sp_block">
+            <strong><%= parse_date_with_unit(news.public_time) %></strong>
+            <%= image_tag "mobile/hioki_r14_c11_sp.jpg", width: 60 %>
+          </p>
+          <%= news.name %></a>
+      </li>
 			<% end %>
 		</ul>
 	</div>
@@ -109,9 +131,10 @@
           <li><a href="/assets_doc/2017general_c1.pdf" target="_blank"><%= image_tag "front/hioki_r15_c10.jpg", width: 383, height: 164 %></a></li>
         </ul>
 </div>
-<div class="hioki_search clearfix">
+<div class="hioki_search hioki_category_bg clearfix">
 	<h3 class="hioki_category_title m_top45 t_center">日置产品一览<br /><span class="hioki_f15">Search Category</span></h3>
-	<ul class="m_top45 clearfix">
+  <p class="hioki_category_xx sp_block"><a href="/products" target="_blank">查看全部商品<span class="sp_inline">&nbsp;&gt;</span></a></p>
+	<ul class="m_top45 clearfix pad_mt25">
 		<% @root_categories.each_with_index do |r_c, index| %>
 		<% if index % 4 == 0 %>
   	<li class="hioki_category">
@@ -138,8 +161,11 @@
 </div>
 <div class="hioki_activity m_top30">
   <ul class="hioki_columns clearfix">
-    <li><a id="try-1" class="health01 cboxElement" href="/assets_doc/greenpoint.html"><%= image_tag "front/hioki_r24_c22.jpg", width: 385, height: 155 %></a></li>
-    <li><a href="/html/application/ind01.html"><%= image_tag "front/hioki_r24_c28.jpg", width: 384, height: 155 %></a></li>
+    <li><a id="try-1" class="health01 cboxElement" href="/assets_doc/greenpoint.html"><%= image_tag "front/hioki_r24_c22.jpg", width: 385, height: 155, class: "imgChange" %></a></li>
+    <li><a href="/html/application/ind01.html"><%= image_tag "front/hioki_r24_c28.jpg", width: 384, height: 155, class: "imgChange" %></a></li>
+    <li class="sp_block pad_block">
+      <%= image_tag "mobile/hioki_r29_c28_sp.jpg", width: "100%" %>
+    </li>
   </ul>
 </div>
 <%= render partial: "shared/footer" %>

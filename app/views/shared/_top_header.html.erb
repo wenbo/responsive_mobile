@@ -1,4 +1,4 @@
-<div class="top_bg">
+<div class="top_bg sp_none pad_none">
   <div class="top clearfix">
     <p class="fl">日置(上海)商贸有限公司</p>
      <ul class="fr">
@@ -29,7 +29,7 @@
 </div>
 <div class="header">
   <h1 class="fl"><a href="/index.html"><%= image_tag "front/hioki_r4_c3.jpg", width: 220, height: 30, alt: "HIOKI" %></a></h1>
-  <ul>
+  <ul class="header_nav sp_none pad_none">
     <% if controller_name == "home" && action_name == "index" %>
       <li class="nav_li">
   <% else %>
@@ -80,4 +80,5 @@
     <a href="/recruit.html">招聘信息</a>
     </li>
   </ul>
+  <%= render partial: "shared/menu_mobile" %>
 </div>

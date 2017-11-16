@@ -1,0 +1,60 @@
+<p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);">
+    <%= image_tag "mobile/hioki_nav_sp.jpg", width: 27 %>
+</a></p>
+<p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);">
+    <%= image_tag "mobile/hioki_land_sp.jpg", width: 27 %>
+</a></p>
+<div class="hioki_land_sp" id="land_sp" style="display:none;">
+  <h3>会员登录</h3>
+  <form id="login_form" action="sessions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tV85vCWYQU2LVJVSvA5AJXV2jr9Pn8k0MmMvNCdS1sHAJb41DiJtyQ8iKN4QuK6oeUG8J1YjadxRPe/4pbcjvQ==" />
+	  <div class="hioki_login">
+		  <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
+		  <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
+		  <input name="" type="" value="登　录" class="sidebar_ld" id="login_button"/>
+      <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
+	  </div>
+  </form>
+	<p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
+</div>
+<div class="hioki_nav_sp" id="nav_sp" style="display:none;">
+  <dl class="hioki_dhyy clearfix">
+    <dd>
+      <%= image_tag "mobile/hioki_dh_sp.jpg", width: 19 %>
+      400-920-6010
+    </dd>
+    <dt>
+      <%= image_tag "mobile/hioki_site_sp.jpg", width: 19 %>
+      Global Site
+    </dt>
+  </dl>
+  <form id="search_form" name="search_form" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+	  <label class="hioki_nav_search">
+		  <input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
+	</form>
+  <ul class="hioki_menu">
+    <li><a href="/index.html">首　　页<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>
+    </i></a></li>
+    <li><a href="/news.html">新　　闻<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>
+    </i></a></li>
+    <li><a href="/industries/1/products">产品一览<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>          
+    </i></a></li>
+    <li><a href="/company.html">公司介绍<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>
+    </i></a></li>
+    <li><a href="/contact.html">联系我们<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>
+    </i></a></li>
+    <li><a href="/repair.html">维修中心<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>          
+    </i></a></li>
+    <li><a href="/recruit.html">招聘信息<i>
+          <%= image_tag "mobile/hioki_nav_yjt.png", width: 10 %>
+    </i></a></li>
+  </ul>
+  <p class="t_center m_top15">
+    <%= image_tag "mobile/hioki_nav_wx.jpg", width: "94%"  %>
+  </p>
+</div>
