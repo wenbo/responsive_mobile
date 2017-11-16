@@ -105,7 +105,7 @@
 	<div class="hioki_search clearfix">
   	<div class="hioki_news_title">
 			<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
-                        <p class="hioki_f15 m_top5"><span class="sp_none pad_none">&nbsp;&gt; </span><a href="/news.html" style="color:#FFF" target="_blank">新闻一览<span class="sp_inline pad_inline">&nbsp;&gt;</span></a></p>
+                        <p class="hioki_f15 m_top5"><span class="sp_none pad_none">&nbsp;&gt; </span><a href="/news.html" target="_blank">新闻一览<span class="sp_inline pad_inline">&nbsp;&gt;</span></a></p>
 			<ul>
 				<% NewsCategory.all.each do |nc| %>
 				<% next if nc.news.count == 0 %>
@@ -161,8 +161,9 @@
 </div>
 <div class="hioki_activity m_top30">
   <ul class="hioki_columns clearfix">
-    <li><a id="try-1" class="health01 cboxElement" href="/assets_doc/greenpoint.html"><%= image_tag "front/hioki_r24_c22.jpg", width: 385, height: 155, class: "imgChange" %></a></li>
-    <li><a href="/html/application/ind01.html"><%= image_tag "front/hioki_r24_c28.jpg", width: 384, height: 155, class: "imgChange" %></a></li>
+    <li><a href="/news/16"><%= image_tag "front/hioki_r24_c3.jpg", width: 385, class: "imgChange" %></a></li>
+    <li><a id="try-1" class="health01 cboxElement" href="/assets_doc/greenpoint.html"><%= image_tag "front/hioki_r24_c22.jpg", width: 385, class: "imgChange" %></a></li>
+    <li><a href="/html/application/ind01.html"><%= image_tag "front/hioki_r24_c28.jpg", width: 384, class: "imgChange" %></a></li>
     <li class="sp_block pad_block">
       <%= image_tag "mobile/hioki_r29_c28_sp.jpg", width: "100%" %>
     </li>
