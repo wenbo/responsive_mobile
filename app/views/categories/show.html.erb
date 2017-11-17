@@ -1,8 +1,78 @@
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="product_banner"></div>
+
+<div class="product_banner"><span class="sp_block"><img width="100%" src="/assets_doc/front/images/product_r1_c1_sp.jpg" ></span></div>
+
+<div class="clearfix sp_block pad_block">
+	<div class="product_industry_title clearfix">
+    <h3 class="hioki_category_title">日置产品一览<br /><span class="hioki_f15 sp_none">Search Category</span></h3>
+    <p class="hioki_category_xx">查看全部商品<span class="sp_inline">&nbsp;&gt;</span></p>
+  </div>
+	<ul class="product_industry clearfix">
+  	<li class="hioki_category">
+			<a href="/categories/31">
+				<dd><img src="/assets_doc/front/images/hioki_r16_c6.jpg" width="120" height="100"></dd>
+				<dt>记录仪,<br class="sp_inline" />数据采集仪</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/23">
+				<dd><img src="/assets_doc/front/images/hioki_r16_c30.jpg" width="120" height="100"></dd>
+				<dt>电子测量仪表</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/14">
+				<dd><img src="/assets_doc/front/images/hioki_r16_c20.jpg" width="120" height="100"></dd>
+				<dt>安全标准测量仪表</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/18">
+				<dd><img src="/assets_doc/front/images/hioki_r16_c26.jpg" width="120" height="100"></dd>
+				<dt>电力测量仪器</dt>
+			</a>
+		</li>
+  	<li class="hioki_category">
+			<a href="/categories/28">
+				<dd><img src="/assets_doc/front/images/hioki_r18_c6.jpg" width="120" height="100"></dd>
+				<dt>电流传感器</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/34">
+				<dd><img src="/assets_doc/front/images/hioki_r20_c26.jpg" width="120" height="100"></dd>
+				<dt>信号发生器,波形发生器</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/10">
+				<dd><img src="/assets_doc/front/images/hioki_r18_c20.jpg" width="120" height="100"></dd>
+				<dt>环境测量仪表</dt>
+			</a>
+		</li>
+		<li class="hioki_category m_left25">
+			<a href="/categories/1">
+				<dd><img src="/assets_doc/front/images/hioki_r18_c26.jpg" width="120" height="100"></dd>
+				<dt>现场测试仪器<span>（钳形表、万用表、绝缘电阻表等）</span></dt>
+			</a>
+		</li>
+  	<li class="hioki_category">
+			<a href="/categories/40">
+				<dd><img src="/assets_doc/front/images/hioki_r20_c20.jpg" width="120" height="100"></dd>
+				<dt>自动测试设备,测试系统</dt>
+			</a>
+		</li>
+    <li class="hioki_category02 m_left25">
+      <a href="/products"><img width="13" height="13" src="/assets_doc/front/images/hioki_r23_c21.jpg" alt="Hioki r23 c21" /> 查看全部产品
+      </a>
+    </li>
+	</ul>
+</div>
+
+
 <div class="news_content clearfix">
-  <div class="product_left" >
+  <div class="product_left sp_none pad_none" >
 		<h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
 		<ul class="m_top10">
 			<% @root_categories.each do |r_c| %>
@@ -11,7 +81,7 @@
 		</ul>
   </div>
   <div class="product_right">
-  	<p class="current">
+  	<p class="current sp_none">
 			<a href="/index.html">首页</a>
                         > <%= link_to "产品一览", "/industries/1/products" %> 
 			<% if @category_parent.present? %>
@@ -101,7 +171,8 @@
 			<% end %>
 			<% end %>
     </ul>
-    <p class="m_top45">&nbsp;</p>
+    <p class="m_top45 sp_none">&nbsp;</p>
   </div>
 </div>
+
 <%= render partial: "shared/footer" %>
