@@ -1,19 +1,19 @@
-<h3 class="recorder_basic">相关产品</h3>
+<h3 class="recorder_basic m_top45 sp_mt25">相关产品</h3>
 <div class="m_top15 clearfix">
-	<% @product.related_products.each do |product| %>
-  <div class="recorder_related">
-		<p class="recorder_jly"><%= product.category.name %></p>
-		<p>
-			<a href="/products/<%= product.id %>" >
-				<%= image_tag product.thumb_image.url, width: 250 %>
-			</a>
-		</p>
-		<p class="recorder_f18 m_top15">
-			<a href="/products/<%= product.id %>" >
-				<%= product.title %>
-			</a>
-		</p>
-			<p class="recorder_blue"><%= truncate(product.desc, length: 63) %></p>
+  <% @product.related_products.each do |product| %>
+    <div class="recorder_related clearfix">
+    <p class="recorder_jly"><%= product.category.name %></p>
+    <p class="recorder_related_img">
+    <a href="/products/<%= product.id %>" >
+      <%= image_tag product.thumb_image.url, width: 250 %>
+    </a>
+    </p>
+    <p class="recorder_f18 m_top15">
+    <a href="/products/<%= product.id %>" >
+      <%= product.title %>
+    </a>
+    </p>
+    <p class="recorder_blue"><%= truncate(product.desc, length: 63) %></p>
   </div>
-	<% end %>
+<% end %>
 </div>

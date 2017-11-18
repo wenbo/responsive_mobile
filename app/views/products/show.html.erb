@@ -14,9 +14,9 @@ ShowSub(0,5);
 
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="recorder_banner"></div>
+<%= render partial: "shared/product_banner_and_categories" %>
 <div class="news_content clearfix">
-  <div class="product_left" >
+  <div class="product_left sp_none pad_none">
     <h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
     <ul class="m_top10">
       <% @root_categories.each do |r_c| %>
@@ -25,14 +25,14 @@ ShowSub(0,5);
     </ul>
   </div>
   <div class="product_right">
-    <p class="current"><a href="/index.html">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= raw(product_category_links(@product.category_ids_hash)) %>
+    <p class="current sp_none"><a href="/index.html">首页</a> > <%= link_to "产品一览", "/industries/1/products" %> > <%= raw(product_category_links(@product.category_ids_hash)) %>
 > <%= @product.title %></p>
 		 <div class="clearfix">
 			 <h3 class="product_f25 m_top20 fl"><%= @product.title %></h3>
 			 <p class="fr m_top20"><a href="javascript:history.go(-1)"><%= image_tag "front/recorder_return.jpg", width: "135", height: "35" %></a></p>
     </div>
-    <p class="m_top30"><%= image_tag @product.banner.url %></p>
-    <ul class="recorder_title m_top30 clearfix">
+    <p class="m_top30 sp_center"><%= image_tag @product.banner.url %></p>
+    <ul class="recorder_title m_top30 clearfix sp_none">
     <% if @summary.present? %>
       <li onclick=ShowSub(0,1) id=S_Menu_01 class=selectd>概　要</li>
     <% end %>
@@ -53,29 +53,42 @@ ShowSub(0,5);
     <% end %>
     </ul>
     <% if @summary.present? %>
+      <h3 class="products_detailed_tab01 sp_block">概　要</h3>
+      <p class="sp_pt50 sp_block"></p>
       <div id="pic_corpus_01" class="recorder_content">
       <%=raw @summary %>
     </div>
   <% end %>
     <% if @spec_table.present? %>
+      <h3 class="products_detailed_tab06 sp_block">规格表</h3>
+      <p class="sp_pt50 sp_block"></p>
     <%= render partial: "spec_table" %>
   <% end %>
     <% if @option_categories.present? %>
+       <h3 class="products_detailed_tab02 sp_block">选　件</h3>
+       <p class="sp_pt50 sp_block"></p>
       <%= render partial: "options" %>
   <% end %>
   <% if @product_attachments.present? %>
+    <h3 class="products_detailed_tab03 sp_block">产品样本/技术资料等</h3>
+    <p class="sp_pt50 sp_block"></p>
     <%= render partial: "pdf" %>
   <% end %>
   <% if @upgraded_flag.present? %>
+    <h3 class="products_detailed_tab04 sp_block">升级・软件</h3>
+    <p class="sp_pt50 sp_block"></p>
     <%= render partial: "upgrade" %>
   <% end %>
       <% if @utilities.present? %>
+      <h3 class="products_detailed_tab05 sp_block">解决方案</h3>
+      <p class="sp_pt50 sp_block"></p>
+
     <%= render partial: "case" %>
   <% end %>
 		<% if @related_products.present? %>
     <%= render partial: "related_products" %>
 		<% end %>
-    <p class="m_top45">&nbsp;</p>
+    <p class="m_top45 sp_none">&nbsp;</p>
   </div>
 </div>
 <%= render partial: "shared/footer" %>

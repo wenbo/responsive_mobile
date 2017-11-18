@@ -12,7 +12,7 @@
 
 <% @product_attachments.each do |pdf_cate_id, arr| %>
   <h3 class="recorder_basic01"><%= PdfCategory.find_by(id: pdf_cate_id).name %></h3>
-<ul class="m_top30 clearfix">
+<ul class="m_top30 clearfix sp_mt20">
   <% arr.each do |p_a| %>
     <li class="recorder_pdf">
     <a href="<%= p_a.pdf.url %>" target="_blank"><%= p_a.name %></a>
