@@ -1,6 +1,17 @@
 
 $(function(){
 	//手机端点击显示菜单
+  column=0;
+	$('.hioki_column00 .hioki_f23').click(function () {
+		if(column%2==0) {
+			$('.hioki_column00 ul').show();
+			$(".hioki_column00 .hioki_f23").addClass('hioki_column_icon');
+		} else {
+			$('.hioki_column00 ul').hide();
+			$(".hioki_column00 .hioki_f23").removeClass('hioki_column_icon');
+		}
+		column++;
+	});
 	i=0;
 	$('.hioki_column01 .hioki_f23').click(function () {
 		if(i%2==0) {

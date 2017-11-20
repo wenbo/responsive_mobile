@@ -10,6 +10,16 @@ var Obj_Display = $G(ObjectId).style.display;
 	}
 }
 
+function Effect3(ObjectId,parentId){
+  var Obj_Display = $G(ObjectId).style.display;
+	if (Obj_Display == 'none'){
+	  Start(ObjectId,'Opens');
+	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_search_sp.jpg' width='27' ></a>"
+	}else{ 
+	  Start(ObjectId,'Close');
+	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_search_sp.jpg' width='27' ></a>"
+	}
+}
 function Effect2(ObjectId,parentId){
 var Obj_Display = $G(ObjectId).style.display;
 	if (Obj_Display == 'none'){

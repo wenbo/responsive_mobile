@@ -1,9 +1,15 @@
-<p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);">
-    <%= image_tag "front/hioki_nav_sp.jpg", width: 27 %>
-</a></p>
-<p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);">
-    <%= image_tag "front/hioki_land_sp.jpg", width: 27 %>
-</a></p>
+ <p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_nav_sp.jpg" width="27" ></a></p>
+  <p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_land_sp.jpg" width="27" ></a></p>
+  <p class="sp_block fr pad_block" id="search"><a href="javascript:void(0)" onClick="Effect3('search_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_search_sp.jpg" width="27" ></a></p>
+
+<div class="hioki_land_sp" id="search_sp" style="display:none;">
+  <form id="search_form" name="search_form" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+	  <label class="hioki_nav_search">
+		  <input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
+    <p class="sp_pt10"><input name="is_deleted" type="checkbox" value="1" />包含已停产的产品</p>
+	</form>
+</div>
+
 <div class="hioki_land_sp" id="land_sp" style="display:none;">
   <h3>会员登录</h3>
   <form id="login_form" action="sessions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tV85vCWYQU2LVJVSvA5AJXV2jr9Pn8k0MmMvNCdS1sHAJb41DiJtyQ8iKN4QuK6oeUG8J1YjadxRPe/4pbcjvQ==" />
@@ -27,10 +33,7 @@
       Global Site
     </dt>
   </dl>
-  <form id="search_form" name="search_form" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-	  <label class="hioki_nav_search">
-		  <input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
-	</form>
+
   <ul class="hioki_menu">
     <li><a href="/index.html">首　　页<i>
           <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>
