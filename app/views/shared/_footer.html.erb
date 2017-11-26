@@ -1,13 +1,17 @@
 <p class="hioki_page sp_none"><a href="#top"><%= image_tag "front/hioki_r28_c37.jpg", width: 60, height: 57 %></a></p>
-<% if controller_name == "categories" %>
+<% if ["categories", "products"].include? controller_name %>
 <p class="products_wx_pad pad_block"><img src="/assets_doc/front/images/products_wx_pad.jpg" width="100%" /></p>
 <p class="products_wx_sp sp_block"><img src="/assets_doc/front/images/hioki_r29_c28_sp.jpg" width="100%" /></p>
 <% end %>
 <div class="hioki_column">
   <div class="hioki_search clearfix">
-    <div class="hioki_column01">
+    <% if controller_name == "home" %>
+    <div class="hioki_column01 sp_none">
+      <% else %>
+      <div class="hioki_column01">
+        <% end %>
       <h3 class="hioki_f23">业界商品分类 <span class="hioki_f15">Search Applications</span></h3>
-      <ul class="m_top25">
+      <ul class="m_top25 clearfix">
         <li><span class="sp_none">&gt; </span><a href="/industries/1">电力/新能源 <span class="hioki_f12">Power, Energy, Environment</span></a></li>
         <li class="m_top10"><span class="sp_none">&gt; </span><a href="/industries/2">汽车 <span class="hioki_f12">Automotive, Transport</span></a></li>
         <li class="m_top10"><span class="sp_none">&gt; </span><a href="/industries/3">电子零件 <span class="hioki_f12">Components, Semiconductors</span></a></li>
@@ -16,7 +20,11 @@
         <li>&nbsp;</li>
       </ul>
     </div>
+    <% if controller_name == "home" %>
+    <div class="hioki_column02 clearfix sp_none">
+    <% else %>
     <div class="hioki_column02 clearfix">
+    <% end %>
       <h3 class="hioki_f23">日置产品一览 <span class="hioki_f15">Search Category</span></h3>
       <%= render partial: "shared/root_categories" %>
     </div>
