@@ -1,0 +1,28 @@
+<div class="hioki_search hioki_category_bg clearfix">
+	<h3 class="hioki_category_title m_top45 t_center">日置产品一览<br /><span class="hioki_f15">Search Category</span></h3>
+  <p class="hioki_category_xx sp_block"><a href="/products" target="_blank">查看全部商品<span class="sp_inline">&nbsp;&gt;</span></a></p>
+	<ul class="m_top45 clearfix pad_mt25">
+		<% @root_categories.each_with_index do |r_c, index| %>
+		<% if index % 4 == 0 %>
+  	<li class="hioki_category">
+			<% else %>
+		<li class="hioki_category m_left25">
+			<% end %>
+			<a href="/categories/<%= r_c.id %>">
+				<dd><%= image_tag r_c.image.url, width: 120, height: 100 %></dd>
+				<dt><%= r_c.name %></dt>
+			</a>
+		</li>
+		<% end %>
+    <li class="hioki_category03 m_left25">
+      <a href="http://www.hioki.cn/html/soft/index.html"><%= image_tag "front/hioki_r23_c22.jpg", width: 13, height: 13 %> 软件下载
+      </a>
+      <a href="http://www.hioki.cn/html/discon/index.html"><%= image_tag "front/hioki_r23_c22.jpg", width: 13, height: 13 %> 查看停产商品
+      </a>
+    </li>
+    <li class="hioki_category02 m_left25">
+      <a href="/products"><%= image_tag "front/hioki_r23_c21.jpg", width: 13, height: 13 %> 查看全部产品
+      </a>
+    </li>
+	</ul>
+</div>
