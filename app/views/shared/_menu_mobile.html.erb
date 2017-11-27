@@ -14,28 +14,30 @@
 <div class="hioki_land_sp" id="land_sp" style="display:none;">
   <h3>会员登录</h3>
 	<% if !session[:user_name].present? %>
-  <%= form_tag "sessions/", id: "login_form" do |f| %>
-	  <div class="hioki_login">
-		  <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
-		  <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
-		  <input name="" type="" value="登　录" class="sidebar_ld" id="login_button"/>
-      <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
-	  </div>
-	<p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
-		<% end %>
-		<% else %>
-	<dd>
-		<p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
-    <ul class="m_top15">
-      <li>
-        <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
-      </li>
-      <li>
-        <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
-      </li>
-    </ul>
-  </dd>
-	<% end %>
+          <%= form_tag "sessions/", id: "login_form" do |f| %>
+          <dd>
+        <div class="hioki_login">
+          <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
+          <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
+          <input name="" type="" value="登　录" class="sidebar_ld" id="login_button"/>
+          <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
+        </div>
+        <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
+      <% end %>
+        </dd>
+      <% else %>
+          <dd>
+        <p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
+        <ul class="m_top15">
+          <li>
+          <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
+          </li>
+          <li>
+          <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
+          </li>
+        </ul>
+        </dd>
+      <% end %>
 
 </div>
 <div class="hioki_nav_sp" id="nav_sp" style="display:none;">
