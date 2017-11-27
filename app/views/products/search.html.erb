@@ -1,8 +1,8 @@
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="product_banner"></div>
+<%= render partial: "shared/product_banner_and_categories" %>
 <div class="news_content clearfix">
-  <div class="product_left" >
+  <div class="product_left sp_none pad_none" >
     <h3>产品一览<br /><span class="hioki_f15">Product</span></h3>
     <ul class="m_top10">
       <% @root_categories.each do |r_c| %>
@@ -11,7 +11,7 @@
     </ul>
   </div>
   <div class="product_right">
-    <p class="current"><a href="/index.html">首页</a> > 搜索结果一览</p>
+    <p class="current sp_none"><a href="/index.html">首页</a> > 搜索结果一览</p>
     <%= render partial: "products/products" %>
     <p class="m_top45">&nbsp;</p>
   </div>

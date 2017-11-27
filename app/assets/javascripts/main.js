@@ -64,8 +64,8 @@ $(document).ready(function() {
         });
     });
 
-		$("#login_form #login_button").click(function() {
-				if ($("#login_form #email").val().length <= 4 || $("#login_form #password").val().length <= 4) {
+		$("#lank_pc #login_form #login_button").click(function() {
+				if ($("#lank_pc #login_form #email").val().length <= 4 || $("#lank_pc #login_form #password").val().length <= 4) {
 						alert("请输入正确的邮件和密码")
 						return false;
         }
@@ -74,19 +74,47 @@ $(document).ready(function() {
 						type: "post",                                                                            
 						url: "/sessions/login_async",                                      
 						data: {
-								email: $("#login_form #email").val(),
-								password:  $("#login_form #password").val()
+								email: $("#lank_pc #login_form #email").val(),
+								password:  $("#lank_pc #login_form #password").val()
 						},
 						async: true,                                                                            
 						success: function (data) { 
 								if (data.code == 200) {
-										$("#login_form dd").html(
+										$("#lank_pc #login_form dd").html(
 														'<p class="sidebar_p recorder_f18">'+ data.user_name + '，HIOKI欢迎您</p>'+
                         '<ul class="m_top15"><li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a></li><li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li></ul>'
 										);
 										setCookie("name", data.user_name);
-                                                                                $("#logout_in_header").show();
+                  $("#logout_in_header").show();
+								}
+								if (data.code == 404) {alert("请输入正确账号或密码")};
+								// if (data.code == 402) $("#shadow, #msg_4").show();
+						}
+        });
+    });
 
+  		$("#land_sp #login_form #login_button").click(function() {
+				if ($("#land_sp #login_form #email").val().length <= 4 || $("#land_sp #login_form #password").val().length <= 4) {
+						alert("请输入正确的邮件和密码")
+						return false;
+        }
+        $.ajax({
+						beforeSend: send_xhr(),
+						type: "post",                                                                            
+						url: "/sessions/login_async",                                      
+						data: {
+								email: $("#land_sp #login_form #email").val(),
+								password:  $("#land_sp #login_form #password").val()
+						},
+						async: true,                                                                            
+						success: function (data) { 
+								if (data.code == 200) {
+										$("#land_sp #login_form dd").html(
+														'<p class="sidebar_p recorder_f18">'+ data.user_name + '，HIOKI欢迎您</p>'+
+                        '<ul class="m_top15"><li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a></li><li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li></ul>'
+										);
+										setCookie("name", data.user_name);
+                  $("#logout_in_header").show();
 								}
 								if (data.code == 404) {alert("请输入正确账号或密码")};
 								// if (data.code == 402) $("#shadow, #msg_4").show();
