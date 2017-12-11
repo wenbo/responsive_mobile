@@ -1,10 +1,26 @@
 <% content_for :head do %>
-<%= stylesheet_link_tag 'colorbox.css' %>
-<%= javascript_include_tag 'jquery.colorbox' %>
-<%= javascript_include_tag 'script', 'tabslide' %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
 <script>
 	$(document).ready(function(){
-	//Examples of how to assign the Colorbox event to elements
+	var winWidth;
+	    if (window.innerWidth)
+	      winWidth = window.innerWidth;
+	    else if ((document.body) && (document.body.clientWidth)) {
+	      winWidth = document.body.clientWidth;
+	    }
+		//Examples of how to assign the Colorbox event to elements
+		if(winWidth > 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:1100, innerHeight:630});
+		}
+		if(winWidth > 767 & winWidth < 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:630});
+		}
+		if(winWidth < 767){
+			{$(".health01").removeClass("cboxElement");}
+		}
 		$(".health01").colorbox({iframe:true, innerWidth:1100, innerHeight:630});
 		$(".callbacks").colorbox({
 			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
@@ -36,68 +52,59 @@
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
 <%= render partial: "shared/top_slider" %>
+
 <div class="hioki_search_bg sp_none">
-	<div class="hioki_search">
+  <div class="hioki_search">
   	<h3 class="hioki_search_title t_center">业界商品分类<br /><span>Search Applications</span></h3>
-		<div class="m_top15 clearfix" id="img_handle">
-                        <a href="#"></a>
-			<a href="/industries/1">
+	<div class="m_top15 clearfix" id="img_handle">
+	  <a href="#"></a>
+	  <a href="/industries/1">
         <dl class="hioki_categories">
-      		<dt class="hioki_f31">电力/新能源</dt>
-					<dt class="m_top5">Power, Energy, Environment</dt>
-					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-          <dt class="sp_block">
-            <%= image_tag "front/hioki_r10_c9_sp.jpg", width: 20 %>
-          </dt>
-		      <dd class="m_top10"><img width="65" height="110" src="/assets_doc/front/images/hioki_r12_c10_pc.jpg" class="imgChange imgChange2" /></dd>
-				</dl>
-			</a>
-			<a href="/industries/2">
+		  <dt class="hioki_f31">电力/新能源</dt>
+		  <dt class="m_top5">Power, Energy, Environment</dt>
+		  <dt class="hioki_f15 m_top15"><img width="13" height="13" src="/assets_doc/front/html/images/hioki_r10_c9.jpg" alt="Hioki r10 c9" />查看详情</dt>
+          <dt class="sp_block"><img width="20" src="/assets_doc/front/html/images/hioki_r10_c9_sp.jpg" /></dt>
+		  <dd class="m_top10"><img width="65" height="110" src="/assets_doc/front/html/images/hioki_r12_c10_pc.jpg" class="imgChange imgChange2" /></dd>
+		</dl>
+	  </a>
+	  <a href="/industries/2">
         <dl class="hioki_categories m_left20">
-      		<dt class="hioki_f31">汽车</dt>
-					<dt class="m_top5">Automotive, Transport</dt>
-					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-          <dt class="sp_block">
-            <%= image_tag "front/hioki_r10_c9_sp.jpg", width: 20 %>
-          </dt>
-		  <dd class="m_top10"><img width="236" height="110" src="/assets_doc/front/images/hioki_r12_c17_pc.jpg" class="imgChange imgChange2" /></dd>
-				</dl>
-			</a>
-			<a href="/industries/3">
+		  <dt class="hioki_f31">汽车</dt>
+		  <dt class="m_top5">Automotive, Transport</dt>
+		  <dt class="hioki_f15 m_top15"><img width="13" height="13" src="/assets_doc/front/html/images/hioki_r10_c9.jpg" alt="Hioki r10 c9" />查看详情</dt>
+          <dt class="sp_block"><img width="20" src="/assets_doc/front/html/images/hioki_r10_c9_sp.jpg" /></dt>
+		  <dd class="m_top10"><img width="236" height="110" src="/assets_doc/front/html/images/hioki_r12_c17_pc.jpg" class="imgChange imgChange2" /></dd>
+		</dl>
+	  </a>
+	  <a href="/industries/3">
+		<dl class="hioki_categories m_left20">
+		  <dt class="hioki_f31">电子零件</dt>
+		  <dt class="m_top5">Components, Semiconductors</dt>
+		  <dt class="hioki_f15 m_top15"><img width="13" height="13" src="/assets_doc/front/html/images/hioki_r10_c9.jpg" alt="Hioki r10 c9" />查看详情</dt>
+          <dt class="sp_block"><img width="20" src="/assets_doc/front/html/images/hioki_r10_c9_sp.jpg" /></dt>
+		  <dd class="m_top10"><img width="110" height="110" src="/assets_doc/front/html/images/hioki_r12_c25_pc.jpg" class="imgChange imgChange2" /></dd>
+		</dl>
+	  </a>
+	  <a href="/industries/4">
+		<dl class="hioki_categories m_left20">
+		  <dt class="hioki_f31">电池</dt>
+		  <dt class="m_top5">Battery</dt>
+		  <dt class="hioki_f15 m_top15"><img width="13" height="13" src="/assets_doc/front/html/images/hioki_r10_c9.jpg" alt="Hioki r10 c9" /> 查看详情</dt>
+          <dt class="sp_block"><img width="20" src="/assets_doc/front/html/images/hioki_r10_c9_sp.jpg" /></dt>
+		  <dd class="m_top10"><img width="236" height="110" src="/assets_doc/front/html/images/hioki_r12_c28_pc.jpg" class="imgChange imgChange2" /></dd>
+		</dl>
+	  </a>
+	  <a href="/industries/5">
         <dl class="hioki_categories m_left20">
-      		<dt class="hioki_f31">电子零件</dt>
-					<dt class="m_top5">Components, Semiconductors</dt>
-					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-          <dt class="sp_block">
-            <%= image_tag "front/hioki_r10_c9_sp.jpg", width: 20 %>
-          </dt>
-		      <dd class="m_top10"><img width="110" height="110" src="/assets_doc/front/images/hioki_r12_c25_pc.jpg" class="imgChange imgChange2" /></dd>
-				</dl>
-			</a>
-			<a href="/industries/4">
-        <dl class="hioki_categories m_left20">
-      		<dt class="hioki_f31">电池</dt>
-					<dt class="m_top5">Battery</dt>
-					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %> 查看详情</dt>
-          <dt class="sp_block">
-            <%= image_tag "front/hioki_r10_c9_sp.jpg", width: 20 %>
-          </dt>
-		      <dd class="m_top10"><img width="236" height="110" src="/assets_doc/front/images/hioki_r12_c28_pc.jpg" class="imgChange imgChange2" /></dd>
-				</dl>
-			</a>
-			<a href="/industries/5">
-        <dl class="hioki_categories m_left20">
-      		<dt class="hioki_f31">交通<span class="hioki_f15">（地铁、铁道、航空）</span></dt>
-					<dt class="m_top5">Underground, Railway, Aviation</dt>
-					<dt class="hioki_f15 m_top15"><%= image_tag "front/hioki_r10_c9.jpg", width: 13, height: 13 %>查看详情</dt>
-          <dt class="sp_block">
-            <%= image_tag "front/hioki_r10_c9_sp.jpg", width: 20 %>
-          </dt>
-		      <dd class="m_top10"><img width="185" height="110" src="/assets_doc/front/images/hioki_r12_c33_pc.jpg" class="imgChange imgChange2" /></dd>
-				</dl>
-			</a>
-		</div>
+		  <dt class="hioki_f31">交通<span class="hioki_f15">（地铁、铁道、航空）</span></dt>
+		  <dt class="m_top5">Underground, Railway, Aviation</dt>
+		  <dt class="hioki_f15 m_top15"><img width="13" height="13" src="/assets_doc/front/html/images/hioki_r10_c9.jpg" alt="Hioki r10 c9" />查看详情</dt>
+          <dt class="sp_block"><img width="20" src="/assets_doc/front/html/images/hioki_r10_c9_sp.jpg" /></dt>
+		  <dd class="m_top10"><img width="185" height="110" src="/assets_doc/front/html/images/hioki_r12_c33_pc.jpg" class="imgChange imgChange2" /></dd>
+		</dl>
+	  </a>
 	</div>
+  </div>
 </div>
 
 <div class="hioki_column sp_block">
@@ -113,8 +120,7 @@
       </ul>
     </div>
 </div>
-<p class="hioki_brand"><a href="/html/brand/"><span class="sp_block"><img width="100%" src="/assets_doc/front/images/hioki_brand_sp.jpg" /></span></a></p>
-
+<p class="hioki_brand"><a href="/html/brand/"><span class="sp_block"><img width="100%" src="/assets_doc/front/html/images/hioki_brand_sp.jpg" /></span></a></p>
 
 <div class="hioki_news_bg">
 	<div class="hioki_search clearfix">
@@ -134,7 +140,7 @@
 			<li><span class="sp_none"><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %></span><a href="/news/<%= news.id %>">
           <p class="sp_block">
             <strong><%= parse_date_with_unit(news.public_time) %></strong>
-            <%= image_tag "front/hioki_r14_c11_sp.jpg", width: 60 %>
+            <img src="/assets_doc/front/html/images/hioki_r14_c11_sp.jpg" width="60" >
           </p>
           <%= news.name %></a>
       </li>
@@ -142,7 +148,7 @@
 			<li class="sp_none"><span class="sp_none"><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %></span><a href="/news/<%= news.id %>">
           <p class="sp_block">
             <strong><%= parse_date_with_unit(news.public_time) %></strong>
-            <%= image_tag "front/hioki_r14_c11_sp.jpg", width: 60 %>
+            <img src="/assets_doc/front/html/images/hioki_r14_c11_sp.jpg" width="60" >
           </p>
           <%= news.name %></a>
       </li>
@@ -150,26 +156,25 @@
       <% end %>
 		</ul>
 	</div>
-        <ul class="hioki_columns clearfix sp_none">
-          <li><a href="/userscenter/intellectual/intellectual.php"><%= image_tag "front/hioki_r15_c6.jpg", width: 383, height: 164 %></a></li>
-            <li><a href="/counterfeit.html"><img width="383" height="164" src="/assets_doc/front/images/hioki_r15_c8_pc.jpg" class="imgChange" /></a></li>
-          <li><a href="/assets_doc/2017general_c1.pdf" target="_blank"><img width="383" height="164" src="/assets_doc/front/images/hioki_r15_c10_pc.jpg" class="imgChange" /></a></li>
-        </ul>
+<ul class="hioki_columns clearfix sp_none">
+	<li><a href="/userscenter/intellectual/intellectual.php"><img width="383" height="164" src="/assets_doc/front/html/images/hioki_r15_c6.jpg" alt="Hioki r15 c6" /></a></li>
+	<li><a href="counterfeit.html"><img width="383" height="164" src="/assets_doc/front/html/images/hioki_r15_c8_pc.jpg" class="imgChange" /></a></li>
+	<li><a href="/assets_doc/2017general_c1.pdf" target="_blank"><img width="383" height="164" src="/assets_doc/front/html/images/hioki_r15_c10_pc.jpg" class="imgChange" /></a></li>
+  </ul>
 </div>
 <%= render partial: "shared/hioki_category" %>
 <div class="hioki_activity m_top30 sp_none">
   <ul class="hioki_columns clearfix">
-    <li><a href="/news/16"><img src="/assets_doc/front/images/hioki_r24_c3_pc.jpg" width="385" /></a></li>
- <li><a id="try-1" class="health01 cboxElement" href="greenpoint.html"><img src="/assets_doc/front/images/hioki_r24_c22_pc.jpg" width="385" /></a></li>
-    <li><a href="/html/application/ind01.html"><img src="/assets_doc/front/images/hioki_r24_c28_pc.jpg" width="384" /></a></li>
-    <li class="pad_block"><img src="/assets_doc/front/images/hioki_r29_c28.jpg" width="384" /></li>
+  	<li><a href="/news/16"><img src="/assets_doc/front/html/images/hioki_r24_c3_pc.jpg" width="385" /></a></li>
+    <li><a id="try-1" class="health01 cboxElement" href="greenpoint.html"><img src="/assets_doc/front/html/images/hioki_r24_c22_pc.jpg" width="385" /></a></li>
+    <li><a href="/html/application/ind01.html"><img src="/assets_doc/front/html/images/hioki_r24_c28_pc.jpg" width="384" /></a></li>
+    <li class="pad_block"><img src="/assets_doc/front/html/images/hioki_r29_c28.jpg" width="384" /></li>
   </ul>
 </div>
 <ul class="hioki_columns clearfix sp_block" style="padding-top:0;">
-  	<li><a href="/html/application/ind01.html"><img src="/assets_doc/front/images/hioki_r24_c28_sp.jpg" width="100%" /></a></li>
-    <li><a href="/counterfeit.html"><img width="100%" src="/assets_doc/front/images/hioki_r15_c8_sp.jpg"></a></li>
-    <li><a id="try-1" class="health01 cboxElement" href="greenpoint.html"><img src="/assets_doc/front/images/hioki_r24_c22_sp.jpg" width="100%" /></a></li>
-    <li><img src="/assets_doc/front/images/hioki_r25_c2_sp.jpg" width="50%" /><img src="/assets_doc/front/images/hioki_r25_c4_sp.jpg" width="50%" /></li>
+  <li><a href="/html/application/ind01.html"><img src="/assets_doc/front/html/images/hioki_r24_c28_sp.jpg" width="100%" /></a></li>
+  <li><a href="/counterfeit.html"><img width="100%" src="/assets_doc/front/html/images/hioki_r15_c8_sp.jpg"></a></li>
+  <li><a id="try-1" class="health01 cboxElement" href="greenpoint.html"><img src="/assets_doc/front/html/images/hioki_r24_c22_sp.jpg" width="100%" /></a></li>
+  <li><img src="/assets_doc/front/html/images/hioki_r25_c2_sp.jpg" width="50%" /><img src="/assets_doc/front/html/images/hioki_r25_c4_sp.jpg" width="50%" /></li>
 </ul>
-  
 <%= render partial: "shared/footer" %>

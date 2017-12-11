@@ -1,22 +1,22 @@
 <% content_for :head do %>
 <script type="text/javascript">
-<!--
 window.onload=window.onresize=function(){
-  if(document.getElementById("mm2").clientHeight<document.getElementById("mm1").clientHeight){
-    document.getElementById("mm2").style.height=document.getElementById("mm1").offsetHeight+"px";
-  }
-  else{
-    document.getElementById("mm1").style.height=document.getElementById("mm2").offsetHeight+"px";
-  }
+if(document.getElementById("mm2").clientHeight<document.getElementById("mm1").clientHeight){
+document.getElementById("mm2").style.height=document.getElementById("mm1").offsetHeight+"px";
 }
--->
+else{
+document.getElementById("mm1").style.height=document.getElementById("mm2").offsetHeight+"px";
+}
+}
 </script>
 <% end %>
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="news_banner"></div>
+<div class="news_banner pad_none sp_none"></div>
+<div class="pad_block"><img src="/assets_doc/front/html/images/news_r1_c1_pad.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/news_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
-  <div class="news_left" id="mm1">
+  <div class="news_left pad_none sp_none" id="mm1">
 		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
 		<ul>
 			<% NewsCategory.all.each do |nc| %>
@@ -25,11 +25,21 @@ window.onload=window.onresize=function(){
 			<% end %>
 		</ul>
   </div>
+  <div class="new_info pad_block sp_block">
+		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
+		<ul>
+			<% NewsCategory.all.each do |nc| %>
+			<% next if nc.news.count == 0 %>
+      <li><%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
+			<% end %>
+		</ul>
+  </div>
   <div class="news_right" id="mm2">
-    <p class="current"><a href="/index.html">首页</a> > <a href="/news">新闻</a> > 新闻详细</p>
+    <p class="current sp_none"><a href="/index.html">首页</a> > <a href="/news">新闻</a> > 新闻详细</p>
     <p class="m_top20 clearfix">
+      <span class="sp_block fl sp_mr1">2017年10月13日</span>
     <%= image_tag @news.news_category.image.url, width: 72, height: 25, class: "fl" %>
-    <a href="/news.html" class="recorder_f16 fr"><span class="recorder_blue">返回</span></a>
+    <a href="/news.html" class="recorder_f16 fr"><span class="recorder_blue sp_none">返回</span></a>
     </p>
     <h3 class="recorder_blue product_f20 m_top10">
       <%= @news.name %>

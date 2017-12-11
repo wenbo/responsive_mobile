@@ -1,8 +1,6 @@
- <p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_nav_sp.jpg" width="27" ></a></p>
-  <p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_land_sp.jpg" width="27" ></a></p>
-
-<p class="sp_block fr pad_block" id="search"><a href="javascript:void(0)" onClick="Effect3('search_sp',this.parentNode.id);"><img src="/assets_doc/front/images/hioki_search_sp.jpg" width="27" ></a></p>
-
+<p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_nav_sp.jpg" width="27" ></a></p>
+<p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_land_sp.jpg" width="27" ></a></p>
+<p class="sp_block fr pad_block" id="search"><a href="javascript:void(0)" onClick="Effect3('search_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_search_sp.jpg" width="27" ></a></p>
 <div class="hioki_land_sp" id="search_sp" style="display:none;">
   <%= form_tag "/products", method: :get, id: "search_form", name: "search_form" do %>
 	<label class="hioki_nav_search">
@@ -14,42 +12,36 @@
 <div class="hioki_land_sp" id="land_sp" style="display:none;">
   <h3>会员登录</h3>
 	<% if !session[:user_name].present? %>
-          <%= form_tag "sessions/", id: "login_form" do |f| %>
-          <dd>
-        <div class="hioki_login">
-          <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
-          <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
-          <input name="" type="" value="登　录" class="sidebar_ld" id="login_button"/>
-          <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
-        </div>
-        <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
-      <% end %>
-        </dd>
-      <% else %>
-          <dd>
-        <p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
-        <ul class="m_top15">
-          <li>
-          <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
-          </li>
-          <li>
-          <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
-          </li>
-        </ul>
-        </dd>
-      <% end %>
-
+  <%= form_tag "sessions/", id: "login_form" do |f| %>
+  <dd>
+    <div class="hioki_login">
+      <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
+      <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
+      <input name="" type="" value="登　录" class="sidebar_ld" id="login_button"/>
+      <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
+    </div>
+    <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
+    <% end %>
+  </dd>
+  <% else %>
+  <dd>
+    <p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>
+    <ul class="m_top15">
+      <li>
+        <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
+      </li>
+      <li>
+        <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
+      </li>
+    </ul>
+    <p class="hioki_register_gb" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);">关闭<i></i></a></p>
+  </dd>
+  <% end %>
 </div>
 <div class="hioki_nav_sp" id="nav_sp" style="display:none;">
   <dl class="hioki_dhyy clearfix">
-    <dd>
-      <%= image_tag "front/hioki_dh_sp.jpg", width: 19 %>
-      400-920-6010
-    </dd>
-    <dt>
-      <%= image_tag "front/hioki_site_sp.jpg", width: 19 %>
-      Global Site
-    </dt>
+    <dd><img width="19" src="/assets_doc/front/html/images/hioki_dh_sp.jpg" alt="Hioki r1 c32">  400-920-6010</dd>
+    <dt><img width="19" alt="Global Site" src="/assets_doc/front/html/images/hioki_site_sp.jpg"> Global Site</dt>
   </dl>
 
   <% if controller_name != "home" %>
@@ -57,27 +49,25 @@
 	  <label class="hioki_nav_search">
 		  <input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
 	</form>
-<% end %>
+  <% end %>
   
   <ul class="hioki_menu">
     <li><a href="/industries/1">产品一览<i>
-          <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>          
+          <img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" >
     </i></a></li>
-    <li><a href="/html/application/ind01.html">解决方案<i><img width="10" src="/assets_doc/front/images/hioki_nav_yjt.png" ></i></a></li>
+    <li><a href="/html/application/ind01.html">解决方案<i><img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" ></i></a></li>
     <li><a href="/company.html">公司介绍<i>
-          <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>
+          <img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" >
     </i></a></li>
     <li><a href="/contact.html">联系我们<i>
-          <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>
+          <img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" >
     </i></a></li>
     <li><a href="/repair.html">维修中心<i>
-          <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>          
+          <img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" >
     </i></a></li>
     <li><a href="/recruit.html">招聘信息<i>
-          <%= image_tag "front/hioki_nav_yjt.png", width: 10 %>
+          <img width="10" src="/assets_doc/front/html/images/hioki_nav_yjt.png" >
     </i></a></li>
   </ul>
-  <p class="t_center m_top15">
-    <%= image_tag "front/hioki_nav_wx.jpg", width: "94%"  %>
-  </p>
+  <p class="t_center m_top15"><img width="94%" src="/assets_doc/front/html/images/hioki_nav_wx.jpg" ></p>
 </div>

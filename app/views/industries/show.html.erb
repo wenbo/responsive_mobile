@@ -10,17 +10,17 @@
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
 <div class="product_banner" id="banner_industry_<%= params[:id] %>">
-  <span class="sp_block"><img width="100%" src="/assets_doc/front/images/product_r1_c2_sp.jpg" ></span>
+  <span class="sp_block"><img width="100%" src="/assets_doc/front/html/images/product_r1_c2_sp.jpg" ></span>
 </div>
 <div class="product_title clearfix sp_none">
   <ul class="news_content">
 		<% (1..5).each do |i| %>
 		<% if params[:id].to_i == i %>
 		<li onclick="window.location='/industries/<%= i %>'" class="selectd">
-      <img width="246" height="76" src="/assets_doc/front/images/product_0<%= i %>_on.jpg" />
+      <img width="246" height="76" src="/assets_doc/front/html/images/product_0<%= i %>_on.jpg" />
 			<% else %>
 		<li onclick="window.location='/industries/<%= i %>'">
-      <img width="246" height="76" src="/assets_doc/front/images/product_0<%= i %>.jpg" />
+      <img width="246" height="76" src="/assets_doc/front/html/images/product_0<%= i %>.jpg" />
 			<% end %>
 			<p><%= image_tag "front/product_sj.jpg", width: 26, height: 19 %></p>
 		</li>
@@ -29,9 +29,9 @@
 </div>
 
 <ul class="product_power sp_block" onclick="window.location='/industries/1'">
-  <li class="fl"><img width="80" src="/assets_doc/front/images/product_01_sp.jpg" /></li>
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li>电力/新能源 <p>Power, Energy, Environment</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/images/product_xs_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xs_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_01" class="hioki_search clearfix" <%= params[:id].to_i == 1 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -43,9 +43,9 @@
 </div>
 
 <ul class="product_power m_top15 sp_block" onclick="window.location='/industries/2'">
-  <li class="fl"><img width="80" src="/assets_doc/front/images/product_01_sp.jpg" /></li>
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li>汽车<p>Automotive, Transport</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_02" class="hioki_search clearfix" <%= params[:id].to_i == 2 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -57,9 +57,9 @@
 </div>
 
 <ul class="product_power m_top15 sp_block" onclick="window.location='/industries/3'">
-  <li class="fl"><img width="80" src="/assets_doc/front/images/product_01_sp.jpg" /></li>
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li>电子零件<p>Components, Semiconductors</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_03" class="hioki_search clearfix" <%= params[:id].to_i == 3 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -71,9 +71,9 @@
 </div>
 
 <ul class="product_power m_top15 sp_block" onclick="window.location='/industries/4'">
-  <li class="fl"><img width="80" src="/assets_doc/front/images/product_01_sp.jpg" /></li>
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li>电池<p>Battery</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_04" class="hioki_search clearfix" <%= params[:id].to_i == 4 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -85,9 +85,9 @@
 </div>
 
 <ul class="product_power m_top15 sp_block" onclick="window.location='/industries/5'">
-  <li class="fl"><img width="80" src="/assets_doc/front/images/product_01_sp.jpg" /></li>
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li class="product_power_li02">交通<p>（地铁、铁道、航空）<br />Automotive, Transport</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_05" class="hioki_search clearfix" <%= params[:id].to_i == 5 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">

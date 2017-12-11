@@ -1,7 +1,7 @@
 <a name="top" id="top"></a>
 <div class="sidebar_search sp_none pad_none">
 	<dl>
-		<dt class="fl"><%= image_tag "front/sidebar_search01.png", width: 75 %></dt>
+		<dt class="fl"><img width="75" src="/assets_doc/front/html/images/sidebar_search01.png" alt="Sidebar search01" /></dt>
 		<dd>
 			<h3>HIOKI商品搜索</h3>
 			<%= form_tag "/products", method: :get, id: "search_form", name: "search_form" do %>
@@ -14,7 +14,7 @@
 </div>
 <div class="sidebar_search02 sp_none pad_none" id="land_pc">
 	<dl>
-		<dt class="fl"><%= image_tag "front/sidebar_search11.png", width: 75 %></dt>
+		<dt class="fl"><img width="75" src="/assets_doc/front/html/images/sidebar_search11.png" alt="Sidebar search11" /></dt>
 		<% if !session[:user_name].present? %>
 		<%= form_tag "sessions/", id: "login_form" do |f| %>
 		<dd>
@@ -23,7 +23,8 @@
 			<ul class="m_top15">
       	<li><input name="" type="" value="登录" class="sidebar_ld" id="login_button"/></li>
 				<li><a href="/userscenter/register.php" class="sidebar_ld">注册</a></li>
-				<li><a href="/userscenter/retake_password.php">忘记密码</a></li>
+				<li><a
+ href="/userscenter/retake_password.php">忘记密码</a></li>
 			</ul>
 		</dd>
 		<% end %>

@@ -4,19 +4,19 @@
      <ul class="fr">
        <li class="top_li1">
        <a style="display:none" id="logout_in_header" href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">
-         <%= image_tag "front/hioki_r1_c30.jpg", width: 28, height: 26 %>
+         <img width="28" height="26" src="/assets_doc/front/html/images/hioki_r1_c30.jpg" alt="Hioki r1 c30" />
          会员退出</a>
        <% if session[:user_name].present? %>
          <a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">
-         <%= image_tag "front/hioki_r1_c30.jpg", width: 28, height: 26 %>
+         <img width="28" height="26" src="/assets_doc/front/html/images/hioki_r1_c30.jpg" alt="Hioki r1 c30" />
          会员退出
        </a>
      <% end %>
           </li>
           <li class="top_li1">
-          <%= image_tag "front/hioki_r1_c32.jpg", width: 22, height: 26 %>400-920-6010
+          <img width="22" height="26" src="/assets_doc/front/html/images/hioki_r1_c32.jpg" alt="Hioki r1 c32" />400-920-6010
           </li>
-          <li class="top_li1"><%= image_tag "front/hioki_r1_c34.jpg", width: 21, height: 23, alt: "Global Site" %>Global Site
+          <li class="top_li1"><img width="21" height="23" alt="Global Site" src="/assets_doc/front/html/images/hioki_r1_c34.jpg" />Global Site
           </li>
         <li class="top_li2 fl"><a href="javascript:void(0)">Select Language</a>
         <ul class="lang_navi_list">
@@ -28,7 +28,7 @@
   </div>
 </div>
 <div class="header">
-  <h1 class="fl"><a href="/index.html"><img width="220" alt="HIOKI" src="/assets_doc/front/images/hioki_logo_pc.jpg" class="imgChange" /></a></h1>
+  <h1 class="fl"><a href="/index.html"><img width="220" alt="HIOKI" src="/assets_doc/front/html/images/hioki_logo_pc.jpg" class="imgChange" /></a></h1>
   <ul class="header_nav sp_none pad_none">
     <% if controller_name == "home" && action_name == "index" %>
       <li class="nav_li">

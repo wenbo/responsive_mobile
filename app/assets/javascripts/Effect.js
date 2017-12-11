@@ -3,10 +3,10 @@ function Effect(ObjectId,parentId){
 var Obj_Display = $G(ObjectId).style.display;
 	if (Obj_Display == 'none'){
 	Start(ObjectId,'Opens');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_land_sp.jpg' width='27'></a>"
+	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_land_sp.jpg' width='27'></a>"
 	}else{ 
 	Start(ObjectId,'Close');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_land_sp.jpg' width='27'></a>"
+	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_land_sp.jpg' width='27'></a>"
 	}
 }
 
@@ -14,20 +14,20 @@ function Effect3(ObjectId,parentId){
   var Obj_Display = $G(ObjectId).style.display;
 	if (Obj_Display == 'none'){
 	  Start(ObjectId,'Opens');
-	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_search_sp.jpg' width='27' ></a>"
+	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_search_sp.jpg' width='27' ></a>"
 	}else{ 
 	  Start(ObjectId,'Close');
-	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_search_sp.jpg' width='27' ></a>"
+	  $G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_search_sp.jpg' width='27' ></a>"
 	}
 }
 function Effect2(ObjectId,parentId){
 var Obj_Display = $G(ObjectId).style.display;
 	if (Obj_Display == 'none'){
 	Start(ObjectId,'Opens');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_nav02_sp.jpg' width='27' ></a>"
+	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_nav02_sp.jpg' width='27' ></a>"
 	}else{ 
 	Start(ObjectId,'Close');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/images/hioki_nav_sp.jpg' width='27' ></a>"
+	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_nav_sp.jpg' width='27' ></a>"
 	}
 }
 function Start(ObjId,method){
