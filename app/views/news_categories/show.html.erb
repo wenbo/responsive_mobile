@@ -1,6 +1,5 @@
 <% content_for :head do %>
 <script type="text/javascript">
-<!--
 window.onload=window.onresize=function(){
 if(document.getElementById("mm2").clientHeight<document.getElementById("mm1").clientHeight){
 document.getElementById("mm2").style.height=document.getElementById("mm1").offsetHeight+"px";
@@ -9,14 +8,15 @@ else{
 document.getElementById("mm1").style.height=document.getElementById("mm2").offsetHeight+"px";
 }
 }
--->
 </script>
 <% end %>
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="t_center"><%= image_tag "front/news_r1_c1.jpg", width: 1401, height: 328, alt: "HIOKI" %></div>
+<div class="news_banner pad_none sp_none"></div>
+<div class="pad_block"><img src="/assets_doc/front/html/images/news_r1_c1_pad.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/news_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
-  <div class="news_left" id="mm1">
+  <div class="news_left pad_none sp_none" id="mm1">
 		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
 		<ul>
 			<% NewsCategory.all.each do |nc| %>
@@ -25,8 +25,17 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
 			<% end %>
 		</ul>
   </div>
-  <div class="news_right" id="mm2">
-  	<p class="current"><a href="index.html">首页</a> > <%= link_to "新闻", "/news" %> > <%= @news_category.name %></p> 
+  <div class="new_info pad_block sp_block">
+		<h3 class="hioki_f22">最新新闻 <span class="hioki_f15">News</span></h3>
+		<ul>
+			<% NewsCategory.all.each do |nc| %>
+			<% next if nc.news.count == 0 %>
+      <li><%= link_to nc.name, "/news_categories/#{nc.id}" %></li>
+			<% end %>
+		</ul>
+  </div>
+  <div class="news_right sp_fn pad_fn sp_w100" id="mm2">
+  	<p class="current sp_none"><a href="index.html">首页</a> > <%= link_to "新闻", "/news" %> > <%= @news_category.name %></p> 
 <ul class="news_list">
 				<% @news.each do |news| %>
 			<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="/news/<%= news.id %>"><%= news.name %></a></li>
