@@ -33,10 +33,12 @@
 	});
 	});
 </script>
-<%= javascript_include_tag 'main' %>
-<%= javascript_include_tag 'default', 'Effect', 'common' %>
 <%= csrf_meta_tags %>
 <%= yield :head %>
+<%= javascript_include_tag 'main' %>
+<script type="text/javascript" src="/assets_doc/front/html/js/default.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/Effect.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/common.js"></script>
 	</head>
 
   <body>

@@ -1,22 +1,54 @@
+<% content_for :head do %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+	$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+		$(".health01").colorbox({iframe:true, innerWidth:1100, innerHeight:630});
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
+<% end %>
+
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="company_banner"></div>
+
+<div class="company_banner sp_none pad_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/company_r1_c1_pad.jpg" width=100%></div>
+<div class="company_banner_sp sp_block"><img src="/assets_doc/front/html/images/about_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
   <div class="product_left" >
-	<h3>公司介绍<br /><span class="hioki_f15">Company</span></h3>
-	<ul class="m_top10">
-	  <li><a href="distribution.html">公司分布</a></li>
-	  <li><a href="speech.html">董事长致辞</a></li>
-	  <li><a href="company.html">公司概要</a></li>
+  <h3 class="about_sp">公司介绍<br class="sp_none pad_none"><span class="hioki_f15">Company</span></h3>
+  <ul class="m_top10 clearfix sp_mt0 pad_mt0">
+    <li><a href="distribution.html">公司分布</a></li>
+    <li><a href="speech.html">董事长致辞</a></li>
+    <li><a href="company.html">公司概要</a></li>
       <li><a href="history.html">公司沿革</a></li>
-	</ul>
+  </ul>
   </div>
-  <div class="product_right">
-  	<p class="current"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 董事长致辞</p>
-    <h3 class="product_f25 m_top20">董事长致辞</h3>
-    <div class="m_top45 clearfix">
-      <div class="speech_left">
-      	<h3 class="product_f20 recorder_blue">希望成为被大家公认的既放心又安全，<br />
+
+<div class="product_right sp_mt10 product_right_sp product_right_pad">
+    <p class="current sp_none"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 董事长致辞</p>
+    <h3 class="product_f25 m_top20 sp_bg sp_mt0">董事长致辞</h3>
+    <div class="m_top45 clearfix sp_w94">
+      <div class="speech_left speech_left_pad sp_w100">
+        <h3 class="product_f20 recorder_blue sp_fs15 sp_mt15 sp_lh26">希望成为被大家公认的既放心又安全，<br />
 并且能够对产业的发展做出贡献的测试仪厂商</h3>
         <p class="m_top15">日置电机株式会社于2007年4月在上海设置了总部，日置（上海）商贸有限公司在中国作为销售公司成立以来，上海以外中国全境内开设了计11个据点，在中国市场的品牌扩大为目标，像客户提供迅速的服务及对应模式，全体团结一致努力并顺利的成长。在此期间，对热情支持我们的各位表示深深的感谢。<br />
 <br />
@@ -24,15 +56,19 @@
 <br />
 我们今后希望成为，为支持人们的安心和安全，并且能够对产业的发展做出贡献的测试仪厂商。日置集团的企业理念是"人性的尊重"和"对社会的贡献"，今后也将作为充满活力的企业和为社会做出贡献的公司事业而迈进。所以，敬请期待本公司今后的动向。
         </p>
-        <p align="right" class="m_top45">日置（上海）商贸有限公司<br />
+        <p class="left sp_block sp_mt40" align=middle><img src="./html/images/speech_r2_c4.jpg" style=""></p>
+        <p align="right" class="m_top45 sp_none">日置（上海）商贸有限公司<br />
 董事长
         </p>
-        <p align="right" class="m_top10"><img width="130" src="/assets_doc/images/speech_r4_c2.png" /></p>
+        <p align="middle" class="m_top45 sp_block">日置（上海）商贸有限公司<br />
+董事长
+        </p>
+        <p align="right" class="m_top10 sp_none"><img width="130" src="./html/images/speech_r4_c2.png" /></p>
+        <p align="middle" class="m_top10 sp_block"><img width="130" src="./html/images/speech_r4_c2.png" /></p>
       </div>
-      <p class="left"><img width="140" src="/assets_doc/images/speech_r2_c4.jpg" /></p>
+      <p class="left sp_none"><img width="140" src="./html/images/speech_r2_c4.jpg"/></p>
     </div>
     
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>

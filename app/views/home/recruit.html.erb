@@ -1,20 +1,60 @@
+<% content_for :head do %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+	$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+		$(".health01").colorbox({iframe:true, innerWidth:1100, innerHeight:630});
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
+<script type="text/javascript">
+window.onload=window.onresize=function(){
+if(document.getElementById("mm2").clientHeight<document.getElementById("mm1").clientHeight){
+document.getElementById("mm2").style.height=document.getElementById("mm1").offsetHeight+"px";
+}
+else{
+document.getElementById("mm1").style.height=document.getElementById("mm2").offsetHeight+"px";
+}
+}
+</script>
+<% end %>
+
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="recruit_banner"></div>
+<div class="recruit_banner pad_none sp_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/recruit_r1_c1_pad.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/recruit_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
-  <div class="product_left" >
-    <h3>招聘信息<br /><span class="hioki_f15">Recruit</span></h3>
-
+  <div class="product_left sp_none" >
+    <h3 class="about_sp">招聘信息<br class="sp_none pad_none"><span class="hioki_f15">Recruit</span></h3>
   </div>
   <div class="product_right">
-    <p class="current"><a href="index.html">首页</a> > 招聘信息</p>
-    <h3 class="hioki_category_title m_top20">十年磨砺，整装待发；华丽转身，再造辉煌！</h3>
-    <p class="m_top15">2007年4月，日本日置电机株式会社（HIOKI）为了更敏锐、更迅速地熟悉并对应中国巨大的市场需求，成立日本独资日置（上海）商贸有限公司。同时在北京，广州成立了分公司。随着公司业绩稳定、持续增长，业务不断扩大，继而成立深圳分公司及苏州，南京，成都，西安，武汉，沈阳，济南等办事处。公司以电子测量仪器的批发，技术咨询及本地化维修服务为主要经营业务。<br />
+    <p class="current sp_none"><a href="index.html">首页</a> > 招聘信息</p>
+
+    <h3 class="repair_title m_top20 sp_mt0">十年磨砺，整装待发；<br class="sp_inline" />华丽转身，再造辉煌！</h3>
+    <p class="m_top15 sp_mt10 sp_lh26 sp_fs14">2007年4月，日本日置电机株式会社（HIOKI）为了更敏锐、更迅速地熟悉并对应中国巨大的市场需求，成立日本独资日置（上海）商贸有限公司。同时在北京，广州成立了分公司。随着公司业绩稳定、持续增长，业务不断扩大，继而成立深圳分公司及苏州，南京，成都，西安，武汉，沈阳，济南等办事处。公司以电子测量仪器的批发，技术咨询及本地化维修服务为主要经营业务。<br />
     在秉承尊重人性、贡献社会的公司经营理念基础上，日置（上海）商贸有限公司将更加努力地致力于中国市场仪器仪表的销售与售后服务工作。公司坚信拥有坚强信念和高度知识的人材是公司的经营之本。为了公司的蓬勃发展，衷心欢迎有志之士加入日置（上海）商贸有限公司。<br />
     欢迎加入日置（上海）商贸有限公司，踏上您事业的起点。您的事业征程中，日置（上海）愿与您共舞，共创未来！</p>
-    <h3 class="hioki_category_title m_top45">招聘信息</h3>
-    <p class="recorder_f18 m_top25">销售工程师</p>
-    <div class="m_top15"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table">
+    <h3 class="repair_title m_top45 sp_mt25">招聘信息</h3>
+    <p class="recorder_f18 m_top25 sp_fs15 sp_mt10">销售工程师</p>
+<div class="m_top15 sp_mt10"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table sp_w100">
         <tr>
           <th width="150" bgcolor="#84AED4">职位</th>
           <td>销售工程师</td>
@@ -53,8 +93,8 @@
         </tr>
       </table>
     </div>
-    <p class="recorder_f18 m_top35">维修技术员</p>
-    <div class="m_top15"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table">
+        <p class="recorder_f18 m_top35 sp_fs15">维修技术员</p>
+    <div class="m_top15 sp_mt10"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table">
         <tr>
           <th width="150" bgcolor="#84AED4">职位</th>
           <td>维修技术员</td>
@@ -91,8 +131,8 @@
         </tr>
       </table>
     </div>
-    <p class="recorder_f18 m_top35">销售工程师（实习生）</p>
-    <div class="m_top15"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table">
+    <p class="recorder_f18 m_top35 sp_fs15">销售工程师（实习生）</p>
+    <div class="m_top15 sp_mt10"><table width="925" border="0" cellspacing="0" cellpadding="0" class="recruit_table">
         <tr>
           <th width="150" bgcolor="#84AED4">职位</th>
           <td>销售工程师（实习生）</td>
@@ -128,15 +168,17 @@
         </tr>
       </table>
     </div>
-    <h3 class="hioki_category_title m_top35">面试流程</h3>
-    <p class="recorder_f16 m_top10">投递简历 > 笔试 > 合格者面试 > 确定录用实习 > 签订实习协议 > 实习合格后录用 > 确定录用并签订三方协议</p>
-    <p class="recruit_f20 m_top35">实习期待遇</p>
-    <p class="m_top10">(1) 提供实习补贴（130元/天）<br />
+
+    <h3 class="repair_title m_top35 sp_mt25 fs18">面试流程</h3>
+    <p class="recorder_f16 m_top10 sp_fs14 sp_mt5">投递简历 > 笔试 > 合格者面试 > 确定录用实习 > 签订实习协议 > 实习合格后录用 > 确定录用并签订三方协议</p>
+    <p class="recruit_f20 m_top35 sp_mt20">实习期待遇</p>
+    <p class="m_top10 sp_mt5">(1) 提供实习补贴（130元/天）<br />
     (2) 提供良好的实习环境和指导
     </p>
-    <p class="distribution_x">&nbsp;</p>
-    <h3 class="hioki_category_title m_top25">应聘方法</h3>
-    <p class="m_top15">发送简历书致以下地址<br />
+    
+    <p class="distribution_x sp_pt0">&nbsp;</p>
+    <h3 class="repair_title m_top25 fs18 sp_mt20">应聘方法</h3>
+    <p class="m_top15 sp_mt10">发送简历书致以下地址<br />
     <br />
     招聘负责人 张小姐<br />
     邮箱：<a href="mailto:zhangyr@hioki.com.cn">zhangyr@hioki.com.cn</a><br />
@@ -148,5 +190,4 @@
     </p>
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>

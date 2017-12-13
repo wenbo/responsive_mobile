@@ -1,19 +1,59 @@
 <% content_for :head do %>
-<%= javascript_include_tag 'jquery_ujs' %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+	$(document).ready(function(){
+		var winWidth;
+    if (window.innerWidth)
+      winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) {
+      winWidth = document.body.clientWidth;
+    }
+	//Examples of how to assign the Colorbox event to elements
+		if(winWidth > 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:630});
+		}
+		if(winWidth > 767 & winWidth < 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:630});
+		}
+		if(winWidth < 767){
+			{$(".health01").removeClass("cboxElement");}
+		}
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
 <% end %>
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="counterfeit_banner"></div>
+<div class="counterfeit_banner pad_none sp_none"></div>
+<div class="pad_block"><img src="/assets_doc/front/html/images/counterfeit_r1_c1.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/counterfeit_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
-  <div class="product_left" >
-	<h3>伪造品提示<br /><span class="hioki_f15">Counterfeit</span></h3>
-	
+  <div class="product_left sp_none" >
+  <h3>伪造品提示<br /><span class="hioki_f15">Counterfeit</span></h3>
   </div>
-  <div class="product_right">
-  	<p class="current"><a href="index.html">首页</a> > 伪造品提示</p>
-    <h3 class="m_top45"><%= image_tag "front/counterfeit_r4_c3.jpg", width: 595, height: 42 %></h3>
-    <p class="m_top30 t_center"><%= image_tag "front/counterfeit_r5_c3.jpg", width: 610, height: 890 %></p>
-    <h3 class="recorder_f16 recorder_red m_top30">填写以下表格验证正品。</h3>
+  <div class="product_right product_right_sp">
+    <p class="current sp_none"><a href="index.html">首页</a> > 伪造品提示</p>
+    <h3 class="m_top45 sp_none"><img width="595" height="42" src="/assets_doc/front/html/images/counterfeit_r4_c3.jpg" alt="Counterfeit r4 c3" /></h3>
+    <h3 class="sp_block counterfeit_sp_title sp_pl3 sp_mt15">关于假冒伪劣产品的特别提示</h3>
+    <p class="m_top30 t_center sp_mt20"><img width="610" height="890" src="/assets_doc/front/html/images/counterfeit_r5_c3.jpg" alt="Counterfeit r5 c3" class="sp_w100"/></p>
+    <h3 class="recorder_f16 recorder_red m_top30 sp_pl3">填写以下表格验证正品。</h3>
 <script language="javascript">
 
 function check()
@@ -83,7 +123,8 @@ function check()
 
 </script>
 			<%= form_for @counterfeit, html: { onsubmit: "return check()" } do |f| %>
-    <div class="counterfeit_genuine recorder_f16"><table width="950" border="0" cellspacing="0" cellpadding="0">
+      <div class="counterfeit_genuine recorder_f16 pad_w100">
+      <table width="950" border="0" cellspacing="0" cellpadding="0" class="pad_w100 sp_none">
   <tr>
     <td width="25">&nbsp;</td>
     <td width="125">日置产品型号</td>
@@ -141,15 +182,90 @@ function check()
     <td>请填写您的邮箱地址</td>
   </tr>
 </table>
-			<p class="counterfeit_fill">
+<table border="0" cellspacing="0" cellpadding="0" class="sp_table sp_w100">
+  <tr>
+    <td>日置产品型号</td>
+    <td>
+			<%= f.text_field :sku, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您所购买的产品型号</td>
+  </tr>
+  <tr>
+    <td>日置产品序列号</td>
+    <td>
+			<%= f.text_field :serial_number, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您所购买的产品序列号</td>
+  </tr>
+  <tr>
+    <td>联系人姓名</td>
+    <td>
+			<%= f.text_field :username, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您的真实姓名</td>
+  </tr>
+  <tr>
+    <td>单位名称</td>
+    <td>
+			<%= f.text_field :unit_name, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您所在单位的名称</td>
+  </tr>
+  <tr>
+    <td>通讯地址</td>
+    <td>
+		<%= f.text_field :address, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您的通讯地址</td>
+  </tr>
+  <tr>
+    <td>联系电话</td>
+    <td>
+			<%= f.text_field :tel, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您的联系电话</td>
+  </tr>
+  <tr>
+    <td>联系人邮箱</td>
+    <td>
+		<%= f.text_field :email, class: "counterfeit_text" %>
+		</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>请填写您的邮箱地址</td>
+  </tr>
+</table>
+			<p class="counterfeit_fill sp_none">
 				<input name="" type="submit" class="counterfeit_button01" value="" />　　
 				<input name="" type="reset" class="counterfeit_button02" value="" />
 			</p>
+      <p class="counterfeit_fill sp_block">
+        <input name="" type="submit" class="counterfeit_button01" value="提 交" />　　
+        <input name="" type="reset" class="counterfeit_button03" value="重新填写" />
+      </p>
     </div>
 		<% end %>
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>
 <% if flash[:counterfeit].present? %>
 <script type="text/javascript">

@@ -1,20 +1,50 @@
+<% content_for :head do %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+	$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+		$(".health01").colorbox({iframe:true, innerWidth:1100, innerHeight:630});
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
+<% end %>
+
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="company_banner"></div>
+<div class="company_banner sp_none pad_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/company_r1_c1_pad.jpg" width=100%></div>
+<div class="company_banner_sp sp_block"><img src="/assets_doc/front/html/images/about_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
   <div class="product_left" >
-	<h3>公司介绍<br /><span class="hioki_f15">Company</span></h3>
-	<ul class="m_top10">
-	  <li><a href="distribution.html">公司分布</a></li>
-	  <li><a href="speech.html">董事长致辞</a></li>
-	  <li><a href="company.html">公司概要</a></li>
-    <li><a href="history.html">公司沿革</a></li>
-	</ul>
+  <h3 class="about_sp">公司介绍<br class="sp_none pad_none"><span class="hioki_f15">Company</span></h3>
+  <ul class="m_top10 clearfix sp_mt0 pad_mt0">
+    <li><a href="distribution.html">公司分布</a></li>
+    <li><a href="speech.html">董事长致辞</a></li>
+    <li><a href="company.html">公司概要</a></li>
+      <li><a href="history.html">公司沿革</a></li>
+  </ul>
   </div>
-  <div class="product_right">
-  	<p class="current"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 公司沿革</p>
-    <h3 class="product_f25 m_top20">公司沿革</h3>
-    <div class="m_top30"><table width="925" border="0" cellspacing="0" cellpadding="0" class="history_table">
+  <div class="product_right product_right_sp product_right_pad">
+    <p class="current sp_none"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 公司沿革</p>
+    <h3 class="product_f25 m_top20 sp_bg">公司沿革</h3>
+    <div class="m_top30 sp_mt10 sp_w94"><table width="" border="0" cellspacing="0" cellpadding="0" class="history_table sp_w100">
   <tr>
     <th width="50" bgcolor="#84AED4">1930</th>
     <td width="50" bgcolor="#F2F7FB">1935/6</td>
@@ -154,5 +184,4 @@
     
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>

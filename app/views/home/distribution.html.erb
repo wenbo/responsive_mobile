@@ -1,8 +1,26 @@
 <% content_for :head do %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
 <script>
 	$(document).ready(function(){
+		var winWidth;
+    if (window.innerWidth)
+      winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) {
+      winWidth = document.body.clientWidth;
+    }
 	//Examples of how to assign the Colorbox event to elements
-		$(".health01").colorbox({iframe:true, innerWidth:925, innerHeight:515});
+		if(winWidth > 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:925, innerHeight:515});
+		}
+		if(winWidth > 767 & winWidth < 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:515});
+		}
+		if(winWidth < 767){
+			{$(".health01").removeClass("cboxElement");}
+		}
 		$(".callbacks").colorbox({
 			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
 			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
@@ -20,27 +38,27 @@
 		});
 	});
 </script>
-<%= stylesheet_link_tag 'colorbox.css' %>
-<%= javascript_include_tag 'jquery.colorbox' %>
 <% end %>
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="company_banner"></div>
+<div class="company_banner sp_none pad_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/company_r1_c1_pad.jpg" width=100%></div>
+<div class="company_banner_sp sp_block"><img src="/assets_doc/front/html/images/about_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
   <div class="product_left" >
-	<h3>公司介绍<br /><span class="hioki_f15">Company</span></h3>
-	<ul class="m_top10">
+<h3 class="about_sp">公司介绍<br class="sp_none pad_none"><span class="hioki_f15">Company</span></h3>
+	<ul class="m_top10 clearfix sp_mt0 pad_mt0">
 	  <li><a href="distribution.html">公司分布</a></li>
 	  <li><a href="speech.html">董事长致辞</a></li>
 	  <li><a href="company.html">公司概要</a></li>
       <li><a href="history.html">公司沿革</a></li>
 	</ul>
   </div>
-  <div class="product_right">
-  	<p class="current"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 公司分布</p>
-    <p class="m_top20"><strong class="product_f25">世界分布</strong>　※点击选择国家查看具体分布</p>
-    <p class="m_top45">&nbsp;</p>
-    <p><%= image_tag "front/distribution_r1_c1.jpg", width: "1100", height: "605", border: "0", usemap: "#Map" %>
+  <div class="product_right product_right_pad product_right_sp">
+    <p class="current sp_none"><a href="../index.html">首页</a> > <a href="company.html">公司介绍</a> > 公司分布</p>
+    <p class="m_top20 sp_pl3 sp_mt10"><strong class="product_f25 sp_color">世界分布</strong>　<span class="sp_none">※点击选择国家查看具体分布</span></p>
+    <p class="m_top45 sp_none">&nbsp;</p>
+    <p class="sp_none pad_w94"><img width="1100" height="605" border="0" usemap="#Map" src="/assets_doc/front/html/images/distribution_r1_c1.jpg" alt="Distribution r1 c1" class="pad_w100"/>
       <map name="Map" id="Map">
         <area shape="poly" coords="963,7,908,4,871,15,858,25,846,28,830,33,814,41,781,56,776,70,773,83,764,95,742,101,730,101,682,92,658,105,652,108,649,125,653,147,669,163,676,164,668,177,676,177,692,169,704,156,711,155,728,158,750,182,753,190,760,190,766,197,767,201,778,217,778,249,788,269,796,273,819,310,819,297,832,312,831,323,854,336,864,335,880,345,905,365,911,361,912,369,913,380,903,400,903,410,916,441,934,454,933,496,924,530,921,562,925,590,940,603,947,602,939,589,947,571,952,549,963,531,975,525,1000,493,1015,472,1028,456,1039,414,1029,400,1002,393,991,380,982,369,974,369,954,353,929,351,917,361,906,357,897,354,897,338,883,335,889,319,879,317,872,324,863,325,852,305,857,291,866,285,879,288,885,284,895,288,901,289,901,299,897,313,917,322,925,328,945,329,938,322,918,316,906,310,909,297,903,283,917,265,927,247,937,231,953,229,965,225,967,217,957,220,953,215,959,210,969,216,985,215,984,207,979,192,973,179,953,155,945,163,937,152,928,143,917,142,910,161,919,170,912,181,911,195,909,199,901,189,903,180,895,177,875,171,868,162,870,139,879,136,895,141,901,147,904,133,913,131,926,131,932,141,942,143,953,141,962,119,951,108,945,98,929,86,913,80,907,73,912,57,921,39,939,24" href="#d8" />
         <area shape="poly" coords="423,240,451,240,452,255,422,255,423,264,415,269,413,265,415,255,423,252" href="#d4" />
@@ -59,167 +77,200 @@
         <area shape="poly" coords="75,186,53,191,40,163,19,194,44,219,44,231,23,232,23,258,47,259,75,227,113,258,122,241,139,219,190,239,184,224,197,217,207,236,211,221,249,238,257,236,282,233,302,206,337,196,390,204,400,188,438,214,428,232,437,233,461,191,445,183,465,160,493,161,520,146,520,152,502,167,504,197,524,168,526,155,541,154,568,140,568,132,577,128,592,134,604,119,546,100,469,84,409,77,374,76,378,61,324,20,313,28,342,50,304,68,254,80,245,101,218,97,209,86,227,64,249,53,218,59,199,89,224,107,180,107,165,113,124,93,90,108,67,143,68,162" href="#d9" />
       </map>
     </p>
-    <p class="m_top45">&nbsp;</p>
+
+    <script type="text/javascript" src="/assets_doc/front/html/js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+    $(document).ready(function(e) {
+      $('img[usemap]').rwdImageMaps();
+    });
+    </script>
+
+    <table class="sp_table sp_dis" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="#d1">中国</a></td>
+        <td><a href="#d2">台湾</a></td>
+      </tr>
+      <tr>
+        <td><a href="#d3">日本</a></td>
+        <td><a href="#d4">韩国</a></td>
+      </tr>
+      <tr>
+        <td><a href="#d5">印度</a></td>
+        <td><a href="#d6">新加坡</a></td>
+      </tr>
+      <tr>
+        <td><a href="#d7">中东</a></td>
+        <td><a href="#d8">美国</a></td>
+      </tr>
+      <tr>
+        <td><a href="#d9">德国</a></td>
+        <td class="bgn"></td>
+      </tr>
+    </table>
+    <p class="m_top45 sp_none">&nbsp;</p>
     <a name="d1" id="d1"></a>
-    <h3><%= image_tag "front/distribution_r3_c2.jpg", width: "171", height: "41" %></h3>
-    <ul class="distribution_fb m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="171" height="41" src="/assets_doc/front/html/images/distribution_r3_c2_pc.jpg" alt="China 中国分布" class="imgChange" /></h3>
+
+<ul class="distribution_fb m_top10 clearfix">
       <li>
-      	<h3 class="recorder_f16">总部</h3>
+        <h3 class="recorder_f16">总部</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china01.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china01.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">北京</h3>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">北京</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />北京分公司</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china02.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china02.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">广州</h3>
+      <li class="pad_bd0">
+        <h3 class="recorder_f16">广州</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />广州分公司</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china03.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china03.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">深圳</h3>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">深圳</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />深圳分公司</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china04.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china04.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
       <li>
-      	<h3 class="recorder_f16">苏州</h3>
+        <h3 class="recorder_f16">苏州</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />苏州联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china05.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china05.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">南京</h3>
+      <li class="pad_bd0 sp_brn">
+        <h3 class="recorder_f16">南京</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />南京联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china06.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china06.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
       <li>
-      	<h3 class="recorder_f16">成都</h3>
+        <h3 class="recorder_f16">成都</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />成都联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china07.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china07.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">沈阳</h3>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">沈阳</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />沈阳联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china08.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china08.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">西安</h3>
+      <li class="pad_bd0">
+        <h3 class="recorder_f16">西安</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />西安联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china09.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china09.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">武汉</h3>
+      <li class="pad_bd1 sp_brn">
+        <h3 class="recorder_f16">武汉</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />武汉联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china10.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china10.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">济南</h3>
+      <li class="pad_bd1">
+        <h3 class="recorder_f16">济南</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />济南联络事务所</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china11.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china11.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">中国区维修服务中心</h3>
+      <li class="pad_bd0 pad_bd1 sp_brn">
+        <h3 class="recorder_f16">中国区维修服务中心</h3>
         <p class="distribution_fgs">日置(上海) 商贸有限公司<br />维修服务中心</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china12.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/china12.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
     </ul>
-    <p class="distribution_x"></p>
+    <p class="distribution_x sp_none"></p>
     <a name="d2" id="d2"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r7_c2.jpg", width: 183, height: 41 %></h3>
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="183" height="41" src="/assets_doc/front/html/images/distribution_r7_c2_pc.jpg" alt="Distribution r7 c2" class="imgChange" /></h3>
     <ul class="distribution_fb2 m_top10 clearfix">
-      <li>
-      	<h3 class="recorder_f16">常驻代表办事处</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/taiwan01.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+      <li class="sp_hg160">
+        <h3 class="recorder_f16">常驻代表办事处</h3>
+        <p class="distribution_fgs sp_hg17">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/taiwan01.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
     </ul>
     <p class="distribution_x"></p>
     <a name="d3" id="d3"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r9_c2.jpg", width: 173, height: 42 %></h3>
-    <ul class="distribution_fb m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="173" height="42" src="/assets_doc/front/html/images/distribution_r9_c2_pc.jpg" alt="Distribution r9 c2" class="imgChange"/></h3>
+<ul class="distribution_fb m_top10 clearfix">
       <li>
-      	<h3 class="recorder_f16">总公司</h3>
+        <h3 class="recorder_f16">总公司</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan01.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan01.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">总公司客服中心</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan02.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="pad_bd0">
+        <h3 class="recorder_f16">总公司订单中心</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan03.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li  class="sp_brn">
+        <h3 class="recorder_f16">东北分公司</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan04.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
       <li>
-      	<h3 class="recorder_f16">总公司客服中心</h3>
+        <h3 class="recorder_f16">长野分公司</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan02.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan05.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="pad_bd0 sp_brn">
+        <h3 class="recorder_f16">东京分公司</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan06.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
       <li>
-      	<h3 class="recorder_f16">总公司订单中心</h3>
+        <h3 class="recorder_f16">横滨事务所</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan03.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan07.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">厚木事务所</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan08.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="pad_bd0">
+        <h3 class="recorder_f16">北关东分公司</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan09.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
+      </li>
+      <li class="sp_brn">
+        <h3 class="recorder_f16">静冈分公司</h3>
+        <p class="distribution_fgs">&nbsp;</p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan10.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
       <li>
-      	<h3 class="recorder_f16">东北分公司</h3>
+        <h3 class="recorder_f16">名古屋分公司</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan04.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan11.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">长野分公司</h3>
+      <li class="pad_bd0 sp_brn">
+        <h3 class="recorder_f16">大阪分公司</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan05.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan12.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">东京分公司</h3>
+      <li class="pad_bd1">
+        <h3 class="recorder_f16">广岛事务所</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan06.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan13.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">横滨事务所</h3>
+      <li class="pad_bd1 sp_brn">
+        <h3 class="recorder_f16">福冈分公司</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan07.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan14.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">厚木事务所</h3>
+      <li class="pad_bd0 pad_bd1 sp_hg">
+        <h3 class="recorder_f16">外国营业分部（总公司内）</h3>
         <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan08.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
+        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan15.html">查看详情 <img width="10" height="9" src="/assets_doc/front/html/images/distribution_r5_c3.jpg" alt="Distribution r5 c3" /></a></p>
       </li>
-      <li>
-      	<h3 class="recorder_f16">北关东分公司</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan09.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">静冈分公司</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan10.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">名古屋分公司</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan11.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">大阪分公司</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan12.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">广岛事务所</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan13.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">福冈分公司</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan14.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li>
-      	<h3 class="recorder_f16">外国营业分部（总公司内）</h3>
-        <p class="distribution_fgs">&nbsp;</p>
-        <p><a id="try-1" class="health01 cboxElement" href="assets_doc/about/japan15.html">查看详情 <%= image_tag "front/distribution_r5_c3.jpg", width: 10, height: 9 %></a></p>
-      </li>
-      <li style="margin-top:3px; background:#FFF;">
+      <li style="background:#FFF;" class="null_pc pad_none sp_hg sp_brn">
       </li>
     </ul>
-    <p class="distribution_x"></p>
+    
+
+    <p class="distribution_x sp_none"></p>
     <a name="d4" id="d4"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r11_c2.jpg", width: 173, height: 43 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="173" height="43" src="/assets_doc/front/html/images/distribution_r11_c2_pc.jpg" alt="Distribution r11 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top15"><strong>HIOKI KOREA CO.,LTD. <br />韩国销售公司</strong></dt>
       <dd class="fl">Rm# 1705, East Tower, Hanshin Intervalley 24<br />
       322 Teheran-ro, Gangnam-gu Seoul, 06211, Rep. of Korea<br />
@@ -230,8 +281,8 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
     </dl>
     <p class="distribution_x"></p>
     <a name="d5" id="d5"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r13_c2.jpg", width: 173, height: 43 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="173" height="43" src="/assets_doc/front/html/images/distribution_r13_c2_pc.jpg" alt="Distribution r13 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top15"><strong>HIOKI INDIA ENGINEERING <br />PRIVATE LIMITED</strong></dt>
       <dd class="fl">415, Bestech Chambers, Sushant Lok - 1<br />
       B Block, Gurgaon, Haryana, 122 001, India<br />
@@ -241,8 +292,8 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
     </dl>
     <p class="distribution_x"></p>
     <a name="d6" id="d6"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r15_c2.jpg", width: 253, height: 42 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="253" height="42" src="/assets_doc/front/html/images/distribution_r15_c2_pc.jpg" alt="Distribution r15 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top5"><strong>HIOKI SINGAPORE PTE. <br />
         LTD.</strong></dt>
             <dd class="fl">33 Ubi Avenue 3 #03-02 Vertex Singapore 408868<br />
@@ -252,8 +303,8 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
     </dl>
     <p class="distribution_x"></p>
     <a name="d7" id="d7"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r17_c2.jpg", width: 173, height: 43 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="173" height="43" src="/assets_doc/front/html/images/distribution_r17_c2_pc.jpg" alt="Distribution r17 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top15"><strong>中东常驻代表办事处</strong></dt>
        <dd class="fl">Office No. 5EA-812 Dubai Airport Free Zone P.O. Box 371097 Dubai, U.A.E.<br />
       TEL ＋971-4232-3400
@@ -261,8 +312,8 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
     </dl>
     <p class="distribution_x"></p>
     <a name="d8" id="d8"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r19_c2.jpg", width: 173, height: 43 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="173" height="43" src="/assets_doc/front/html/images/distribution_r19_c2_pc.jpg" alt="Distribution r19 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top5"><strong>HIOKI USA CORPORATION</strong></dt>
       <dd class="fl">6 Corporate Drive Cranbury, NJ 08512 U.S.A.<br />
       TEL +1-609-409-9109　 FAX +1-609-409-9108<br />
@@ -270,7 +321,7 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
       URL:<a href="http://www.hiokiusa.com/" target="_blank">http://www.hiokiusa.com/</a></dd>
     </dl>
 
-    <dl class="m_top10 clearfix">
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top5"><strong>HIOKI USA CORPORATION<br/>Western Regional Office</strong></dt>
       <dd class="fl">21250 Hawthorne Boulevard, Suite.500 Torrance,<br />
       CA 90503, U.S.A.<br />
@@ -279,16 +330,15 @@ URL:<a href="http://www.hiokikorea.com" target="_blank">http://www.hiokikorea.co
     </dl>
     <p class="distribution_x"></p>
     <a name="d9" id="d9"></a>
-    <h3 class="m_top45"><%= image_tag "front/distribution_r21_c2.jpg", width: 215, height: 43 %></h3>
-    <dl class="m_top10 clearfix">
+    <h3 class="distribution_title_sp pad_mt10 m_top45"><img width="215" height="43" src="/assets_doc/front/html/images/distribution_r21_c2_pc.jpg" alt="Distribution r21 c2" class="imgChange"/></h3>
+    <dl class="m_top10 clearfix sp_pl3">
       <dt class="distribution_w250 m_top5"><strong>HIOKI EUROPE GmbH</strong></dt>
       <dd class="fl">Rudolf-Diesel-Strasse 5, 65760 Eschborn, Germany<br />
 TEL +49-6173-3234063　 FAX +49-6173-3234064<br />
 E-mail：hioki@hioki.eu<br />
 URL：<a href="http://www.hioki.com/" target="_blank">http://www.hioki.com/</a></dd>
     </dl>
-    <p class="distribution_x"></p>
+    <p class="distribution_x sp_none"></p>
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>

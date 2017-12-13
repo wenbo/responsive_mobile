@@ -1,11 +1,26 @@
 <% content_for :head do %>
-<%= stylesheet_link_tag 'colorbox.css' %>
-<%= javascript_include_tag 'jquery.colorbox' %>
-<%= javascript_include_tag 'jquery_ujs' %>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
 <script>
 	$(document).ready(function(){
+		var winWidth;
+    if (window.innerWidth)
+      winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) {
+      winWidth = document.body.clientWidth;
+    }
 	//Examples of how to assign the Colorbox event to elements
-		$(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:620});
+		if(winWidth > 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:630});
+		}
+		if(winWidth > 767 & winWidth < 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:630});
+		}
+		if(winWidth < 767){
+			{$(".health01").removeClass("cboxElement");}
+		}
 		$(".callbacks").colorbox({
 			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
 			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
@@ -24,23 +39,32 @@
 	});
 </script>
 <% end %>
+
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
-<div class="contact_banner"></div>
+<div class="contact_banner sp_none pad_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/contact_r1_c1_pad.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/contact_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
-  <div class="product_left" >
-	<h3>联系我们<br /><span class="hioki_f15">Contact</span></h3>
+  <div class="product_left sp_none" >
+  <h3 class="about_sp">联系我们<br class="sp_none pad_none"><span class="hioki_f15">Contact</span></h3>
 	
   </div>
-  <div class="product_right">
-  	<p class="current"><a href="index.html">首页</a> > 联系我们</p>
-    <div class="contact_lx">
+    <div class="product_right pad_fn">
+    <p class="current sp_none pad_pl3"><a href="index.html">首页</a> > 联系我们</p>
+<div class="contact_lx sp_none pad_w94 pad_ml3">
       <p class="contact_bt t_center"><strong>日置(上海) 商贸有限公司联系方式</strong></p>
-      <p class="product_f20 m_top25" style="padding-left:150px;">产品、维修/校正请咨询：<strong>400-920-6010</strong><span class=" recorder_f16">（工作时间：8:30-11:45，12:45-17:30）</span></p>
-      <p class="m_top10" style="padding-left:150px;">地址：上海市黄浦区西藏中路268号来福士广场4705室</p>
-      <p class="product_f20 m_top10" style="padding-left:150px;">销售（报价、交期）及其他请咨询：<a id="try-1" class="health01 cboxElement" href="/assets_doc/china.html" style="color:#195FA9">中国分支机构</a></p>
+      <p class="product_f20 m_top25 contact_t55">产品、维修/校正请咨询：<strong>400-920-6010</strong><span class=" recorder_f16">（工作时间：8:30-11:45，12:45-17:30）</span></p>
+      <p class="m_top10 contact_t55">地址：上海市黄浦区西藏中路268号来福士广场4705室</p>
+      <p class="product_f20 m_top10 contact_t55">销售（报价、交期）及其他请咨询：<a id="try-1" class="health01 cboxElement" href="/assets_doc/china.html" style="color:#195FA9">中国分支机构</a></p>
     </div>
-    <p class="m_top30">红色星号标注的项目为必须填写的项目</p>
+<div class="contact_lx sp_block">
+      <p class="contact_bt t_center"><strong>日置(上海) 商贸有限公司联系方式</strong></p>
+      <p class="product_f20 m_top10 product_f17 t_center">产品、维修/校正请咨询<br><strong>400-920-6010</strong><br><span class=" recorder_f16 recorder_f16_sp">（工作时间：8:30-11:45，12:45-17:30）</span></p>
+      <p class="t_center sp_fs11">地址：上海市黄浦区西藏中路268号来福士广场4705室</p>
+      <p class="product_f20 sp_fs11 t_center">销售（报价、交期）及其他请咨询：<a id="try-1" class="health01 cboxElement" href="/assets_doc/china.html" style="color:#195FA9;font-size: 14px;">中国分支机构</a></p>
+    </div>                                   
+    <p class="m_top30 sp_mt25 sp_t_center sp_fs14 pad_pl3">红色星号标注的项目为必须填写的项目</p>
 		<script language="javascript">
 
 function check()
@@ -119,7 +143,7 @@ function check()
 
 		<!-- <form action="/contacts" method="post" onsubmit="return check();"> -->
 			<%= form_for @contact, html: { onsubmit: "return check()" } do |f| %>
-    <div class="register_content">
+    <div class="register_content pad_w94 pad_pl3">
       <dl class="register_dl clearfix">
       	<dd class="register_dd">姓名</dd>
         <dt>
@@ -165,7 +189,7 @@ function check()
       <dl class="register_dl clearfix">
       	<dd class="register_dd">E-mail</dd>
         <dt>
-        <%= f.text_field :email, class: "register_text" %><span class="recorder_red">（请填写QQ邮箱以外的E-mail地址）</span>
+        <%= f.text_field :email, class: "register_text" %><span class="recorder_red sp_fs11"><br class="pad_block" />（请填写QQ邮箱以外的E-mail地址）</span>
         </dt>
       </dl>
       <dl class="register_dl clearfix" style="border:none;">
@@ -176,16 +200,19 @@ function check()
       </dl>
       <p>※取得的顾客个人信息我们将严格进行管理，除了与贵公司之间的咨询外，一切禁止他用。<br />
 ※提交后，我们会尽快给您回复，请耐心等待。</p>
-	  <p class="recorder_red t_center m_top20">请问以上内容是否正确？如果正确的话请点选提交。</p>
-      <div class="counterfeit_fill">
+    <p class="recorder_red t_center m_top20">请问以上内容是否正确？如果正确的话请点选提交。</p>
+      <div class="counterfeit_fill sp_w100 sp_none">
 				<input name="" type="submit" class="counterfeit_button01" value="" />　　
 				<input name="" type="reset" class="counterfeit_button03" value="" />
 			</div>
+      <div class="counterfeit_fill sp_w100  sp_mt10 sp_block">
+        <input name="" type="submit" class="counterfeit_button01" value="提&ensp;&ensp;&ensp;交" />　　
+        <input name="" type="reset" class="counterfeit_button03" value="返&ensp;&ensp;&ensp;回" />
+      </div>
     </div>
 		<% end %>
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <%= render partial: "shared/footer" %>
 <% if flash[:contact].present? %>
 <script type="text/javascript">
