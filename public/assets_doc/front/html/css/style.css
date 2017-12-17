@@ -178,7 +178,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .product_category li a{width:300px; height:47px; float:left; font-size:16px; line-height:47px; padding-left:21px; margin:0 18px 18px 0; background:url(/assets_doc/front/html/images/product_r3_c4.jpg) no-repeat}
 .product_category li.product_category_li a{width:300px; height:47px; float:left; color:#FFF; font-size:16px; line-height:47px; padding-left:21px; margin:0 18px 18px 0; background:url(/assets_doc/front/html/images/product_r3_c5.jpg) no-repeat}
 .product_search{width:885px; height:43px; font-size:16px; line-height:30px; padding:12px 0 0 30px; border:#8FB1D4 3px solid; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px;}
-.product_search li{float:left; margin-right:30px;}
+.product_search li{float:left; margin-right:29px;}
 .product_search li select[name=category_id]{width:240px;}
 .product_number{width:345px; height:28px; border:#DDDDDD 1px solid;}
 .product_number p{width:100px; height:28px; float:left; text-align:center; background:#F5F5F5;}
@@ -265,9 +265,10 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 
 
 .im_banner{width:100%; height:328px; background:url(/assets_doc/front/html/images/intellectual_r1_c1.jpg) no-repeat top center;}
-.im_table{border-top:#C5C6C7 1px solid; border-left:#C5C6C7 1px solid;}
+.im_table{width:925px;border-top:#C5C6C7 1px solid; border-left:#C5C6C7 1px solid;}
 .im_table th{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; color:#000; font-weight:normal; padding:10px;}
 .im_table td{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; padding:10px; color:#666;}
+.page {width:925px;}
 
 
 .company_banner{width:100%; height:328px; background:url(/assets_doc/front/html/images/company_r1_c1.jpg) no-repeat top center;}
@@ -300,6 +301,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .counterfeit_button01{width:198px; height:65px; border:none; background:url(/assets_doc/front/html/images/counterfeit_r6_c4.jpg) no-repeat; cursor:pointer;}
 .counterfeit_button02{width:198px; height:65px; border:none; background:url(/assets_doc/front/html/images/counterfeit_r6_c6.jpg) no-repeat; cursor:pointer;}
 .counterfeit_button03{width:198px; height:65px; border:none; background:url(/assets_doc/front/html/images/contact_r4_c4.jpg) no-repeat; cursor:pointer;}
+.counterfeit_button04 {width: 198px;height: 65px;border: none;background: url(/assets_doc/front/html/images/counterfeit_r6_c5.jpg) no-repeat;cursor: pointer;}
 
 .contact_banner{width:100%; height:328px; background:url(/assets_doc/front/html/images/contact_r1_c1.jpg) no-repeat top center;}
 .contact_lx{width:925px; border:#195FA6 2px solid; margin-top:35px; padding-bottom:25px}
@@ -365,7 +367,8 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .methods_listDl dd{padding:0 0 10px 12px;}
 .methods_listDl dd .txtBox{display:inline-block; width:600px; vertical-align:top; padding-left:10px;}
 .methods_listDl dd .imgBox{display:inline-block; width:350px; vertical-align:top; text-align:center; padding:0 10px;}
-.methods_table{border-top:1px solid #dbdbdb; border-left:1px solid #dbdbdb;}
+.methods_listDl dd .imgBox iframe {width:350px;height:200px;}
+.methods_table{width:90%;border-top:1px solid #dbdbdb; border-left:1px solid #dbdbdb;}
 .methods_table th{border-right:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb; padding:2px 10px; text-align:left; font-weight:normal; background:#EEEEEE;}
 .methods_table td{border-right:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb; padding:2px 10px;}
 
@@ -417,6 +420,21 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .sale_present .present_ins1 {padding-top:20px;}
 .sale_present .present_ins2 {padding-top:45px;}
 
+.tables_list {width:100%;overflow: hidden;}
+.tables_list li {width:33%;float:left;}
+.tables_list li img {display:block;width:200px;height:138px;}
+.tables_list li p {text-align:left;margin-top: 5px;}
+.recorder_banner {background: url(/assets_doc/front/html/images/recorder_r1_c2.jpg) no-repeat center;}
+.search-products-area .search-word {width:300px;}
+
+.icon_list tr td {padding:0 10px;}
+
+
+
+
+
+
+
 @media only screen and (min-width:768px) and (max-width:899px){
 .sale_present {width:768px; height:511px;line-height: 2px; background:url(/assets_doc/front/html/images/click_bg.jpg) no-repeat;background-size:100%;color:#000;}
 .sale_present .sale_goods {width:540px; margin:0 auto;}
@@ -425,4 +443,7 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 .sale_present .present_ins2 {padding-top:30px;}
 
 .counterfeit_genuine .counterfeit_td {width:510px;}
+
+
+
 }

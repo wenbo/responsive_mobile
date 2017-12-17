@@ -1,0 +1,300 @@
+/* BODY_common */
+A:link {COLOR: #2521fa; TEXT-DECORATION: none}
+A:visited {COLOR: #2521fa; TEXT-DECORATION: none}
+A:hover	{color: #FF0000; ; text-decoration: underline}
+A:active {COLOR: #8957a0; TEXT-DECORATION: underline; font-weight: normal} 
+A {text-decoration: none }
+
+.black14ba a:link,.black14ba a:visited{ color: #000000; text-decoration: none} 
+.black14ba a:hover { color: #333333; text-decoration: underline}
+
+.black12a a:link,.black12a a:visited{ color: #000000; text-decoration: none} 
+.black12a a:hover { color: #333333; text-decoration: underline}
+
+BODY {width:750px; margin: 0 auto; background-color : #ffffff; font-size:12px; }
+H2 {width: 100%;margin: 0px; font-family:Arial, Helvetica, sans-serif;}
+
+/* common */
+.Hi_10 {font-size:10px; line-height:normal; font-family:Arial, Helvetica, sans-serif;}
+.Hi_10_h14 {font-size:12px; line-height:14px; font-family:Arial, Helvetica, sans-serif;}
+.Hi_10_h14_b {font-size:10px; line-height:14px; font-weight: bold; font-family:Arial, Helvetica, sans-serif;}
+.Hi_12 {font-size:12px; line-height:normal; font-family:Arial, Helvetica, sans-serif;}
+.Hi_12_h16 {font-size:12px; line-height:16px; font-family:Arial, Helvetica, sans-serif;}
+.Hi_12_h16_b {font-size:12px; line-height:16px; font-weight: bold; font-family:Arial, Helvetica, sans-serif;}
+
+.Hi_12_h16_b1 { color:#FFFFFF; font-size:13px; line-height:24px; font-weight: bold; background:url(/assets_doc/front/html/image_c/top_1.jpg) no-repeat;}
+.Hi_12_h16_b1 a:link,.Hi_12_h16_b1 a:visited{ color: #FFFFFF; text-decoration: none} 
+.Hi_12_h16_b1 a:hover { color: #FFFFFF; text-decoration: underline}
+
+.Hi_12_h16_b2 { color:#FFFFFF; font-size:13px; line-height:24px; font-weight: bold; background:url(/assets_doc/front/html/image_c/top_2.jpg) no-repeat;}
+.Hi_12_h16_b2 a:link,.Hi_12_h16_b2 a:visited{ color: #FFFFFF; text-decoration: none} 
+.Hi_12_h16_b2 a:hover { color: #FFFFFF; text-decoration: underline}
+
+.Hi_14_h18 {font-size:14px; line-height:18px; font-family:Arial, Helvetica, sans-serif;}
+.Hi_14_h18_b {font-size:14px; line-height:18px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+.Hi_16_h18 {font-size:16px; line-height:18px; font-family:Arial, Helvetica, sans-serif;}
+.Hi_16_h18_b {font-size:16px; line-height:18px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+.Menu_On	{font-size:12px; line-height:16px; font-weight: bold; color: #ffffff; background-color: #536fb8; font-family:Arial, Helvetica, sans-serif;}
+.Menu_Off	{font-size:12px; line-height:16px; color: #000000; background-color: #e1eefb; font-family:Arial, Helvetica, sans-serif;}
+
+/* product.cssÒÆÐÐ */
+.black18{font-size: 18px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black16{font-size: 16px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black16b{font-size: 16px; font-family:Arial, Helvetica, sans-serif;line-height: 130%;font-weight: bold;}
+.black14{font-size: 14px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black14b{font-size: 14px; font-family:Arial, Helvetica, sans-serif;line-height: 130%;font-weight: bold;}
+.black14ba{font-size: 15px; font-family:"ºÚÌå";line-height: 130%;font-weight: bold;}
+.black12{font-size: 12px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black12a{font-size: 13px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black12b{font-size: 12px; font-family:Arial, Helvetica, sans-serif;line-height: 130%;font-weight: bold;}
+.black10{font-size: 10px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+.black10b{font-size: 10px; font-family:Arial, Helvetica, sans-serif;line-height: 130%;font-weight: bold;}
+.black8{font-size: 8px; font-family:Arial, Helvetica, sans-serif;line-height: 130%}
+
+.linkon{font-size: 14px;font-family:Arial, Helvetica, sans-serif;line-height: 130%;color:#ffffff;font-weight: bold;}
+.linkof{font-size: 14px;font-family:Arial, Helvetica, sans-serif;line-height: 130%;color:#666666;font-weight: bold;}
+.spec{font-size: 12px;font-family:Arial, Helvetica, sans-serif;line-height: 130%;color:#00337C;font-weight: bold;}
+
+/* old_common */
+.midasi {  font-size: 16px; font-style: normal; font-weight: bold; line-height: 18px}
+.default { font-size: 14px; font-style: normal; font-weight: normal; line-height: 16px}
+.top {  font-size: 24px; font-weight: bold; font-style: normal; color: #66C092}
+.stitle {  font-size: 10px; color: #66C092}
+.title { font-size: 24px; font-weight: bold; font-style: normal; color: #66C092 }
+.titleK { font-size: 24px; font-weight: bold; font-style: normal; color: #3A5AA7}
+.topK { font-size: 20px; font-weight: bold; font-style: normal; color: #3A5AA7}
+.stitleK { font-size: 10px; line-height: normal}
+.titleF { font-size: 24px; font-weight: bold; font-style: normal; color: #8069B0}
+.waku { font-size: 14px; font-style: normal; font-weight: normal; line-height: 18px}
+.midasihyouw { font-size: 18px; font-style: normal; font-weight: bold; line-height: 20px; clip: rect( ); text-decoration: none ; color: #FFFFFF}
+.defaultw { font-size: 14px; font-style: normal; font-weight: normal; line-height: 20px ; color: #FFFFFF}
+.stitlehyou { font-size: 7px}
+.waku1 { font-size: 24px; font-weight: bold; font-style: normal}
+.defaultK { font-size: 14px; font-style: normal; font-weight: normal; line-height: 30px}
+.stitleW { font-size: 10px ; color: #FFFFFF; line-height: normal}
+.sheet {  font-size: 14px; line-height: 18px; text-decoration: none}
+.selback {  background-color: #000000}
+.wakup { font-size: 12px; font-style: normal; font-weight: normal; line-height: normal}
+.defaultKS { font-size: 12px; font-style: normal; font-weight: normal; line-height: 16px}
+.Corptop { font-size: 11px; font-style: normal; font-weight: normal; line-height: 14px}
+
+
+/* ƒ^ƒCƒgƒ‹ */
+.prod_ti_rec {
+	border: 1px solid #BFBFBF;
+	background-color: #536FB8;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_ele {
+	border: 1px solid #BFBFBF;
+	background-color: #4cbc3b;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_sig {
+	border: 1px solid #BFBFBF;
+	background-color: #cd585f;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_log {
+	border: 1px solid #BFBFBF;
+	background-color: #a02739;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_env {
+	border: 1px solid #BFBFBF;
+	background-color: #018e47;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_saf {
+	border: 1px solid #BFBFBF;
+	background-color: #f8855e;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_cla {
+	border: 1px solid #BFBFBF;
+	background-color: #AFD00F;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_pow {
+	border: 1px solid #BFBFBF;
+	background-color: #01ac9d;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_fie {
+	border: 1px solid #BFBFBF;
+	background-color: #A8001E;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_fic {
+	border: 1px solid #BFBFBF;
+	background-color: #ae0e20;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_com {
+	border: 1px solid #BFBFBF;
+	background-color: #3DB249;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_per {
+	border: 1px solid #BFBFBF;
+	background-color: #00acce;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_opt {
+	border: 1px solid #BFBFBF;
+	background-color: #07A3CB;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+.prod_ti_mul {
+	border: 1px solid #BFBFBF;
+	background-color: #ffa624;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.prod_ti_etc {
+	border: 1px solid #BFBFBF;
+	background-color: #9294C7;
+	padding: 2px 2px 2px 6px;
+	margin: 0px;
+	font-size: 14px;
+	line-height: 140%;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* ƒCƒ“ƒfƒbƒNƒXƒŠƒXƒg */
+.menu ul {
+	padding-left: 0px;
+	margin: 0px;
+}
+.menu li {
+	list-style-type: none;
+	background-image: url('/product/images/prd_mk01.gif');
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+	padding-left: 10px;
+	font-size: 12px;
+	line-height: 140%;
+}
+.index_mini {
+	width: 142px;
+	background-image: url('/product/images/prd_mk02.gif');
+	background-repeat: no-repeat;
+	background-position: 0px -2px;
+	padding-left: 12px;
+	font-size: 12px;
+	line-height: 140%;
+	font-weight: bold;
+}
+.index_mini a:link	{
+	COLOR: #000000;
+}
+.index_mini a:visited	{
+	COLOR: #000000;
+}
+#prod ul	{list-style-position: outside ; padding-left: 14px; margin: 0px; font-size: 12px; line-height: 140%; font-weight: bold; }
+#prod li	{list-style-image: url(prd_mk02.gif); }
+#prod a:link {color: #000000; text-decoration: none; }
+#prod a:hover {color: #FF0000; text-decoration: underline; }
+#prod a:visited {color: #000000; text-decoration: none; }
+
+#prod_wh ul	{list-style-position: outside ; padding-left: 16px; margin: 0px; font-size: 14px; line-height: 140%; font-weight: bold; }
+#prod_wh li	{list-style-image: url(prd_mk03.gif); }
+
+.prod_indexph_waku {
+	width: 142px;
+	border: 1px solid #c6c6c6;
+	background-color: #ffffff;
+	padding: 5px 0px 5px 0px;
+	margin: 0px auto;
+	text-align: center;
+}
+.option_menu_waku {
+	background-color: #E6E6B8;
+	padding: 5px;
+	margin: 0px auto;
+}
+
+.newproduct{
+	width:740px;
+	list-style:none;
+	margin:0 0 0 10px;
+	padding:0;
+}
+
+.newproduct li{
+	width:359px;
+	padding:0;
+	margin:0 10px 10px 0;
+	float:left;
+}

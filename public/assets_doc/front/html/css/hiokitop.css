@@ -1,0 +1,11 @@
+.style11 {font-size: 14px;line-height: 16px; font-family:Arial, Helvetica, sans-serif;}
+.style12 {font-size: 12px;font-weight: bold; font-family:Arial, Helvetica, sans-serif;}
+.style13 {font-size: 12px;color: #FFFFFF; font-family:Arial, Helvetica, sans-serif;}
+a:link {color: #00693E;text-decoration: none;}
+a:visited {color: #00693E;text-decoration: none;}
+a:active {color: #00693E;text-decoration: none;}
+a:hover {color: #2A6CC4;text-decoration: underline;}
+#FrRi92 {left:0px; top:0px}
+#MaRi92 {left:0px; top:0px}
+div.show-title	{color: #ffffff ; background-color: #797979; font-size: 12px; line-height: 120%; font-weight: bold; padding: 4px; }
+div.show-title a	{color: #ffffff ;}

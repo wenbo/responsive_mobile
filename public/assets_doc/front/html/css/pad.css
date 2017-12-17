@@ -30,8 +30,17 @@
 .distribution_fb li.pad_bd1 {border-bottom:none;}
 
 .contact_t55 {padding-left:5%;}
+.register_dl dt {width:70%;}
 .register_dl dd{width:20%; padding-left:5%;}
-.register_dl dt {width:72%;}
+.register_dl_else dd {width:8%;}
+.register_dl_else dt {width:87%;}
+.register_dl_else .register_text {width:100%;}
+
+.register_other dd {width:12%;}
+.register_other dt {width:83%;}
+.register_other dt .register_text {width:64%;}
+.register_text_lis
+
 .repair_card_pad {box-sizing: border-box;padding:3%;}
 .repair_tips {width:35%;padding-bottom:50px;}
 .repair_tips01 {background: #F4F4F4 url(/assets_doc/front/html/images/repair_r13_c4.jpg) no-repeat 65px 175px;}
@@ -41,8 +50,24 @@
 .counterfeit_genuine .counterfeit_text {width:94%;}
 .soft_parameter{width:100%;border-top:#C5C6C7 1px solid; border-left:#C5C6C7 1px solid;}
 .soft_parameter th{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; font-size:14px; padding:15px 6px;}
+.soft_parameter_else th {width:12%;}
 .soft_parameter td{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; padding:4px; color:#666;font-size: 13px;}
 
+.productArea {width:100%;}
+.productArea .product {width:31%;margin:0 0px 40px 2%;}
+
+.product_search {width:100%;padding:4px 0 0 2%;box-sizing: border-box;}
+.product_search li {margin-right:1%;font-size: 14px;}
+.product_search li:nth-child(1) {width:14%;}
+.product_search li:nth-child(2) {width:40%;}
+.product_search li:nth-child(3) {width:40%;}
+.product_search li select[name=category_id] {width:69%;}
+.product_number {width:30%;position: relative;}
+.product_number p {width:31%;}
+.product_number input[type=text] {width:51%;}
+.product_number input[type=submit] {position: absolute;right:0;}
+.product_search input, .product_search select {font-size: 15px;}
+.im_table td {font-size: 12px;}
 
 .header{width:94%; height:27px; padding:12px 3%; position:relative;}
 .header h1 img{width:170px;}
@@ -195,7 +220,7 @@ transform:rotate(-45deg);}
 .product_left h3 span{font-size:12px; padding-left:5px;}
 .product_left ul li{width:50%; height:50px; float:left; margin:0; border-bottom:none;}
 .product_left ul li a{width:88%; height:25px; font-size:16px; line-height:25px; padding:12px 6%; display:block; border-left:1px solid #FFF; margin-left:-1px; border-bottom:1px solid #FFF; background:#F4F4F4 url(/assets_doc/front/html/images/hioki_column_jt03.png) no-repeat 95% center; background-size:8px auto;}
-
+.product_left .categories_list0 li a {font-size: 14px;}
 
 .application_w590{width:49%;}
 .application_ind{width:96%; padding:0px 2%;}
@@ -226,4 +251,12 @@ transform:rotate(-45deg);}
 
 .recruit_table {overflow: hidden;width:100%;}
 .recruit_table tr td {box-sizing: border-box;}
+.pad_break {word-wrap: break-word;}
+
+.methods_listDl dd .txtBox {width:100%;}
+
+.tables_list {width:100%;overflow: hidden;}
+.tables_list li {width:33%;float:left;}
+.tables_list li img {display:block;width:200px;height:138px;}
+.tables_list li p {text-align:left;margin-top: 5px;}
 }
