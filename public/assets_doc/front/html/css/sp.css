@@ -489,18 +489,11 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 
 .distribution_dc{width:94%; padding:20px 0 0 0;margin: 0 auto;}
 .distribution_dt{width:100%; float:left;}
-.sp_none {display: none;}
-.sp_block {display: block;}
-.sp_mt20 {margin-top: 20px;}
-.sp_fn {float: none;}
-.sp_mt10 {margin-top:10px;}
 .sp_mb10 {margin-bottom:10px;}
 .sp_mb20 {margin-bottom: 20px;}
-.sp_w100 {width:100%;height:auto;}
-.sp_fr {float: right;}
 .return {background: #548bc4;color:#fff;padding:1% 3%;border-radius:5px;font-size: 14px;}
 .sp_a {display:block;color:#fff;}
-a:link {color:#fff;}
+.sp_a:link {color:#fff;}
 
 .china_dc{width:94%;padding-left:3%;margin:0px auto;}
 .china_dc li{width:100%; float:none; padding-right:0;margin-top: 20px;}

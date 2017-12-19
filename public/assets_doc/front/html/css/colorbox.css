@@ -15,7 +15,7 @@
 #cboxOverlay{ background:#D9DADA;} /*背景颜色*/
 #colorbox{outline:0;}
 #cboxContent{background:#fff; overflow:hidden;}
-#cboxClose{width:31px; height:31px; border:0; padding:0; margin:0; position:absolute; top:0; right:0; text-indent:-9999px; background:url(/assets_doc/front/html/images/calendar_close.png) no-repeat;} /*关闭按钮*/
+#cboxClose{width:31px; height:31px; border:0; padding:0; margin:0; position:absolute; top:0; right:0; text-indent:-9999px; background:url(../images/calendar_close.png) no-repeat;} /*关闭按钮*/
 
 
 .distribution_dc{width:800px; padding:35px 0 0 55px;}
@@ -28,7 +28,6 @@
 .greenpoint_img {width:1000px;}
 .greenpoint_h3{color:#FFF; font-size:16px; margin-top:30px; padding:2px 10px; display:inline-block; background:#00A64F;}
 
-.sp_block {display: none;}
 
 
 @media only screen and (min-width:768px) and (max-width:1100px){
