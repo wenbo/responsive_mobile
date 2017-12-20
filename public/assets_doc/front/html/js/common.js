@@ -1,5 +1,14 @@
-
 $(function(){
+	//首页左边悬浮
+	$('.hioki_promotion .hioki_promotion_x').click(function () {
+		$('.hioki_promotion a').hide();
+		$('.hioki_promotion p').show();
+	});
+	$('.hioki_promotion p').click(function () {
+		$('.hioki_promotion a').show();
+		$('.hioki_promotion p').hide();
+	});
+	
 	//手机端点击显示菜单
 	column=0;
 	$('.hioki_column00 .hioki_f23').click(function () {
@@ -132,8 +141,52 @@ $(function(){
 		}
 		pd06++;
 	});
+
+
 	
 });
+
+
+
+/**
+ * common.js
+ *
+ *  version --- 3.7
+ *  updated --- 2012/10/12
+ */
+
+
+/* !stack ------------------------------------------------------------------- */
+jQuery(document).ready(function($) {
+    useguidePop();
+});
+
+
+/* !useguidePop ---------------------------------------------------------------- */
+var useguidePop = function() {
+    $(".methods_listDl dt").click(function(){
+        if($(this).hasClass("close")){
+            $(this).removeClass("close");
+            $(this).addClass("open");
+            $(this).next().css('display','block');
+        }
+        else if($(this).hasClass("open")){
+            $(this).removeClass("open");
+            $(this).addClass("close");
+            $(this).next().css('display','none');        }
+    });
+};
+
+/* !Addition odd & even --------------------------------------------------- */
+$(function(){
+ $('.ul_business02 > li:nth-child(even)').addClass('even');
+});
+
+
+
+
+
+
 
 
 

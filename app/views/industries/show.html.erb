@@ -9,9 +9,14 @@
 
 <%= render partial: "shared/top_search" %>
 <%= render partial: "shared/top_header" %>
+
 <div class="product_banner" id="banner_industry_<%= params[:id] %>">
-  <span class="sp_block"><img width="100%" src="/assets_doc/front/html/images/product_r1_c2_sp.jpg" ></span>
+  <span class="sp_block">
+    <img width="100%" src="html/images/banner_industry_<%= params[:id] %>_sp.jpg" >
+  </span>
+  <span class="pad_block"><img width="100%" src="/assets_doc/front/html/images/banner_industry_<%= params[:id] %>_pad.jpg" ></span>
 </div>
+
 <div class="product_title clearfix sp_none">
   <ul class="news_content">
 		<% (1..5).each do |i| %>

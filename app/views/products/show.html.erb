@@ -31,7 +31,7 @@ ShowSub(0,5);
 			 <h3 class="product_f25 m_top20 fl"><%= @product.title %></h3>
 			 <p class="fr m_top20"><a href="javascript:history.go(-1)"><%= image_tag "front/recorder_return.jpg", width: "135", height: "35" %></a></p>
     </div>
-    <p class="m_top30 sp_center"><%= image_tag @product.banner.url %></p>
+    <p class="m_top30 sp_center img_auto"><%= image_tag @product.banner.url %></p>
     <ul class="recorder_title m_top30 clearfix sp_none">
     <% if @summary.present? %>
       <li onclick=ShowSub(0,1) id=S_Menu_01 class=selectd>概　要</li>

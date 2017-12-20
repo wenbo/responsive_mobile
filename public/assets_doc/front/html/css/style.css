@@ -59,13 +59,14 @@ a:hover img{filter:Alpha(opacity=70); opacity:0.8;}
 #img-show li:nth-child(4){background:url(/assets_doc/front/html/images/hioki_r7_c3.jpg) no-repeat center top}
 #img-show li:nth-child(5){background:url(/assets_doc/front/html/images/hioki_r7_c4.jpg) no-repeat center top}
 #img-show li:nth-child(6){background:url(/assets_doc/front/html/images/hioki_r7_c5.jpg) no-repeat center top}
-#img-show li span{display:none;}
 
 #myjQuery{width:100%;height:463px;margin:0 auto;position:relative}
 #myjQueryContent{width:100%;height:463px;position:absolute}
 #myjQueryContent li{position:absolute;height:463px;width:100%}
 
 .hioki_promotion{position:fixed; top:50%; left:0; z-index:100; margin-top:-100px;}
+.hioki_promotion_x{position:absolute; top:0; right:-26px; cursor:pointer;}
+.hioki_promotion p{display:none; cursor:pointer;}
 .hioki_search_bg{width:100%; padding:35px 0 70px 0; background:url(/assets_doc/front/html/images/hioki_r8_c1.jpg) repeat;}
 .hioki_search{width:1260px; margin:0 auto;}
 .hioki_search_title{color:#FFF; font-size:28px; line-height:40px;}
