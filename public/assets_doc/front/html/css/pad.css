@@ -131,6 +131,7 @@ transform:rotate(-45deg);}
 .hioki_columns{width:94%; padding:25px 3% 0 3%;}
 .hioki_columns li{width:31.3%; padding-left:3%;}
 .hioki_columns li img{width:100%; height:auto;}
+.hioki_columns #try-1{padding-left:0;}
 .hioki_category_bg{width:96%; padding:0 2%;}
 .hioki_category_title{font-size:26px; line-height:34px; margin-top:30px;}
 .hioki_category_title span{font-size:14px; line-height:24px; display:block;}
@@ -144,8 +145,7 @@ transform:rotate(-45deg);}
 .hioki_category02 a{font-size:13px; padding:24px 0 24px 0;}
 .hioki_category03{width:23.2%; height:62px; margin-left:2%; margin-bottom:10px; padding-top:10px; vertical-align:middle;}
 .hioki_category03 a{font-size:13px; padding:3px 0 3px 15%;}
-.hioki_activity{width:70%; padding:0 15% 20px 15%; margin-top:15px;}
-.hioki_activity .hioki_columns li{width:47%; padding:10px 1.5%;}
+.hioki_activity{width:100%; padding:0 0 20px 0; margin-top:15px;}
 .hioki_column01{width:35%; height:335px; padding-left:3%;}
 .hioki_column02{width:33%; height:335px; padding-left:3%; border-right:#000000 1px dotted;}
 .hioki_w205{width:96%;}
