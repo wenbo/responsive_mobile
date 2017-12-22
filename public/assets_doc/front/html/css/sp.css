@@ -382,7 +382,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 .news_list li {width:96%;height:auto; border-bottom: 1px solid #eee;}
 .news_list li:last-child {border-bottom: none;}
 .news_list li a {width:100%;display: block;}
-.news_right h3.recorder_blue.product_f20{font-size: 17px;line-height: 24px;margin-top: 0;color:#000;}
+.news_right h3.recorder_blue.product_f20{font-size: 17px;line-height: 24px;margin-top: 0;color:#000;margin-top:18px;}
 .news_right p strong {display: none;}
 
 .news_detail dt {width:100%;float:none;margin-top: 10px;}
