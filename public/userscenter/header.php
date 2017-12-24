@@ -50,7 +50,6 @@ if ($_COOKIE["login_stub"])
 			</ul>
 		</dd>
 </form>		
-	</dl>
 <?php endif; ?>
 
                 <?php if(($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
@@ -61,11 +60,12 @@ if ($_COOKIE["login_stub"])
                         <a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a>
                         </li>
                         <li>
-                        <a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
+                        <a href="/userscenter/im_logout.php" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a>
                         </li>
                       </ul>
     </dd>
 <?php endif; ?>
+        </dl>
 </div>
 
 <div class="top_bg sp_none pad_none">
@@ -77,7 +77,7 @@ if ($_COOKIE["login_stub"])
          <img width="28" height="26" src="/assets_doc/front/html/images/hioki_r1_c30.jpg" alt="Hioki r1 c30" />
          会员退出</a>
          <?php if(($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
-         <a href="/sessions/logout" data-method="delete" data-confirm="确认退出吗?">
+         <a href="/userscenter/im_logout.php" data-method="delete" data-confirm="确认退出吗?">
          <img width="28" height="26" src="/assets_doc/front/html/images/hioki_r1_c30.jpg" alt="Hioki r1 c30" />
          会员退出
        </a>
@@ -121,8 +121,9 @@ if ($_COOKIE["login_stub"])
   </div>
   <div class="hioki_land_sp" id="land_sp" style="display:none;">
 	<h3>会员登录</h3>
-	<form id="login_form" action="sessions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Og7G5Y98uVnYgyLyyZejUkNgwMAfaBnTJE6q2ufQLWHiFRjvMQy7A8iwahjymuf//gCn9OQeolwhE+/kkRYxcg==" />
+                <?php if(!($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
 	  <dd>
+	<form id="login_form" action="sessions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Og7G5Y98uVnYgyLyyZejUkNgwMAfaBnTJE6q2ufQLWHiFRjvMQy7A8iwahjymuf//gCn9OQeolwhE+/kkRYxcg==" />
 	  <div class="hioki_login">
 		<p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
 		<p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
@@ -130,16 +131,19 @@ if ($_COOKIE["login_stub"])
 		<p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
 	  </div>
 	  <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
+	</form>
 	  </dd>
+<?php endif; ?>
+                <?php if(($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
       <dd>
-      <p class="sidebar_p recorder_f18">chenlu@hioki.com.cn，<br />HIOKI欢迎您</p>
+      <p class="sidebar_p recorder_f18"><?php echo $_SESSION['usercenter']['name'];?>，<br />HIOKI欢迎您</p>
       <ul class="m_top15">
       	<li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld">会员中心</a></li>
-        <li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li>
+        <li><a href="/userscenter/im_logout.php" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li>
 	  </ul>
       <p class="hioki_register_gb" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);">关闭<i></i></a></p>
       </dd>
-	</form>
+<?php endif; ?>
   </div>
   <div class="hioki_nav_sp" id="nav_sp" style="display:none;">
   	<dl class="hioki_dhyy clearfix">

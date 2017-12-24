@@ -3,9 +3,81 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <title>注册｜HIOKI-日置(上海) 商贸有限公司</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/scrollsmoothly.js"></script>
-		<script type="text/javascript" src="js/tab.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/assets_doc/front/html/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/assets_doc/front/html/css/pad.css" rel="stylesheet" type="text/css" />
+<link href="/assets_doc/front/html/css/sp.css" rel="stylesheet" type="text/css" />
+
+<script src="/assets_doc/front/html/js/scrollsmoothly.js"></script>
+<script src="/assets_doc/front/html/js/jquery-1.9.1.js"></script>
+<script type="text/javascript">           
+	$(document).ready(function(){
+	$(".sidebar_search").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 365}, 400);
+	})
+	$(".sidebar_search").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 75}, 400);
+	});
+	});
+</script>
+<script type="text/javascript">           
+	$(document).ready(function(){
+	$(".sidebar_search02").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 365}, 400);
+	})
+	$(".sidebar_search02").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 75}, 400);
+	});
+	});
+</script>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+	$(document).ready(function(){
+		var winWidth;
+    if (window.innerWidth)
+      winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) {
+      winWidth = document.body.clientWidth;
+    }
+	//Examples of how to assign the Colorbox event to elements
+		if(winWidth > 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:630});
+		}
+		if(winWidth > 767 & winWidth < 1300){
+			$(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:630});
+		}
+		if(winWidth < 767){
+			{$(".health01").removeClass("cboxElement");}
+		}
+		$(".callbacks").colorbox({
+			onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+			onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+			onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+			onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+			onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+		});
+
+		$('.non-retina').colorbox({rel:'group5', transition:'none'})
+		$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+		//Example of preserving a JavaScript event for inline calls.
+		$("#click").click(function(){ 
+			$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+			return false;
+		});
+	});
+</script>
+
+<script type="text/javascript" src="/userscenter/js/main.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/default.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/Effect.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/common.js"></script>
 		<script language="javascript" type="text/javascript">
 			function checkFrom()
 			{
