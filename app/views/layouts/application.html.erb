@@ -5,6 +5,9 @@
                 <title><%= @title %>｜HIOKI-日置(上海) 商贸有限公司</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/assets_doc/front/html/css/style.css" rel="stylesheet" type="text/css" />
+<% if ["registrations"].include? controller_name %>
+<link href="/assets_doc/front/html/css/registration.css" rel="stylesheet" type="text/css" />
+<% end %>
 <link href="/assets_doc/front/html/css/pad.css" rel="stylesheet" type="text/css" />
 <link href="/assets_doc/front/html/css/sp.css" rel="stylesheet" type="text/css" />
 <script src="/assets_doc/front/html/js/scrollsmoothly.js"></script>

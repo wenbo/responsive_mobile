@@ -36,7 +36,7 @@ $info_type = $_POST['info_type'];
 $feedback = htmlspecialchars(trim($_POST['feedback']));
 if ($company=='' || $dept=='' || $name=='' || $type=='' || $area=='' || $work1=='' || $work2==''  || $postcode=='' || $address=='' || $tel=='' || $email=='' || $password=='')
 {
-	header("Location: reg.php");
+	header("Location: register.php");
 	exit;
 }
 require_once 'intellectual/lib/function.php';
@@ -100,10 +100,10 @@ include("./header.php");//加载template
 <?php if($type=="系统集成商") echo "系统集成商"; ?>
 <?php if($type=="其它") echo "其它"; ?>
 </span>
-							<input type="hidden" name="type" type="radio" value="最终用户" <?php if($type=="最终用户") echo "checked"; ?> />
-							<input type="hidden" name="type" type="radio" value="仪器代理商" <?php if($type=="仪器代理商") echo "checked"; ?> />
-							<input type="hidden" name="type" type="radio" value="系统集成商" <?php if($type=="系统集成商") echo "checked"; ?> />
-							<input type="hidden" name="type" type="radio" value="其它" <?php if($type=="其它") echo "checked"; ?> />
+<?php if($type=="最终用户") echo '<input type="hidden" name="type" type="radio" value="最终用户" "checked" />' ?>
+<?php if($type=="仪器代理商") echo '<input type="hidden" name="type" type="radio" value="仪器代理商" "checked" />' ?>
+<?php if($type=="系统集成商") echo '<input type="hidden" name="type" type="radio" value="系统集成商" "checked" />' ?>
+<?php if($type=="其它") echo '<input type="hidden" name="type" type="radio" value="其它" "checked" />' ?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -115,10 +115,19 @@ include("./header.php");//加载template
 <?php if($area=="华南") echo "华南"; ?>
 <?php if($area=="中西") echo "中西"; ?>
 </span>
-							<input type="hidden" name="area" type="radio" value="华北" <?php if($area=="华北") echo "checked"; ?>/>
-							<input type="hidden" name="area" type="radio" value="华东" <?php if($area=="华东") echo "checked"; ?>/>
-							<input type="hidden" name="area" type="radio" value="华南" <?php if($area=="华南") echo "checked"; ?>/>
-							<input type="hidden" name="area" type="radio" value="中西" <?php if($area=="中西") echo "checked"; ?>/>
+
+<?php if($area=="华北") 
+echo 
+'<input type="hidden" name="area" type="radio" value="华北" "checked"/>' ?>
+<?php if($area=="华东") 
+echo
+'<input type="hidden" name="area" type="radio" value="华东" "checked"/>' ?>
+<?php if($area=="华南") 
+echo
+'<input type="hidden" name="area" type="radio" value="华南" "checked"/>' ?>
+<?php if($area=="中西") 
+echo
+'<input type="hidden" name="area" type="radio" value="中西" "checked"/>' ?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -137,17 +146,17 @@ include("./header.php");//加载template
 <?php if($work1=="10") echo "政府、学校、研究所"; ?>
 <?php if($work1=="11") echo "其它"; ?>
 </span>
-							<input type="hidden" name="work1" type="radio" value="1" <?php if($work1=="1") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="2" <?php if($work1=="2") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="3" <?php if($work1=="3") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="4" <?php if($work1=="4") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="5" <?php if($work1=="5") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="6" <?php if($work1=="6") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="7" <?php if($work1=="7") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="8" <?php if($work1=="8") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="9" <?php if($work1=="9") echo "checked"; ?>/>
-							<input type="hidden" name="work1" type="radio" value="10" <?php if($work1=="10") echo "checked"; ?> />
-							<input type="hidden" name="work1" type="radio" value="11" <?php if($work1=="11") echo "checked"; ?>/>
+<?php if($work1=="1") echo '<input type="hidden" name="work1" type="radio" value="1" "checked"/>' ?> 
+<?php if($work1=="2") echo '<input type="hidden" name="work1" type="radio" value="2" "checked"/>' ?>
+<?php if($work1=="3") echo '<input type="hidden" name="work1" type="radio" value="3" "checked"/>' ?>
+<?php if($work1=="4") echo '<input type="hidden" name="work1" type="radio" value="4" "checked"/>' ?>
+<?php if($work1=="5") echo '<input type="hidden" name="work1" type="radio" value="5" "checked"/>' ?>
+<?php if($work1=="6") echo '<input type="hidden" name="work1" type="radio" value="6" "checked"/>' ?>
+<?php if($work1=="7") echo '<input type="hidden" name="work1" type="radio" value="7" "checked"/>' ?>
+<?php if($work1=="8") echo '<input type="hidden" name="work1" type="radio" value="8" "checked"/>' ?>
+<?php if($work1=="9") echo '<input type="hidden" name="work1" type="radio" value="9" "checked"/>' ?>
+<?php if($work1=="10") echo '<input type="hidden" name="work1" type="radio" value="10" "checked"/>' ?>
+<?php if($work1=="11") echo '<input type="hidden" name="work1" type="radio" value="11" "checked"/>' ?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -166,17 +175,17 @@ include("./header.php");//加载template
 <?php if($work2=="10") echo "学校、学生"; ?>
 <?php if($work2=="11") echo "其它"; ?>
 </span>
-							<input type="hidden" name="work2" type="radio" value="1" <?php if($work2=="1") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="2" <?php if($work2=="2") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="3" <?php if($work2=="3") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="4" <?php if($work2=="4") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="5" <?php if($work2=="5") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="6" <?php if($work2=="6") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="7" <?php if($work2=="7") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="8" <?php if($work2=="8") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="9" <?php if($work2=="9") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="10" <?php if($work2=="10") echo "checked"; ?>/>
-							<input type="hidden" name="work2" type="radio" value="11" <?php if($work2=="11") echo "checked"; ?>/>
+<?php if($work2=="1") echo '<input type="hidden" name="work2" type="radio" value="1" "checked"/>' ?>
+<?php if($work2=="2") echo '<input type="hidden" name="work2" type="radio" value="2" "checked"/>' ?>
+<?php if($work2=="3") echo '<input type="hidden" name="work2" type="radio" value="3" "checked"/>' ?>
+<?php if($work2=="4") echo '<input type="hidden" name="work2" type="radio" value="4" "checked"/>' ?>
+<?php if($work2=="5") echo '<input type="hidden" name="work2" type="radio" value="5" "checked"/>' ?>
+<?php if($work2=="6") echo '<input type="hidden" name="work2" type="radio" value="6" "checked"/>' ?>
+<?php if($work2=="7") echo '<input type="hidden" name="work2" type="radio" value="7" "checked"/>' ?>
+<?php if($work2=="8") echo '<input type="hidden" name="work2" type="radio" value="8" "checked"/>' ?>
+<?php if($work2=="9") echo '<input type="hidden" name="work2" type="radio" value="9" "checked"/>' ?>
+<?php if($work2=="10") echo '<input type="hidden" name="work2" type="radio" value="10" "checked"/>' ?>
+<?php if($work2=="11") echo '<input type="hidden" name="work2" type="radio" value="11" "checked"/>' ?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -217,8 +226,8 @@ include("./header.php");//加载template
 <?php if($is_used=="yes") echo "是"; ?>
 <?php if($is_used=="no") echo "否"; ?>
 </span>
-							<input type="hidden" name="is_used" type="radio" value="yes" <?php if($is_used=="yes") echo "checked"; ?>/>
-							<input type="hidden" name="is_used" type="radio" value="no" <?php if($is_used=="no") echo "checked"; ?>/>
+<?php if($is_used=="yes") echo '<input type="hidden" name="is_used" type="radio" value="yes" "checked"/>'?>
+<?php if($is_used=="no") echo '<input type="hidden" name="is_used" type="radio" value="no" "checked"/>'?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
@@ -280,10 +289,10 @@ include("./header.php");//加载template
 <?php if(in_array("3", $info_type)) echo "研讨会通知 "; ?>
 <?php if(in_array("4", $info_type)) echo "展会通知"; ?>
 </span>
-							<input type="hidden" name="info_type[]" type="checkbox" value="1" <?php if(in_array("1", $info_type)) echo "checked"; ?>/>
-							<input type="hidden" name="info_type[]" type="checkbox" value="2" <?php if(in_array("2", $info_type)) echo "checked"; ?>/>
-							<input type="hidden" name="info_type[]" type="checkbox" value="3" <?php if(in_array("3", $info_type)) echo "checked"; ?>/>
-							<input type="hidden" name="info_type[]" type="checkbox" value="4" <?php if(in_array("4", $info_type)) echo "checked"; ?>/>
+<?php if(in_array("1", $info_type)) echo '<input type="hidden" name="info_type[]" type="checkbox" value="1" "checked"/>'?>
+<?php if(in_array("2", $info_type)) echo '<input type="hidden" name="info_type[]" type="checkbox" value="2" "checked"/>'?>
+<?php if(in_array("3", $info_type)) echo '<input type="hidden" name="info_type[]" type="checkbox" value="3" "checked"/>'?>
+<?php if(in_array("4", $info_type)) echo '<input type="hidden" name="info_type[]" type="checkbox" value="4" "checked"/>'?>
 						</dt>
 					</dl>
                                         <dl class="register_dl clearfix" style="border:none;">

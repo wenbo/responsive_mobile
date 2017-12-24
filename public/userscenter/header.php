@@ -1,3 +1,12 @@
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1543ceff58b1606182e9b7cf357712b3";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <?php
 session_start();
 if ($_COOKIE["login_stub"])

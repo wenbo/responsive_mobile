@@ -42,25 +42,21 @@
 			if (type=='')
 			{
 			alert('请选择类别');
-			document.FORMADD.type.focus();
 			return false;
 			}
 			if (area=='')
 			{
 			alert('请选择区域');
-			document.FORMADD.area.focus();
 			return false;
 			}
 			if (work1=='')
 			{
 			alert('请选择业种');
-			document.FORMADD.work1.focus();
 			return false;
 			}
 			if (work2=='')
 			{
 			alert('请选择职种');
-			document.FORMADD.work2.focus();
 			return false;
 			}
 			if (email=='')
