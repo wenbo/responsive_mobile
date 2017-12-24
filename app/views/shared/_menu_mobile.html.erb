@@ -12,8 +12,8 @@
 <div class="hioki_land_sp" id="land_sp" style="display:none;">
   <h3>会员登录</h3>
 	<% if !session[:user_name].present? %>
-  <dd>
   <%= form_tag "sessions/", id: "login_form" do |f| %>
+  <dd>
     <div class="hioki_login">
       <p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
       <p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
@@ -21,8 +21,8 @@
       <p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
     </div>
     <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
-    <% end %>
   </dd>
+    <% end %>
   <% else %>
   <dd>
     <p class="sidebar_p recorder_f18"><%= session[:user_name] %>，HIOKI欢迎您</p>

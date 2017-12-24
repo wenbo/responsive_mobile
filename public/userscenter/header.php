@@ -122,8 +122,8 @@ if ($_COOKIE["login_stub"])
   <div class="hioki_land_sp" id="land_sp" style="display:none;">
 	<h3>会员登录</h3>
                 <?php if(!($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
-	  <dd>
 	<form id="login_form" action="sessions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Og7G5Y98uVnYgyLyyZejUkNgwMAfaBnTJE6q2ufQLWHiFRjvMQy7A8iwahjymuf//gCn9OQeolwhE+/kkRYxcg==" />
+	  <dd>
 	  <div class="hioki_login">
 		<p class="clearfix"><label>用户名</label><span><input type="text" id="email" name="email" value=""  /></span></p>
 		<p class="m_top10 clearfix"><label>密　码</label><span><input type="password" id="password" name="password" value=""  /></span></p>
@@ -131,8 +131,8 @@ if ($_COOKIE["login_stub"])
 		<p class="hioki_forgot"><a href="/userscenter/retake_password.php">忘记密码</a></p>
 	  </div>
 	  <p class="hioki_register"><a href="/userscenter/register.php">新会员注册</a></p>
-	</form>
 	  </dd>
+	</form>
 <?php endif; ?>
                 <?php if(($_SESSION['usercenter']['name'] &&$_COOKIE["login_stub"])): ?>
       <dd>
