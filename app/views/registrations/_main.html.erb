@@ -70,14 +70,14 @@
           <th>生产编号</th>
           <td>
             <p>请输入9位生产编号。（也有生产编号不足9位的产品）&nbsp;&nbsp;<a style="color:#005EAD" href="/assets_doc/registrations/serial_no.png" data-lightbox="serial_no1">生产编号示例</a></p>
-            <input type="text" name="serial_number" value="" style="width:200px;" disabled="disabled">
+            <input type="text" name="serial_number" value="" disabled="disabled">
           </td>
         </tr>
         <tr>
           <th>购买年月日</th>
           <td>
             <p>请用半角英文输入。（例：2005-02-05）</p>
-            <input type="text" name="buy_date" value="" style="width:200px;" disabled="disabled">
+            <input type="text" name="buy_date" value="" disabled="disabled">
           </td>
         </tr>
         <tr>
@@ -91,8 +91,10 @@
         </tbody>
       </table>
       <div class="btn-area-products-user">
-        <input type="button" onclick="return chkPostData();" class="counterfeit_button01">
-        <input type="reset" value="" onclick="resetSearchWord();" class="counterfeit_button02">
+        <input type="button" onclick="return chkPostData();" class="counterfeit_button01 sp_none">
+        <input type="reset" value="" onclick="resetSearchWord();" class="counterfeit_button02 sp_none">
+        <input type="button" value="提  交" onclick="return chkPostData();" class="counterfeit_button01 sp_block">
+        <input type="reset" value="重新填写" onclick="resetSearchWord();" class="counterfeit_button02 counterfeit_button03 sp_block sp_mt15">
       </div>
 
       <script>

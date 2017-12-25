@@ -113,9 +113,9 @@ if ($_COOKIE["login_stub"])
   <p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_land_sp.jpg" width="27" ></a></p>
   <p class="sp_block fr pad_block" id="search"><a href="javascript:void(0)" onClick="Effect3('search_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_search_sp.jpg" width="27" ></a></p>
   <div class="hioki_land_sp" id="search_sp" style="display:none;">
-  <form id="search_form" name="search_form" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <form id="search_form_sp" name="search_form" action="/products" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
 	  <label class="hioki_nav_search">
-		<input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form').submit()" type="button" /></label>
+		<input type="text" name="search" value="输入商品名・关键字进行搜索" onfocus="if(value=='输入商品名・关键字进行搜索'){value=''}" onblur="if(value==''){value='输入商品名・关键字进行搜索'}" /><input name="" onclick="$('#search_form_sp').submit()" type="button" /></label>
         <p class="m_top10"><input name="is_deleted" type="checkbox" value="1" />包含已停产的产品</p>
 	</form>
   </div>

@@ -122,7 +122,6 @@ if (!empty($category_id))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>资料下载｜HIOKI-日置(上海) 商贸有限公司</title>
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/assets_doc/front/html/css/style.css" rel="stylesheet" type="text/css" />
 <link href="/assets_doc/front/html/css/pad.css" rel="stylesheet" type="text/css" />
@@ -130,6 +129,7 @@ if (!empty($category_id))
 
 <script src="/assets_doc/front/html/js/scrollsmoothly.js"></script>
 <script src="/assets_doc/front/html/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/tab.js"></script>
 <script type="text/javascript">           
 	$(document).ready(function(){
 	$(".sidebar_search").mouseover(function() {
@@ -204,13 +204,15 @@ if (!empty($category_id))
 <?php 
 include("../header.php");//加载template
 ?>
-<div class="im_banner"></div>
+ <div class="im_banner pad_none sp_none"></div>
+<div class="pad_block sp_none"><img src="/assets_doc/front/html/images/intellectual_r1_c1_pad.jpg" width=100%></div>
+<div class="sp_block"><img src="/assets_doc/front/html/images/intellectual_sp.png" class="sp_w100"></div>
 <div class="news_content clearfix">
 <?php 
 include("product_left.php");//加载template
 ?>
   <div class="product_right">
-  	<p class="current"><a href="/index.html">首页</a> > <a href="intellectual.html">智测会</a> > 资料下载</p>
+    <p class="current sp_none"><a href="/index.html">首页</a> > <a href="intellectual.html">智测会</a> > 资料下载</p>
     <h3 class="product_f25 m_top20">资料下载</h3>
     
     <div id="pic_corpus_01">
@@ -240,8 +242,9 @@ foreach($select_list as $l)
       <li class="product_number"><p>文件名称</p><input name="name" value="<?php echo $name;?>" type="text" /><input name="submit" type="submit" value="" /></li>
     </ul>
                 </form>
-    <div class="m_top20">
-      <table width="925" border="0" cellspacing="0" cellpadding="0" class="im_table">
+
+    <div class="m_top20 sp_w100">
+      <table border="0" cellspacing="0" cellpadding="0" class="im_table pad_w100 sp_w100">
   <tr>
      <th nowrap="nowrap" bgcolor="#F0F7FD">编号</th>
     <th nowrap="nowrap" bgcolor="#F0F7FD">类别</th>
@@ -273,7 +276,7 @@ foreach($select_list as $l)
 	<?php $i++;} } ?>
 </table>
 	<?php if ($total>$onepage) { ?><br>
-	<table class="page" width="925" border="0" cellspacing="0" cellpadding="0">
+        <table class="page pad_w100 sp_w100" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 	<td width="100" align="left">合计：<?=$total;?> 条</td>
 	<td align="right"><?php echo $pagebar;?></td>
@@ -284,7 +287,6 @@ foreach($select_list as $l)
     </div>
   </div>
 </div>
-<p class="m_top45">&nbsp;</p>
 <?php 
 include("../footer.php");//加载template
 ?>
