@@ -32,6 +32,14 @@ function delCookie(name)//删除cookie
 }
 
 $(document).ready(function() {
+  if(getCookie("login_stub")){
+    $("#login_form dd").html(
+      '<p class="sidebar_p recorder_f18">'+ getCookie("name") + '，HIOKI欢迎您</p>'+
+        '<ul class="m_top15"><li><a href="/userscenter/intellectual/intellectual.php" class="sidebar_ld" >会员中心</a></li><li><a href="/sessions/logout" class="sidebar_ld" data-method="delete" data-confirm="确认退出吗?">退出登录</a></li></ul>'
+    );
+    $("#logout_in_header").show();
+  }
+
 		$("#pic_corpus_04 #submit").click(function() {
 				if ($("#pic_corpus_04 #email").val().length <= 4 || $("#pic_corpus_04 #password").val().length <= 4) {
 						alert("请输入正确的邮件和密码")
