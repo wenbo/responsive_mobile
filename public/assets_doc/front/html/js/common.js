@@ -21,7 +21,21 @@ $(function(){
 		}
 		column++;
 	});
+
+
+	$('.hioki_column04 ul').show();
+	$('.hioki_column04 .hioki_f23').click(function () {
+		if(column%2==0) {
+			$('.hioki_column04 ul').hide();
+			$(".hioki_column04 .hioki_f23").addClass('hioki_column_icon');
+		} else {
+			$('.hioki_column04 ul').show();
+			$(".hioki_column04 .hioki_f23").removeClass('hioki_column_icon');
+		}
+		column++;
+	});
 	
+
 	i=0;
 	$('.hioki_column01 .hioki_f23').click(function () {
 		if(i%2==0) {
@@ -57,6 +71,8 @@ $(function(){
 		}
 		iii++;
 	});
+
+
 	
 	iiii=0;
 	$('.product_industry_title .hioki_category_xx').click(function () {

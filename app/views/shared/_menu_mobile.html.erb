@@ -1,6 +1,6 @@
-<p class="sp_block fr pad_block" id="nav"><a href="javascript:void(0)" onClick="Effect2('nav_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_nav_sp.jpg" width="27" ></a></p>
-<p class="sp_block fr pad_block" id="land"><a href="javascript:void(0)" onClick="Effect('land_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_land_sp.jpg" width="27" ></a></p>
-<p class="sp_block fr pad_block" id="search"><a href="javascript:void(0)" onClick="Effect3('search_sp',this.parentNode.id);"><img src="/assets_doc/front/html/images/hioki_search_sp.jpg" width="27" ></a></p>
+<p class="sp_block fr pad_block" onclick="Effect('nav_sp','nav_sptab');"><span id="nav_sptab"><img src="/assets_doc/front/html/images/hioki_nav_sp.jpg" width="27" ></span></p>
+<p class="sp_block fr pad_block land_spding" onclick="Effect('land_sp','land_sptab');"><img src="/assets_doc/front/html/images/hioki_land_sp.jpg" width="27" ><span id="land_sptab" style="display: none;"></span></p>
+<p class="sp_block fr pad_block" onclick="Effect('search_sp','search_sptab');"><img src="/assets_doc/front/html/images/hioki_search_sp.jpg" width="27" ><span id="search_sptab" style="display: none;"></span></p>
 <div class="hioki_land_sp" id="search_sp" style="display:none;">
   <%= form_tag "/products", method: :get, id: "search_form_sp", name: "search_form" do %>
 	<label class="hioki_nav_search">

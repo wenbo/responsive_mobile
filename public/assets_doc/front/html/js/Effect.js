@@ -1,36 +1,19 @@
 function $G(Read_Id) { return document.getElementById(Read_Id) }
-function Effect(ObjectId,parentId){
-var Obj_Display = $G(ObjectId).style.display;
-	if (Obj_Display == 'none'){
-	Start(ObjectId,'Opens');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_land_sp.jpg' width='27'></a>"
-	}else{ 
-	Start(ObjectId,'Close');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_land_sp.jpg' width='27'></a>"
+//改编caiying2007
+var openedObjId=null
+function Effect(ObjectId){
+	if (openedObjId){
+		$G(openedObjId+"tab").innerHTML = "<img src='/assets_doc/front/html/images/hioki_nav_sp.jpg' width='27' >";
+		Start(openedObjId,'Close');
 	}
+	if(openedObjId!=ObjectId){
+		$G(ObjectId+"tab").innerHTML = "<img src='/assets_doc/front/html/images/hioki_nav02_sp.jpg' width='27' >";
+		Start(ObjectId,'Opens');
+		openedObjId=ObjectId
+	}
+	else openedObjId=null
 }
 
-function Effect2(ObjectId,parentId){
-var Obj_Display = $G(ObjectId).style.display;
-	if (Obj_Display == 'none'){
-	Start(ObjectId,'Opens');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_nav02_sp.jpg' width='27' ></a>"
-	}else{ 
-	Start(ObjectId,'Close');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect2('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_nav_sp.jpg' width='27' ></a>"
-	}
-}
-
-function Effect3(ObjectId,parentId){
-var Obj_Display = $G(ObjectId).style.display;
-	if (Obj_Display == 'none'){
-	Start(ObjectId,'Opens');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_search_sp.jpg' width='27' ></a>"
-	}else{ 
-	Start(ObjectId,'Close');
-	$G(parentId).innerHTML = "<a href=javascript:void(0) onClick=javascript:Effect3('"+ObjectId+"','"+parentId+"');><img src='/assets_doc/front/html/images/hioki_search_sp.jpg' width='27' ></a>"
-	}
-}
 function Start(ObjId,method){
 var BoxHeight = $G(ObjId).offsetHeight;   			//获取对象高度
 var MinHeight = 5;									//定义对象最小高度

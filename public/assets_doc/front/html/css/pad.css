@@ -236,7 +236,7 @@ transform:rotate(-45deg);}
 .Hi_12_h16_pc1 {width:620px;height:230px;}
 .pc_table {width:100%;}
 .hi_1201 {width:48%;}
-.speech_left_pad {width:69%;}
+.speech_left {width:100%;}
 .history_table {width:98%;}
 .pad_mt15 {margin-top: 15px;}
 
@@ -260,4 +260,14 @@ transform:rotate(-45deg);}
 .tables_list li {width:33%;float:left;}
 .tables_list li img {display:block;width:200px;height:138px;}
 .tables_list li p {text-align:left;margin-top: 5px;}
+
+
+.tables_list_b {width:100%;overflow: hidden;}
+.tables_list_b li {width:25%;float:left;}
+.tables_list_b li img {display:block;width:150px;height:100px;}
+.land_spding {padding:0 13px 0;}
+
+.video{position:relative; width:320px; height:220px;}
+.video #iframeId{position:absolute; top:0; left:0;}
+
 }

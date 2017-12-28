@@ -67,7 +67,7 @@ body{font-size:12px; line-height:20px;}
 
 .sp_fl {float: left;}
 
-.speech_left {padding-right: 0;}
+
 
 .distribution_fgs {height:42px;}
 .distribution_fb {width:100%;padding:0 3%;box-sizing: border-box;}
@@ -210,10 +210,12 @@ transform:rotate(-45deg);}
 .hioki_category03 a{color:#000; font-size:13px; padding:5px 0 5px 18px; display:block;}
 .hioki_activity{padding:0; margin-top:10px; background:none;}
 .hioki_column{width:100%; padding:16px 0 16px 0; background:#FFF;}
-hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; height:auto; float:none; padding-left:0; border-right:none;}
-.hioki_column00 .hioki_f23,.hioki_column01 .hioki_f23,.hioki_column02 .hioki_f23,.hioki_column03 .hioki_f23{color:#FFF; font-size:16px; line-height:40px; padding:0 3%; background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt02.png) no-repeat 96% center; background-size:11px auto;}
-.hioki_column00 .hioki_f23 span,.hioki_column01 .hioki_f23 span,.hioki_column02 .hioki_f23 span,.hioki_column03 .hioki_f23 span{font-size:10px;}
+hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{width:100%; height:auto; float:none; padding-left:0; border-right:none;}
+.hioki_column00 .hioki_f23,.hioki_column01 .hioki_f23,.hioki_column02 .hioki_f23,.hioki_column03 .hioki_f23,.hioki_column04 .hioki_f23{color:#FFF; font-size:16px; line-height:40px; padding:0 3%; background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt02.png) no-repeat 96% center; background-size:11px auto;}
+.hioki_column00 .hioki_f23 span,.hioki_column01 .hioki_f23 span,.hioki_column02 .hioki_f23 span,.hioki_column03 .hioki_f23 span,.hioki_column04 .hioki_f23 span{font-size:10px;}
 .hioki_column00 .hioki_f23.hioki_column_icon,.hioki_column01 .hioki_f23.hioki_column_icon,.hioki_column02 .hioki_f23.hioki_column_icon,.hioki_column03 .hioki_f23.hioki_column_icon{background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt01.png) no-repeat 96% center; background-size:11px auto;}
+.hioki_column04 .hioki_f23 {background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt01.png) no-repeat 96% center; background-size:11px auto;}
+.hioki_column04 .hioki_f23.hioki_column_icon{background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt02.png) no-repeat 96% center; background-size:11px auto;}
 .hioki_column ul{width:100%; margin-top:0; display:none;}
 .hioki_column ul li{width:50%; height:45px; float:left; margin:0; }
 .hioki_column ul li a{width:88%; height:20px; font-size:3.4vw; line-height:150%; padding:12px 6%; display:block; border-left:1px solid #FFF; margin-left:-1px; border-bottom:1px solid #FFF; background:#F4F4F4 url(/assets_doc/front/html/images/hioki_column_jt03.png) no-repeat 95% center; background-size:7px auto;}
@@ -256,6 +258,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 .product_right_sp{width:100%;padding-left: 0;margin-top:10px;padding:0;}
 .product_right .product_f25.m_top20{font-size:20px; line-height:30px; margin-top:0;padding:2% 0;box-sizing: border-box;}
 .product_right_sp .product_f25.m_top20{font-size:16px;padding-left: 3%;}
+.product_right_sp .product_f25.m_top55.sp_mt30.sp_bg.sp_fs18 {padding-left: 3%;box-sizing: border-box;}
 .product_category{width:100%; margin-top:15px;}
 .product_category li,.product_category li.product_category_li{width:48.5%; height:44px; float:left; margin-bottom:12px; background:linear-gradient(#F7F7F7, #D9D9D9);}
 .product_category li:nth-child(2),.product_category li:nth-child(4),.product_category li:nth-child(6),.product_category li:nth-child(8),.product_category li:nth-child(10),.product_category li:nth-child(12){float:right;}
@@ -385,6 +388,12 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 .news_right h3.recorder_blue.product_f20{font-size:16px; line-height:24px; margin-top:18px;color:#000;}
 .news_right p strong {display: none;}
 
+.news_right img {width:100%;}
+.news_right .news_weixin {text-align: center;}
+.news_right .news_weixin img {margin-right: 0;}
+.news_right .news_tp {text-align: center;}
+.news_right .news_tp img {width:100%;height:auto;margin-right: 0;margin-top:20px;}
+
 .news_detail dt {width:100%;float:none;margin-top: 10px;}
 .news_detail dt p {margin-top:10px;}
 
@@ -463,6 +472,11 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 .tables_list li img {display:block;width:27%;height:auto;float:left;}
 .tables_list li p {width:71%;float:left;text-align:left;line-height:17px;font-size: 12px;padding-left:2%;}
 
+
+.tables_list_b {width:100%;overflow: hidden;}
+.tables_list_b li {width:100%;overflow: hidden;margin-top: 20px;}
+.tables_list_b li img {width:100%;height:auto;}
+
 #youkuplayer {width:100%;height:220px;}
 
 .search-products-area .search-word {width:77%;}
@@ -504,6 +518,11 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03{width:100%; heigh
 .greenpoint_dc{padding:0 50px; font-size:16px; line-height:25px;}
 .greenpoint_h3{color:#FFF; font-size:16px; margin-top:30px; padding:2px 10px; display:inline-block; background:#00A64F;}
 
+.land_spding {padding:0 13px 0;}
+
+.video{position:relative; width:100%; height:220px; text-align:center;}
+.boxSummaryIn01 .boxLeft01 .video img{height:206px; width:300px;}
+.video #iframeId{position:absolute; top:0; left:0;}
 
 
 }
