@@ -37,6 +37,15 @@
 	});
 </script>
 <%= csrf_meta_tags %>
+<script>
+var _hmt = _hmt || [];
+(function() {
+ var hm = document.createElement("script");
+ hm.src = "https://hm.baidu.com/hm.js?1543ceff58b1606182e9b7cf357712b3";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(hm, s);
+ })();
+</script>
 <%= yield :head %>
 <%= javascript_include_tag 'main' %>
 <script type="text/javascript" src="/assets_doc/front/html/js/default.js"></script>
