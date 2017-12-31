@@ -124,7 +124,7 @@ function check()
 
   }
 
-  var password = document.getElementById('password').value;
+  var password = document.getElementById('password_php').value;
 
   if (password=='')
 
@@ -132,7 +132,7 @@ function check()
 
     alert('请输入密码');
 
-    document.getElementById('password').focus();
+    document.getElementById('password_php').focus();
 
     return false;
 
@@ -146,7 +146,7 @@ function check()
         <div class="recorder_please recorder_please_sp sp_mt20">
           <div class="m_top25 clearfix"><label class="sp_none">用户名<br />(邮箱地址)</label>
             <label class="sp_block label_sp">用户名(邮箱地址)</label><input name="username" id="username" type="text" /></div>
-          <div class="m_top25 clearfix"><label class="m_top10 label_sp">密　码</label><input name="password" id="password" type="password" /><br />
+          <div class="m_top25 clearfix"><label class="m_top10 label_sp">密　码</label><input name="password" id="password_php" type="password" /><br />
 <p><a href="/userscenter/retake_password.php">忘记密码</a></p></div>
         </div>
         <input name="" type="submit" class="recorder_login sp_none" value="" />
