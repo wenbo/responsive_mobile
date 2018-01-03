@@ -230,7 +230,7 @@ include("./header.php");//加载template
               <label class="register_dx"><input name="type" type="radio" value="最终用户" />&nbsp;&nbsp;最终用户</label>
               <label class="register_dx"><input name="type" type="radio" value="仪器代理商" />&nbsp;&nbsp;仪器代理商</label>
               <label class="register_dx"><input name="type" type="radio" value="系统集成商" />&nbsp;&nbsp;系统集成商</label>
-              <label class="register_dx"><input name="type" type="radio" value="其它" />&nbsp;&nbsp;其它</label>
+              <label class="register_dx"><input name="type" type="radio" value="其他" />&nbsp;&nbsp;其他</label>
             </dt>
           </dl>
           <dl class="register_dl register_other clearfix">

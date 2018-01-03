@@ -31,6 +31,9 @@ http://103.197.26.6/userscenter/intellectual/im_download.php?category_id=1
 http://localhost/userscenter/intellectual/im_download.php?category_id=1
 
 irb(main):012:0* HUser.count
+          hu = HUser.where(type: "其它").count
+          hu = HUser.where(type: "其它").update_all(type: '其他')
+          
           (0.3ms)  SELECT COUNT(*) FROM `h_user`
           => 2031
           irb(main):013:0> HUser.last

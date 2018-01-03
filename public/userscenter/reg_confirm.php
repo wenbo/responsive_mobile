@@ -170,12 +170,12 @@ include("./header.php");//加载template
 <?php if($type=="最终用户") echo "最终用户"; ?>
 <?php if($type=="仪器代理商") echo "仪器代理商"; ?>
 <?php if($type=="系统集成商") echo "系统集成商"; ?>
-<?php if($type=="其它") echo "其它"; ?>
+<?php if($type=="其他") echo "其他"; ?>
 </span>
 <?php if($type=="最终用户") echo '<input type="hidden" name="type" type="radio" value="最终用户" "checked" />' ?>
 <?php if($type=="仪器代理商") echo '<input type="hidden" name="type" type="radio" value="仪器代理商" "checked" />' ?>
 <?php if($type=="系统集成商") echo '<input type="hidden" name="type" type="radio" value="系统集成商" "checked" />' ?>
-<?php if($type=="其它") echo '<input type="hidden" name="type" type="radio" value="其它" "checked" />' ?>
+<?php if($type=="其他") echo '<input type="hidden" name="type" type="radio" value="其他" "checked" />' ?>
 						</dt>
 					</dl>
 					<dl class="register_dl clearfix">
