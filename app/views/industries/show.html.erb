@@ -33,10 +33,10 @@
   </ul>
 </div>
 
-<ul class="product_power sp_block" onclick="window.location='/industries/1'">
+<a id="a" name="a"></a><ul class="product_power sp_block" onclick="window.location='/industries/1#a'">
   <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
   <li>电力/新能源 <p>Power, Energy, Environment</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xs_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_x<%= params[:id].to_i == 1 ? 's' : 'x' %>_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_01" class="hioki_search clearfix" <%= params[:id].to_i == 1 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -47,10 +47,10 @@
   <p class="m_top45 sp_none">&nbsp;</p>
 </div>
 
-<ul class="product_power m_top15 sp_block" onclick="window.location='/industries/2'">
-  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
+<a id="b" name="b"></a><ul class="product_power m_top15 sp_block" onclick="window.location='/industries/2#b'">
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_02_sp.jpg" /></li>
   <li>汽车<p>Automotive, Transport</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_x<%= params[:id].to_i == 2 ? 's' : 'x' %>_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_02" class="hioki_search clearfix" <%= params[:id].to_i == 2 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -61,10 +61,10 @@
   <p class="m_top45 sp_none">&nbsp;</p>
 </div>
 
-<ul class="product_power m_top15 sp_block" onclick="window.location='/industries/3'">
-  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
+<a id="c" name="c"></a><ul class="product_power m_top15 sp_block" onclick="window.location='/industries/3#c'">
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_03_sp.jpg" /></li>
   <li>电子零件<p>Components, Semiconductors</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_x<%= params[:id].to_i == 3 ? 's' : 'x' %>_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_03" class="hioki_search clearfix" <%= params[:id].to_i == 3 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -75,10 +75,10 @@
   <p class="m_top45 sp_none">&nbsp;</p>
 </div>
 
-<ul class="product_power m_top15 sp_block" onclick="window.location='/industries/4'">
-  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
+<a id="d" name="d"></a><ul class="product_power m_top15 sp_block" onclick="window.location='/industries/4#d'">
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_04_sp.jpg" /></li>
   <li>电池<p>Battery</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_x<%= params[:id].to_i == 4 ? 's' : 'x' %>_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_04" class="hioki_search clearfix" <%= params[:id].to_i == 4 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">
@@ -89,10 +89,10 @@
   <p class="m_top45 sp_none">&nbsp;</p>
 </div>
 
-<ul class="product_power m_top15 sp_block" onclick="window.location='/industries/5'">
-  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_01_sp.jpg" /></li>
+<a id="e" name="e"></a><ul class="product_power m_top15 sp_block" onclick="window.location='/industries/5#e'">
+  <li class="fl"><img width="80" src="/assets_doc/front/html/images/product_05_sp.jpg" /></li>
   <li class="product_power_li02">交通<p>（地铁、铁道、航空）<br />Automotive, Transport</p></li>
-  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_xx_sp.jpg" /></li>
+  <li class="fr"><img width="21" height="21" src="/assets_doc/front/html/images/product_x<%= params[:id].to_i == 5 ? 's' : 'x' %>_sp.jpg" /></li>
 </ul>
 <div id="pic_corpus_05" class="hioki_search clearfix" <%= params[:id].to_i == 5 ? '' : "style=display:none;" %>>
   <div class="m_top45 clearfix sp_none">

@@ -119,7 +119,7 @@ body{font-size:12px; line-height:20px;}
 .counterfeit_fill {padding:15px 0;text-align:left;}
 .counterfeit_button01,.counterfeit_button02,.counterfeit_button03 {width:100%; height:50px; font-size: 26px;color:#fff; line-height:50px;}
 .counterfeit_button01{background:url(/assets_doc/front/html/images/submit_sp.png) repeat-x center; background-size:100% 100%;}
-.counterfeit_button02,.counterfeit_button03{background:url(/assets_doc/front/html/images/return_sp.png) repeat-x center; background-size:100% 100%;margin-top: 20px;}
+.counterfeit_button02,.counterfeit_button03{background:url(/assets_doc/front/html/images/return_sp.png) repeat-x center; background-size:100% 100%;margin-top:10px;}
 
 .soft_parameter{width:100%;border-top:#C5C6C7 1px solid; border-left:#C5C6C7 1px solid;box-sizing: border-box;}
 .soft_parameter th{border-right:#C5C6C7 1px solid; border-bottom:#C5C6C7 1px solid; font-size:12px; padding:2%;box-sizing: border-box;white-space:wrap;}
@@ -211,7 +211,7 @@ transform:rotate(-45deg);}
 .hioki_activity{padding:0; margin-top:10px; background:none;}
 .hioki_column{width:100%; padding:16px 0 16px 0; background:#FFF;}
 hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{width:100%; height:auto; float:none; padding-left:0; border-right:none;}
-.hioki_column00 .hioki_f23,.hioki_column01 .hioki_f23,.hioki_column02 .hioki_f23,.hioki_column03 .hioki_f23,.hioki_column04 .hioki_f23{color:#FFF; font-size:16px; line-height:40px; padding:0 3%; background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt02.png) no-repeat 96% center; background-size:11px auto;}
+.hioki_column00 .hioki_f23,.hioki_column01 .hioki_f23,.hioki_column02 .hioki_f23,.hioki_column03 .hioki_f23,.hioki_column04 .hioki_f23{color:#FFF; font-size:16px; line-height:40px; padding:0 3%; background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt04.png) no-repeat 96% center; background-size:8px auto;}
 .hioki_column00 .hioki_f23 span,.hioki_column01 .hioki_f23 span,.hioki_column02 .hioki_f23 span,.hioki_column03 .hioki_f23 span,.hioki_column04 .hioki_f23 span{font-size:10px;}
 .hioki_column00 .hioki_f23.hioki_column_icon,.hioki_column01 .hioki_f23.hioki_column_icon,.hioki_column02 .hioki_f23.hioki_column_icon,.hioki_column03 .hioki_f23.hioki_column_icon{background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt01.png) no-repeat 96% center; background-size:11px auto;}
 .hioki_column04 .hioki_f23 {background:#195FA7 url(/assets_doc/front/html/images/hioki_column_jt01.png) no-repeat 96% center; background-size:11px auto;}
@@ -238,6 +238,9 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .product_power li:nth-child(2) p{font-size:12px; line-height:18px;}
 .product_power li:nth-child(2).product_power_li02{padding-top:5px;}
 .product_power li.fr{padding-top:26px;}
+.product_dt01 .product_f16 {height: 55px;overflow: hidden;} /*增加*/
+.product_dt01 .product_xx {margin-top: 5px;} /*增加*/
+.search-products-area input[name=”search-word”] {width:77%;}
 #pic_corpus_01.hioki_search,#pic_corpus_02.hioki_search,#pic_corpus_03.hioki_search,#pic_corpus_04.hioki_search,#pic_corpus_05.hioki_search{width:94%; padding:15px 3% 10px 3%; background:#CAEAFF;}
 #pic_corpus_01.hioki_search ul.m_top45,#pic_corpus_02.hioki_search ul.m_top45,#pic_corpus_03.hioki_search ul.m_top45,#pic_corpus_04.hioki_search ul.m_top45,#pic_corpus_05.hioki_search ul.m_top45{margin-top:0;}
 .hioki_search li.m_left25.fl{width:48.5%; height:70px; margin-left:3%; background:url(/assets_doc/front/html/images/products_application_sp.jpg) no-repeat center bottom; background-size:100% auto;}
@@ -266,7 +269,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .product_category li.product_category_li{background:linear-gradient(#1F679E, #1C599E);}
 .product_category li.product_category_li a{background:url(/assets_doc/front/html/images/product_r3_c5_sp.png) no-repeat 95% center; background-size:5px auto;}
 .product_list li{width:100%; margin-bottom:12px;}
-.product_list dl{width:auto; height:188px;}
+.product_list dl{width:auto; height:207px;}
 .product_dz img{width:50px; height:auto;}
 .product_list dl.product_tj{height:180px; border:#BACFE4 4px solid;}
 .product_list dl.product_new{height:180px; border:#FEEDB7 4px solid;}
@@ -343,7 +346,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .recorder04_content{width:100%;}
 .recorder04_content .recorder_f16{font-size:12px; line-height:20px;}
 .recorder_upgrade th{font-size:14px; font-weight:normal;}
-.recorder_upgrade td{padding:8px; color:#666;}
+.recorder_upgrade td{padding:8px; color:#666;word-break: break-word;}
 .recorder_upgrade th:last-child{width:12%;}
 .repair_card {width:100%; padding:23px 16px;box-sizing: border-box;}
 .sp_lh33 {line-height:26px;}
@@ -388,7 +391,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .news_right h3.recorder_blue.product_f20{font-size:16px; line-height:24px; margin-top:18px;color:#000;}
 .news_right p strong {display: none;}
 
-.news_right img {width:100%;}
+
 .news_right .news_weixin {text-align: center;}
 .news_right .news_weixin img {margin-right: 0;}
 .news_right .news_tp {text-align: center;}
