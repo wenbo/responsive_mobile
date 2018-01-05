@@ -27,3 +27,8 @@ IntroLinks = {
     "接地电阻计/相序表/验电笔的使用方法"=> "https://www.hioki.cn/html/methods/field_earthing.html"
   }
 }
+NewsImg = {
+  1 => "hioki_r14_c11_sp.jpg",
+  4 => "hioki_r14_c14_sp.jpg",
+  6 => "hioki_r14_c16_sp.jpg"
+}

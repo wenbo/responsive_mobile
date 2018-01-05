@@ -25,8 +25,81 @@ if ($get['email']!=$email)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>会员信息修改｜HIOKI-日置(上海) 商贸有限公司</title>
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../js/scrollsmoothly.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/assets_doc/front/html/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/assets_doc/front/html/css/pad.css" rel="stylesheet" type="text/css" />
+<link href="/assets_doc/front/html/css/sp.css" rel="stylesheet" type="text/css" />
+
+<script src="/assets_doc/front/html/js/scrollsmoothly.js"></script>
+<script src="/assets_doc/front/html/js/jquery-1.9.1.js"></script>
+<script type="text/javascript">           
+  $(document).ready(function(){
+  $(".sidebar_search").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 365}, 400);
+  })
+  $(".sidebar_search").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 75}, 400);
+  });
+  });
+</script>
+<script type="text/javascript">           
+  $(document).ready(function(){
+  $(".sidebar_search02").mouseover(function() {
+  $(this).stop();
+  $(this).animate({width: 365}, 400);
+  })
+  $(".sidebar_search02").mouseout(function() {
+  $(this).stop();
+  $(this).animate({width: 75}, 400);
+  });
+  });
+</script>
+<link rel="stylesheet" media="screen" href="/assets_doc/front/html/css/colorbox.css" />
+<script src="/assets_doc/front/html/js/jquery.colorbox.js"></script>
+<script src="/assets_doc/front/html/js/script.js"></script>
+<script src="/assets_doc/front/html/js/tabslide.js"></script>
+<script>
+  $(document).ready(function(){
+    var winWidth;
+    if (window.innerWidth)
+      winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth)) {
+      winWidth = document.body.clientWidth;
+    }
+  //Examples of how to assign the Colorbox event to elements
+    if(winWidth > 1300){
+      $(".health01").colorbox({iframe:true, innerWidth:1300, innerHeight:630});
+    }
+    if(winWidth > 767 & winWidth < 1300){
+      $(".health01").colorbox({iframe:true, innerWidth:768, innerHeight:630});
+    }
+    if(winWidth < 767){
+      {$(".health01").removeClass("cboxElement");}
+    }
+    $(".callbacks").colorbox({
+      onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+      onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+      onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+      onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+      onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+    });
+
+    $('.non-retina').colorbox({rel:'group5', transition:'none'})
+    $('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+    //Example of preserving a JavaScript event for inline calls.
+    $("#click").click(function(){ 
+      $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+      return false;
+    });
+  });
+</script>
+
+<script type="text/javascript" src="/userscenter/js/main.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/default.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/Effect.js"></script>
+<script type="text/javascript" src="/assets_doc/front/html/js/common.js"></script>
 <script language="javascript" type="text/javascript">
 function checkFrom()
 {
@@ -119,37 +192,37 @@ include("../header.php");//加载template
 <?php 
 include("product_left.php");//加载template
 ?>
-  <div class="product_right">
-  	<p class="current"><a href="/index.html">首页</a> > <a href="intellectual.html">智测会</a> > 会员信息修改</p>
+  <div class="product_right product_right_ins">
+    <p class="current sp_none"><a href="/index.html">首页</a> > <a href="intellectual.html">智测会</a> > 会员信息修改</p>
     <h3 class="product_f25 m_top20">会员信息修改</h3>
-    <div class="register_content">
+    <div class="register_content pad_w100">
 <form name="FORMADD" method="post" action="modifiy_check.php" onsubmit="return checkFrom();">
 <input type="hidden" name="oldpassword" value="<?php echo $get['password'];?>" />
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">公司名</dd>
         <dt>
           <input name="company" id="company" type="text" class="register_text" value="<?php echo $get['company'];?>" /><span class="register_f14">　例：日置（上海）商贸 有限公司</span>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">部门</dd>
         <dt>
           <input name="dept" id="dept" type="text" class="register_text" value="<?php echo $get['dept'];?>" /><span class="register_f14">　例：营业支援部</span>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">职位</dd>
         <dt>
           <input name="job" id="job" type="text" class="register_text" value="<?php echo $get['job'];?>" /><span class="register_f14">　例：助理</span>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">姓名</dd>
         <dt>
           <input name="name" id="name" type="text" value="<?php echo $get['name'];?>" class="register_text" /><span class="register_f14">　例：张三</span>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">业种</dd>
         <dt>
           <label class="register_dx"><input name="work1" type="radio" value="1" <?php if ($get['work1']=='1') { ?>checked<?php } ?> />&nbsp;&nbsp;食品、纤维</label>
@@ -165,7 +238,7 @@ include("product_left.php");//加载template
           <label class="register_dx"><input name="work1" type="radio" value="11" <?php if ($get['work1']=='11') { ?>checked<?php } ?> />&nbsp;&nbsp;其它</label>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">职种</dd>
         <dt>
           <label class="register_dx"><input name="work2" type="radio" value="1" <?php if ($get['work2']=='1') { ?>checked<?php } ?> />&nbsp;&nbsp;研究、开发</label>
@@ -181,37 +254,37 @@ include("product_left.php");//加载template
           <label class="register_dx"><input name="work2" type="radio" value="11" <?php if ($get['work2']=='11') { ?>checked<?php } ?> />&nbsp;&nbsp;其它</label>
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">密码</dd>
         <dt>
           <input name="password" type="password" id="password" class="register_text" />
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">地址</dd>
         <dt>
           <input name="address" id="address" type="text" class="register_text" value="<?php echo $get['address'];?>" />
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">邮编</dd>
         <dt>
           <input name="postcode" id="postcode" type="text" class="register_text" value="<?php echo $get['postcode'];?>" />
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd class="register_dd">TEL</dd>
         <dt>
           <input name="tel" id="tel" type="text" class="register_text" value="<?php echo $get['tel'];?>" />
         </dt>
       </dl>
-      <dl class="register_dl clearfix">
+      <dl class="register_dl register_other  clearfix">
       	<dd>FAX</dd>
         <dt>
           <input name="" type="text" class="register_text" value="<?php echo $get['fax'];?>" />
         </dt>
       </dl>
-      <input name="" type="submit" value="" class="register_submit" /><input name="" type="reset" value="" class="register_reset" />
+      <input name="" type="submit" value="" class="register_submit sp_none" /><input name="" type="reset" value="" class="register_reset sp_none" /><br><br><input name="" type="submit" value="提    交" class="counterfeit_button04 counterfeit_button01 sp_block" />&nbsp;&nbsp;<input name="" type="reset" value="重新填写" class="counterfeit_button02 counterfeit_button03 sp_block" />
 </form>
     </div>
     

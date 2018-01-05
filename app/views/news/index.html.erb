@@ -38,7 +38,7 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
     <p class="current sp_none"><a href="index.html">首页</a> > 新闻</p>
 <ul class="news_list">
 	<% @news.each do |news| %>
-	<li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25 %><a href="/news/<%= news.id %>"><%= news.name %></a></li>
+          <li><%= parse_date_with_unit(news.public_time) %><%= image_tag news.news_category.image.url, width: 72, height: 25, class: "sp_none" %><img src="/assets_doc/front/html/images/<%= NewsImg[news.news_category.id] %>" width=63 alt="Original" class="sp_inline"/><a href="/news/<%= news.id %>"><%= news.name %></a></li>
 	<% end %>
 </ul>
 <ul class="news_flip t_center m_top20 sp_none">
