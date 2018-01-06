@@ -37,7 +37,7 @@ document.getElementById("mm1").style.height=document.getElementById("mm2").offse
   <div class="news_right" id="mm2">
     <p class="current sp_none"><a href="/index.html">首页</a> > <a href="/news">新闻</a> > 新闻详细</p>
     <p class="m_top20 clearfix">
-      <span class="sp_block fl sp_mr1">2017年10月13日</span>
+      <span class="sp_block fl sp_mr1"><%= parse_date_with_unit(@news.public_time) %></span>
     <%= image_tag @news.news_category.image.url, width: 72, height: 25, class: "fl sp_none" %>
 <img src="/assets_doc/front/html/images/<%= NewsImg[@news.news_category.id] %>" width=63 class="fl sp_inline"/>
     <a href="/news.html" class="recorder_f16 fr"><span class="recorder_blue sp_none">返回</span></a>
