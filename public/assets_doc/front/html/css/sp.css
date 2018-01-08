@@ -238,9 +238,9 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .product_power li:nth-child(2) p{font-size:12px; line-height:18px;}
 .product_power li:nth-child(2).product_power_li02{padding-top:5px;}
 .product_power li.fr{padding-top:26px;}
-.product_dt01 .product_f16{height:55px;overflow:hidden;}
-.product_dt01 .product_xx{margin-top:5px;}
-.search-products-area input[name="earch-word"{width:77%;}
+.product_dt01 .product_f16 {height:55px;overflow:hidden;} 
+.product_dt01 .product_xx {margin-top:5px;} 
+.search-products-area input[name="search-word"] {width:77%;}
 #pic_corpus_01.hioki_search,#pic_corpus_02.hioki_search,#pic_corpus_03.hioki_search,#pic_corpus_04.hioki_search,#pic_corpus_05.hioki_search{width:94%; padding:15px 3% 10px 3%; background:#CAEAFF;}
 #pic_corpus_01.hioki_search ul.m_top45,#pic_corpus_02.hioki_search ul.m_top45,#pic_corpus_03.hioki_search ul.m_top45,#pic_corpus_04.hioki_search ul.m_top45,#pic_corpus_05.hioki_search ul.m_top45{margin-top:0;}
 .hioki_search li.m_left25.fl{width:48.5%; height:70px; margin-left:3%; background:url(/assets_doc/front/html/images/products_application_sp.jpg) no-repeat center bottom; background-size:100% auto;}
@@ -450,7 +450,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .product_right .product_f25.m_top20 {font-size: 18px;}
 
 .methods_table {width:100%;}
-.methods_table td,.methods_table th {word-break: break-all;box-sizing: border-box;padding:2px 5px;}
+.methods_table td,.methods_table th {word-break:break-all;box-sizing: border-box;padding:2px 5px;}
 
 .product_search {width:100%;height:auto;line-height:19px;padding:2%;box-sizing: border-box;}
 .product_search li {margin-right:0;font-size:13px;float:none;}
@@ -463,7 +463,7 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 .product_number input[type=text] {width:51%;}
 .product_number input[type=submit] {position: absolute;right:0;}
 .product_search input, .product_search select {font-size: 11px;}
-.im_table td {font-size: 10px;box-sizing: border-box;word-break: break-all;padding:3px;line-height: 17px;}
+.im_table td {font-size: 10px;box-sizing: border-box;word-break:break-all;padding:3px;line-height: 17px;}
 .im_table th:nth-child(4),.im_table th:nth-child(6),.im_table th:nth-child(8) {display: none;}
 .im_table tr td:nth-child(4),.im_table tr td:nth-child(6),.im_table tr td:nth-child(8) {display: none;}
 .page_black {font-size: 10px;line-height: 15px;}
@@ -501,10 +501,10 @@ hioki_column00,.hioki_column01,.hioki_column02,.hioki_column03,.hioki_column04{w
 #colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
 
 #cboxLoadedContent{margin:30px 0;}
-#cboxOverlay{ background:#D9DADA;} /*鑳屾櫙棰滆壊*/
+#cboxOverlay{ background:#D9DADA;} /*背景颜色*/
 #colorbox{outline:0;}
 #cboxContent{background:#fff; overflow:hidden;}
-#cboxClose{width:31px; height:31px; border:0; padding:0; margin:0; position:absolute; top:0; right:0; text-indent:-9999px; background:url(/assets_doc/front/html/images/calendar_close.png) no-repeat;} /*鍏抽棴鎸夐挳*/
+#cboxClose{width:31px; height:31px; border:0; padding:0; margin:0; position:absolute; top:0; right:0; text-indent:-9999px; background:url(/assets_doc/front/html/images/calendar_close.png) no-repeat;} /*关闭按钮*/
 
 
 .distribution_dc{width:94%; padding:20px 0 0 0;margin: 0 auto;}
