@@ -39,11 +39,11 @@ $(function(){
 	i=0;
 	$('.hioki_column01 .hioki_f23').click(function () {
 		if(i%2==0) {
-			$('.hioki_column01 ul').show();
-			$(".hioki_column01 .hioki_f23").addClass('hioki_column_icon');
+			$(this).next().show();
+			$(this).addClass('hioki_column_icon');
 		} else {
-			$('.hioki_column01 ul').hide();
-			$(".hioki_column01 .hioki_f23").removeClass('hioki_column_icon');
+			$(this).next().hide();
+			$(this).removeClass('hioki_column_icon');
 		}
 		i++;
 	});
