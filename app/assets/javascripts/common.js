@@ -1,7 +1,16 @@
-
 $(function(){
+	//首页左边悬浮
+	$('.hioki_promotion .hioki_promotion_x').click(function () {
+		$('.hioki_promotion a').hide();
+		$('.hioki_promotion p').show();
+	});
+	$('.hioki_promotion p').click(function () {
+		$('.hioki_promotion a').show();
+		$('.hioki_promotion p').hide();
+	});
+	
 	//手机端点击显示菜单
-  column=0;
+	column=0;
 	$('.hioki_column00 .hioki_f23').click(function () {
 		if(column%2==0) {
 			$('.hioki_column00 ul').show();
@@ -12,14 +21,29 @@ $(function(){
 		}
 		column++;
 	});
+
+
+	$('.hioki_column04 ul').show();
+	$('.hioki_column04 .hioki_f23').click(function () {
+		if(column%2==0) {
+			$('.hioki_column04 ul').hide();
+			$(".hioki_column04 .hioki_f23").addClass('hioki_column_icon');
+		} else {
+			$('.hioki_column04 ul').show();
+			$(".hioki_column04 .hioki_f23").removeClass('hioki_column_icon');
+		}
+		column++;
+	});
+	
+
 	i=0;
 	$('.hioki_column01 .hioki_f23').click(function () {
 		if(i%2==0) {
-			$('.hioki_column01 ul').show();
-			$(".hioki_column01 .hioki_f23").addClass('hioki_column_icon');
+			$(this).next().show();
+			$(this).addClass('hioki_column_icon');
 		} else {
-			$('.hioki_column01 ul').hide();
-			$(".hioki_column01 .hioki_f23").removeClass('hioki_column_icon');
+			$(this).next().hide();
+			$(this).removeClass('hioki_column_icon');
 		}
 		i++;
 	});
@@ -47,6 +71,8 @@ $(function(){
 		}
 		iii++;
 	});
+
+
 	
 	iiii=0;
 	$('.product_industry_title .hioki_category_xx').click(function () {
@@ -131,8 +157,86 @@ $(function(){
 		}
 		pd06++;
 	});
+
+
 	
+	$(document).ready(function(){
+		$(".sidebar_search").mouseover(function() {
+		  $(this).stop();
+		  $(this).animate({width: 365}, 400);
+			})
+			$(".sidebar_search").mouseout(function() {
+		  $(this).stop();
+		  $(this).animate({width: 75}, 400);
+			});
+			});
+			          
+			$(document).ready(function(){
+			$(".sidebar_search02").mouseover(function() {
+		  $(this).stop();
+		  $(this).animate({width: 365}, 400);
+			})
+			$(".sidebar_search02").mouseout(function() {
+		  $(this).stop();
+		  $(this).animate({width: 75}, 400);
+		});
+	});
+
+	pd07=0;
+	$('.product_power').click(function () {
+		if(pd07%2==0) {
+			$(this).next().hide();
+			$(this).children().last().find("img").css({'transform':'rotate(90deg)'});
+		} else {
+			$(this).next().show();
+			$(this).children().last().find("img").css({'transform':'rotate(0deg)'});
+		}
+		pd07++;
+	});
+
 });
+
+
+
+/**
+ * common.js
+ *
+ *  version --- 3.7
+ *  updated --- 2012/10/12
+ */
+
+
+/* !stack ------------------------------------------------------------------- */
+jQuery(document).ready(function($) {
+    useguidePop();
+});
+
+
+/* !useguidePop ---------------------------------------------------------------- */
+var useguidePop = function() {
+    $(".methods_listDl dt").click(function(){
+        if($(this).hasClass("close")){
+            $(this).removeClass("close");
+            $(this).addClass("open");
+            $(this).next().css('display','block');
+        }
+        else if($(this).hasClass("open")){
+            $(this).removeClass("open");
+            $(this).addClass("close");
+            $(this).next().css('display','none');        }
+    });
+};
+
+/* !Addition odd & even --------------------------------------------------- */
+$(function(){
+ $('.ul_business02 > li:nth-child(even)').addClass('even');
+});
+
+
+
+
+
+
 
 
 
