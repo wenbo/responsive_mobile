@@ -56,6 +56,8 @@ Rails.application.routes.draw do
     end
     resources :news_categories
     resources :news
+    resources :faq_categories
+    resources :faqs
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

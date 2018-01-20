@@ -1,0 +1,37 @@
+<section class="content-header">
+  <h1> FAQ分类
+    <small>控制板</small>
+  </h1>
+</section>
+<section class="content">
+  <div class="box box-primary">
+    <div class="box-header">
+      <h3 class="box-title">FAQ分类列表</h3>
+			<div class="col-sm-4 hidden-xs margin-top-10">
+        <%= link_to '新建',[:new,:admin,:faq_category],  class: 'btn btn-s-md btn-primary btn-flat', id: 'color-white' %>
+      </div>
+    </div>
+    <div class="box-body table-responsive no-padding">                                                     
+      <table class="table table-hover"> 
+        <tbody>                                                                                            
+          <tr>                                                                                             
+            <th>FAQ分类名称</th>
+            <th><%= sortable "position", "顺序" %></th>
+            <th>父类名称</th>
+            <th>分类图片</th>
+            <th>关联产品分类</th>
+            <th>操作</th>                                                                      
+          </tr>                                                                                            
+          <%= render @faq_categories  %>
+        </tbody>                                                                                           
+      </table>                                                                                             
+    </div>                                                                                                 
+    <div class="box-footer clearfix">                                                                      
+      <div class="row">
+        <div class="col-sm-10 text-center text-center-xs">
+          <%= paginate @faq_categories %> 
+        </div>                                                                                             
+      </div>                                                                                               
+    </div>    
+  </div>    
+</section>

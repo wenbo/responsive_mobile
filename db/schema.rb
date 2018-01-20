@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025114246) do
+ActiveRecord::Schema.define(version: 20180120153503) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,13 +18,14 @@ ActiveRecord::Schema.define(version: 20171025114246) do
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
+    t.text     "intro_links",        limit: 65535
     t.index ["lft"], name: "index_categories_on_lft", using: :btree
     t.index ["rgt"], name: "index_categories_on_rgt", using: :btree
   end
@@ -74,9 +75,34 @@ ActiveRecord::Schema.define(version: 20171025114246) do
     t.string   "address"
     t.string   "tel"
     t.string   "email"
-    t.text     "content",       limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "faq_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "parent_id"
+    t.integer  "category_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["category_id"], name: "index_faq_categories_on_category_id", using: :btree
+  end
+
+  create_table "faqs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.text     "body",            limit: 65535
+    t.integer  "faq_category_id"
+    t.date     "public_time"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["faq_category_id"], name: "index_faqs_on_faq_category_id", using: :btree
   end
 
   create_table "industries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -213,6 +239,7 @@ ActiveRecord::Schema.define(version: 20171025114246) do
     t.integer  "position",                         default: 99999
     t.text     "upgraded_note",      limit: 65535
     t.text     "spec_table",         limit: 65535
+    t.string   "category_ids"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["sku"], name: "index_products_on_sku", using: :btree
   end
@@ -281,6 +308,8 @@ ActiveRecord::Schema.define(version: 20171025114246) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "faq_categories", "categories"
+  add_foreign_key "faqs", "faq_categories"
   add_foreign_key "news", "news_categories"
   add_foreign_key "option_categories", "products"
   add_foreign_key "product_access_records", "categories"

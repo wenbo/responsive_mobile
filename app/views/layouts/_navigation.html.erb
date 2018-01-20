@@ -26,6 +26,18 @@
     <i class="fa fa-gear"></i> <span>选件管理</span>
     <% end %>
 	</li>
+
+	<li class="<%= active?(:faqs_categories) %>">
+    <%= link_to [:admin, :faq_categories] do %>
+    <i class="fa fa-book"></i> <span>FAQ分类管理</span>
+    <% end %>
+	</li>
+	<li class="<%= active?(:faqs) %>">
+    <%= link_to [:admin, :faqs] do %>
+    <i class="fa fa-quora"></i> <span>FAQ管理</span>
+    <% end %>
+	</li>
+
 	<li class="<%= active?(:news_categories) %>">
     <%= link_to [:admin, :news_categories] do %>
     <i class="fa fa-reorder"></i> <span>新闻分类管理</span>

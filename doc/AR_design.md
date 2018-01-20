@@ -77,6 +77,12 @@ rails g model registration h_user_id:integer seihin_id:integer
 rake db:migrate:redo VERSION=20170908142743
 rake db:migrate:redo VERSION=20170908142722
 
+rake db:migrate:down VERSION=20180120153503
+rake db:migrate:down VERSION=20180120153444
+
+rake db:migrate:up VERSION=20180120153444
+rake db:migrate:up VERSION=20180120153503
+
 bundle exec rake db:migrate:down VERSION=20171022141940
 
 rake import:seihin
@@ -90,6 +96,11 @@ Registration.product_model_name("000")
 rails g migration AddCategoryIdsToProducts category_ids:string
 rails g model ProdCategory 
 https://stackoverflow.com/questions/4864513/ruby-on-rails-multiple-selection-in-f-select
+
+rails g model FaqCategory name:string position:integer parent_id:integer category:references avatar:attachment
+rails g model Faq title:string  body:text faq_category:references public_time:datetime
+
+
 
 ## code
 Product.first.category_ids

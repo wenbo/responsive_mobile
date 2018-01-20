@@ -1,0 +1,62 @@
+<%= form_for [:admin, @faq_category], html: {class: "form-horizontal"} do |f| %>
+<div class="box-body">
+  <%= render 'admin/shared/error', model: @faq_category %>
+  <fieldset>
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="string required col-sm-2 control-label">
+          FAQ分类名称<abbr title="required">*</abbr>
+        </label>
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label">顺序</label>
+        <div class="col-sm-4">
+          <%= f.text_field :position, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label">  分类小图标 </label>
+        <%= image_tag(@faq_category.avatar.url(:w50h50)) if @faq_category.avatar? %>
+        <div class="col-sm-4">
+          <%= f.file_field :avatar, class: "string required form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group string requirede">
+        <label class="col-sm-2 control-label"> 关联产品分类 </label>
+        <div class="col-sm-4">
+          <%= f.select :category_id, nested_set_options(Category) {|i| "#{'-' * i.level} #{i.name}" }, {}, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-inputs">
+      <div class="form-group">
+        <label class="col-sm-2 control-label"> 从属分类 </label>
+        <div class="col-sm-4">
+          <%= f.select :parent_id, nested_set_options(FaqCategory, @faq_category) {|i| "#{'-' * i.level} #{i.name}" }.unshift(["一级分类", '']), {}, class: "string required form-control"  %>
+        </div>
+      </div>
+    </div>
+
+
+  </fieldset>
+  <div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+      <%= f.button '保存', class: 'btn btn-primary' %>
+      <%= link_to '取消', [:admin, :categories], class: 'btn btn-warning' %>
+    </div>
+  </div>
+</div>
+<% end %>

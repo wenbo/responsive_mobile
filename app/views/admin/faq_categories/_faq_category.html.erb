@@ -1,0 +1,12 @@
+<tr>                                                                                             
+  <th> 
+    <%= faq_category.name %> 
+  </th>
+  <th> 
+    <%= faq_category.position %> 
+  </th>
+  <th><%= faq_category.parent_id.present? ? faq_category.parent.try(:name) : "" %></th>
+  <th><%= image_tag faq_category.avatar.url(:w50h50) if faq_category.avatar?%></th>
+  <th><%= faq_category.try(:category).try(:name) %></th>
+  <th><%= link_to "编辑", [:edit, :admin, faq_category], class: "btn btn-primary" %> <%= link_to "删除", [:admin, faq_category], method: :delete, class: "btn btn-primary", data: { confirm: "确认删除吗?" } %></th>
+</tr>                                                                                            
